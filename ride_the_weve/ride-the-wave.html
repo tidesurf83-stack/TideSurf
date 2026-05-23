@@ -1,0 +1,141 @@
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tide Surf</title>
+
+<link rel="stylesheet" href="ride-the-wave.css">
+
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+  <!-- Leaflet CSS -->
+  <link
+    rel="stylesheet"
+    href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+  />
+  
+  <style>
+    #map {
+      height: 100vh; /* ocupa toda la pantalla */
+    }
+  </style>
+</head>
+
+<body>
+
+<header>
+
+    <nav class="navbar">
+
+        <div class="logo">
+            <img src="img/logof-removebg-preview.png" alt="">
+        </div>
+
+        <ul class="nav-links">
+            <li><a href="#">News</a></li>
+            <li><a href="#">Competition</a></li>
+            <li><a href="#">Ride the wave</a></li>
+            <li><a href="#">Gear Zone Board</a></li>
+            <li><a href="#">Wave Academy</a></li>
+            <li><a href="#">My profile</a></li>
+        </ul>
+
+    </nav>
+
+</header>
+
+
+<section class="hero">
+
+    <div class="hero-content">
+        <h1>Find your beach</h1>
+    </div>
+
+</section>
+
+
+<section class="intro">
+
+    <h2>Our beaches</h2>
+
+    <p>
+        El Salvador is a top surf destination in Central America,
+        known for its world-class beaches and consistent waves
+        year-round. Spots like Playa El Tunco, Punta Roca, and Playa El
+        Zonte offer unique experiences for surfers of all levels,
+        combining nature, adventure, and the energy of the ocean.
+    </p>
+
+</section>
+
+
+<section class="beaches">
+
+    <h2>The best beaches</h2>
+
+    <div class="cards">
+
+        <div class="card">
+            <img src="img/zonte.webp">
+            <h3>Playa El Zonte</h3>
+            <p>Costa de La Libertad</p>
+            <button>Ver más...</button>
+        </div>
+
+        <div class="card">
+            <img src="img/las flores.webp">
+            <h3>Playa Las Flores</h3>
+            <p>Oriente del país (cerca de El Cuco)</p>
+            <button>Ver más...</button>
+        </div>
+
+        <div class="card">
+            <img src="img/mizata.webp">
+            <h3>Playa Mizata</h3>
+            <p>Zona occidental</p>
+            <button>Ver más...</button>
+        </div>
+
+        <div class="card">
+            <img src="img/tunco1.webp">
+            <h3>Playa El Tunco</h3>
+            <p>Departamento de La Libertad</p>
+            <button>Ver más...</button>
+        </div>
+
+        <div class="card">
+            <img src="img/el sunzal.jpg">
+            <h3>Playa El Sunzal</h3>
+            <p>Junto a El Tunco</p>
+            <button>Ver más...</button>
+        </div>
+
+        <div class="card">
+            <img src="img/punta roca.jpg">
+            <h3>Punta Roca</h3>
+            <p>Puerto de La Libertad</p>
+            <button>Ver más...</button>
+        </div>
+
+    </div>
+
+</section>
+
+
+<section class="map-section">
+  
+
+ <div class="map-card">
+  <div id="map"></div>
+ </div>
+
+  <!-- Leaflet JS -->
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+
+  <!-- Tu archivo JS -->
+  <script src="mapa.js"></script>
+</section>
+
+</body>
+</html>     
