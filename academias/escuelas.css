@@ -10,7 +10,7 @@ html{
 }
 
 body{
-    font-family:'playfair display',cursive;
+    font-family:'Poppins',sans-serif;
     background:#f4f4f4;
     color:#222;
 }
@@ -20,7 +20,7 @@ body{
 
     display:flex;
     justify-content:space-between;
-    align-items:center;
+    align-items:rigth;
 
     padding:8px 30px;
 
@@ -44,6 +44,8 @@ body{
     display:flex;
 
     gap:35px;
+
+    align-items: left;
 }
 
 .nav-links a{

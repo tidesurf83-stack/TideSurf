@@ -1,28 +1,23 @@
- <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
+
 <head>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>Tide Surf</title>
 
 <link rel="stylesheet" href="ride-the-wave.css">
 
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
 
-  <!-- Leaflet CSS -->
-  <link
-    rel="stylesheet"
-    href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
-  />
-  
-  <style>
-    #map {
-      height: 100vh; /* ocupa toda la pantalla */
-    }
-  </style>
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"/>
+
 </head>
 
 <body>
+
 
 <header>
 
@@ -33,12 +28,19 @@
         </div>
 
         <ul class="nav-links">
+
             <li><a href="noticias/noticias.html">Noticias</a></li>
+
             <li><a href="#">Competencias</a></li>
-            <li><a href="ride_the_weve/ride-the-wave.html">Playas</a></li>
+
+            <li><a href="ride_the_wave/ride-the-wave.html">Playas</a></li>
+
             <li><a href="#">Tiendas</a></li>
+
             <li><a href="academias/academias.html">Escuelas de Surf</a></li>
+
             <li><a href="#">Mi perfil</a></li>
+
         </ul>
 
     </nav>
@@ -49,7 +51,9 @@
 <section class="hero">
 
     <div class="hero-content">
+
         <h1>Find your beach</h1>
+
     </div>
 
 </section>
@@ -69,53 +73,122 @@
 
 </section>
 
-
 <section class="beaches">
 
     <h2>The best beaches</h2>
-    
+
     <div class="cards">
 
         <div class="card">
+
             <img src="img/zonte.webp">
-            <h3>Playa El Zonte</h3>
-            <p>Costa de La Libertad</p>
-            <button>Ver más...</button>
+
+            <div class="card-content">
+
+                <h3>Playa El Zonte</h3>
+
+                <p>Costa de La Libertad</p>
+
+                <button onclick="openBeach('zonte')">
+                    Ver más...
+                </button>
+
+            </div>
+
         </div>
 
+
         <div class="card">
+
             <img src="img/las flores.webp">
-            <h3>Playa Las Flores</h3>
-            <p>Oriente del país (cerca de El Cuco)</p>
-            <button>Ver más...</button>
+
+            <div class="card-content">
+
+                <h3>Playa Las Flores</h3>
+
+                <p>Oriente del país</p>
+
+                <button onclick="openBeach('flores')">
+                    Ver más...
+                </button>
+
+            </div>
+
         </div>
 
         <div class="card">
+
             <img src="img/mizata.webp">
-            <h3>Playa Mizata</h3>
-            <p>Zona occidental</p>
-            <button>Ver más...</button>
+
+            <div class="card-content">
+
+                <h3>Playa Mizata</h3>
+
+                <p>Zona occidental</p>
+
+                <button onclick="openBeach('mizata')">
+                    Ver más...
+                </button>
+
+            </div>
+
         </div>
 
+
         <div class="card">
+
             <img src="img/tunco1.webp">
-            <h3>Playa El Tunco</h3>
-            <p>Departamento de La Libertad</p>
-            <button>Ver más...</button>
+
+            <div class="card-content">
+
+                <h3>Playa El Tunco</h3>
+
+                <p>Departamento de La Libertad</p>
+
+                <button onclick="openBeach('tunco')">
+                    Ver más...
+                </button>
+
+            </div>
+
         </div>
 
+
         <div class="card">
+
             <img src="img/el sunzal.jpg">
-            <h3>Playa El Sunzal</h3>
-            <p>Junto a El Tunco</p>
-            <button>Ver más...</button>
+
+            <div class="card-content">
+
+                <h3>Playa El Sunzal</h3>
+
+                <p>Junto a El Tunco</p>
+
+                <button onclick="openBeach('sunzal')">
+                    Ver más...
+                </button>
+
+            </div>
+
         </div>
 
+
         <div class="card">
+
             <img src="img/punta roca.jpg">
-            <h3>Punta Roca</h3>
-            <p>Puerto de La Libertad</p>
-            <button>Ver más...</button>
+
+            <div class="card-content">
+
+                <h3>Punta Roca</h3>
+
+                <p>Puerto de La Libertad</p>
+
+                <button onclick="openBeach('puntaRoca')">
+                    Ver más...
+                </button>
+
+            </div>
+
         </div>
 
     </div>
@@ -123,19 +196,93 @@
 </section>
 
 
+
 <section class="map-section">
-  
 
- <div class="map-card">
-  <div id="map"></div>
- </div>
+    <h2>Explore the map</h2>
 
-  <!-- Leaflet JS -->
-  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <div class="map-card">
 
-  <!-- Tu archivo JS -->
-  <script src="mapa.js"></script>
+        <div id="map"></div>
+
+    </div>
+
 </section>
 
+
+<div class="beach-modal" id="beachModal">
+
+    <div class="modal-container">
+
+        <span class="close-modal">&times;</span>
+
+        <div class="modal-carousel">
+
+            <button class="carousel-arrow left-arrow">
+                &#10094;
+            </button>
+
+            <img id="modalImage" src="">
+
+            <button class="carousel-arrow right-arrow">
+                &#10095;
+            </button>
+
+        </div>
+
+        <div class="modal-info">
+
+            <h2 id="modalTitle"></h2>
+
+            <div class="modal-details">
+
+                <div class="detail-card">
+                     <span id="modalLocation"></span>
+                </div>
+
+                <div class="detail-card">
+                     <span id="modalWave"></span>
+                </div>
+
+                <div class="detail-card">
+                     <span id="modalLevel"></span>
+                </div>
+
+                <div class="detail-card">
+                     <span id="modalSeason"></span>
+                </div>
+
+            </div>
+
+            <p id="modalDescription"></p>
+
+            <div class="activities">
+
+                <h3>Activities</h3>
+
+                <ul id="activitiesList"></ul>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<footer>
+
+    <h3>Tide Surf</h3>
+
+    <p>Ride the wave. Explore El Salvador.</p>
+
+</footer>
+
+
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+
+<script src="ride_the_wave.js"></script>
+
 </body>
-</html>     
+</html>

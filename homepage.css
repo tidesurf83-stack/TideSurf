@@ -59,7 +59,6 @@ body{
     color:white;
 }
 
-/* HERO */
 .hero{
     height:100vh;
     background:url('https://images.unsplash.com/photo-1502680390469-be75c86b636f?q=80&w=1600&auto=format&fit=crop');
@@ -162,7 +161,6 @@ body{
     text-align:center;
     white-space:nowrap;
     letter-spacing:2px;
-    font-family:;
 }
 
 .newsletter{

@@ -1,3 +1,4 @@
+
 *{
     margin:0;
     padding:0;
@@ -7,45 +8,53 @@
 body{
     font-family:'Poppins',sans-serif;
     background:#f5f5f5;
+    color:#222;
 }
 
-
-body{
-    font-family: 'Poppins', sans-serif;
-}
-
-.hero h1,
-.beaches h2,
-.map-section h2,
-.intro h2{
-    font-family: 'playfair display', cursive;
-}
+/* NAVBAR */
 
 .navbar{
+
     background:rgb(224, 244, 250);
+
     display:flex;
+
     justify-content:space-between;
+
     align-items:center;
-    padding:10px 5px;
+
+    padding:10px 25px;
+
     box-shadow:0 2px 8px rgba(0,0,0,.08);
-    padding-left: 20px;
+
+    position:sticky;
+
+    top:0;
+
+    z-index:1000;
 }
 
 .logo img{
     width:75px;
-    border-radius: 100px;
 }
 
 .nav-links{
+
     list-style:none;
+
     display:flex;
+
     gap:35px;
 }
 
 .nav-links a{
+
     text-decoration:none;
+
     color:#222;
+
     font-weight:500;
+
     transition:.3s;
 }
 
@@ -53,69 +62,83 @@ body{
     color:#3b87b5;
 }
 
+/* HERO */
 
 .hero{
+
     height:520px;
 
     background:
     linear-gradient(
-        rgba(0,0,0,.15),
-        rgba(0,0,0,.15)
+        rgba(0,0,0,.25),
+        rgba(0,0,0,.25)
     ),
     url("img/playita.png");
 
     background-size:cover;
+
     background-position:center;
 
     display:flex;
+
     justify-content:center;
-    align-items:flex-start;
+
+    align-items:center;
 }
 
 .hero h1{
-    margin-top:40px;
 
     color:white;
 
     font-family:'Playfair Display',serif;
 
-    font-size:70px;
+    font-size:75px;
 
-    text-shadow:
-    2px 2px 10px rgba(0,0,0,.4);
-
-    letter-spacing:2px;
+    text-shadow:2px 2px 10px rgba(0,0,0,.4);
 }
 
+/* INTRO */
 
 .intro{
+
     background:#fff4d7;
+
     text-align:center;
-    padding:50px 90px;
+
+    padding:60px 90px;
 }
 
 .intro h2{
+
     font-family:'Playfair Display',serif;
+
     font-size:50px;
+
     margin-bottom:25px;
 }
 
 .intro p{
+
     font-size:22px;
+
     line-height:1.9;
+
     max-width:1100px;
+
     margin:auto;
-    font-style:italic;
-    font-weight:600;
 }
 
+/* BEACHES */
 
 .beaches{
+
     background:#dfeaf2;
+
     padding:60px 40px;
 }
 
 .beaches h2{
+
     text-align:center;
 
     font-family:'Playfair Display',serif;
@@ -126,6 +149,7 @@ body{
 }
 
 .cards{
+
     display:grid;
 
     grid-template-columns:
@@ -139,41 +163,49 @@ body{
 }
 
 .card{
+
     background:white;
 
     border-radius:20px;
 
-    padding:15px;
+    overflow:hidden;
 
-    text-align:center;
-
-    box-shadow:
-    0 4px 10px rgba(0,0,0,.12);
+    box-shadow:0 5px 15px rgba(0,0,0,.12);
 
     transition:.4s;
 }
 
 .card:hover{
+
     transform:translateY(-8px);
 }
 
 .card img{
+
     width:100%;
-    height:180px;
+
+    height:220px;
 
     object-fit:cover;
+}
 
-    border-radius:15px;
+.card-content{
+
+    padding:20px;
+
+    text-align:center;
 }
 
 .card h3{
-    margin-top:15px;
-    font-size:20px;
+
+    margin-bottom:10px;
 }
 
 .card p{
-    margin:10px 0;
-    color:#444;
+
+    margin-bottom:15px;
+
+    color:#555;
 }
 
 .card button{
@@ -184,6 +216,8 @@ body{
 
     padding:10px 25px;
 
+    border-radius:10px;
+
     cursor:pointer;
 
     transition:.3s;
@@ -192,55 +226,266 @@ body{
 }
 
 .card button:hover{
+
     background:#84c8da;
+
+    transform:scale(1.05);
 }
 
-@media(max-width:900px){  
+/* MAP */
 
-.navbar{
-    flex-direction:column;
+.map-section{
+
+    background:white;
+
+    padding:70px 30px;
 }
 
-.nav-links{
-    flex-wrap:wrap;
-    justify-content:center;
-    margin-top:10px;
-}
-
-.hero h1{
-    font-size:45px;
-}
-
-.intro h2,
-.beaches h2,
 .map-section h2{
-    font-size:40px;
-}
 
-.intro{
-    padding:40px;
-}
+    text-align:center;
 
-.intro p{
-    font-size:18px;
+    font-size:50px;
+
+    font-family:'Playfair Display',serif;
+
+    margin-bottom:40px;
 }
 
 .map-card{
-    width: 90%;
-    max-width: 1200px;
-    margin: 40px auto;
-    padding: 15px;
 
-    background: white;
-    border-radius: 20px;
+    width:90%;
 
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+    max-width:1200px;
+
+    margin:auto;
+
+    padding:15px;
+
+    background:white;
+
+    border-radius:20px;
+
+    box-shadow:0 10px 30px rgba(0,0,0,.15);
 }
 
 #map{
-    height: 500px;
-    border-radius: 15px;
+
+    height:500px;
+
+    border-radius:15px;
 }
 
+/* MODAL */
 
+.beach-modal{
+
+    display:none;
+
+    position:fixed;
+
+    inset:0;
+
+    background:rgba(0,0,0,.75);
+
+    backdrop-filter:blur(5px);
+
+    z-index:9999;
+
+    overflow:auto;
+}
+
+.modal-container{
+
+    background:white;
+
+    width:90%;
+
+    max-width:1000px;
+
+    margin:40px auto;
+
+    border-radius:20px;
+
+    overflow:hidden;
+
+    animation:modalShow .4s ease;
+}
+
+@keyframes modalShow{
+
+    from{
+        opacity:0;
+        transform:translateY(-30px);
+    }
+
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+
+.modal-carousel{
+
+    position:relative;
+
+    height:450px;
+}
+
+.modal-carousel img{
+
+    width:100%;
+    height:100%;
+
+    object-fit:cover;
+}
+
+.carousel-arrow{
+
+    position:absolute;
+
+    top:50%;
+
+    transform:translateY(-50%);
+
+    width:50px;
+    height:50px;
+
+    border:none;
+
+    border-radius:50%;
+
+    background:white;
+
+    cursor:pointer;
+
+    font-size:22px;
+}
+
+.left-arrow{
+    left:20px;
+}
+
+.right-arrow{
+    right:20px;
+}
+
+.modal-info{
+    padding:35px;
+}
+
+.modal-info h2{
+
+    font-size:40px;
+
+    margin-bottom:20px;
+
+    font-family:'Playfair Display',serif;
+}
+
+.modal-details{
+
+    display:grid;
+
+    grid-template-columns:
+    repeat(auto-fit,minmax(180px,1fr));
+
+    gap:15px;
+
+    margin-bottom:25px;
+}
+
+.detail-card{
+
+    background:#d7edf8;
+
+    padding:15px;
+
+    border-radius:12px;
+
+    text-align:center;
+}
+
+#modalDescription{
+
+    line-height:1.9;
+
+    margin-bottom:25px;
+}
+
+.activities{
+
+    background:#f3f8fb;
+
+    padding:20px;
+
+    border-radius:15px;
+}
+
+.activities h3{
+    margin-bottom:15px;
+}
+
+.activities li{
+    margin-bottom:10px;
+}
+
+.close-modal{
+
+    position:absolute;
+
+    top:20px;
+    right:35px;
+
+    color:white;
+
+    font-size:45px;
+
+    cursor:pointer;
+}
+
+/* FOOTER */
+
+footer{
+
+    background:#d7edf8;
+
+    text-align:center;
+
+    padding:30px;
+}
+
+/* RESPONSIVE */
+
+@media(max-width:900px){
+
+    .navbar{
+        flex-direction:column;
+        gap:15px;
+    }
+
+    .nav-links{
+        flex-wrap:wrap;
+        justify-content:center;
+    }
+
+    .hero h1{
+        font-size:50px;
+    }
+
+    .intro{
+        padding:40px;
+    }
+
+    .intro p{
+        font-size:18px;
+    }
+
+    .modal-carousel{
+        height:250px;
+    }
+
+    .modal-info h2{
+        font-size:28px;
+    }
 }
