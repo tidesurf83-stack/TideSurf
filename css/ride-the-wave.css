@@ -37,6 +37,11 @@ body{
 .logo img{
     width:75px;
 }
+/* NAVBAR */
+.navbar{
+    padding:10px 0;
+    background:#e7f0f7 !important;
+}
 
 .nav-links{
 

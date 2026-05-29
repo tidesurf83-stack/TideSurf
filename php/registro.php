@@ -1,0 +1,211 @@
+<?php
+?>
+ 
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro - TideSurf</title>
+ 
+    <link rel="stylesheet" href="css/registro.css">
+ 
+    <!-- Font Awesome -->
+    <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+ 
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+ 
+<body>
+ 
+<div class="container">
+ 
+    <!-- HEADER -->
+    <header class="header">
+ 
+        <div class="logo">
+            <img src="img/logo.png" alt="Logo TideSurf">
+        </div>
+ 
+        <h2>Registro</h2>
+ 
+    </header>
+ 
+    <!-- FORM -->
+    <section class="register-section">
+ 
+        <div class="register-box">
+ 
+            <h1>Únete a TideSurf</h1>
+ 
+            <p>y conecta con el océano</p>
+ 
+            <form action="guardar_registro.php" method="POST">
+ 
+                <!-- NOMBRE -->
+                <div class="input-group">
+ 
+                    <i class="fa-solid fa-user"></i>
+ 
+                    <input
+                        type="text"
+                        name="nombre_completo"
+                        placeholder="Nombre completo"
+                        required
+                    >
+ 
+                </div>
+ 
+                <!-- CORREO -->
+                <div class="input-group">
+ 
+                    <i class="fa-solid fa-envelope"></i>
+ 
+                    <input
+                        type="email"
+                        name="correo"
+                        placeholder="Correo electrónico"
+                        required
+                    >
+ 
+                </div>
+ 
+                <!-- NACIONALIDAD -->
+                <div class="input-group">
+ 
+                    <i class="fa-solid fa-flag"></i>
+ 
+                    <select name="nacionalidad" required>
+ 
+                        <option value="">
+                            Selecciona tu país
+                        </option>
+ 
+                        <option value="Afganistán">Afganistán</option>
+                        <option value="Albania">Albania</option>
+                        <option value="Alemania">Alemania</option>
+                        <option value="Argentina">Argentina</option>
+                        <option value="Australia">Australia</option>
+                        <option value="Bolivia">Bolivia</option>
+                        <option value="Brasil">Brasil</option>
+                        <option value="Canadá">Canadá</option>
+                        <option value="Chile">Chile</option>
+                        <option value="China">China</option>
+                        <option value="Colombia">Colombia</option>
+                        <option value="Corea del Sur">Corea del Sur</option>
+                        <option value="Costa Rica">Costa Rica</option>
+                        <option value="Cuba">Cuba</option>
+                        <option value="Ecuador">Ecuador</option>
+                        <option value="El Salvador">El Salvador</option>
+                        <option value="España">España</option>
+                        <option value="Estados Unidos">Estados Unidos</option>
+                        <option value="Francia">Francia</option>
+                        <option value="Guatemala">Guatemala</option>
+                        <option value="Honduras">Honduras</option>
+                        <option value="India">India</option>
+                        <option value="Italia">Italia</option>
+                        <option value="Japón">Japón</option>
+                        <option value="México">México</option>
+                        <option value="Nicaragua">Nicaragua</option>
+                        <option value="Panamá">Panamá</option>
+                        <option value="Paraguay">Paraguay</option>
+                        <option value="Perú">Perú</option>
+                        <option value="Portugal">Portugal</option>
+                        <option value="Reino Unido">Reino Unido</option>
+                        <option value="República Dominicana">República Dominicana</option>
+                        <option value="Uruguay">Uruguay</option>
+                        <option value="Venezuela">Venezuela</option>
+ 
+                    </select>
+ 
+                </div>
+ 
+ 
+                <!-- NIVEL -->
+                <div class="input-group">
+ 
+                    <i class="fa-solid fa-water"></i>
+ 
+                    <select name="nivel_surf" required>
+ 
+                        <option value="">
+                            Nivel de Surf
+                        </option>
+ 
+                        <option value="Novato">
+                            Novato
+                        </option>
+ 
+                        <option value="Medio">
+                            Medio
+                        </option>
+ 
+                        <option value="Avanzado">
+                            Avanzado
+                        </option>
+ 
+                    </select>
+ 
+                </div>
+ 
+                <!-- PASSWORD -->
+                <div class="input-group">
+ 
+                    <i class="fa-solid fa-lock"></i>
+ 
+                <input
+                        type="password"
+                        name="contrasena"
+                        placeholder="Contraseña"
+                        required
+                    >
+ 
+                </div>
+ 
+                <!-- CONFIRMAR -->
+                <div class="input-group">
+ 
+                    <i class="fa-solid fa-lock"></i>
+ 
+                    <input
+                        type="password"
+                        name="confirmar_contrasena"
+                        placeholder="Confirmar contraseña"
+                        required
+                    >
+ 
+                </div>
+ 
+                <!-- LOGIN -->
+                <div class="login-link">
+ 
+                    <span>¿Tienes cuenta?</span>
+ 
+                   <a href="login.html">
+                    Iniciar sesion
+                   </a>
+ 
+                </div>
+ 
+                <!-- BOTÓN -->
+                <button type="submit" class="btn-register">
+ 
+                    <i class="fa-solid fa-person-swimming"></i>
+ 
+                    Registrarse
+ 
+                </button>
+ 
+            </form>
+ 
+        </div>
+ 
+    </section>
+ 
+</div>
+ 
+</body>
+</html>
+ 

@@ -10,26 +10,17 @@ body {
   color: #333;
 }
  
-.navbar {
-  display: flex;
-  align-items: center;
-  justify-content: flex-start;  
-  gap: 2rem;
-  background-color: #d7e8f5;
-  padding: 0.75rem 2rem;
-  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.08);
-  position: sticky;
-  top: 0;
-  z-index: 100;
+/* NAVBAR */
+.navbar{
+    padding:10px 0;
+    background:#e7f0f7 !important;
 }
- 
-.navbar__logo {
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-  min-width: 120px;
+
+.logo{
+    width:70px;
+    height: 70px;
+    border-radius: 100px;
 }
- 
 .navbar__logo-img {
   height: 52px;
   width: auto;
