@@ -34,6 +34,11 @@ body{
     width:75px;
     border-radius: 100px;
 }
+/* NAVBAR */
+.navbar{
+    padding:10px 0;
+    background:#e7f0f7 !important;
+}
 
 .nav-links{
     list-style:none;
