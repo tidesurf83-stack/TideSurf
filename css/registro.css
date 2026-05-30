@@ -19,6 +19,7 @@ body{
  
   overflow: hidden;
 }
+
  
 /* HEADER */
 .header{
@@ -53,7 +54,7 @@ body{
   color: #000;
 }
  
-/* REGISTER */
+
 .register-section{
   width: 100%;
  

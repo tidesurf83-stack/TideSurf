@@ -44,21 +44,27 @@ body{
     color:#19d7df;
 }
 
-.btn-nav{
-    border:none;
-    background:#fcfdfd;
-    padding:10px 40px;
-    border-radius:15px;
-    font-weight:600;
-    transition:0.3s;
+.btn-container{
+    display: flex;
+    flex-direction: row;
+    gap: 15px;
+    align-items: center;
+}
 
+.btn-nav{
+    border: none;
+    background: #fcfdfd;
+    padding: 10px 25px;
+    border-radius: 15px;
+    font-weight: 600;
+    cursor: pointer;
+    white-space: nowrap;
 }
 
 .btn-nav:hover{
-    background:#00c8d7;
-    color:white;
+    background: #d7edf8;
+    transform: translateY(-2px);
 }
-
 .hero{
     height:100vh;
     background:url('https://images.unsplash.com/photo-1502680390469-be75c86b636f?q=80&w=1600&auto=format&fit=crop');

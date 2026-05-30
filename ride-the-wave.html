@@ -1,243 +1,166 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 
 <head>
 
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Tide Surf</title>
+    <title>Tide Surf</title>
 
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
 
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"/>
 
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/ride-the-wave.css">
 
-<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"/>
-
-  <link
-    rel="stylesheet"
-    href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
-  />
-  
-  <style>
-    #map {
-      height: 100vh; /* ocupa toda la pantalla */
-    }
-  </style>
-
-  <link rel="stylesheet" href="css/ride-the-wave.css">
 </head>
 
 <body>
-
 
 <header>
 
     <nav class="navbar">
 
         <div class="logo">
-            <img src="img/logof-removebg-preview.png" alt="">
+            <img src="img/logof-removebg-preview.png" alt="Tide Surf">
         </div>
 
         <ul class="nav-links">
-
             <li><a href="noticias/noticias.html">Noticias</a></li>
-
             <li><a href="#">Competencias</a></li>
-
             <li><a href="ride_the_wave/ride-the-wave.html">Playas</a></li>
-
             <li><a href="#">Tiendas</a></li>
-
             <li><a href="academias/academias.html">Escuelas de Surf</a></li>
-
-            <li><a href="#">Mi perfil</a></li>
-
+            <li><a href="#">Mi Perfil</a></li>
         </ul>
 
     </nav>
-    
 
 </header>
 
+<!-- HERO -->
 
 <section class="hero">
 
     <div class="hero-content">
-
-        <h1>Find your beach</h1>
-
+        <h1>Find Your Beach</h1>
     </div>
 
 </section>
 
+<!-- INTRO -->
+
 <section class="intro">
-<nav class="navbar navbar-expand-lg bg-white shadow-sm fixed-top">
-    <div class="container">
 
-        <a class="navbar-brand" href="#" style="margin-left:-40px;">
-            <img src="img/logof-removebg-preview.png" alt="logo" class="logo">
-        </a>
-
-        <div class="nav-links">
-            <a href="noticias.html">Noticias</a>
-            <a href="competition.html">Competencias</a>
-            <a href="ride-the-wave.html">Playas</a>
-            <a href="grearzone.html">Tiendas</a>
-            <a href="academias.html">Escuelas de Surf</a>
-            <a href="profile.html">My perfil</a>
-        </div>
-    <h2>Our beaches</h2>
+    <h2>Our Beaches</h2>
 
     <p>
-        El Salvador is a top surf destination in Central America,
-        known for its world-class beaches and consistent waves
-        year-round. Spots like Playa El Tunco, Punta Roca, and Playa El
-        Zonte offer unique experiences for surfers of all levels,
-        combining nature, adventure, and the energy of the ocean.
+        El Salvador es uno de los mejores destinos de surf en Centroamérica. Sus playas ofrecen olas increíbles, atardeceres espectaculares y experiencias inolvidables para surfistas de todos los niveles. Explora las playas más famosas y descubre tu próxima aventura.
     </p>
 
 </section>
 
+
+
 <section class="beaches">
 
-    <h2>The best beaches</h2>
+    <h2>The Best Beaches</h2>
 
     <div class="cards">
 
         <div class="card">
-
-            <img src="img/zonte.webp">
+            <img src="img/zonte.webp" alt="Playa El Zonte">
 
             <div class="card-content">
-
                 <h3>Playa El Zonte</h3>
-
                 <p>Costa de La Libertad</p>
 
                 <button onclick="openBeach('zonte')">
                     Ver más...
                 </button>
-
             </div>
-
         </div>
 
-
         <div class="card">
-
-            <img src="img/las flores.webp">
+            <img src="img/las flores.webp" alt="Playa Las Flores">
 
             <div class="card-content">
-
                 <h3>Playa Las Flores</h3>
-
                 <p>Oriente del país</p>
 
                 <button onclick="openBeach('flores')">
                     Ver más...
                 </button>
-
             </div>
-
         </div>
 
         <div class="card">
-
-            <img src="img/mizata.webp">
+            <img src="img/mizata.webp" alt="Playa Mizata">
 
             <div class="card-content">
-
                 <h3>Playa Mizata</h3>
-
-                <p>Zona occidental</p>
+                <p>Zona Occidental</p>
 
                 <button onclick="openBeach('mizata')">
                     Ver más...
                 </button>
-
             </div>
-
         </div>
 
-
         <div class="card">
-
-            <img src="img/tunco1.webp">
+            <img src="img/tunco1.webp" alt="Playa El Tunco">
 
             <div class="card-content">
-
                 <h3>Playa El Tunco</h3>
-
                 <p>Departamento de La Libertad</p>
 
                 <button onclick="openBeach('tunco')">
                     Ver más...
                 </button>
-
             </div>
-
         </div>
 
-
         <div class="card">
-
-            <img src="img/el sunzal.jpg">
+            <img src="img/el sunzal.jpg" alt="Playa El Sunzal">
 
             <div class="card-content">
-
                 <h3>Playa El Sunzal</h3>
-
                 <p>Junto a El Tunco</p>
 
                 <button onclick="openBeach('sunzal')">
                     Ver más...
                 </button>
-
             </div>
-
         </div>
 
-
         <div class="card">
-
-            <img src="img/punta roca.jpg">
+            <img src="img/punta roca.jpg" alt="Punta Roca">
 
             <div class="card-content">
-
                 <h3>Punta Roca</h3>
-
                 <p>Puerto de La Libertad</p>
 
                 <button onclick="openBeach('puntaRoca')">
                     Ver más...
                 </button>
-
             </div>
-
         </div>
 
     </div>
 
 </section>
 
-
+<!-- MAPA -->
 
 <section class="map-section">
 
-    <h2>Explore the map</h2>
+    <h2>Explore the Map</h2>
 
     <div class="map-card">
-
         <div id="map"></div>
-
     </div>
 
-<<<<<<< HEAD:ride_the_weve/ride-the-wave.html
-=======
-  <!-- Tu archivo JS -->
-  <script src="js/mapa.js"></script>
->>>>>>> 33bc09fefe253d5312bd1518e8b6529abc72e20e:ride-the-wave.html
 </section>
 
 
@@ -253,7 +176,7 @@
                 &#10094;
             </button>
 
-            <img id="modalImage" src="">
+            <img id="modalImage" src="" alt="Beach">
 
             <button class="carousel-arrow right-arrow">
                 &#10095;
@@ -268,19 +191,19 @@
             <div class="modal-details">
 
                 <div class="detail-card">
-                     <span id="modalLocation"></span>
+                    <span id="modalLocation"></span>
                 </div>
 
                 <div class="detail-card">
-                     <span id="modalWave"></span>
+                    <span id="modalWave"></span>
                 </div>
 
                 <div class="detail-card">
-                     <span id="modalLevel"></span>
+                    <span id="modalLevel"></span>
                 </div>
 
                 <div class="detail-card">
-                     <span id="modalSeason"></span>
+                    <span id="modalSeason"></span>
                 </div>
 
             </div>
@@ -302,16 +225,20 @@
 </div>
 
 
+
 <footer>
 
     <h3>Tide Surf</h3>
 
-    <p>Ride the wave. Explore El Salvador.</p>
+    <p>Ride the Wave. Explore El Salvador.</p>
 
 </footer>
 
 
+
 <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+
+<script src="js/mapa.js"></script>
 
 <script src="ride_the_wave.js"></script>
 

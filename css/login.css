@@ -11,13 +11,63 @@ body, html {
     background-color: white; /* El fondo general es blanco */
 }
 
-/* Barra superior que cruza toda la pantalla */
-.full-header {
-    background-color: #d1e9ff; /* El celeste de tu diseño */
-    width: 100%;
-    padding: 15px 50px;
-    border-bottom: 1px solid #bde4f4;
+.navbar{
+    padding:10px 0;
+    background:#e7f0f7 !important;
 }
+
+.logo{
+    width:70px;
+    height: 70px;
+    border-radius: 100px;
+}
+
+.nav-links{
+    display:flex;
+    align-items:center;
+    gap:35px;
+    flex-wrap:nowrap;
+}
+
+.nav-links a{
+    white-space:nowrap;
+}
+
+.nav-links a{
+    text-decoration:none;
+    color:black;
+    font-weight:600;
+    font-size:15px;
+    transition:0.3s;
+}
+
+.nav-links a:hover{
+    color:#19d7df;
+}
+
+.btn-container{
+    display: flex;
+    flex-direction: row;
+    gap: 15px;
+    align-items: center;
+}
+
+.btn-nav{
+    border: none;
+    background: #fcfdfd;
+    padding: 10px 25px;
+    border-radius: 15px;
+    font-weight: 600;
+    cursor: pointer;
+    white-space: nowrap;
+}
+
+.btn-nav:hover{
+    background: #d7edf8;
+    transform: translateY(-2px);
+}
+
+
 
 .header-content {
     display: flex;
