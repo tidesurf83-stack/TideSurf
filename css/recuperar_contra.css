@@ -1,0 +1,218 @@
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;600;700&display=swap');
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Quicksand', sans-serif;
+}
+
+body{
+    min-height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    flex-direction:column;
+
+    background:
+    linear-gradient(
+        rgba(0,0,0,0.15),
+        rgba(0,0,0,0.15)
+    ),
+    url("../img/playa.jpg");
+
+    background-size:cover;
+    background-position:center;
+    background-attachment:fixed;
+}
+
+.topbar{
+    margin-bottom:25px;
+}
+
+.topbar h1{
+    color:white;
+    font-size:3rem;
+    text-shadow:3px 3px 15px rgba(0,0,0,.4);
+    letter-spacing:2px;
+}
+
+.container{
+    width:100%;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+
+.card{
+    width:450px;
+    background:rgba(255,255,255,0.85);
+    backdrop-filter:blur(10px);
+
+    border-radius:30px;
+    padding:40px;
+
+    box-shadow:
+    0 15px 40px rgba(0,0,0,.2);
+
+    position:relative;
+
+    overflow:hidden;
+}
+
+/* Ola decorativa */
+.card::before{
+    content:'';
+    position:absolute;
+    top:-60px;
+    left:-50px;
+
+    width:200px;
+    height:200px;
+
+    background:#00c2cb;
+    border-radius:50%;
+    opacity:.25;
+}
+
+.card::after{
+    content:'';
+    position:absolute;
+    bottom:-70px;
+    right:-70px;
+
+    width:220px;
+    height:220px;
+
+    background:#ffd166;
+    border-radius:50%;
+    opacity:.25;
+}
+
+.card h2{
+    text-align:center;
+    color:#0081a7;
+    margin-bottom:10px;
+    font-size:2rem;
+}
+
+.card p{
+    text-align:center;
+    color:#555;
+    margin-bottom:25px;
+    line-height:1.5;
+}
+
+.input-group{
+    position:relative;
+    margin-bottom:20px;
+}
+
+.input-group i{
+    position:absolute;
+    left:15px;
+    top:50%;
+    transform:translateY(-50%);
+
+    color:#00b4d8;
+    font-size:1.1rem;
+}
+
+.input-group input,
+.input-group select{
+
+    width:100%;
+    padding:15px 15px 15px 45px;
+
+    border:none;
+    border-radius:15px;
+
+    background:#f1f8fb;
+
+    outline:none;
+
+    transition:.3s;
+}
+
+.input-group input:focus,
+.input-group select:focus{
+
+    background:white;
+
+    box-shadow:
+    0 0 0 3px rgba(0,180,216,.25);
+
+    transform:translateY(-2px);
+}
+
+.btn{
+
+    width:100%;
+
+    padding:15px;
+
+    border:none;
+
+    border-radius:50px;
+
+    background:linear-gradient(
+        135deg,
+        #00b4d8,
+        #00c896
+    );
+
+    color:white;
+
+    font-size:1rem;
+
+    font-weight:bold;
+
+    cursor:pointer;
+
+    transition:.4s;
+}
+
+.btn:hover{
+
+    transform:translateY(-4px);
+
+    box-shadow:
+    0 10px 25px rgba(0,180,216,.4);
+}
+
+.back{
+
+    margin-top:20px;
+
+    text-align:center;
+}
+
+.back a{
+
+    text-decoration:none;
+
+    color:#0081a7;
+
+    font-weight:700;
+
+    transition:.3s;
+}
+
+.back a:hover{
+
+    color:#00c896;
+}
+
+/* Responsive */
+
+@media(max-width:500px){
+
+    .card{
+        width:90%;
+        padding:25px;
+    }
+
+    .topbar h1{
+        font-size:2rem;
+    }
+}
