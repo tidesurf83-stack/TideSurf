@@ -451,3 +451,121 @@ header{
     font-weight:bold;
     color:#16304f;
 }
+
+/* ========================= */
+/* DECORACIONES TIPO SURF UI */
+/* ========================= */
+
+.hero{
+    position:relative;
+}
+
+.events{
+    position:relative;
+}
+
+.rankings{
+    position:relative;
+}
+
+/* Solecito */
+
+.sun{
+    position:absolute;
+    top:30px;
+    right:100px;
+    font-size:32px;
+    animation: float 3s ease-in-out infinite;
+}
+
+.hero{
+    position: relative;
+}
+
+
+
+/* Corazón */
+
+.heart{
+    display:inline-block;
+    margin-left:10px;
+    font-size:22px;
+    animation: pulse 2s infinite;
+}
+
+/* Onditas */
+
+.wave{
+    color:#18bfd3;
+    margin-left:10px;
+    font-size:24px;
+    animation: float 3s ease-in-out infinite;
+}
+
+/* Olas decorativas */
+
+.ocean-wave{
+    position:absolute;
+    bottom:20px;
+    left:50%;
+    transform:translateX(-50%);
+    font-size:28px;
+    color:#18bfd3;
+    animation: float 3s ease-in-out infinite;
+}
+
+/* Estrellitas */
+
+.star{
+    position:absolute;
+    font-size:24px;
+    color:#ffd44d;
+    top: 400px;
+    animation: float 3s ease-in-out infinite;
+}
+
+.star1{
+    top:300px;
+    left:50px;
+}
+
+.star2{
+    top:400px;
+    right:80px;
+}
+
+.palm{
+    position:absolute;
+    top:60px;
+    right:70px;
+    font-size:35px;
+    z-index:10;
+    animation: float 3s ease-in-out infinite;
+}
+
+
+/* Animaciones */
+
+@keyframes float{
+    0%{
+        transform:translateY(0);
+    }
+    50%{
+        transform:translateY(-8px);
+    }
+    100%{
+        transform:translateY(0);
+    }
+}
+
+@keyframes pulse{
+    0%{
+        transform:scale(1);
+    }
+    50%{
+        transform:scale(1.15);
+    }
+    100%{
+        transform:scale(1);
+    }
+}
