@@ -17,18 +17,47 @@ header{
     justify-content:space-between;
     align-items:center;
     padding:25px 8%;
+    
 }
 
 nav{
     display:flex;
     gap:40px;
+    background:#e7f0f7 !important;
+    
 }
 
 nav a{
     text-decoration:none;
     color:#16304f;
     font-weight:500;
+    background:#e7f0f7 !important;
+
 }
+
+
+header{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:10px 5%;
+    background:white;
+}
+
+.logo{
+    display:flex;
+    align-items:center;
+    background:#e7f0f7 !important;
+
+}
+
+.logo img{
+    width:90px;
+    height:auto;
+    display:block;
+}
+
+
 
 .menu{
     font-size:30px;
