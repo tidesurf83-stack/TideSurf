@@ -11,7 +11,9 @@ body{
      overflow-x:hidden;
 }
 
+
 .navbar{
+<<<<<<< HEAD:css/playas.css
     padding:10px 0;
     background:#e7f0f7 !important;
 }
@@ -21,25 +23,88 @@ body{
     height: 70px;
     border-radius: 100px;
 
+=======
+    padding:10px 10px;
+    background:#e7f0f7 !important;
+}
+
+.navbar .container{
+    display:flex;
+    align-items:center;
+    justify-content:space-between ;
+}
+
+.logo{
+    width:150spx;
+    height:70px;
+    border-radius:100px;
+    padding: 0px 5px 0px 50px;
+>>>>>>> deed5482ca6fff38f61b86714403cd97ca469341:css/ride-the-wave.css
 }
 
 .nav-links{
     display:flex;
+<<<<<<< HEAD:css/playas.css
     align-items:center;
     gap:35px;
     flex-wrap:nowrap;
+=======
+    align-items:left;
+    gap:25px;
+    margin-left:auto;
+>>>>>>> deed5482ca6fff38f61b86714403cd97ca469341:css/ride-the-wave.css
 }
 
 .nav-links a{
     text-decoration:none;
+<<<<<<< HEAD:css/playas.css
     color: black;
     font-weight:600;
     font-size:15px;
     transition:0.3s;
+=======
+    color:black;
+    font-weight:600;
+    font-size:15px;
+    transition:0.3s;
+    white-space:nowrap;
+    
+>>>>>>> deed5482ca6fff38f61b86714403cd97ca469341:css/ride-the-wave.css
 }
 
 .nav-links a:hover{
     color:#19d7df;
+<<<<<<< HEAD:css/playas.css
+=======
+}
+
+.btn-container{
+    display:flex !important;
+    flex-direction:row !important;
+    align-items:center;
+    gap:10px;
+}
+
+.btn-container a{
+    display:inline-block;
+}
+
+.btn-nav{
+    border:none;
+    background:#fcfdfd;
+    padding:10px 25px;
+    border-radius:15px;
+    font-weight:600;
+    cursor:pointer;
+    white-space:nowrap;
+    transition:0.3s;
+    font-size:15px;
+}
+
+.btn-nav:hover{
+    background:#d7edf8;
+    transform:translateY(-2px);
+>>>>>>> deed5482ca6fff38f61b86714403cd97ca469341:css/ride-the-wave.css
 }
 
 

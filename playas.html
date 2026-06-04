@@ -10,7 +10,7 @@
 
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
 
-    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
 
     <link rel="stylesheet" href="css/playas.css">
 
@@ -20,12 +20,33 @@
 
 <header>
 
-    <nav class="navbar">
+   <nav class="navbar navbar-expand-lg bg-white shadow-sm fixed-top">
+    <div class="container">
 
-        <div class="logo">
-            <img src="img/logof-removebg-preview.png" alt="Tide Surf">
+        <a class="navbar-brand" href="#" style="margin-left:-40px;">
+            <img src="img/logof-removebg-preview.png" alt="logo" class="logo">
+        </a>
+
+        <div class="nav-links">
+            <a href="noticias/noticias.html">News</a>
+            <a href="competicions">competition</a>
+            <a href="ride_the_weve/ride-the-wave.html">Ride the wave</a>
+            <a href="grearzone.html">Grear Zone Board</a>
+            <a href="academias/academias.html">Wave Academy</a>
+            <a href="profile.html">My profile</a>
+
+            <div class="btn-container">
+                <a href="login.html">
+                    <button class="btn-nav">Iniciar Sesión</button>
+                </a>
+
+                <a href="registro.html">
+                    <button class="btn-nav">Registrarse</button>
+                </a>
+            </div>
         </div>
 
+<<<<<<< HEAD:playas.html
         <ul class="nav-links">
             <li><a href="noticias.html">Noticias</a></li>
             <li><a href="#">Competencias</a></li>
@@ -33,12 +54,11 @@
             <li><a href="#">Tiendas</a></li>
             <li><a href="academias.html">Escuelas de Surf</a></li>
         </ul>
+=======
+    </div>
+</nav>
+>>>>>>> deed5482ca6fff38f61b86714403cd97ca469341:ride-the-wave.html
 
-    </nav>
-
-</header>
-
-<!-- HERO -->
 
 <section class="hero">
 
@@ -55,12 +75,15 @@
     <h2>Our Beaches</h2>
 
     <p>
-        El Salvador es uno de los mejores destinos de surf en Centroamérica. Sus playas ofrecen olas increíbles, atardeceres espectaculares y experiencias inolvidables para surfistas de todos los niveles. Explora las playas más famosas y descubre tu próxima aventura.
+        El Salvador es uno de los mejores destinos de surf en Centroamérica.
+        Sus playas ofrecen olas increíbles, atardeceres espectaculares y
+        experiencias inolvidables para surfistas de todos los niveles.
+        Explora las playas más famosas y descubre tu próxima aventura.
     </p>
 
 </section>
 
-
+<!-- PLAYAS -->
 
 <section class="beaches">
 
@@ -69,81 +92,135 @@
     <div class="cards">
 
         <div class="card">
+<<<<<<< HEAD:playas.html
             <img src="../TideSurf/img/playas/zonte.webp" alt="Playa El Zonte">
+=======
+
+            <img src="img/zonte.webp" alt="Playa El Zonte">
+>>>>>>> deed5482ca6fff38f61b86714403cd97ca469341:ride-the-wave.html
 
             <div class="card-content">
+
                 <h3>Playa El Zonte</h3>
+
                 <p>Costa de La Libertad</p>
 
                 <button onclick="openBeach('zonte')">
                     Ver más...
                 </button>
+
             </div>
+
         </div>
 
         <div class="card">
+<<<<<<< HEAD:playas.html
             <img src="../TideSurf/img/playas/las flores.webp" alt="Playa Las Flores">
+=======
+
+            <img src="img/las flores.webp" alt="Playa Las Flores">
+>>>>>>> deed5482ca6fff38f61b86714403cd97ca469341:ride-the-wave.html
 
             <div class="card-content">
+
                 <h3>Playa Las Flores</h3>
+
                 <p>Oriente del país</p>
 
                 <button onclick="openBeach('flores')">
                     Ver más...
                 </button>
+
             </div>
+
         </div>
 
         <div class="card">
+<<<<<<< HEAD:playas.html
             <img src="../TideSurf/img/playas/mizata.webp" alt="Playa Mizata">
+=======
+
+            <img src="img/mizata.webp" alt="Playa Mizata">
+>>>>>>> deed5482ca6fff38f61b86714403cd97ca469341:ride-the-wave.html
 
             <div class="card-content">
+
                 <h3>Playa Mizata</h3>
+
                 <p>Zona Occidental</p>
 
                 <button onclick="openBeach('mizata')">
                     Ver más...
                 </button>
+
             </div>
+
         </div>
 
         <div class="card">
+<<<<<<< HEAD:playas.html
             <img src="../TideSurf/img/playas/tunco1.webp" alt="Playa El Tunco">
+=======
+
+            <img src="img/tunco1.webp" alt="Playa El Tunco">
+>>>>>>> deed5482ca6fff38f61b86714403cd97ca469341:ride-the-wave.html
 
             <div class="card-content">
+
                 <h3>Playa El Tunco</h3>
+
                 <p>Departamento de La Libertad</p>
 
                 <button onclick="openBeach('tunco')">
                     Ver más...
                 </button>
+
             </div>
+
         </div>
 
         <div class="card">
+<<<<<<< HEAD:playas.html
             <img src="../TideSurf/img/playas/el sunzal.jpg" alt="Playa El Sunzal">
+=======
+
+            <img src="img/el sunzal.jpg" alt="Playa El Sunzal">
+>>>>>>> deed5482ca6fff38f61b86714403cd97ca469341:ride-the-wave.html
 
             <div class="card-content">
+
                 <h3>Playa El Sunzal</h3>
+
                 <p>Junto a El Tunco</p>
 
                 <button onclick="openBeach('sunzal')">
                     Ver más...
                 </button>
+
             </div>
+
         </div>
 
         <div class="card">
+<<<<<<< HEAD:playas.html
             <img src="../TideSurf/img/playas/punta roca.jpg" alt="Punta Roca">
+=======
+
+            <img src="img/punta roca.jpg" alt="Punta Roca">
+>>>>>>> deed5482ca6fff38f61b86714403cd97ca469341:ride-the-wave.html
 
             <div class="card-content">
+
                 <h3>Punta Roca</h3>
+
                 <p>Puerto de La Libertad</p>
 
                 <button onclick="openBeach('puntaRoca')">
                     Ver más...
                 </button>
+
             </div>
+
         </div>
 
     </div>
@@ -157,11 +234,14 @@
     <h2>Explore the Map</h2>
 
     <div class="map-card">
+
         <div id="map"></div>
+
     </div>
 
 </section>
 
+<!-- MODAL -->
 
 <div class="beach-modal" id="beachModal">
 
@@ -223,7 +303,7 @@
 
 </div>
 
-
+<!-- FOOTER -->
 
 <footer>
 
@@ -233,7 +313,7 @@
 
 </footer>
 
-
+<!-- SCRIPTS -->
 
 <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
 
