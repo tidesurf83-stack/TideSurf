@@ -33,12 +33,31 @@ body{
   gap:40px;
 }
 
+<<<<<<< HEAD
 .navbar-menu a{
   text-decoration:none;
   color:#000;
   font-size:18px;
   font-weight:600;
   transition:.3s;
+=======
+.hero{
+  height: 70vh;
+
+  background:
+  linear-gradient(
+       rgba(0,0,0,.45),
+       rgba(0,0,0,.45)
+    ),
+   url("../img/noticias/hero.jpg");
+
+   background-size: cover;
+   background-position: center;
+   background-repeat: no-repeat;
+
+   display: flex;
+   align-items: center;
+>>>>>>> c6def59dab3ddfa181caab4f573e4feef6c061da
 }
 
 .navbar-menu a:hover{
@@ -123,6 +142,7 @@ button{
   transition:0.3s;
 }
 
+<<<<<<< HEAD
 button:hover{
   background:#dfefff;
 }
@@ -163,5 +183,44 @@ button:hover{
 
   .title h1{
     font-size:32px;
+=======
+.modal{
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,.7);
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.modal-content{
+  background: white;
+  width: 90%;
+  max-width: 600px;
+  padding: 2rem;
+  border-radius: 15px;
+  position: relative;
+  animation: aparecer .3s ease;
+}
+
+.cerrar{
+  position: absolute;
+  right: 20px;
+  top: 10px;
+  font-size: 30px;
+  cursor: pointer;
+}
+
+@keyframes aparecer{
+  from{
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+
+  to{
+    opacity: 1;
+    transform: translateY(0);
+>>>>>>> c6def59dab3ddfa181caab4f573e4feef6c061da
   }
 }

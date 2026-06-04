@@ -15,6 +15,7 @@
           <img src="../TideSurf/img/logof-removebg-preview.png" alt="logo">
       </div>
 
+<<<<<<< HEAD
       <div class="navbar-menu">
           <a href="noticias.html">Noticias</a>
           <a href="#">Competencias</a>
@@ -22,6 +23,18 @@
           <a href="#">Tiendas</a>
           <a href="academias.html">Escuelas de Surf</a>
       </div>
+=======
+        <div class="menu">
+            <a href="noticias.html">News</a>
+            <a href="competicions">competition</a>
+            <a href="ride-the-wave.html">Ride the wave</a>
+            <a href="grearzone.html">Grear Zone Board</a>
+            <a href="academias.html">Wave Academy</a>
+            <a href="profile.html">My profile</a>
+        </div>   
+    </div>
+</nav>
+>>>>>>> c6def59dab3ddfa181caab4f573e4feef6c061da
 
   </nav>
 
@@ -73,7 +86,7 @@
             de un campeonato de surf el próximo verano.
           </p>
 
-          <button>Leer más</button>
+          <button class="btn-leer-mas" data-noticia="1">Leer más</button>
 
         </div>
 
@@ -91,7 +104,7 @@
             Las mejores playas para surfear en 2026
           </h3>
 
-          <button>Leer más</button>
+          <button class="btn-leer-mas" data-noticia="2">Leer más</button>
 
         </div>
 
@@ -109,7 +122,7 @@
             Surfistas salvadoreños destacan internacionalmente
           </h3>
 
-          <button>Leer más</button>
+          <button class="btn-leer-mas" data-noticia="3">Leer más</button>
 
         </div>
 
@@ -127,7 +140,7 @@
             Cómo empezar en el surf siendo principiante
           </h3>
 
-          <button>Leer más</button>
+          <button class="btn-leer-mas" data-noticia="4">Leer más</button>
 
         </div>
 
@@ -137,5 +150,15 @@
 
   </main>
 
+ <div class="modal" id="modal">
+  <div class="modal-content">
+    <span class="cerrar">&times;</span>
+
+    <h2 id="modal-titulo"></h2>
+    <p id="modal-texto"></p>
+  </div>
+ </div>
+
+<script src="noticias.js"></script>
 </body>
 </html>
