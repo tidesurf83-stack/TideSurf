@@ -14,11 +14,12 @@ body{
   width: 100%;
   min-height: 100vh;
  
-  border: 2px solid #f7a7c5;
+  border: 2px solid #c9d9ef;
   border-radius: 10px;
  
   overflow: hidden;
 }
+
  
 /* HEADER */
 .header{
@@ -53,7 +54,7 @@ body{
   color: #000;
 }
  
-/* REGISTER */
+
 .register-section{
   width: 100%;
  

@@ -15,20 +15,15 @@
       <img src="img/logo (1).png" alt="Tide Surf Logo" class="navbar__logo-img"/>
     </div>
     <ul class="navbar__links">
-      <li><a href="#">News</a></li>
-      <li><a href="#">Competition</a></li>
-      <li><a href="#">Ride the Wave</a></li>
+      <li><a href="noticias.html">Noticias</a></li>
+      <li><a href="">Competencias</a></li>
+      <li><a href="playas.html">Playas</a></li>
       <li><a href="#">Gear zone Board</a></li>
-      <li><a href="#" class="navbar__active">Wave Academy</a></li>
-      <li><a href="#">My Profile</a></li>
+      <li><a href="academias.html">Escuelas de Surf</a></li>
     </ul>
-    <div class="navbar__search">
-      <input type="text" placeholder="Find your wave..." />
-      <button class="navbar__search-btn"></button>
-    </div>
+    
   </nav>
  
-  <!-- HERO -->
   <section class="hero">
     <img
       src="https://images.unsplash.com/photo-1509914398892-963f53e6e2f1?w=1400&auto=format&fit=crop"
@@ -54,7 +49,7 @@
             <span class="card__stars">★★★★☆</span>
             <span class="card__reviews">4.1 (120 reviews)</span>
           </div>
-          <button class="card__btn">Ver más</button>
+          <button class="card__btn" onclick="openModal('tuncoModal')">Ver más</button>
         </div>
       </div>
  
@@ -69,7 +64,7 @@
             <span class="card__stars">★★★★☆</span>
             <span class="card__reviews">4.1 (120 reviews)</span>
           </div>
-          <button class="card__btn">Ver más</button>
+          <button class="card__btn" onclick="openModal('sunzalModal')">Ver más</button>
         </div>
       </div>
  
@@ -84,7 +79,7 @@
             <span class="card__stars">★★★★☆</span>
             <span class="card__reviews">4.1 (120 reviews)</span>
           </div>
-          <button class="card__btn">Ver más</button>
+          <button class="card__btn" onclick="openModal('puroModal')">Ver más</button>
         </div>
       </div>
  
@@ -99,7 +94,7 @@
             <span class="card__stars">★★★★☆</span>
             <span class="card__reviews">4.1 (120 reviews)</span>
           </div>
-          <button class="card__btn">Ver más</button>
+          <button class="card__btn" onclick="openModal('slowModal')">Ver más</button>
         </div>
       </div>
  
@@ -114,7 +109,7 @@
             <span class="card__stars">★★★★☆</span>
             <span class="card__reviews">4.1 (120 reviews)</span>
           </div>
-          <button class="card__btn">Ver más</button>
+          <button class="card__btn" onclick="openModal('premiumModal')">Ver más</button>
         </div>
       </div>
  
@@ -129,12 +124,171 @@
             <span class="card__stars">★★★★☆</span>
             <span class="card__reviews">4.1 (120 reviews)</span>
           </div>
-          <button class="card__btn">Ver más</button>
+          <button class="card__btn" onclick="openModal('proModal')">Ver más</button>
         </div>
       </div>
  
     </div>
   </section>
- 
+ <div class="academy-modal" id="tuncoModal">
+<div class="academy-modal-content">
+<span class="close-modal" onclick="closeModal('tuncoModal')">&times;</span>
+
+<img src="https://images.unsplash.com/photo-1502680390469-be75c86b636f?w=1200" class="modal-banner">
+
+<div class="modal-info">
+<h2>Tunco Surf School</h2>
+<p> Playa El Tunco, La Libertad</p>
+<div class="modal-rating">⭐⭐⭐⭐⭐ 4.9 (243 Reviews)</div>
+
+<p>
+Professional surf school for beginners and advanced surfers.
+Certified instructors and modern equipment.
+</p>
+
+<div class="modal-contact">
+<p> 8923-3333</p>
+<p> info@tuncosurf.com</p>
+</div>
+
+<button class="modal-register-btn">Inscribirme</button>
+</div>
+</div>
+</div>
+
+<div class="academy-modal" id="sunzalModal">
+<div class="academy-modal-content">
+<span class="close-modal" onclick="closeModal('sunzalModal')">&times;</span>
+
+<img src="https://images.unsplash.com/photo-1455729552865-3658a5d39692?w=1200" class="modal-banner">
+
+<div class="modal-info">
+<h2>Sunzal El Salvador Company</h2>
+<p> Playa Sunzal, La Libertad</p>
+<div class="modal-rating">⭐⭐⭐⭐⭐ 4.8 (189 Reviews)</div>
+
+<p>
+Focused on longboard training and wave reading.
+Perfect for surfers looking to improve technique.
+</p>
+
+<div class="modal-contact">
+<p> 7865-2234</p>
+<p> contact@sunzalsurf.com</p>
+</div>
+
+<button class="modal-register-btn">Inscribirme</button>
+</div>
+</div>
+</div>
+
+<div class="academy-modal" id="puroModal">
+<div class="academy-modal-content">
+<span class="close-modal" onclick="closeModal('puroModal')">&times;</span>
+
+<img src="https://images.unsplash.com/photo-1531722569936-825d3dd91b15?w=1200" class="modal-banner">
+
+<div class="modal-info">
+<h2>Puro Surf Academy</h2>
+<p> Playa El Zonte</p>
+<div class="modal-rating">⭐⭐⭐⭐⭐ 5.0 (310 Reviews)</div>
+
+<p>
+International surf academy with intensive programs,
+professional coaching and accommodation packages.
+</p>
+
+<div class="modal-contact">
+<p> 7456-8812</p>
+<p> info@purosurf.com</p>
+</div>
+
+<button class="modal-register-btn">Inscribirme</button>
+</div>
+</div>
+</div>
+
+
+<div class="academy-modal" id="slowModal">
+<div class="academy-modal-content">
+<span class="close-modal" onclick="closeModal('slowModal')">&times;</span>
+
+<img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=1200" class="modal-banner">
+
+<div class="modal-info">
+<h2>Slow Motion Surf School</h2>
+<p> Playa El Tunco</p>
+<div class="modal-rating">⭐⭐⭐⭐☆ 4.6 (154 Reviews)</div>
+
+<p>
+Friendly surf school focused on beginners and family lessons.
+Small groups and personalized attention.
+</p>
+
+<div class="modal-contact">
+<p> 7789-1223</p>
+<p> hello@slowmotionsurf.com</p>
+</div>
+
+<button class="modal-register-btn">Inscribirme</button>
+</div>
+</div>
+</div>
+
+
+<div class="academy-modal" id="premiumModal">
+<div class="academy-modal-content">
+<span class="close-modal" onclick="closeModal('premiumModal')">&times;</span>
+
+<img src="https://images.unsplash.com/photo-1544551763-46a013bb70d5?w=1200" class="modal-banner">
+
+<div class="modal-info">
+<h2>Tunco Surf School Premium</h2>
+<p> Playa El Tunco</p>
+<div class="modal-rating">⭐⭐⭐⭐⭐ 4.9 (275 Reviews)</div>
+
+<p>
+Premium lessons with private instructors,
+video analysis and competition preparation.
+</p>
+
+<div class="modal-contact">
+<p> 7123-4545</p>
+<p> premium@tuncosurf.com</p>
+</div>
+
+<button class="modal-register-btn">Inscribirme</button>
+</div>
+</div>
+</div>
+
+
+<div class="academy-modal" id="proModal">
+<div class="academy-modal-content">
+<span class="close-modal" onclick="closeModal('proModal')">&times;</span>
+
+<img src="https://images.unsplash.com/photo-1476673160081-cf065607f449?w=1200" class="modal-banner">
+
+<div class="modal-info">
+<h2>Tunco Surf School Pro</h2>
+<p> Playa El Tunco</p>
+<div class="modal-rating">⭐⭐⭐⭐⭐ 4.8 (210 Reviews)</div>
+
+<p>
+Advanced surf coaching, ISA preparation,
+and training for regional competitions.
+</p>
+
+<div class="modal-contact">
+<p> 7894-3311</p>
+<p> pro@tuncosurf.com</p>
+</div>
+
+<button class="modal-register-btn">Inscribirme</button>
+</div>
+</div>
+</div>
+
+<script src="js/academias.js"></script>
 </body>
 </html>
