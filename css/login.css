@@ -14,7 +14,9 @@ body, html {
 .navbar{
     padding:10px 0;
     background:#e7f0f7 !important;
+    
 }
+
 
 .logo{
     width:70px;
@@ -45,6 +47,8 @@ body, html {
     color:#19d7df;
 }
 
+
+
 .btn-container{
     display: flex;
     flex-direction: row;
@@ -68,15 +72,10 @@ body, html {
 }
 
 
-
 .header-content {
     display: flex;
     align-items: center;
     gap: 20px;
-}
-
-.logo {
-    width: 70px;
 }
 
 .full-header h1 {
