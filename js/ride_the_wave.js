@@ -25,7 +25,7 @@ const beaches = {
             "Lleva bolsas impermeables"
         ],
         images:[
-            "img/zonte1.jpg",
+            "",
             "img/zonte2.jpg",
             "img/zonte3.jpg"
         ]

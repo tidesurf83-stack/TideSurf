@@ -15,7 +15,7 @@ body{
 .navbar{
   width:100%;
   height:80px;
-  background:#dbe7f0;
+  background:#e7f0f7 !important;
   display:flex;
   align-items:center;
   justify-content:space-between;
