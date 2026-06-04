@@ -17,6 +17,8 @@ header{
     justify-content:space-between;
     align-items:center;
     padding:25px 8%;
+    background:#e7f0f7 !important;
+
     
 }
 
@@ -41,7 +43,9 @@ header{
     justify-content:space-between;
     align-items:center;
     padding:10px 5%;
-    background:white;
+    background:#e7f0f7 !important;
+    
+
 }
 
 .logo{
@@ -62,6 +66,8 @@ header{
 .menu{
     font-size:30px;
     cursor:pointer;
+    background:#e7f0f7 !important;
+
 }
 
 /* HERO */
