@@ -8,7 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Registro - TideSurf</title>
 
-    <link rel="stylesheet" href="../css/registro.css">
+    <link rel="stylesheet" href="../css/registroo.css">
 
     <!-- Font Awesome -->
     <link rel="stylesheet"
