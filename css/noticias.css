@@ -37,14 +37,6 @@ body{
   font-weight: 500;
 }
 
-<<<<<<< HEAD
-.navbar-menu a{
-  text-decoration:none;
-  color:#000;
-  font-size:18px;
-  font-weight:600;
-  transition:.3s;
-=======
 .hero{
   height: 70vh;
 
@@ -61,7 +53,6 @@ body{
 
    display: flex;
    align-items: center;
->>>>>>> f1916318beb56a534c12829233e029bf35fc7496
 }
 
 .overlay{
@@ -187,48 +178,6 @@ body{
   cursor:pointer;
 }
 
-<<<<<<< HEAD
-button:hover{
-  background:#dfefff;
-}
-
-/* RESPONSIVE */
-
-@media(max-width:850px){
-
-  .navbar{
-    height:auto;
-    padding:15px 20px;
-    flex-direction:column;
-    gap:15px;
-  }
-
-  .navbar-menu{
-    flex-wrap:wrap;
-    justify-content:center;
-    gap:20px;
-  }
-
-  .card{
-    flex-direction:column;
-  }
-
-  .card img{
-    width:100%;
-    height:220px;
-  }
-
-  .content h2{
-    font-size:28px;
-  }
-
-  .content p{
-    font-size:18px;
-  }
-
-  .title h1{
-    font-size:32px;
-=======
 .modal{
   display: none;
   position: fixed;
@@ -266,6 +215,5 @@ button:hover{
   to{
     opacity: 1;
     transform: translateY(0);
->>>>>>> f1916318beb56a534c12829233e029bf35fc7496
   }
 }
