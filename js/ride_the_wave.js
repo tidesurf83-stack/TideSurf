@@ -1,0 +1,277 @@
+
+
+const beaches = {
+
+    zonte:{
+        title:"Playa El Zonte",
+        location:"La Libertad, El Salvador",
+        wave:"Point Break",
+        level:"Intermedio",
+        season:"Marzo - Octubre",
+        water:"27°C promedio",
+        boards:"Fish / Shortboard",
+        description:"Playa El Zonte es uno de los destinos de surf más famosos de Centroamérica. Sus olas largas y constantes la convierten en un lugar ideal para surfistas.",
+        activities:[
+            "Clases de surf",
+            "Fotografía de atardeceres",
+            "Fogatas en la playa",
+            "Sesiones de yoga",
+            "Restaurantes frente al mar"
+        ],
+        tips:[
+            "Usa bloqueador solar resistente al agua",
+            "Las mejores olas aparecen temprano",
+            "Tabla recomendada: Fish",
+            "Lleva bolsas impermeables"
+        ],
+        images:[
+            "",
+            "img/zonte2.jpg",
+            "img/zonte3.jpg"
+        ]
+    },
+
+    flores:{
+        title:"Playa Las Flores",
+        location:"San Miguel, El Salvador",
+        wave:"Point Break de Derecha",
+        level:"Avanzado",
+        season:"Abril - Septiembre",
+        water:"28°C promedio",
+        boards:"Shortboard Profesional",
+        description:"Playa Las Flores es reconocida internacionalmente por sus olas rápidas y técnicas.",
+        activities:[
+            "Surf profesional",
+            "Paseos en lancha",
+            "Surf camps",
+            "Competencias"
+        ],
+        tips:[
+            "Ideal para surfistas experimentados",
+            "Revisa el swell antes de entrar",
+            "Usa quillas avanzadas"
+        ],
+        images:[
+            "img/flores1.jpg",
+            "img/flores2.jpg",
+            "img/flores3.jpg"
+        ]
+    },
+
+    mizata:{
+        title:"Playa Mizata",
+        location:"Sonsonate, El Salvador",
+        wave:"Beach Break",
+        level:"Principiante - Intermedio",
+        season:"Todo el año",
+        water:"26°C promedio",
+        boards:"Longboard",
+        description:"Mizata es famosa por su ambiente ecológico y relajante.",
+        activities:[
+            "Surf camps",
+            "Ecoturismo",
+            "Meditación",
+            "Camping"
+        ],
+        tips:[
+            "Perfecta para aprender",
+            "Las mañanas son más tranquilas",
+            "Ideal para retiros de surf"
+        ],
+        images:[
+            "img/mizata1.jpg",
+            "img/mizata2.jpg",
+            "img/mizata3.jpg"
+        ]
+    },
+
+    tunco:{
+        title:"Playa El Tunco",
+        location:"La Libertad, El Salvador",
+        wave:"Beach Break",
+        level:"Todos los niveles",
+        season:"Todo el año",
+        water:"27°C promedio",
+        boards:"Todo tipo de tablas",
+        description:"El Tunco es el corazón de la cultura surf en El Salvador.",
+        activities:[
+            "Clases de surf",
+            "Música en vivo",
+            "Restaurantes",
+            "Vida nocturna"
+        ],
+        tips:[
+            "Perfecta para principiantes",
+            "Tiene los mejores atardeceres",
+            "Hay tiendas de surf cerca"
+        ],
+        images:[
+            "img/tunco1.jpg",
+            "img/tunco2.jpg",
+            "img/tunco3.jpg"
+        ]
+    },
+
+    sunzal:{
+        title:"Playa El Sunzal",
+        location:"La Libertad, El Salvador",
+        wave:"Point Break Largo",
+        level:"Principiante",
+        season:"Marzo - Octubre",
+        water:"27°C promedio",
+        boards:"Longboard",
+        description:"Una de las mejores playas para aprender surf.",
+        activities:[
+            "Clases de surf",
+            "Longboard",
+            "Fotografía",
+            "Bares de playa"
+        ],
+        tips:[
+            "Ideal para principiantes",
+            "Usa tablas soft-top",
+            "Las olas son lentas y seguras"
+        ],
+        images:[
+            "img/sunzal1.jpg",
+            "img/sunzal2.jpg",
+            "img/sunzal3.jpg"
+        ]
+    },
+
+    puntaRoca:{
+        title:"Punta Roca",
+        location:"Puerto de La Libertad",
+        wave:"Point Break Mundial",
+        level:"Avanzado",
+        season:"Abril - Octubre",
+        water:"28°C promedio",
+        boards:"Shortboard Profesional",
+        description:"La ola más famosa de El Salvador.",
+        activities:[
+            "Campeonatos de surf",
+            "Entrenamiento profesional",
+            "Fotografía deportiva"
+        ],
+        tips:[
+            "Solo para avanzados",
+            "Hay arrecifes debajo",
+            "Las olas son muy rápidas"
+        ],
+        images:[
+            "img/roca1.jpg",
+            "img/roca2.jpg",
+            "img/roca3.jpg"
+        ]
+    }
+
+};
+
+
+const modal = document.getElementById("beachModal");
+const modalImage = document.getElementById("modalImage");
+const modalTitle = document.getElementById("modalTitle");
+const modalLocation = document.getElementById("modalLocation");
+const modalWave = document.getElementById("modalWave");
+const modalLevel = document.getElementById("modalLevel");
+const modalSeason = document.getElementById("modalSeason");
+const modalDescription = document.getElementById("modalDescription");
+const activitiesList = document.getElementById("activitiesList");
+
+const closeModal = document.querySelector(".close-modal");
+const leftArrow = document.querySelector(".left-arrow");
+const rightArrow = document.querySelector(".right-arrow");
+
+let currentBeach;
+let currentImage = 0;
+
+
+function openBeach(beach){
+
+    currentBeach = beaches[beach];
+    currentImage = 0;
+
+    modal.style.display = "block";
+
+    updateModal();
+}
+
+
+function updateModal(){
+
+    modalTitle.innerHTML = currentBeach.title;
+
+    modalLocation.textContent = currentBeach.location;
+    modalWave.textContent = currentBeach.wave;
+    modalLevel.textContent = currentBeach.level;
+    modalSeason.textContent = currentBeach.season;
+    modalDescription.textContent = currentBeach.description;
+
+    modalImage.src = currentBeach.images[currentImage];
+
+    activitiesList.innerHTML = "";
+
+    currentBeach.activities.forEach(activity => {
+        activitiesList.innerHTML += `<li>${activity}</li>`;
+    });
+}
+
+rightArrow.addEventListener("click", () => {
+
+    currentImage++;
+
+    if(currentImage >= currentBeach.images.length){
+        currentImage = 0;
+    }
+
+    updateModal();
+});
+
+leftArrow.addEventListener("click", () => {
+
+    currentImage--;
+
+    if(currentImage < 0){
+        currentImage = currentBeach.images.length - 1;
+    }
+
+    updateModal();
+});
+
+
+closeModal.addEventListener("click", () => {
+    modal.style.display = "none";
+});
+
+window.addEventListener("click", (e) => {
+
+    if(e.target === modal){
+        modal.style.display = "none";
+    }
+});
+
+
+const cards = document.querySelectorAll(".card");
+
+const observer = new IntersectionObserver(entries => {
+
+    entries.forEach(entry => {
+
+        if(entry.isIntersecting){
+
+            entry.target.style.opacity = "1";
+            entry.target.style.transform = "translateY(0)";
+        }
+
+    });
+
+});
+
+cards.forEach(card => {
+
+    card.style.opacity = "0";
+    card.style.transform = "translateY(30px)";
+    card.style.transition = ".7s";
+
+    observer.observe(card);
+});
