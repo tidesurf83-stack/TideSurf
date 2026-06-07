@@ -921,6 +921,7 @@ body{
     padding:60px;
 
     position:relative;
+<<<<<<< HEAD
 
     overflow:hidden;
 
@@ -1726,3 +1727,8 @@ body{
 
     transform:translateY(-4px);
 }
+=======
+ 
+     overflow:hidden;
+    }
+>>>>>>> 607c2a99c2ccd5e015d2c8d3782eaf10db8bbcd3
