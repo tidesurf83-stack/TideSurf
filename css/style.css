@@ -22,14 +22,19 @@ body{
     height:55px;
 }
 
-.navbar-nav{
-    gap:20px;
+.navbar{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    padding:15px 40px;
 }
 
-.nav-link{
-    color:#0A2647 !important;
-    font-weight:500;
-    position:relative;
+.nav-links{
+    display:flex;
+    align-items:center;
+    gap:15px;
+    list-style:none;
+    flex-wrap:nowrap;
 }
 
 .nav-link::after{
@@ -52,6 +57,10 @@ body{
     gap:10px;
 }
 
+.nav-links li{
+    white-space:nowrap;
+}
+
 .btn-login{
     text-decoration:none;
     color:#0A2647;
@@ -64,6 +73,12 @@ body{
 .btn-login:hover{
     background:#00CFE8;
     color:white;
+}
+
+.auth-buttons{
+    display:flex;
+    gap:15px;
+    flex-shrink:0;
 }
 
 .btn-register{
@@ -921,7 +936,6 @@ body{
     padding:60px;
 
     position:relative;
-<<<<<<< HEAD
 
     overflow:hidden;
 
@@ -1727,8 +1741,3 @@ body{
 
     transform:translateY(-4px);
 }
-=======
- 
-     overflow:hidden;
-    }
->>>>>>> 607c2a99c2ccd5e015d2c8d3782eaf10db8bbcd3
