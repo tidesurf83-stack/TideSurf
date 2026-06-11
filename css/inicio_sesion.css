@@ -1,169 +1,331 @@
 * {
+    box-sizing: border-box;
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, Roboto, Helvetica, Arial, sans-serif;
 }
-
-body, html {
-    height: 100%;
+ 
+body {
+    background: linear-gradient(to bottom, #e0f7fa 0%, #b3e5fc 100%);
+    background-attachment: fixed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    padding: 20px;
+    overflow-x: hidden;
+    position: relative;
+}
+ 
+/* ==========================================================================
+   SISTEMA DE OLAS IDÉNTICO A TU REGISTRO
+   ========================================================================== */
+body::before,
+body::after {
+    content: "";
+    position: fixed;
+    bottom: -100px;
+    left: 0;
+    width: 200%;
+    height: 240px;
+    background-repeat: repeat-x;
+    pointer-events: none;
+    z-index: 0;
+    opacity: 0;
+    transition: bottom 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275), opacity 0.6s ease;
+}
+ 
+body::before {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 800 200'%3E%3Cpath fill='%2301579b' fill-opacity='0.25' d='M0,120 C150,180 250,60 400,120 C550,180 650,60 800,120 L800,200 L0,200 Z'/%3E%3C/svg%3E");
+    background-size: 1000px 240px;
+}
+ 
+body::after {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 800 200'%3E%3Cpath fill='%234fc3f7' fill-opacity='0.4' d='M0,100 C120,40 280,160 400,100 C520,40 680,160 800,100 L800,200 L0,200 Z'/%3E%3C/svg%3E");
+    background-size: 1200px 240px;
+}
+ 
+body.mostrar-olas::before {
+    bottom: 0;
+    opacity: 1;
+    animation: oleajeHorizontal 14s linear infinite;
+}
+ 
+body.mostrar-olas::after {
+    bottom: 0;
+    opacity: 1;
+    animation: oleajeHorizontal 20s linear infinite, oleajeVertical 4s ease-in-out infinite alternate;
+}
+ 
+/* ESTRUCTURA DE LA INTERFAZ */
+.interfaz-navegador {
     width: 100%;
-    background-color: white; /* El fondo general es blanco */
-}
-
-.navbar{
-    padding:10px 0;
-    background:#e7f0f7 !important;
-    
-}
-
-
-.logo{
-    width:70px;
-    height: 70px;
-    border-radius: 100px;
-}
-
-.nav-links{
-    display:flex;
-    align-items:center;
-    gap:35px;
-    flex-wrap:nowrap;
-}
-
-.nav-links a{
-    white-space:nowrap;
-}
-
-.nav-links a{
-    text-decoration:none;
-    color:black;
-    font-weight:600;
-    font-size:15px;
-    transition:0.3s;
-}
-
-.nav-links a:hover{
-    color:#19d7df;
-}
-
-
-
-.btn-container{
-    display: flex;
-    flex-direction: row;
-    gap: 15px;
-    align-items: center;
-}
-
-.btn-nav{
-    border: none;
-    background: #fcfdfd;
-    padding: 10px 25px;
-    border-radius: 15px;
-    font-weight: 600;
-    cursor: pointer;
-    white-space: nowrap;
-}
-
-.btn-nav:hover{
-    background: #d7edf8;
-    transform: translateY(-2px);
-}
-
-
-.header-content {
-    display: flex;
-    align-items: center;
-    gap: 20px;
-}
-
-.full-header h1 {
-    font-size: 24px;
-    color: #333;
-    font-weight: 400;
-}
-
-/* Contenedor principal que ocupa el resto del alto */
-.main-content {
+    max-width: 1050px;
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding-top: 80px; /* Espacio para que el formulario no pegue arriba */
-    height: calc(100vh - 100px); 
+    position: relative;
+    z-index: 10;
 }
-
-.form-wrapper {
+ 
+.titulo-login-principal {
+    color: #01579b;
+    font-size: 3.5rem;
+    font-weight: 700;
+    margin-bottom: 25px;
+    letter-spacing: 1px;
+    text-shadow: 0 2px 10px rgba(1, 87, 155, 0.15);
+}
+ 
+.tarjeta-login-contenedor {
+    background: rgba(255, 255, 255, 0.4);
+    display: flex;
     width: 100%;
-    max-width: 450px; /* El formulario no se estira infinito para que no sea difícil de leer */
-    text-align: center;
-    padding: 20px;
+    max-width: 1050px;
+    min-height: 640px;
+    border-radius: 24px;
+    overflow: hidden;
+    box-shadow: 0 25px 55px rgba(1, 43, 74, 0.18);
+    border: 1px solid rgba(255, 255, 255, 0.7);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
 }
-
-h2 {
-    font-size: 28px;
-    margin-bottom: 40px;
-    color: #222;
+ 
+/* PANEL IZQUIERDO VISUAL: Surfista en la ola */
+.panel-izquierdo-visual {
+    flex: 1.1;
+    background-image: url('https://images.unsplash.com/photo-1502680390469-be75c86b636f?q=80&w=1000&auto=format&fit=crop');
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
 }
-
-/* Estilo de los inputs tipo cápsula */
-.input-container {
-    background-color: #e8f1f9;
-    border-radius: 15px;
+ 
+.capa-degradado-oceano {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to bottom, rgba(0,0,0,0) 50%, rgba(2, 48, 82, 0.55) 100%);
+    z-index: 1;
+}
+ 
+.branding-inferior {
+    position: relative;
+    z-index: 2;
+    padding: 35px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+ 
+.logo-tidesurf {
     display: flex;
     align-items: center;
-    padding: 15px 20px;
-    margin-bottom: 20px;
+    gap: 10px;
+    color: #ffffff;
 }
-
-.input-container i {
-    color: #555;
-    font-size: 18px;
+ 
+.logo-tidesurf i {
+    font-size: 2.2rem;
+    text-shadow: 0 2px 8px rgba(2, 48, 82, 0.5);
 }
-
-.input-container input {
-    background: transparent;
-    border: none;
-    outline: none;
-    width: 100%;
-    padding: 0 15px;
-    font-size: 16px;
-}
-
-.helper-text {
-    text-align: right;
-    margin-bottom: 30px;
-}
-
-.helper-text a {
-    color: #4fb3d9;
-    text-decoration: none;
-    font-size: 14px;
-}
-
-/* Botón grande */
-.btn-full {
-    background-color: #bde4f4;
-    border: none;
-    width: 100%;
-    padding: 18px;
-    border-radius: 15px;
-    color: #444;
+ 
+.logo-tidesurf span {
+    font-size: 2rem;
     font-weight: 600;
-    font-size: 18px;
+    letter-spacing: 0.5px;
+    text-shadow: 0 2px 8px rgba(2, 48, 82, 0.5);
+}
+ 
+/* PANEL FORMULARIO DERECHO */
+.panel-derecho-formulario {
+    flex: 1;
+    padding: 50px 45px;
+    background: rgba(179, 229, 252, 0.45) !important;
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border-left: 1px solid rgba(255, 255, 255, 0.3);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: relative;
+}
+ 
+.titulo-formulario {
+    color: #ffffff !important;
+    font-size: 2.2rem;
+    font-weight: 700;
+    margin-bottom: 6px;
+    text-shadow: 0 2px 6px rgba(1, 76, 133, 0.3);
+}
+ 
+/* ¡MÁS GRANDE! Se subió de 1rem a 1.15rem */
+.subtitulo-formulario {
+    color: #013a63;
+    font-size: 1.15rem; 
+    margin-bottom: 32px;
+    font-weight: 500;
+}
+ 
+.formulario-login {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+}
+ 
+.contenedor-input-icono {
+    position: relative;
+    width: 100%;
+}
+ 
+.contenedor-input-icono .input-icon {
+    position: absolute;
+    left: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #457b9d;
+    font-size: 1.25rem;
+    pointer-events: none;
+    z-index: 10;
+}
+ 
+.eye-icon {
+    position: absolute;
+    right: 22px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #457b9d;
+    font-size: 1.3rem;
+    cursor: pointer;
+    z-index: 10;
+    transition: color 0.2s;
+}
+ 
+.eye-icon:hover {
+    color: #013a63;
+}
+ 
+.contenedor-input-icono input {
+    width: 100%;
+    padding: 14px 45px 14px 52px;
+    border: 1px solid rgba(255, 255, 255, 0.8);
+    border-radius: 50px;
+    background: #ffffff;
+    font-size: 1rem; /* Subió un poco para mejorar legibilidad */
+    color: #013a63 !important;
+    font-weight: 500;
+    outline: none;
+    box-shadow: 0 4px 10px rgba(2, 48, 82, 0.04);
+    transition: all 0.3s ease;
+}
+ 
+.formulario-login .contenedor-input-icono input:hover {
+    border-color: #00a2e8 !important;
+    box-shadow: 0 0 12px rgba(0, 162, 232, 0.6) !important;
+}
+ 
+.formulario-login .contenedor-input-icono input:focus {
+    border-color: #0288d1 !important;
+    box-shadow: 0 4px 15px rgba(2, 136, 209, 0.25) !important;
+}
+ 
+/* ¡MÁS GRANDE! Los placeholders subieron de 0.9rem/400 a 1.05rem/500 */
+.contenedor-input-icono input::placeholder {
+    color: #638890;
+    font-size: 1.05rem;
+    font-weight: 500;
+}
+ 
+.helper-text-links {
+    text-align: right;
+    margin-top: -6px;
+    margin-bottom: 5px;
+}
+ 
+/* ¡MÁS GRANDE! Subió de 0.85rem a 1.05rem */
+.link-olvido {
+    color: #014c85;
+    text-decoration: none;
+    font-size: 1.05rem; 
+    font-weight: 600;
+    transition: color 0.2s;
+}
+ 
+.link-olvido:hover {
+    color: #0288d1;
+}
+ 
+/* ¡MÁS GRANDE! El bloque inferior subió de 0.88rem a 1.05rem */
+.enlace-registro-redireccion {
+    text-align: center;
+    font-size: 1.05rem; 
+    margin: 6px 0 12px 0;
+    font-weight: 500;
+    color: #014c85 !important;
+}
+ 
+.enlace-registro-redireccion a {
+    color: #0288d1;
+    text-decoration: none;
+    font-weight: 700;
+}
+ 
+/* BOTÓN INICIAR SESIÓN */
+.boton-iniciar-tide {
+    width: 100%;
+    padding: 15px;
+    background: linear-gradient(135deg, #026aa7 0%, #014c85 100%);
+    color: #ffffff;
+    border: none;
+    border-radius: 50px;
+    font-size: 1.1rem;
+    font-weight: 600;
     cursor: pointer;
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 12px;
+    gap: 8px;
+    box-shadow: 0 6px 20px rgba(1, 76, 133, 0.3), inset 0 -3px 0px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease;
 }
-
-.register-footer {
-    margin-top: 30px;
+ 
+.boton-iniciar-tide:hover {
+    transform: translateY(-2px);
+    background: linear-gradient(135deg, #0288d1 0%, #026aa7 100%);
 }
-
-.register-footer a {
-    color: #4fb3d9;
-    text-decoration: none;
-    font-weight: 600;
+ 
+/* KEYFRAMES ANIMACIÓN DE OLAS */
+@keyframes oleajeHorizontal {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
 }
+ 
+@keyframes oleajeVertical {
+    0% { transform: translateY(0) scaleY(1); }
+    100% { transform: translateY(12px) scaleY(1.04); }
+}
+ 
+/* RESPONSIVE */
+@media (max-width: 850px) {
+    .tarjeta-login-contenedor {
+        flex-direction: column;
+        min-height: auto;
+    }
+    .panel-izquierdo-visual {
+        min-height: 250px;
+    }
+    .panel-derecho-formulario {
+        padding: 40px 25px;
+        background: rgba(179, 229, 252, 0.6) !important;
+    }
+}
+ 
+@media (min-width: 851px) {
+    body { padding-bottom: 120px !important; }
+}
+ 

@@ -1,84 +1,49 @@
-<?php
-?>
- 
 <!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Registro - TideSurf</title>
- 
-    <link rel="stylesheet" href="css/registroo.css">
- 
-    <!-- Font Awesome -->
-    <link rel="stylesheet"
-    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
- 
-    <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/registro.css">
 </head>
- 
 <body>
  
-<div class="container">
+    <div class="interfaz-navegador">
+        
+        <h1 class="titulo-registro-principal">Registro</h1>
  
-    <!-- HEADER -->
-    <header class="header">
- 
-
- 
-    </header>
- 
-    <!-- FORM -->
-    <section class="register-section">
- 
-        <div class="register-box">
- 
-            <h1>Únete a TideSurf</h1>
- 
-            <p>y conecta con el océano</p>
- 
-            <form action="guardar_registro.php" method="POST">
- 
-                <!-- NOMBRE -->
-                <div class="input-group">
- 
-                    <i class="fa-solid fa-user"></i>
- 
-                    <input
-                        type="text"
-                        name="nombre_completo"
-                        placeholder="Nombre completo"
-                        required
-                    >
- 
+        <div class="tarjeta-registro-contenedor">
+            
+            <div class="panel-izquierdo-visual">
+                <div class="capa-degradado-oceano"></div>
+                <div class="branding-inferior">
+                    <div class="logo-tidesurf">
+                        <i class='bx bx-water'></i> <span>TideSurf</span>
+                    </div>
                 </div>
+            </div>
  
-                <!-- CORREO -->
-                <div class="input-group">
+            <div class="panel-derecho-formulario">
+                <h2 class="titulo-formulario">Únete a TideSurf</h2>
+                <p class="subtitulo-formulario">y conecta con el océano</p>
  
-                    <i class="fa-solid fa-envelope"></i>
+                <form class="formulario-registro" action="#" method="POST">
+                    
+                    <div class="contenedor-input-icono">
+                        <i class='bx bx-user input-icon'></i>
+                        <input type="text" name="nombre" placeholder="Tu nombre completo" required>
+                    </div>
  
-                    <input
-                        type="email"
-                        name="correo"
-                        placeholder="Correo electrónico"
-                        required
-                    >
+                    <div class="contenedor-input-icono">
+                        <i class='bx bx-envelope input-icon'></i>
+                        <input type="email" name="email" placeholder="Tu correo electrónico" required>
+                    </div>
  
-                </div>
- 
-                <!-- NACIONALIDAD -->
-                <div class="input-group">
- 
-                    <i class="fa-solid fa-flag"></i>
- 
-                    <select name="nacionalidad" required>
- 
-                        <option value="">
-                            Selecciona tu país
-                        </option>
- 
+                    <div class="contenedor-input-icono select-wrapper">
+                        <i class='bx bx-flag input-icon'></i>
+                        <select name="pais" required>
+                        <option value="" disabled selected>Selecciona tu país</option>
                         <option value="Afganistán">Afganistán</option>
                         <option value="Albania">Albania</option>
                         <option value="Alemania">Alemania</option>
@@ -113,95 +78,43 @@
                         <option value="República Dominicana">República Dominicana</option>
                         <option value="Uruguay">Uruguay</option>
                         <option value="Venezuela">Venezuela</option>
+                        </select>
+                    </div>
  
-                    </select>
+                    <div class="contenedor-input-icono select-wrapper">
+                        <i class='bx bx-list-ul input-icon'></i>
+                        <select name="nivel" required>
+                            <option value="" disabled selected>Selecciona tu nivel</option>
+                            <option value="principiante"> Principiante</option>
+                            <option value="intermedio"> Intermedio</option>
+                            <option value="avanzado"> Avanzado / Experto</option>
+                        </select>
+                    </div>
  
-                </div>
+                    <div class="contenedor-input-icono">
+                        <i class='bx bx-lock-alt input-icon'></i>
+                        <input type="password" name="password" placeholder="Nueva contraseña" required>
+                    </div>
  
+                    <div class="contenedor-input-icono">
+                        <i class='bx bx-lock-open-alt input-icon'></i>
+                        <input type="password" name="confirm_password" placeholder="Confirma tu contraseña" required>
+                    </div>
  
-                <!-- NIVEL -->
-                <div class="input-group">
+                    <div class="enlace-login-redireccion">
+                        ¿Tienes cuenta? <a href="inicio_sesion.html">Iniciar sesión</a>
+                    </div>
  
-                    <i class="fa-solid fa-water"></i>
- 
-                    <select name="nivel_surf" required>
- 
-                        <option value="">
-                            Nivel de Surf
-                        </option>
- 
-                        <option value="Novato">
-                            Novato
-                        </option>
- 
-                        <option value="Medio">
-                            Medio
-                        </option>
- 
-                        <option value="Avanzado">
-                            Avanzado
-                        </option>
- 
-                    </select>
- 
-                </div>
- 
-                <!-- PASSWORD -->
-                <div class="input-group">
- 
-                    <i class="fa-solid fa-lock"></i>
- 
-                <input
-                        type="password"
-                        name="contrasena"
-                        placeholder="Contraseña"
-                        required
-                    >
- 
-                </div>
- 
-                <!-- CONFIRMAR -->
-                <div class="input-group">
- 
-                    <i class="fa-solid fa-lock"></i>
- 
-                    <input
-                        type="password"
-                        name="confirmar_contrasena"
-                        placeholder="Confirmar contraseña"
-                        required
-                    >
- 
-                </div>
- 
-                <!-- LOGIN -->
-                <div class="login-link">
- 
-                    <span>¿Tienes cuenta?</span>
- 
-                   <a href="login.html">
-                    Iniciar sesion
-                   </a>
- 
-                </div>
- 
-                <!-- BOTÓN -->
-                <button type="submit" class="btn-register">
- 
-                    <i class="fa-solid fa-person-swimming"></i>
- 
-                    Registrarse
- 
-                </button>
- 
-            </form>
+                    <button type="submit" class="boton-registrarse-tide">
+                        <i class='bx bx-run'></i> Registrarse
+                    </button>
+                </form>
+            </div>
  
         </div>
  
-    </section>
- 
-</div>
- 
+
+    </div>
+ <script src="js/registro.js"></script>
 </body>
 </html>
- 

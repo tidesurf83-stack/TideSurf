@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Editar Perfil - TideSurf</title>
+    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/editar_perfil.css">
+</head>
+<body>
+ 
+    <div class="tarjeta-perfil-contenedor">
+        
+        <div class="encabezado-perfil">
+            <div class="logo-tidesurf-perfil">
+                <i class='bx bx-water'></i>
+                <span class="texto-logo">TIDE SURF</span>
+            </div>
+            <h1 class="titulo-seccion">Editar Mi Perfil</h1>
+        </div>
+ 
+        <div class="seccion-avatar">
+            <div class="contenedor-avatar">
+                <i class='bx bx-user usuario-icono-por-defecto'></i>
+                <button class="boton-cambiar-foto" type="button" title="Cambiar foto de perfil">
+                    <i class='bx bx-image-add'></i>
+                </button>
+            </div>
+            <h2 class="nombre-usuario-pantalla">Briseyda Flores</h2>
+        </div>
+ 
+        <form class="formulario-perfil" action="actualizar_perfil.php" method="POST">
+            
+            <div class="grupo-campo">
+                <label for="ubicacion">Ubicación:</label>
+                <input type="text" id="ubicacion" name="ubicacion" placeholder="Lorem ipsum dolor sit.">
+            </div>
+ 
+            <div class="grupo-campo">
+                <label for="edad">Edad:</label>
+                <input type="number" id="edad" name="edad" placeholder="20">
+            </div>
+ 
+            <div class="grupo-campo">
+                <label for="nivelSurf">Nivel de Surf:</label>
+                <input type="text" id="nivelSurf" name="nivelSurf" placeholder="Lorem ipsum">
+            </div>
+ 
+            <div class="grupo-campo">
+                <label for="playasFavoritas">Playas Favoritas:</label>
+                <input type="text" id="playasFavoritas" name="playasFavoritas" placeholder="Lorem ipsum dolor sit.">
+            </div>
+ 
+            <div class="contenedor-etiqueta-sobremi">
+                <span class="etiqueta-sobremi">Sobre mi...</span>
+            </div>
+ 
+            <div class="contenedor-textarea">
+                <textarea name="biografia" rows="5" placeholder="Lorem ipsum dolor sit Lorem ipsum dolor sit Lorem ipsum dolor sit Lorem ipsum dolor sit Lorem ipsum dolor sit Lorem ipsum dolor sit."></textarea>
+            </div>
+ 
+            <div class="bloque-botones-accion">
+                <button type="submit" class="boton-guardar-cambios">Guardar Cambios</button>
+                <button type="button" class="boton-cancelar-perfil" onclick="window.history.back();">Cancelar</button>
+            </div>
+ 
+        </form>
+ 
+    </div>
+ 
+</body>
+</html>
+ 
