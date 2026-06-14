@@ -936,6 +936,10 @@ body{
     padding:60px;
 
     position:relative;
+<<<<<<< HEAD
+ 
+    }
+=======
 
     overflow:hidden;
 
@@ -1741,3 +1745,4 @@ body{
 
     transform:translateY(-4px);
 }
+>>>>>>> f566999db2ccfd064385c361086760d8bec3b7c2

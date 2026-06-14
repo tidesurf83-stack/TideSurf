@@ -1,0 +1,232 @@
+/* RESET DE ESTILOS GENERALES */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, Roboto, Helvetica, Arial, sans-serif;
+}
+ 
+/* FONDO COMPLETAMENTE BLANCO */
+body {
+    background-color: #ffffff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+}
+ 
+/* RECTÁNGULO CONTENEDOR CENTRAL */
+.tarjeta-perfil-contenedor {
+    background-color: #f4f9fc; /* Fondo celeste muy claro interno */
+    width: 100%;
+    max-width: 450px; /* Tamaño ideal estilo celular/tarjeta compacta */
+    border-radius: 16px;
+    box-shadow: 0 10px 30px rgba(0, 52, 89, 0.12);
+    border: 1px solid rgba(162, 210, 233, 0.4);
+    overflow: hidden;
+    padding-bottom: 25px;
+}
+ 
+/* ENCABEZADO CON DEGRADADO AZUL */
+.encabezado-perfil {
+    background: linear-gradient(to bottom, #7bc8f2 0%, #a2d2eb 100%);
+    padding: 18px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 2px solid #5fa8d3;
+}
+ 
+/* LOGO DE TIDESURF RECREADO */
+.logo-tidesurf-perfil {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    color: #013a63;
+}
+ 
+.logo-tidesurf-perfil i {
+    font-size: 1.6rem;
+}
+ 
+.texto-logo {
+    font-size: 0.9rem;
+    font-weight: 800;
+    letter-spacing: 0.5px;
+}
+ 
+.titulo-seccion {
+    color: #013a63;
+    font-size: 1.4rem;
+    font-weight: 700;
+}
+ 
+/* ÁREA DE LA FOTO DEL AVATAR */
+.seccion-avatar {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 25px 0 15px 0;
+}
+ 
+.contenedor-avatar {
+    position: relative;
+    width: 130px;
+    height: 130px;
+    background-color: #a2d2eb;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 4px solid #013a63;
+}
+ 
+.usuario-icono-por-defecto {
+    font-size: 5rem;
+    color: #ffffff;
+}
+ 
+/* Pequeña burbuja con icono de imagen */
+.boton-cambiar-foto {
+    position: absolute;
+    bottom: 2px;
+    right: 2px;
+    background-color: #cbdbe5;
+    border: 2px solid #013a63;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+ 
+.boton-cambiar-foto i {
+    font-size: 1.25rem;
+    color: #013a63;
+}
+ 
+.nombre-usuario-pantalla {
+    color: #013a63;
+    font-size: 1.35rem;
+    font-weight: 700;
+    margin-top: 10px;
+}
+ 
+/* ESTRUCTURA DEL FORMULARIO Y FILAS */
+.formulario-perfil {
+    padding: 0 25px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+ 
+.grupo-campo {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+}
+ 
+.grupo-campo label {
+    color: #013a63;
+    font-weight: 700;
+    font-size: 0.95rem;
+    width: 35%; /* Alineación uniforme de las etiquetas izquierdas */
+}
+ 
+.grupo-campo input {
+    width: 65%;
+    padding: 6px 12px;
+    border: none;
+    background-color: transparent;
+    font-size: 0.95rem;
+    color: #333333;
+    outline: none;
+}
+ 
+/* Estilo para simular el texto editable */
+.grupo-campo input::placeholder {
+    color: #555555;
+    font-style: italic;
+}
+ 
+/* BOTÓN/ETIQUETA DE SOBRE MÍ */
+.contenedor-etiqueta-sobremi {
+    display: flex;
+    justify-content: center;
+    margin: 8px 0 2px 0;
+}
+ 
+.etiqueta-sobremi {
+    background-color: #a2d2eb;
+    color: #013a63;
+    padding: 5px 24px;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    font-weight: 700;
+    border: 1px solid #7bc8f2;
+}
+ 
+/* CAJA DE TEXTO GRANDE (TEXTAREA) */
+.contenedor-textarea {
+    width: 100%;
+}
+ 
+.contenedor-textarea textarea {
+    width: 100%;
+    padding: 12px;
+    background-color: #cbdbe5;
+    border: 3px solid #a2d2eb;
+    border-radius: 12px;
+    resize: none;
+    font-size: 0.95rem;
+    color: #444444;
+    outline: none;
+    line-height: 1.4;
+}
+ 
+/* BOTONES INFERIORES SIMÉTRICOS */
+.bloque-botones-accion {
+    display: flex;
+    justify-content: space-between;
+    gap: 15px;
+    margin-top: 15px;
+}
+ 
+.boton-guardar-cambios, 
+.boton-cancelar-perfil {
+    flex: 1;
+    padding: 10px;
+    font-size: 0.95rem;
+    font-weight: 700;
+    border-radius: 8px;
+    cursor: pointer;
+    border: none;
+    transition: background-color 0.2s, transform 0.1s;
+}
+ 
+.boton-guardar-cambios {
+    background-color: #a2d2eb;
+    color: #013a63;
+    border: 1px solid #7bc8f2;
+}
+ 
+.boton-guardar-cambios:hover {
+    background-color: #7bc8f2;
+    transform: translateY(-1px);
+}
+ 
+.boton-cancelar-perfil {
+    background-color: #cbdbe5;
+    color: #555555;
+}
+ 
+.boton-cancelar-perfil:hover {
+    background-color: #b0c4de;
+    transform: translateY(-1px);
+}
+ 
