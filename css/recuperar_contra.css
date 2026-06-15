@@ -1,218 +1,249 @@
-@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;600;700&display=swap');
 
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-    font-family:'Poppins',sans-serif;
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, Roboto, Helvetica, Arial, sans-serif;
+}
+ 
+body {
+    background: linear-gradient(to bottom, #e0f7fa 0%, #b3e5fc 100%);
+    background-attachment: fixed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    padding: 20px;
+    overflow-x: hidden;
+    position: relative;
+}
+ 
+.interfaz-navegador {
+    width: 100%;
+    max-width: 1050px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    z-index: 10;
+}
+ 
+.titulo-registro-principal {
+    color: #01579b;
+    font-size: 3.5rem;
+    font-weight: 700;
+    margin-bottom: 25px;
+    letter-spacing: 1px;
+    text-shadow: 0 2px 10px rgba(1, 87, 155, 0.15);
+}
+ 
+.tarjeta-registro-contenedor {
+    background: rgba(255, 255, 255, 0.4);
+    display: flex;
+    width: 100%;
+    max-width: 1050px;
+    min-height: 500px;
+    border-radius: 24px;
+    overflow: hidden;
+    box-shadow: 0 25px 55px rgba(1, 43, 74, 0.18);
+    border: 1px solid rgba(255, 255, 255, 0.7);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+}
+ 
+.panel-izquierdo-visual {
+    flex: 1.1;
+    background-image: url('../img/registro-inicio/fondo.registro.jpg');
+    background-size: cover;
+    background-position: center 20%;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+}
+ 
+.capa-degradado-oceano {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to bottom, rgba(0,0,0,0) 60%, rgba(2, 48, 82, 0.4) 100%);
+    z-index: 1;
+}
+ 
+.branding-inferior {
+    position: relative;
+    z-index: 2;
+    padding: 35px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+ 
+.logo-tidesurf {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: #ffffff;
+}
+ 
+.logo-tidesurf span {
+    font-size: 2rem;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    text-shadow: 0 2px 8px rgba(2, 48, 82, 0.5);
+}
+ 
+.panel-derecho-formulario {
+    flex: 1;
+    padding: 50px 45px;
+    background: rgba(179, 229, 252, 0.45) !important;
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border-left: 1px solid rgba(255, 255, 255, 0.3);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: relative;
+}
+ 
+.titulo-formulario {
+    color: #ffffff !important;
+    font-size: 2.2rem;
+    font-weight: 700;
+    margin-bottom: 6px;
+    text-shadow: 0 2px 6px rgba(1, 76, 133, 0.3);
+}
+ 
+.subtitulo-formulario {
+    color: #013a63;
+    font-size: 1rem;
+    margin-bottom: 32px;
+    font-weight: 500;
+}
+ 
+.formulario-registro {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+ 
+.contenedor-input-icono {
+    position: relative;
+    width: 100%;
+}
+ 
+.contenedor-input-icono .input-icon {
+    position: absolute;
+    left: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #457b9d;
+    font-size: 1.25rem;
+    pointer-events: none;
+    z-index: 10;
+}
+ 
+.contenedor-input-icono input {
+    width: 100%;
+    padding: 14px 20px 14px 52px;
+    border: 1px solid rgba(255, 255, 255, 0.8);
+    border-radius: 50px;
+    background: #ffffff;
+    font-size: 0.95rem;
+    color: #013a63 !important; 
+    font-weight: 500;
+    outline: none;
+    box-shadow: 0 4px 10px rgba(2, 48, 82, 0.04);
+    transition: all 0.3s ease;
+}
+ 
+.formulario-registro .contenedor-input-icono input:hover {
+    border-color: #00a2e8 !important;
+    box-shadow: 0 0 12px rgba(0, 162, 232, 0.6) !important;
+}
+ 
+.formulario-registro .contenedor-input-icono input:focus {
+    border-color: #0288d1 !important;
+    box-shadow: 0 4px 15px rgba(2, 136, 209, 0.25) !important;
+}
+ 
+.contenedor-input-icono input::placeholder {
+    color: #7b9fa6;
+    font-weight: 400;
+}
+ 
+.enlace-login-redireccion {
+    text-align: center;
+    font-size: 0.88rem;
+    margin: 6px 0;
+    font-weight: 500;
+    color: #014c85 !important;
+}
+ 
+.enlace-login-redireccion a {
+    color: #0288d1;
+    text-decoration: none;
+    font-weight: 700;
+}
+ 
+.boton-registrarse-tide {
+    width: 100%;
+    padding: 15px;
+    background: linear-gradient(135deg, #026aa7 0%, #014c85 100%);
+    color: #ffffff;
+    border: none;
+    border-radius: 50px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    box-shadow: 0 6px 20px rgba(1, 76, 133, 0.3), inset 0 -3px 0px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease;
+}
+ 
+.boton-registrarse-tide:hover {
+    transform: translateY(-2px);
+    background: linear-gradient(135deg, #0288d1 0%, #026aa7 100%);
 }
 
-body{
-    min-height:100vh;
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    flex-direction:column;
-
-    background:
-    linear-gradient(
-        rgba(0,0,0,0.15),
-        rgba(0,0,0,0.15)
-    ),
-    url("../img/playa.jpg");
-
-    background-size:cover;
-    background-position:center;
-    background-attachment:fixed;
+.back {
+    text-align: center;
+    margin-top: 20px;
 }
 
-.topbar{
-    margin-bottom:25px;
+.back a {
+    color: #014c85;
+    text-decoration: none;
+    font-weight: 600;
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
 }
 
-.topbar h1{
-    color:white;
-    font-size:3rem;
-    text-shadow:3px 3px 15px rgba(0,0,0,.4);
-    letter-spacing:2px;
+.back a:hover {
+    color: #0288d1;
 }
-
-.container{
-    width:100%;
-    display:flex;
-    justify-content:center;
-    align-items:center;
-}
-
-.card{
-    width:450px;
-    background:rgba(255,255,255,0.85);
-    backdrop-filter:blur(10px);
-
-    border-radius:30px;
-    padding:40px;
-
-    box-shadow:
-    0 15px 40px rgba(0,0,0,.2);
-
-    position:relative;
-
-    overflow:hidden;
-}
-
-/* Ola decorativa */
-.card::before{
-    content:'';
-    position:absolute;
-    top:-60px;
-    left:-50px;
-
-    width:200px;
-    height:200px;
-
-    background:#00c2cb;
-    border-radius:50%;
-    opacity:.25;
-}
-
-.card::after{
-    content:'';
-    position:absolute;
-    bottom:-70px;
-    right:-70px;
-
-    width:220px;
-    height:220px;
-
-    background:#ffd166;
-    border-radius:50%;
-    opacity:.25;
-}
-
-.card h2{
-    text-align:center;
-    color:#0081a7;
-    margin-bottom:10px;
-    font-size:2rem;
-}
-
-.card p{
-    text-align:center;
-    color:#555;
-    margin-bottom:25px;
-    line-height:1.5;
-}
-
-.input-group{
-    position:relative;
-    margin-bottom:20px;
-}
-
-.input-group i{
-    position:absolute;
-    left:15px;
-    top:50%;
-    transform:translateY(-50%);
-
-    color:#00b4d8;
-    font-size:1.1rem;
-}
-
-.input-group input,
-.input-group select{
-
-    width:100%;
-    padding:15px 15px 15px 45px;
-
-    border:none;
-    border-radius:15px;
-
-    background:#f1f8fb;
-
-    outline:none;
-
-    transition:.3s;
-}
-
-.input-group input:focus,
-.input-group select:focus{
-
-    background:white;
-
-    box-shadow:
-    0 0 0 3px rgba(0,180,216,.25);
-
-    transform:translateY(-2px);
-}
-
-.btn{
-
-    width:100%;
-
-    padding:15px;
-
-    border:none;
-
-    border-radius:50px;
-
-    background:linear-gradient(
-        135deg,
-        #00b4d8,
-        #00c896
-    );
-
-    color:white;
-
-    font-size:1rem;
-
-    font-weight:bold;
-
-    cursor:pointer;
-
-    transition:.4s;
-}
-
-.btn:hover{
-
-    transform:translateY(-4px);
-
-    box-shadow:
-    0 10px 25px rgba(0,180,216,.4);
-}
-
-.back{
-
-    margin-top:20px;
-
-    text-align:center;
-}
-
-.back a{
-
-    text-decoration:none;
-
-    color:#0081a7;
-
-    font-weight:700;
-
-    transition:.3s;
-}
-
-.back a:hover{
-
-    color:#00c896;
-}
-
-/* Responsive */
-
-@media(max-width:500px){
-
-    .card{
-        width:90%;
-        padding:25px;
+ 
+@media (max-width: 850px) {
+    .tarjeta-registro-contenedor {
+        flex-direction: column;
+        min-height: auto;
     }
-
-    .topbar h1{
-        font-size:2rem;
+    .panel-izquierdo-visual {
+        min-height: 250px;
     }
+    .panel-derecho-formulario {
+        padding: 40px 25px;
+        background: rgba(179, 229, 252, 0.6) !important;
+    }
+}
+ 
+@media (min-width: 851px) {
+    body { padding-bottom: 120px !important; }
 }

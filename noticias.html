@@ -1,68 +1,83 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>News</title>
-  <link rel="stylesheet" href="css/noticias.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Noticias - TIDE SURF</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/noticias.css">
 </head>
 <body>
 
-<<<<<<< HEAD
-
-  <header>
-    <div class="logo">
-      <img src="img/logo.jpeg"  alt="logo">
-      <h2>TIDE SURF</h2>
-    </div>
-
-    <nav>
-      <a href="noticias.html">News</a>
-      <a href="#">Competition</a>
-      <a href="#">Ride The Wave</a>
-      <a href="#">Gear Zone</a>
-      <a href="#">Wave Board</a>
-      <a href="">Wave Academy</a>
-      <a href="#">My Profile</a>
-    </nav>
-  </header>
-
-  <section class="title">
-    <h1>Descubre mas sobre el surf</h1>
-
-  <!-- NAVBAR -->
-
-=======
->>>>>>> 8f9caa9 (logica detras del cerrar cesion)
-  <nav class="navbar">
+<nav class="navbar navbar-expand-lg navbar-light fixed-top custom-navbar">
     <div class="container">
 
-        <a class="navbar-brand" href="#" style="margin-left:-40px;" >
-            <img src="ride_the_weve/img/logof-removebg-preview.png" alt="logo" class="logo">
+        <a class="navbar-brand" href="index.html">
+            <img src="img/logof-removebg-preview.png" alt="TideSurf Logo">
         </a>
 
-        <div class="menu">
-            <a href="noticias.html">News</a>
-            <a href="competicions">competition</a>
-            <a href="ride-the-wave.html">Ride the wave</a>
-            <a href="grearzone.html">Grear Zone Board</a>
-            <a href="academias.html">Wave Academy</a>
-            <a href="profile.html">My profile</a>
-        </div>   
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menu">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="menu">
+
+            <ul class="navbar-nav mx-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="index.html">Inicio</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="noticias.html">Noticias</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="competencias.html">Competencias</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="playas.html">Playas</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="escuelas.html">Escuelas de Surf</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="tiendas.html">Tiendas</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="galeria.html">Galería</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="sobre_nosotros.html">Sobre Nosotros</a>
+                </li>
+
+
+            </ul>
+
+            <div class="nav-buttons">
+                <a href="inicio_sesion.html" class="btn-login">Iniciar Sesión</a>
+            </div>
+
+        </div>
+
     </div>
 </nav>
 
- <section class="hero">
+<section class="hero">
 
     <div class="overlay">
 
-      <h1>NEWS</h1>
+      <h1>NOTICIAS</h1>
 
-      <p>Mantente al dia con el mundo del Surf</p>
+      <p>Mantente al día con el mundo del Surf</p>
 
       <div class="search-box">
-        <input type="text" placeholder="Buscar...">
-        <button>Buscar</button>
+        <input type="text" id="searchInput" placeholder="Buscar noticias...">
+        <button id="searchBtn">Buscar</button>
       </div>
 
       <div class="filters">
@@ -73,37 +88,31 @@
 
     </div>
 
-<<<<<<< HEAD
+</section>
 
-  </section>
-=======
- </section>
->>>>>>> 8f9caa9 (logica detras del cerrar cesion)
+<div id="searchMessage" class="search-message"></div>
 
- <!--NOTICIAS-->
-
- <main class="container">
+<main class="container">
 
     <h2>Noticias destacadas</h2>
 
     <section class="news-grid">
 
-      <!--CARD GRANDE-->
-      <article class="news-card featured">
+      <article class="news-card featured" id="noticia-1">
 
         <img src="img/noticias/hero.jpg" alt="Surf">
 
         <div class="content">
 
           <span class="tag">COMPETENCIAS</span>
+          <span class="date">10 Junio 2026</span>
 
           <h3>
-            EL Tunco será sede de campeonato internacional
+            El Tunco será sede de campeonato internacional
           </h3>
 
           <p>
-            La famosa playa salvadoreña será  el escenario
-            de un campeonato de surf el próximo verano.
+            La famosa playa salvadoreña será el escenario de un campeonato de surf el próximo verano, con la participación de los mejores surfistas del mundo.
           </p>
 
           <button class="btn-leer-mas" data-noticia="1">Leer más</button>
@@ -112,19 +121,22 @@
 
       </article>
 
-      <!--CARD 2-->
-
-      <article class="news-card">
+      <article class="news-card" id="noticia-2">
 
         <img src="img/noticias/competencia3.jpg" alt="Playa">
 
         <div class="content">
 
           <span class="tag">PLAYAS</span>
+          <span class="date">5 Junio 2026</span>
 
           <h3>
-          Las mejores playas para surfear en 2026
+            Las mejores playas para surfear en 2026
           </h3>
+
+          <p>
+            Descubre las playas más impresionantes alrededor del mundo que debes visitar este año para disfrutar de las mejores olas.
+          </p>
 
           <button class="btn-leer-mas" data-noticia="2">Leer más</button>
 
@@ -132,18 +144,22 @@
 
       </article>
 
-      <!--CARD 3-->
-      <article class="news-card">
+      <article class="news-card" id="noticia-3">
 
         <img src="img/noticias/competencia2.jpg" alt="Competencia">
 
         <div class="content">
 
           <span class="tag">COMPETENCIAS</span>
+          <span class="date">28 Mayo 2026</span>
 
           <h3>
             Surfistas salvadoreños destacan internacionalmente
           </h3>
+
+          <p>
+            Los atletas nacionales han conseguido importantes reconocimientos en las últimas competencias celebradas en Hawaii.
+          </p>
 
           <button class="btn-leer-mas" data-noticia="3">Leer más</button>
 
@@ -151,39 +167,74 @@
 
       </article>
 
-      <!--CARD 4-->
-      <article class="news-card">
+      <article class="news-card" id="noticia-4">
 
-        <img src="img/noticias/competencia1.jpg" alt="Guia">
+        <img src="img/noticias/competencia1.jpg" alt="Guía">
 
         <div class="content">
 
-          <span>GUÍA</span>
+          <span class="tag">GUÍA</span>
+          <span class="date">15 Mayo 2026</span>
 
           <h3>
             Cómo empezar en el surf siendo principiante
           </h3>
 
+          <p>
+            Una guía completa para quienes quieren iniciarse en este deporte, desde la elección de la tabla hasta las primeras olas.
+          </p>
+
           <button class="btn-leer-mas" data-noticia="4">Leer más</button>
 
         </div>
-   
+
       </article>
 
     </section>
 
- </main>
+</main>
 
-
- <div class="modal" id="modal">
+<div class="modal" id="modal">
   <div class="modal-content">
     <span class="cerrar">&times;</span>
 
     <h2 id="modal-titulo"></h2>
     <p id="modal-texto"></p>
   </div>
- </div>
+</div>
 
-<script src="noticias.js"></script>
+<footer class="footer">
+
+    <div class="container">
+
+        <h3>Nuestro Objetivo</h3>
+
+        <p class="footer-objective">
+
+            Nuestro objetivo es ayudar a las personas a conocer más sobre el surf,
+            descubrir las mejores playas de El Salvador, promover el turismo y
+            fomentar el aprendizaje de este deporte a través de información útil,
+            academias y eventos destacados.
+
+        </p>
+
+        <div class="footer-social">
+
+            <a href="#">Instagram</a>
+
+            <a href="#">Facebook</a>
+
+            <a href="#">TikTok</a>
+
+            <a href="#">YouTube</a>
+
+        </div>
+
+    </div>
+
+</footer>
+
+<script src="js/noticias.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
