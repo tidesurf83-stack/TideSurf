@@ -8,52 +8,79 @@
     <link rel="stylesheet" href="css/recuperar_contra.css">
 </head>
 <body>
- 
-    <div class="interfaz-navegador">
-        
+    <main class="interfaz-navegador">
         <h1 class="titulo-registro-principal">Recuperar Contraseña</h1>
- 
-        <div class="tarjeta-registro-contenedor">
-            
+
+        <section class="tarjeta-registro-contenedor" aria-label="Formulario para recuperar contraseña">
             <div class="panel-izquierdo-visual">
                 <div class="capa-degradado-oceano"></div>
+                <div class="mensaje-visual">
+                    <i class='bx bx-shield-quarter'></i>
+                    <p>Protege tu cuenta y vuelve a surfear con TideSurf.</p>
+                </div>
                 <div class="branding-inferior">
                     <div class="logo-tidesurf">
                         <i class='bx bx-water'></i> <span>TideSurf</span>
                     </div>
                 </div>
             </div>
- 
+
             <div class="panel-derecho-formulario">
+                <span class="etiqueta-seguridad">Acceso seguro</span>
                 <h2 class="titulo-formulario">¿Olvidaste tu contraseña?</h2>
-                <p class="subtitulo-formulario">Ingresa tu correo electrónico para restablecerla</p>
- 
-                <form class="formulario-registro" action="#" method="POST">
-                    
+                <p class="subtitulo-formulario">Ingresa el correo de tu cuenta y te daremos un enlace para crear una nueva contraseña.</p>
+
+                <div class="alerta-recuperacion" id="mensajeRecuperacion" hidden></div>
+
+                <form class="formulario-registro" action="php/recuperar_contra.php" method="POST">
+                    <label class="sr-only" for="correo">Correo electrónico</label>
                     <div class="contenedor-input-icono">
                         <i class='bx bx-envelope input-icon'></i>
-                        <input type="email" name="email" placeholder="Tu correo electrónico" required>
+                        <input type="email" id="correo" name="correo" placeholder="Tu correo electrónico" autocomplete="email" required>
                     </div>
- 
-                    <div class="enlace-login-redireccion">
-                        ¿Ya tienes cuenta? <a href="inicio_sesion.html">Iniciar sesión</a>
-                    </div>
- 
+
                     <button type="submit" class="boton-registrarse-tide">
                         <i class='bx bx-send'></i> Enviar enlace
                     </button>
                 </form>
-                
+
+                <div class="ayuda-recuperacion">
+                    <i class='bx bx-info-circle'></i>
+                    <p>El enlace vence en 1 hora. En producción debes enviarlo por correo; en desarrollo se muestra en la URL de respuesta.</p>
+                </div>
+
+                <div class="enlace-login-redireccion">
+                    ¿Ya tienes cuenta? <a href="inicio_sesion.html">Iniciar sesión</a>
+                </div>
+
                 <div class="back">
-                    <a href="inicio_sesion.html">
-                        <i class='bx bx-arrow-back'></i> Volver al login
-                    </a>
+                    <a href="inicio_sesion.html"><i class='bx bx-arrow-back'></i> Volver al login</a>
                 </div>
             </div>
- 
-        </div>
- 
-    </div>
- <script src="js/registro.js"></script>
+        </section>
+    </main>
+
+    <script>
+        const params = new URLSearchParams(window.location.search);
+        const estado = params.get('estado');
+        const demo = params.get('demo');
+        const mensaje = document.getElementById('mensajeRecuperacion');
+
+        if (estado) {
+            const textos = {
+                correo_invalido: 'Ingresa un correo electrónico válido.',
+                enviado: 'Si el correo existe, recibirás instrucciones para restablecer tu contraseña.',
+                enlace_generado: 'Enlace generado correctamente para pruebas locales.'
+            };
+            mensaje.hidden = false;
+            mensaje.textContent = textos[estado] || textos.enviado;
+            if (demo) {
+                const link = document.createElement('a');
+                link.href = demo;
+                link.textContent = ' Abrir enlace de restablecimiento';
+                mensaje.appendChild(link);
+            }
+        }
+    </script>
 </body>
 </html>
