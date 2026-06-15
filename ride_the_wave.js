@@ -159,9 +159,9 @@ const beaches = {
             "Las olas son muy rápidas"
         ],
         images:[
-            "img/roca1.jpg",
-            "img/roca2.jpg",
-            "img/roca3.jpg"
+            "img/playas/punta roca 2.webp",
+            "img/playas/punta roca.jpg",
+            "img/playas/puntaroca3.webp"
         ]
     }
 
@@ -275,3 +275,254 @@ cards.forEach(card => {
 
     observer.observe(card);
 });
+const monthlyTop = {
+
+    0: [ // Enero
+        {
+            name: "El Sunzal",
+            location: "La Libertad",
+            image: "img/playas/el sunzal.jpg"
+        },
+        {
+            name: "El Tunco",
+            location: "La Libertad",
+            image: "img/playas/tunco1.webp"
+        },
+        {
+            name: "El Zonte",
+            location: "La Libertad",
+            image: "img/playas/zonte.webp"
+        }
+    ],
+
+    1: [ // Febrero
+        {
+            name: "El Sunzal",
+            location: "La Libertad",
+            image: "img/playas/el sunzal.jpg"
+        },
+        {
+            name: "El Tunco",
+            location: "La Libertad",
+            image: "img/playas/tunco1.webp"
+        },
+        {
+            name: "El Zonte",
+            location: "La Libertad",
+            image: "img/playas/zonte.webp"
+        }
+    ],
+
+    2: [ // Marzo
+        {
+            name: "El Zonte",
+            location: "La Libertad",
+            image: "img/playas/zonte.webp"
+        },
+        {
+            name: "Punta Roca",
+            location: "La Libertad",
+            image: "img/playas/punta roca.jpg"
+        },
+        {
+            name: "El Sunzal",
+            location: "La Libertad",
+            image: "img/playas/el sunzal.jpg"
+        }
+    ],
+
+    3: [ // Abril
+        {
+            name: "Punta Roca",
+            location: "La Libertad",
+            image: "img/playas/punta roca.jpg"
+        },
+        {
+            name: "Las Flores",
+            location: "San Miguel",
+            image: "img/playas/las flores.webp"
+        },
+        {
+            name: "El Zonte",
+            location: "La Libertad",
+            image: "img/playas/zonte.webp"
+        }
+    ],
+
+    4: [ // Mayo
+        {
+            name: "Punta Roca",
+            location: "La Libertad",
+            image: "img/playas/punta roca.jpg"
+        },
+        {
+            name: "Las Flores",
+            location: "San Miguel",
+            image: "img/playas/las flores.webp"
+        },
+        {
+            name: "Mizata",
+            location: "Sonsonate",
+            image: "img/playas/mizata.webp"
+        }
+    ],
+
+    5: [ // Junio
+        {
+            name: "Las Flores",
+            location: "San Miguel",
+            image: "img/playas/las flores.webp"
+        },
+        {
+            name: "Punta Roca",
+            location: "La Libertad",
+            image: "img/playas/punta roca.jpg"
+        },
+        {
+            name: "Mizata",
+            location: "Sonsonate",
+            image: "img/playas/mizata.webp"
+        }
+    ],
+
+    6: [ // Julio
+        {
+            name: "Las Flores",
+            location: "San Miguel",
+            image: "img/playas/las flores.webp"
+        },
+        {
+            name: "Punta Roca",
+            location: "La Libertad",
+            image: "img/playas/punta roca.jpg"
+        },
+        {
+            name: "Mizata",
+            location: "Sonsonate",
+            image: "img/playas/mizata.webp"
+        }
+    ],
+
+    7: [ // Agosto
+        {
+            name: "Las Flores",
+            location: "San Miguel",
+            image: "img/playas/las flores.webp"
+        },
+        {
+            name: "Punta Roca",
+            location: "La Libertad",
+            image: "img/playas/punta roca.jpg"
+        },
+        {
+            name: "Punta Mango",
+            location: "La Unión",
+            image: "img/playas/punta-mango.jpg"
+        }
+    ],
+
+    8: [ // Septiembre
+        {
+            name: "Punta Roca",
+            location: "La Libertad",
+            image: "img/playas/punta roca.jpg"
+        },
+        {
+            name: "Las Flores",
+            location: "San Miguel",
+            image: "img/playas/las flores.webp"
+        },
+        {
+            name: "Punta Mango",
+            location: "La Unión",
+            image: "img/playas/punta-mango.jpg"
+        }
+    ],
+
+    9: [ // Octubre
+        {
+            name: "Punta Roca",
+            location: "La Libertad",
+            image: "img/playas/punta roca.jpg"
+        },
+        {
+            name: "Las Flores",
+            location: "San Miguel",
+            image: "img/playas/las flores.webp"
+        },
+        {
+            name: "Punta Mango",
+            location: "La Unión",
+            image: "img/playas/punta-mango.jpg"
+        }
+    ],
+
+    10: [ // Noviembre
+        {
+            name: "El Sunzal",
+            location: "La Libertad",
+            image: "img/playas/el sunzal.jpg"
+        },
+        {
+            name: "El Tunco",
+            location: "La Libertad",
+            image: "img/playas/tunco1.webp"
+        },
+        {
+            name: "El Zonte",
+            location: "La Libertad",
+            image: "img/playas/zonte.webp"
+        }
+    ],
+
+    11: [ // Diciembre
+        {
+            name: "El Sunzal",
+            location: "La Libertad",
+            image: "img/playas/el sunzal.jpg"
+        },
+        {
+            name: "El Tunco",
+            location: "La Libertad",
+            image: "img/playas/tunco1.webp"
+        },
+        {
+            name: "El Zonte",
+            location: "La Libertad",
+            image: "img/playas/zonte.webp"
+        }
+    ]
+};
+const currentMonth = new Date().getMonth();
+
+const topData = monthlyTop[currentMonth] || monthlyTop[0];
+
+document.getElementById("top1-img").src = topData[0].image;
+document.getElementById("top1-name").textContent = topData[0].name;
+document.getElementById("top1-location").textContent = topData[0].location;
+
+document.getElementById("top2-img").src = topData[1].image;
+document.getElementById("top2-name").textContent = topData[1].name;
+document.getElementById("top2-location").textContent = topData[1].location;
+
+document.getElementById("top3-img").src = topData[2].image;
+document.getElementById("top3-name").textContent = topData[2].name;
+document.getElementById("top3-location").textContent = topData[2].location;
+
+const months = [
+    "Enero",
+    "Febrero",
+    "Marzo",
+    "Abril",
+    "Mayo",
+    "Junio",
+    "Julio",
+    "Agosto",
+    "Septiembre",
+    "Octubre",
+    "Noviembre",
+    "Diciembre"
+];
+
+document.getElementById("monthName").textContent =
+    months[currentMonth];

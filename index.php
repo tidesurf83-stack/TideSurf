@@ -1,3 +1,4 @@
+<?php session_start(); ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -29,14 +30,21 @@ href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
 
         <div class="collapse navbar-collapse" id="menu">
 
+<<<<<<< HEAD:index.html
+<<<<<<< HEAD
+=======
             <ul class="navbar-nav mx-auto">
+>>>>>>> c468082a0ef4c54ab65238b476c9577f330570d8
+=======
+            <ul class="navbar-nav mx-auto">
+>>>>>>> 8f9caa9 (logica detras del cerrar cesion):index.php
 
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Noticias</a>
+                    <a class="nav-link" href="noticias.html">Noticias</a>
                 </li>
 
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Competencias</a>
+                    <a class="nav-link" href="competencias.html">Competencias</a>
                 </li>
 
                 <li class="nav-item">
@@ -57,17 +65,27 @@ href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
 
             </ul>
 
-            <div class="nav-buttons">
+      <div class="nav-buttons">
 
-                <a href="#" class="btn-login">
-                    Iniciar Sesión
-                </a>
+    <?php if (isset($_SESSION['usuario_id'])): ?>
 
-                <a href="#" class="btn-register">
-                    Registrarse
-                </a>
+        <a href="php/logout.php" class="btn-login">
+            Cerrar sesión
+        </a>
 
-            </div>
+    <?php else: ?>
+
+        <a href="inicio_sesion.html" class="btn-login">
+            Iniciar Sesión
+        </a>
+
+        <a href="registro.html" class="btn-register">
+            Registrarse
+        </a>
+
+    <?php endif; ?>
+
+</div>
 
         </div>
 

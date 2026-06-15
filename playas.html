@@ -14,6 +14,9 @@
 
     <link rel="stylesheet" href="css/playas.css">
 
+    <link rel="stylesheet"
+href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
+
 </head>
 
 <body>
@@ -42,34 +45,224 @@
 </nav>
 
 
+
 <section class="hero">
 
     <div class="hero-content">
-        <h1>Find Your Beach</h1>
+
+        <h1>Encuentra Tu Playa</h1>
+
+        <p>
+            Descubre las mejores playas para surfear
+            en El Salvador.
+        </p>
+
     </div>
 
 </section>
 
-<!-- INTRO -->
 
-<section class="intro">
+<section class="our-beaches">
 
-    <h2>Our Beaches</h2>
+    <div class="container-beaches">
 
-    <p>
-        El Salvador es uno de los mejores destinos de surf en Centroamérica.
-        Sus playas ofrecen olas increíbles, atardeceres espectaculares y
-        experiencias inolvidables para surfistas de todos los niveles.
-        Explora las playas más famosas y descubre tu próxima aventura.
-    </p>
+        <h2>Nuestras Playas</h2>
+
+        <p class="beach-description">
+
+            El Salvador es uno de los mejores destinos de surf en Centroamérica.
+            Sus playas ofrecen olas increíbles, atardeceres espectaculares y
+            experiencias inolvidables para surfistas de todos los niveles.
+
+            Explora las playas más famosas y descubre tu próxima aventura.
+
+        </p>
+
+        <div class="features">
+
+            <div class="feature">
+
+                <div class="icon"></div>
+                <div class="icon">
+                 <i class="bi bi-water"></i>
+                </div>
+
+                <h4>Olas todo el año</h4>
+
+                <p>Surf siempre que quieras</p>
+
+            </div>
+
+            <div class="feature">
+
+                <div class="icon"></div>
+                <div class="icon">
+                    <i class="bi bi-brightness-high"></i>
+                </div>
+
+                <h4>Clima tropical</h4>
+
+                <p>Temperaturas perfectas</p>
+
+            </div>
+
+            <div class="feature">
+
+                <div class="icon"></div>
+                <div class="icon">
+                    <i class="bi bi-geo-alt"></i>
+                </div>
+
+                <h4>Playas para todos</h4>
+
+                <p>Desde principiantes hasta expertos</p>
+
+            </div>
+
+            <div class="feature">
+
+                <div class="icon"></div>
+                <div class="icon">
+                    <i class="bi bi-heart"></i>
+                </div>
+
+                <h4>Cultura surf</h4>
+
+                <p>Comunidad local increíble</p>
+
+            </div>
+
+        </div>
+
+    </div>
 
 </section>
 
-<!-- PLAYAS -->
+<section class="top-month">
+
+    <h2>
+     Top 3 Playas de <span id="monthName"></span>
+    </h2>
+
+    <p class="month-subtitle">
+        Las playas recomendadas para este mes.
+    </p>
+
+    <div class="top-grid">
+
+        <div class="top-card gold" id="top1-card">
+            <span class="medal"></span>
+            <img id="top1-img" src="" alt="">
+            <h3 id="top1-name"></h3>
+            <p id="top1-location"></p>
+        </div>
+
+        <div class="top-card silver" id="top2-card">
+            <span class="medal"></span>
+            <img id="top2-img" src="" alt="">
+            <h3 id="top2-name"></h3>
+            <p id="top2-location"></p>
+        </div>
+
+        <div class="top-card bronze" id="top3-card">
+            <span class="medal"></span>
+            <img id="top3-img" src="" alt="">
+            <h3 id="top3-name"></h3>
+            <p id="top3-location"></p>
+        </div>
+
+    </div>
+
+</section>
+<div class="facts-title">
+    <h2>Características de nuestras playas</h2>
+    <p>
+        Descubre algunas de las condiciones que hacen de El Salvador un destino reconocido para el surf.
+    </p>
+</div>
+<section class="surf-facts">
+
+    <div class="fact-card">
+        <div class="fact-icon">
+            <i class="bi bi-thermometer-sun"></i>
+        </div>
+        
+        <h3>Temperatura del agua</h3>
+        <p>
+            Las aguas del Pacífico salvadoreño mantienen temperaturas entre
+            26°C y 29°C durante la mayor parte del año, por lo que normalmente
+            no se necesita traje de neopreno.
+        </p>
+    </div>
+
+    <div class="fact-card">
+        <div class="fact-icon">
+            <i class="bi bi-water"></i>>
+        </div>
+        
+        <h3>Niveles de surf</h3>
+        <p>
+            El país cuenta con playas aptas para principiantes, intermedios y
+            avanzados, permitiendo que cualquier persona encuentre una ola
+            adecuada para su experiencia.
+        </p>
+    </div>
+
+    <div class="fact-card">
+        <div class="fact-icon">
+            <i class="bi bi-brightness-high"></i>
+        </div>
+         
+        <h3>Clima tropical</h3>
+        <p>
+            Las temperaturas suelen oscilar entre 25°C y 32°C, ofreciendo
+            condiciones favorables para actividades al aire libre durante gran
+            parte del año.
+        </p>
+    </div>
+
+    <div class="fact-card">
+        <div class="fact-icon">
+            <i class="bi bi-trophy"></i>
+        </div>
+        <h3>Temporada de olas</h3>
+        <p>
+            Entre marzo y octubre suelen presentarse las marejadas más
+            consistentes, consideradas por muchos surfistas como la mejor época
+            para visitar las playas del país.
+        </p>
+    </div>
+
+    <div class="fact-card">
+        <div class="fact-icon">
+          <i class="bi bi-globe-americas"></i>
+        </div>
+        <h3>Reconocimiento internacional</h3>
+        <p>
+            El Salvador ha sido sede de importantes competencias
+            internacionales de surf, atrayendo atletas y visitantes de
+            diferentes partes del mundo.
+        </p>
+    </div>
+
+    <div class="fact-card">
+        
+        <div class="fact-icon">
+            <i class="bi bi-camera"></i>
+        </div>
+        <h3>Más que surf</h3>
+        <p>
+            Además de las olas, los visitantes pueden disfrutar de
+            atardeceres, gastronomía local, naturaleza y comunidades costeras
+            con una fuerte cultura relacionada al mar.
+        </p>
+    </div>
+
+</section>
 
 <section class="beaches">
+      <h2>Las Mejores Playas</h2>
 
-    <h2>The Best Beaches</h2>
 
     <div class="cards">
 
@@ -181,8 +374,58 @@
     </div>
 
 </section>
+<section class="featured-beaches">
 
-<!-- MAPA -->
+    <div class="section-title">
+        <h2>Playas destacadas</h2>
+        <p>Descubre otros destinos increíbles para surfear en El Salvador.</p>
+    </div>
+
+    <div class="featured-grid">
+
+        <div class="featured-card">
+            <img src="img/playas/costa del sol.webp" alt="">
+            <div class="overlay">
+                <h4>Costa del Sol</h4>
+                <span>Ideal para relajarse</span>
+            </div>
+        </div>
+
+        <div class="featured-card">
+            <img src="img/playas/puntamango.webp" alt="">
+            <div class="overlay">
+                <h4>Punta Mango</h4>
+                <span>Olas potentes</span>
+            </div>
+        </div>
+
+        <div class="featured-card">
+            <img src="img/playas/labocana.webp" alt="">
+            <div class="overlay">
+                <h4>La Bocana</h4>
+                <span>Surf de nivel mundial</span>
+            </div>
+        </div>
+
+        <div class="featured-card">
+            <img src="img/playas/metalio.webp" alt="">
+            <div class="overlay">
+                <h4>Metalío</h4>
+                <span>Ambiente tranquilo</span>
+            </div>
+        </div>
+
+        <div class="featured-card">
+            <img src="img/playas/sandiego.jpg" alt="">
+            <div class="overlay">
+                <h4>San Diego</h4>
+                <span>Perfecta para aprender</span>
+            </div>
+        </div>
+
+    </div>
+
+</section>
 
 <section class="map-section">
 
@@ -196,7 +439,77 @@
 
 </section>
 
-<!-- MODAL -->
+ <div class="section-title">
+
+        <h2>Más que playas</h2>
+
+        <p>
+            Todo lo que necesitas para vivir la experiencia completa del surf.
+        </p>
+
+    </div>
+
+
+    <div class="more-grid">
+
+        <div class="more-card">
+
+            <img src="img/escuela.jpg" alt="">
+
+            <div class="more-content">
+
+                <h3>Escuelas de surf</h3>
+
+                <p>
+                    Aprende con instructores certificados y mejora tu técnica.
+                </p>
+
+                <a href="#">Ver escuelas →</a>
+
+            </div>
+
+        </div>
+
+        <div class="more-card">
+
+            <img src="img/tienda.jpg" alt="">
+
+            <div class="more-content">
+
+                <h3>Tiendas</h3>
+
+                <p>
+                    Encuentra tablas, ropa y accesorios especializados.
+                </p>
+
+                <a href="#">Ver tiendas →</a>
+
+            </div>
+
+        </div>
+
+        <div class="more-card">
+
+            <img src="img/competencia.jpg" alt="">
+
+            <div class="more-content">
+
+                <h3>Competencias</h3>
+
+                <p>
+                    No te pierdas los torneos y eventos de surf nacionales.
+                </p>
+
+                <a href="#">Ver competencias →</a>
+
+            </div>
+
+        </div>
+
+
+        </div>
+
+    </div>
 
 <div class="beach-modal" id="beachModal">
 
@@ -258,8 +571,6 @@
 
 </div>
 
-<!-- FOOTER -->
-
 <footer>
 
     <h3>Tide Surf</h3>
@@ -268,13 +579,11 @@
 
 </footer>
 
-<!-- SCRIPTS -->
-
 <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
 
 <script src="js/mapa.js"></script>
 
-<script src="js/ride_the_wave.js"></script>
+<script src="ride_the_wave.js"></script>
 
 </body>
 </html>
