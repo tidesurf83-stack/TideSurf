@@ -3,50 +3,100 @@ const titulo = document.getElementById("modal-titulo");
 const texto = document.getElementById("modal-texto");
 const cerrar = document.querySelector(".cerrar");
 
-const noticias = {
-    1: {
-        titulo: "El Tunco será sede de campeonato internacional",
-        texto: "El Tunco recibirá a surfistas de diferentes países en un evento que busca posicionar a El Salvador como uno de los principales destinos para la práctica del surf."
-    },
+const buscador = document.getElementById("busqueda-noticias");
+const btnBuscar = document.getElementById("btn-buscar");
+const botonesFiltro = document.querySelectorAll(".btn-filtro");
+const tarjetas = Array.from(document.querySelectorAll(".news-card"));
+const mensajeSinResultados = document.getElementById("mensaje-sin-resultados");
 
-    2: {
-        titulo: "Las mejores playas para surfear en 2026",
-        texto: "Entre las playas destacadas se encuentran El Tunco, Punta Roca y El Zonte, reconocidas por la calidad de sus olas y su creciente popularidad internacional."
-    },
+let filtroActual = "todas";
 
-    3: {
-        titulo: "Surfistas salvadoreños destacan internacionalmente",
-        texto: "Varios atletas nacionales han conseguido importantes resultados en competencias internacionales, fortaleciendo la presencia salvadoreña en el surf mundial."
-    },
+function normalizar(texto) {
+  return texto
+    .toLowerCase()
+    .normalize("NFD")
+    .replace(/[\u0300-\u036f]/g, "");
+}
 
-    4: {
-        titulo: "Cómo empezar en el surf siendo principiante",
-        texto: "Los expertos recomiendan iniciar con una tabla de espuma, practicar en olas pequeñas y tomar clases con instructores certificados."
+function actualizarDestacada() {
+  tarjetas.forEach((tarjeta) => {
+    tarjeta.classList.remove("featured");
+  });
+
+  const primeraVisible = tarjetas.find((tarjeta) => tarjeta.style.display !== "none");
+
+  if (primeraVisible) {
+    primeraVisible.classList.add("featured");
+  }
+}
+
+function aplicarFiltros() {
+  const busqueda = normalizar(buscador.value.trim());
+  let totalVisibles = 0;
+
+  tarjetas.forEach((tarjeta) => {
+    const textoTarjeta = normalizar(
+      `${tarjeta.dataset.titulo} ${tarjeta.dataset.resumen} ${tarjeta.dataset.categoria}`
+    );
+
+    const coincideBusqueda = textoTarjeta.includes(busqueda);
+
+    let coincideFiltro = true;
+
+    if (filtroActual === "destacadas") {
+      coincideFiltro = tarjeta.dataset.destacada === "1";
+    } else if (filtroActual !== "todas") {
+      coincideFiltro = normalizar(tarjeta.dataset.categoria) === normalizar(filtroActual);
     }
-};
 
-document.querySelectorAll(".btn-leer-mas").forEach(boton => {
+    const mostrar = coincideBusqueda && coincideFiltro;
 
-    boton.addEventListener("click", () => {
+    tarjeta.style.display = mostrar ? "" : "none";
 
-        const id = boton.dataset.noticia;
+    if (mostrar) {
+      totalVisibles++;
+    }
+  });
 
-        titulo.textContent = noticias[id].titulo;
-        texto.textContent = noticias[id].texto;
+  actualizarDestacada();
 
-        modal.style.display = "flex";
-    });
+  mensajeSinResultados.style.display = totalVisibles === 0 ? "block" : "none";
+}
 
+document.querySelectorAll(".btn-leer-mas").forEach((boton) => {
+  boton.addEventListener("click", () => {
+    titulo.textContent = boton.dataset.titulo;
+    texto.textContent = boton.dataset.contenido;
+
+    modal.style.display = "flex";
+  });
+});
+
+botonesFiltro.forEach((boton) => {
+  boton.addEventListener("click", () => {
+    botonesFiltro.forEach((btn) => btn.classList.remove("active"));
+    boton.classList.add("active");
+
+    filtroActual = boton.dataset.filtro;
+    aplicarFiltros();
+  });
+});
+
+btnBuscar.addEventListener("click", aplicarFiltros);
+buscador.addEventListener("input", aplicarFiltros);
+
+buscador.addEventListener("keydown", (e) => {
+  if (e.key === "Enter") {
+    aplicarFiltros();
+  }
 });
 
 cerrar.addEventListener("click", () => {
-    modal.style.display = "none";
+  modal.style.display = "none";
 });
 
 window.addEventListener("click", (e) => {
-
-    if (e.target === modal) {
-        modal.style.display = "none";
-    }
-
+  if (e.target === modal) {
+    modal.style.display = "none";
+  }
 });
