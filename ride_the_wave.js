@@ -25,9 +25,10 @@ const beaches = {
             "Lleva bolsas impermeables"
         ],
         images:[
-            "",
-            "img/zonte2.jpg",
-            "img/zonte3.jpg"
+            
+            "img/playas/zonte.webp",
+            "img/playas/el zonte2.webp",
+            "img/playas/zonte3.webp"
         ]
     },
 
@@ -52,9 +53,9 @@ const beaches = {
             "Usa quillas avanzadas"
         ],
         images:[
-            "img/flores1.jpg",
-            "img/flores2.jpg",
-            "img/flores3.jpg"
+            "img/playas/las flores.webp",
+            "img/playas/las flores2.webp",
+            "img/playas/lasflores3.webp"
         ]
     },
 
@@ -79,9 +80,9 @@ const beaches = {
             "Ideal para retiros de surf"
         ],
         images:[
-            "img/mizata1.jpg",
-            "img/mizata2.jpg",
-            "img/mizata3.jpg"
+            "img/playas/mizata.webp",
+            "img/playas/mizata2.png",
+            "img/playas/mizata3.webp"
         ]
     },
 
@@ -106,9 +107,9 @@ const beaches = {
             "Hay tiendas de surf cerca"
         ],
         images:[
-            "img/tunco1.jpg",
-            "img/tunco2.jpg",
-            "img/tunco3.jpg"
+            "img/playas/tunco1.webp",
+            "img/playas/el tunco2.jpg",
+            "img/playas/eltunco3.webp"
         ]
     },
 
@@ -133,9 +134,9 @@ const beaches = {
             "Las olas son lentas y seguras"
         ],
         images:[
-            "img/sunzal1.jpg",
-            "img/sunzal2.jpg",
-            "img/sunzal3.jpg"
+            "img/playas/el sunzal.jpg",
+            "img/playas/el sunzal2.webp",
+            "img/playas/sunzal3.webp"
         ]
     },
 
@@ -277,7 +278,7 @@ cards.forEach(card => {
 });
 const monthlyTop = {
 
-    0: [ // Enero
+    0: [ 
         {
             name: "El Sunzal",
             location: "La Libertad",
@@ -295,7 +296,7 @@ const monthlyTop = {
         }
     ],
 
-    1: [ // Febrero
+    1: [ 
         {
             name: "El Sunzal",
             location: "La Libertad",
@@ -313,7 +314,7 @@ const monthlyTop = {
         }
     ],
 
-    2: [ // Marzo
+    2: [ 
         {
             name: "El Zonte",
             location: "La Libertad",
@@ -331,7 +332,7 @@ const monthlyTop = {
         }
     ],
 
-    3: [ // Abril
+    3: [ 
         {
             name: "Punta Roca",
             location: "La Libertad",
@@ -349,7 +350,7 @@ const monthlyTop = {
         }
     ],
 
-    4: [ // Mayo
+    4: [ 
         {
             name: "Punta Roca",
             location: "La Libertad",
@@ -367,7 +368,7 @@ const monthlyTop = {
         }
     ],
 
-    5: [ // Junio
+    5: [
         {
             name: "Las Flores",
             location: "San Miguel",
@@ -385,7 +386,7 @@ const monthlyTop = {
         }
     ],
 
-    6: [ // Julio
+    6: [ 
         {
             name: "Las Flores",
             location: "San Miguel",
@@ -403,7 +404,7 @@ const monthlyTop = {
         }
     ],
 
-    7: [ // Agosto
+    7: [ 
         {
             name: "Las Flores",
             location: "San Miguel",
@@ -421,7 +422,7 @@ const monthlyTop = {
         }
     ],
 
-    8: [ // Septiembre
+    8: [ 
         {
             name: "Punta Roca",
             location: "La Libertad",
@@ -439,7 +440,7 @@ const monthlyTop = {
         }
     ],
 
-    9: [ // Octubre
+    9: [ 
         {
             name: "Punta Roca",
             location: "La Libertad",
@@ -475,7 +476,7 @@ const monthlyTop = {
         }
     ],
 
-    11: [ // Diciembre
+    11: [ 
         {
             name: "El Sunzal",
             location: "La Libertad",
