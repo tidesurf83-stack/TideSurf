@@ -4,32 +4,30 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>TideSurf - Sobre Nosotros</title>
-    <link rel="stylesheet" href="css/sobre_nosotros.css">
+    <link rel="stylesheet" href="css/sobre_nosotros.css?v=perfil-icono">
+    <link rel="stylesheet" href="css/navbar.css?v=navbar-grande">
 </head>
-<body>
-
-<header class="header">
-
-    <div class="header-container">
-
-        <a href="/" class="logo">
-            <img src="img/logof-removebg-preview.png" alt="TideSurf">
+<body class="has-site-navbar">
+<div class="site-navbar-shell">
+    <div class="site-navbar">
+        <a class="site-navbar-brand" href="index.php" aria-label="TideSurf Inicio">
+            <img src="logo-tidesurf-navbar.png" alt="TideSurf">
         </a>
-
-        <nav class="navbar">
-            <ul class="menu">
-                <li><a href="#">Noticias</a></li>
-                <li><a href="#">Competencias</a></li>
-                <li><a href="#">Playas</a></li>
-                <li><a href="#">Escuelas de Surf</a></li>
-                <li><a href="#">Tiendas</a></li>
-                <li><a href="#">Sobre Nosotros</a></li>
-            </ul>
+        <nav class="site-navbar-menu" aria-label="Navegacion principal">
+            <a href="index.php">Inicio</a>
+            <a href="noticias.html">Noticias</a>
+            <a href="competencias.html">Competencias</a>
+            <a href="playas.html">Playas</a>
+            <a href="escuelas.html">Escuelas de Surf</a>
+            <a href="tiendas.html">Tiendas</a>
+            <a href="galeria.html">Galeria</a>
+            <a href="sobre_nosotros.html">Sobre Nosotros</a>
         </nav>
-
+        <a href="perfil.php" class="site-profile-avatar" aria-label="Mi Perfil">
+            <span class="site-avatar-icon"></span>
+        </a>
     </div>
-
-</header>
+</div>
 
 <main>
 
@@ -229,17 +227,11 @@
 
     </section>
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
     <section>
 
         <h2>NUESTROS VALORES</h2>
 
         <div>
-=======
-</main>
->>>>>>> a07fc74 (sobre nosotros)
 
             <article>
                 <img src="value-passion.jpg" alt="">
@@ -420,6 +412,6 @@
 
 </footer>
 
->>>>>>> 8d7c211593a823bbbcb625904f7d264a0f595404
+    <script src="js/navbar.js?v=navbar-grande"></script>
 </body>
 </html>

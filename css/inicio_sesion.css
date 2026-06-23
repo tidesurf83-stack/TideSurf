@@ -328,4 +328,15 @@ body.mostrar-olas::after {
 @media (min-width: 851px) {
     body { padding-bottom: 120px !important; }
 }
- 
+
+.mensaje-error {
+    background: rgba(255, 255, 255, 0.75);
+    color: #b00020;
+    border: 1px solid rgba(176, 0, 32, 0.2);
+    padding: 10px 14px;
+    border-radius: 16px;
+    font-size: 0.95rem;
+    font-weight: 600;
+    margin-bottom: 18px;
+    text-align: center;
+}

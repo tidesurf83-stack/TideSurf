@@ -4,27 +4,33 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Wave Academy</title>
-  <link rel="stylesheet" href="css/academias.css" />
+  <link rel="stylesheet" href="css/academias.css?v=perfil-icono" />
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+    <link rel="stylesheet" href="css/navbar.css?v=navbar-grande">
 </head>
-<body>
- 
-  <!-- NAVBAR -->
-  <nav class="navbar">
-    <div class="navbar__logo">
-      <img src="img/logo (1).png" alt="Tide Surf Logo" class="navbar__logo-img"/>
+<body class="has-site-navbar">
+<div class="site-navbar-shell">
+    <div class="site-navbar">
+        <a class="site-navbar-brand" href="index.php" aria-label="TideSurf Inicio">
+            <img src="logo-tidesurf-navbar.png" alt="TideSurf">
+        </a>
+        <nav class="site-navbar-menu" aria-label="Navegacion principal">
+            <a href="index.php">Inicio</a>
+            <a href="noticias.html">Noticias</a>
+            <a href="competencias.html">Competencias</a>
+            <a href="playas.html">Playas</a>
+            <a href="escuelas.html">Escuelas de Surf</a>
+            <a href="tiendas.html">Tiendas</a>
+            <a href="galeria.html">Galeria</a>
+            <a href="sobre_nosotros.html">Sobre Nosotros</a>
+        </nav>
+        <a href="perfil.php" class="site-profile-avatar" aria-label="Mi Perfil">
+            <span class="site-avatar-icon"></span>
+        </a>
     </div>
-    <ul class="navbar__links">
-      <li><a href="noticias.html">Noticias</a></li>
-      <li><a href="competencias.html">Competencias</a></li>
-      <li><a href="playas.html">Playas</a></li>
-      <li><a href="">Gear zone Board</a></li>
-      <li><a href="academias.html">Escuelas de Surf</a></li>
-    </ul>
-    
-  </nav>
- 
-  <section class="hero">
+</div>
+
+<section class="hero">
     <img
       src="https://images.unsplash.com/photo-1509914398892-963f53e6e2f1?w=1400&auto=format&fit=crop"
       alt="Surfer riding a wave"
@@ -290,5 +296,6 @@ and training for regional competitions.
 </div>
 
 <script src="js/academias.js"></script>
+    <script src="js/navbar.js?v=navbar-grande"></script>
 </body>
 </html>
