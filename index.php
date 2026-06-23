@@ -1,5 +1,6 @@
+<?php session_start(); ?>
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -63,7 +64,25 @@ href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
             </ul>
 
             <div class="nav-buttons">
-                <a href="inicio_sesion.html" class="btn-login">Iniciar Sesión</a>
+
+                <?php if (isset($_SESSION['usuario_id'])): ?>
+
+                <a href="php/logout.php" class="btn-login">
+                    Cerrar sesión
+                </a>
+
+                <?php else: ?>
+
+                    <a href="inicio_sesion.html" class="btn-login">
+                        Iniciar Sesión
+                    </a>
+
+                    <a href="registro.html" class="btn-register">
+                        Registrarse
+                    </a>
+
+                <?php endif; ?>
+
             </div>
 
         </div>
