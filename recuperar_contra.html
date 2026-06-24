@@ -5,77 +5,100 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Recuperar Contraseña - TideSurf</title>
     <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="css/recuperar_contra.css">
-    <link rel="stylesheet" href="css/navbar.css?v=navbar-grande">
+    <link rel="stylesheet" href="css/recuperar_contra.css?v=codigo-correo">
 </head>
-<body class="has-site-navbar">
-<div class="site-navbar-shell">
-    <div class="site-navbar">
-        <a class="site-navbar-brand" href="index.php" aria-label="TideSurf Inicio">
-            <img src="logo-tidesurf-navbar.png" alt="TideSurf">
-        </a>
-        <nav class="site-navbar-menu" aria-label="Navegacion principal">
-            <a href="index.php">Inicio</a>
-            <a href="noticias.html">Noticias</a>
-            <a href="competencias.html">Competencias</a>
-            <a href="playas.html">Playas</a>
-            <a href="escuelas.html">Escuelas de Surf</a>
-            <a href="tiendas.html">Tiendas</a>
-            <a href="galeria.html">Galeria</a>
-            <a href="sobre_nosotros.html">Sobre Nosotros</a>
-        </nav>
-        <a href="perfil.php" class="site-profile-avatar" aria-label="Mi Perfil">
-            <span class="site-avatar-icon"></span>
-        </a>
-    </div>
-</div>
+<body>
+    <div class="interfaz-navegador">
+        <h1 class="titulo-recuperar-principal">Recuperar contraseña</h1>
 
-<div class="interfaz-navegador">
-        
-        <h1 class="titulo-registro-principal">Recuperar Contraseña</h1>
- 
-        <div class="tarjeta-registro-contenedor">
-            
+        <div class="tarjeta-recuperar-contenedor">
             <div class="panel-izquierdo-visual">
                 <div class="capa-degradado-oceano"></div>
                 <div class="branding-inferior">
                     <div class="logo-tidesurf">
-                        <i class='bx bx-water'></i> <span>TideSurf</span>
+                        <i class='bx bx-water'></i>
+                        <span>TideSurf</span>
                     </div>
                 </div>
             </div>
- 
+
             <div class="panel-derecho-formulario">
-                <h2 class="titulo-formulario">¿Olvidaste tu contraseña?</h2>
-                <p class="subtitulo-formulario">Ingresa tu correo electrónico para restablecerla</p>
- 
-                <form class="formulario-registro" action="#" method="POST">
-                    
+                <span class="etiqueta-seguridad">Código de seguridad</span>
+                <h2 class="titulo-formulario">Verifica tu correo</h2>
+                <p class="subtitulo-formulario">
+                    Escribe tu correo electrónico y enviaremos un código para recuperar tu cuenta.
+                </p>
+
+                <form class="formulario-recuperar" id="formEnviarCodigo" action="#" method="POST">
                     <div class="contenedor-input-icono">
                         <i class='bx bx-envelope input-icon'></i>
-                        <input type="email" name="email" placeholder="Tu correo electrónico" required>
+                        <input type="email" name="email" id="correoRecuperacion" placeholder="Tu correo electrónico" required>
                     </div>
- 
-                    <div class="enlace-login-redireccion">
-                ¿Ya tienes cuenta? <a href="inicio_sesion.php">Iniciar sesión</a>
-                    </div>
- 
-                    <button type="submit" class="boton-registrarse-tide">
-                        <i class='bx bx-send'></i> Enviar enlace
+
+                    <button type="submit" class="boton-recuperar-tide">
+                        <i class='bx bx-send'></i>
+                        Enviar código
                     </button>
                 </form>
-                
-                <div class="back">
-                <a href="inicio_sesion.php">
-                        <i class='bx bx-arrow-back'></i> Volver al login
-                    </a>
+
+                <div class="estado-codigo" id="estadoCodigo" hidden>
+                    <i class='bx bx-check-shield'></i>
+                    <p>
+                        Enviamos un código a tu correo. Revisa tu bandeja de entrada en Outlook o Gmail.
+                    </p>
                 </div>
+
+                <section class="bloque-codigo" id="bloqueCodigo" hidden>
+                    <p class="texto-codigo">
+                        Introduce el código que recibiste, ya sea en Outlook o Gmail.
+                    </p>
+
+                    <form class="formulario-codigo" action="#" method="POST">
+                        <div class="contenedor-input-icono">
+                            <i class='bx bx-key input-icon'></i>
+                            <input type="text" name="codigo" placeholder="Código de verificación" inputmode="numeric" maxlength="6" required>
+                        </div>
+
+                        <button type="submit" class="boton-verificar-codigo">
+                            <i class='bx bx-check-circle'></i>
+                            Verificar código
+                        </button>
+                    </form>
+
+                    <div class="reenviar-codigo">
+                        <span>¿No te llegó el código?</span>
+                        <button type="button" id="botonReenviarCodigo">
+                            Reenviar código
+                        </button>
+                    </div>
+                </section>
+
+                <a class="volver-login" href="inicio_sesion.php">
+                    <i class='bx bx-arrow-back'></i>
+                    Volver al inicio de sesión
+                </a>
             </div>
- 
         </div>
- 
     </div>
- <script src="js/registro.js"></script>
-    <script src="js/navbar.js?v=navbar-grande"></script>
+
+    <script>
+        const formEnviarCodigo = document.getElementById("formEnviarCodigo");
+        const bloqueCodigo = document.getElementById("bloqueCodigo");
+        const estadoCodigo = document.getElementById("estadoCodigo");
+        const botonReenviarCodigo = document.getElementById("botonReenviarCodigo");
+
+        formEnviarCodigo.addEventListener("submit", (event) => {
+            event.preventDefault();
+            document.body.classList.add("mostrar-olas");
+            estadoCodigo.hidden = false;
+            bloqueCodigo.hidden = false;
+        });
+
+        botonReenviarCodigo.addEventListener("click", () => {
+            estadoCodigo.hidden = false;
+            estadoCodigo.querySelector("p").textContent = "Listo, enviamos nuevamente el código. Revisa Outlook o Gmail.";
+            document.body.classList.add("mostrar-olas");
+        });
+    </script>
 </body>
 </html>

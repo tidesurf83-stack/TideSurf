@@ -174,8 +174,8 @@ $fotoPerfil = trim((string) ($usuario["foto_perfil"] ?? ""));
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mi Perfil - TideSurf</title>
     <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="css/perfil.css?v=perfil-final">
-    <link rel="stylesheet" href="css/navbar.css?v=navbar-grande">
+    <link rel="stylesheet" href="css/perfil.css?v=cerrar-sesion-ola">
+    <link rel="stylesheet" href="css/navbar.css?v=login-espacio">
 </head>
 <body class="has-site-navbar">
 <div class="site-navbar-shell">
@@ -262,10 +262,10 @@ $fotoPerfil = trim((string) ($usuario["foto_perfil"] ?? ""));
             </section>
         </section>
 
-        <a class="boton-cerrar-sesion" href="php/logout.php">
+        <button class="boton-cerrar-sesion" type="button" data-modal-target="modalCerrarSesion">
             <i class='bx bx-log-out'></i>
             Cerrar sesion
-        </a>
+        </button>
     </main>
 
     <dialog class="modal-perfil" id="modalEditarPerfil">
@@ -349,6 +349,37 @@ $fotoPerfil = trim((string) ($usuario["foto_perfil"] ?? ""));
                     <button type="button" class="boton-secundario" id="botonDetenerCamara">Cancelar camara</button>
                     <button type="button" class="boton-guardar" id="botonCapturarFoto">Usar foto</button>
                 </div>
+            </div>
+        </div>
+    </dialog>
+
+    <dialog class="modal-perfil modal-cerrar-sesion" id="modalCerrarSesion">
+        <div class="formulario-modal">
+            <div class="modal-cierre-encabezado">
+                <h2>
+                    <i class='bx bx-log-out'></i>
+                    Cerrar sesion
+                </h2>
+                <button type="button" class="boton-cerrar-modal boton-cerrar-simple" data-modal-close aria-label="Cerrar ventana">
+                    <i class='bx bx-x'></i>
+                </button>
+            </div>
+
+            <p class="texto-confirmacion-cierre">Estas seguro que deseas cerrar tu sesion?</p>
+
+            <div class="iconos-cierre" aria-hidden="true">
+                <i class='bx bxs-door-open'></i>
+                <i class='bx bxs-user'></i>
+            </div>
+
+            <div class="ola-cierre" aria-hidden="true">
+                <span></span>
+                <span></span>
+            </div>
+
+            <div class="modal-acciones acciones-cierre">
+                <button type="button" class="boton-secundario" data-modal-close>Cancelar</button>
+                <a class="boton-confirmar-cierre" href="php/logout.php">Si, cerrar sesion</a>
             </div>
         </div>
     </dialog>
@@ -462,6 +493,6 @@ $fotoPerfil = trim((string) ($usuario["foto_perfil"] ?? ""));
             });
         }
     </script>
-    <script src="js/navbar.js?v=navbar-grande"></script>
+    <script src="js/navbar.js?v=login-si-no"></script>
 </body>
 </html>

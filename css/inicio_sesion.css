@@ -95,9 +95,9 @@ body.mostrar-olas::after {
 /* PANEL IZQUIERDO VISUAL: Surfista en la ola */
 .panel-izquierdo-visual {
     flex: 1.1;
-    background-image: url('https://images.unsplash.com/photo-1502680390469-be75c86b636f?q=80&w=1000&auto=format&fit=crop');
+    background-image: url('../foto-login-surf.png');
     background-size: cover;
-    background-position: center;
+    background-position: center center;
     position: relative;
     display: flex;
     flex-direction: column;

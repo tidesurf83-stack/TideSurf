@@ -17,6 +17,17 @@ document.addEventListener("DOMContentLoaded", async () => {
 
         const datos = await respuesta.json();
 
+        if (!datos.sesion) {
+            avatars.forEach((avatar) => {
+                avatar.classList.remove("site-profile-avatar");
+                avatar.classList.add("site-login-button");
+                avatar.href = "inicio_sesion.php";
+                avatar.setAttribute("aria-label", "Iniciar sesion");
+                avatar.textContent = "Iniciar sesion";
+            });
+            return;
+        }
+
         if (!datos.foto) {
             return;
         }

@@ -3,7 +3,7 @@ session_start();
 header("Content-Type: application/json; charset=UTF-8");
 
 if (!isset($_SESSION["usuario_id"])) {
-    echo json_encode(["foto" => ""]);
+    echo json_encode(["sesion" => false, "foto" => ""]);
     exit;
 }
 
@@ -24,4 +24,4 @@ if ($stmt) {
 
 $conn->close();
 
-echo json_encode(["foto" => $fotoPerfil]);
+echo json_encode(["sesion" => true, "foto" => $fotoPerfil]);

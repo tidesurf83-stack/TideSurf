@@ -45,31 +45,9 @@ $conn->close();
     <title>Iniciar Sesión - TideSurf</title>
     <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
     <link rel="stylesheet" href="css/inicio_sesion.css">
-    <link rel="stylesheet" href="css/navbar.css?v=navbar-grande">
 </head>
-<body class="has-site-navbar">
-<div class="site-navbar-shell">
-    <div class="site-navbar">
-        <a class="site-navbar-brand" href="index.php" aria-label="TideSurf Inicio">
-            <img src="logo-tidesurf-navbar.png" alt="TideSurf">
-        </a>
-        <nav class="site-navbar-menu" aria-label="Navegacion principal">
-            <a href="index.php">Inicio</a>
-            <a href="noticias.html">Noticias</a>
-            <a href="competencias.html">Competencias</a>
-            <a href="playas.html">Playas</a>
-            <a href="escuelas.html">Escuelas de Surf</a>
-            <a href="tiendas.html">Tiendas</a>
-            <a href="galeria.html">Galeria</a>
-            <a href="sobre_nosotros.html">Sobre Nosotros</a>
-        </nav>
-        <a href="perfil.php" class="site-profile-avatar" aria-label="Mi Perfil">
-            <span class="site-avatar-icon"></span>
-        </a>
-    </div>
-</div>
-
-<div class="interfaz-navegador">
+<body>
+    <div class="interfaz-navegador">
  
         <h1 class="titulo-login-principal">Inicio de sesión</h1>
  
@@ -79,7 +57,7 @@ $conn->close();
                 <div class="capa-degradado-oceano"></div>
                 <div class="branding-inferior">
                     <div class="logo-tidesurf">
-                        <i class='bx bx-water'></i> <span>TideSurf</span>
+                      </i> <span>TideSurf</span>
                     </div>
                 </div>
             </div>
@@ -123,7 +101,6 @@ $conn->close();
     </div>
  
     <script src="js/inicio_sesion.js"></script>
-    <script src="js/navbar.js?v=navbar-grande"></script>
 </body>
 </html>
  
