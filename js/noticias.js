@@ -3,6 +3,14 @@ const titulo = document.getElementById("modal-titulo");
 const texto = document.getElementById("modal-texto");
 const cerrar = document.querySelector(".cerrar");
 
+const imagenModal = document.getElementById("modal-imagen");
+const btnAnterior = document.querySelector(".carousel-prev");
+const btnSiguiente = document.querySelector(".carousel-next");
+const contadorCarrusel = document.getElementById("carousel-counter");
+
+let imagenesCarrusel = [];
+let imagenActual = 0;
+
 const buscador = document.getElementById("busqueda-noticias");
 const btnBuscar = document.getElementById("btn-buscar");
 const botonesFiltro = document.querySelectorAll(".btn-filtro");
@@ -63,13 +71,58 @@ function aplicarFiltros() {
   mensajeSinResultados.style.display = totalVisibles === 0 ? "block" : "none";
 }
 
+function mostrarImagenActual() {
+  if (imagenesCarrusel.length === 0) {
+    imagenModal.style.display = "none";
+    btnAnterior.style.display = "none";
+    btnSiguiente.style.display = "none";
+    contadorCarrusel.textContent = "";
+    return;
+  }
+
+  imagenModal.style.display = "block";
+  imagenModal.src = imagenesCarrusel[imagenActual];
+
+  contadorCarrusel.textContent = `${imagenActual + 1} / ${imagenesCarrusel.length}`;
+
+  const mostrarControles = imagenesCarrusel.length > 1;
+
+  btnAnterior.style.display = mostrarControles ? "block" : "none";
+  btnSiguiente.style.display = mostrarControles ? "block" : "none";
+  contadorCarrusel.style.display = mostrarControles ? "block" : "none";
+}
+
 document.querySelectorAll(".btn-leer-mas").forEach((boton) => {
   boton.addEventListener("click", () => {
     titulo.textContent = boton.dataset.titulo;
     texto.textContent = boton.dataset.contenido;
 
+    imagenesCarrusel = JSON.parse(boton.dataset.imagenes || "[]");
+    imagenActual = 0;
+    mostrarImagenActual();
+
     modal.style.display = "flex";
   });
+});
+
+btnSiguiente.addEventListener("click", () => {
+  imagenActual++;
+
+  if (imagenActual >= imagenesCarrusel.length) {
+    imagenActual = 0;
+  }
+
+  mostrarImagenActual();
+});
+
+btnAnterior.addEventListener("click", () => {
+  imagenActual--;
+
+  if (imagenActual < 0) {
+    imagenActual = imagenesCarrusel.length - 1;
+  }
+
+  mostrarImagenActual();
 });
 
 botonesFiltro.forEach((boton) => {
