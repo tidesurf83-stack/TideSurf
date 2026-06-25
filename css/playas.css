@@ -11,6 +11,367 @@ body{
      overflow-x:hidden;
 }
 
+/* ===============================
+   RESET & BASE
+================================ */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background: #ffffff;
+    color: #222;
+    overflow-x: hidden;
+}
+
+/* ===============================
+   NAVBAR
+================================ */
+.navbar {
+    background: #e7f0f7;
+    padding: 12px 20px;
+}
+
+.navbar .container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logo {
+    width: 150px;
+    height: auto;
+}
+
+.nav-links {
+    display: flex;
+    gap: 22px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    font-weight: 600;
+    color: #111;
+    font-size: 15px;
+    transition: 0.3s;
+}
+
+.nav-links a:hover {
+    color: #19d7df;
+}
+
+/* ===============================
+   HERO
+================================ */
+.hero {
+    height: 85vh;
+    background:
+        linear-gradient(rgba(0,0,0,0.35), rgba(0,0,0,0.35)),
+        url("../img/playas/playita.png");
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.hero-content h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 80px;
+    color: #fff;
+    margin-bottom: 15px;
+}
+
+.hero-content p {
+    font-size: 22px;
+    color: #f1f1f1;
+    max-width: 600px;
+    margin: auto;
+}
+
+/* ===============================
+   OUR BEACHES (INTRO)
+================================ */
+.our-beaches {
+    background: #fff4d7;
+    padding: 90px 20px;
+}
+
+.container-beaches {
+    max-width: 1200px;
+    margin: auto;
+    text-align: center;
+}
+
+.container-beaches h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 52px;
+    margin-bottom: 25px;
+}
+
+.beach-description {
+    font-size: 20px;
+    line-height: 1.9;
+    max-width: 900px;
+    margin: 0 auto 60px;
+}
+
+/* FEATURES */
+.features {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 35px;
+}
+
+.feature {
+    background: #ffffff;
+    border-radius: 18px;
+    padding: 30px 20px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+    transition: transform 0.3s;
+}
+
+.feature:hover {
+    transform: translateY(-8px);
+}
+
+.feature .icon {
+    font-size: 40px;
+    color: #19d7df;
+    margin-bottom: 15px;
+}
+
+.feature h4 {
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+.feature p {
+    font-size: 15px;
+    color: #555;
+}
+
+/* ===============================
+   TOP MONTH
+================================ */
+.top-month {
+    background: #dfeaf2;
+    padding: 90px 20px;
+    text-align: center;
+}
+
+.top-month h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 48px;
+    margin-bottom: 10px;
+}
+
+.top-month span {
+    color: #19d7df;
+}
+
+.month-subtitle {
+    font-size: 18px;
+    margin-bottom: 50px;
+    color: #444;
+}
+
+.top-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 40px;
+    max-width: 1000px;
+    margin: auto;
+}
+
+.top-card {
+    background: white;
+    border-radius: 20px;
+    padding: 25px;
+    box-shadow: 0 12px 30px rgba(0,0,0,0.12);
+    transition: transform 0.3s;
+}
+
+.top-card:hover {
+    transform: translateY(-10px);
+}
+
+.top-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 15px;
+    margin-bottom: 15px;
+}
+
+.top-card h3 {
+    font-size: 22px;
+}
+
+.top-card p {
+    color: #666;
+}
+
+/* ===============================
+   SURF FACTS
+================================ */
+.facts-title {
+    text-align: center;
+    padding: 80px 20px 30px;
+}
+
+.facts-title h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 48px;
+}
+
+.facts-title p {
+    max-width: 700px;
+    margin: auto;
+    font-size: 18px;
+    color: #555;
+}
+
+.surf-facts {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 30px;
+    padding: 60px 30px 100px;
+    max-width: 1200px;
+    margin: auto;
+}
+
+.fact-card {
+    background: #ffffff;
+    border-radius: 20px;
+    padding: 30px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+    transition: transform 0.3s;
+}
+
+.fact-card:hover {
+    transform: translateY(-8px);
+}
+
+.fact-icon {
+    font-size: 38px;
+    color: #19d7df;
+    margin-bottom: 15px;
+}
+
+.fact-card h3 {
+    margin-bottom: 10px;
+}
+
+.fact-card p {
+    color: #555;
+    font-size: 15px;
+    line-height: 1.6;
+}
+
+/* ===============================
+   FEATURED BEACHES
+================================ */
+.featured-beaches {
+    background: #f3f8fb;
+    padding: 90px 20px;
+}
+
+.section-title {
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.section-title h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 48px;
+}
+
+.section-title p {
+    font-size: 18px;
+    color: #555;
+}
+
+.featured-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 25px;
+    max-width: 1200px;
+    margin: auto;
+}
+
+.featured-card {
+    position: relative;
+    border-radius: 20px;
+    overflow: hidden;
+    height: 260px;
+}
+
+.featured-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.featured-card .overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to top, rgba(0,0,0,0.6), transparent);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding: 20px;
+    color: white;
+}
+
+/* ===============================
+   MORE GRID
+================================ */
+.more-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+    max-width: 1200px;
+    margin: 0 auto 100px;
+    padding: 0 20px;
+}
+
+.more-card {
+    background: white;
+    border-radius: 22px;
+    overflow: hidden;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+}
+
+.more-card img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+}
+
+.more-content {
+    padding: 25px;
+}
+
+.more-content h3 {
+    margin-bottom: 10px;
+}
+
+.more-content p {
+    color: #555;
+    margin-bottom: 15px;
+}
+
+.more-content a {
+    text-decoration: none;
+    color: #19d7df;
+    font-weight: 600;
+}
+
 
 .navbar{
     padding:10px 10px;
@@ -836,7 +1197,19 @@ footer{
 footer h3{
     margin-bottom:10px;
 }
+/* DESKTOP POR DEFECTO */
+.nav-links {
+  display: flex;
+  gap: 20px;
+}
 
+.hamburger {
+  display: none;
+}
+
+.mobile-menu {
+  display: none;
+}
 
 @media(max-width:900px){
 
@@ -874,4 +1247,328 @@ footer h3{
     #map{
         height:400px;
     }
+}
+
+@media (max-width: 480px) {
+
+  /* =====================
+     ESCALA GENERAL
+  ===================== */
+  body {
+    font-size: 14px;
+  }
+
+  h2 {
+    font-size: 26px !important;
+  }
+
+  p {
+    font-size: 14px;
+  }
+
+  /* =====================
+     NAVBAR + HAMBURGUESA
+  ===================== */
+  .navbar {
+    padding: 10px 15px;
+  }
+
+  .navbar .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .logo {
+    width: 95px;
+    padding: 0;
+  }
+
+  .hamburger {
+    width: 30px;
+    height: 22px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    cursor: pointer;
+    z-index: 1001;
+  }
+
+  .hamburger span {
+    height: 3px;
+    width: 100%;
+    background: #111;
+    border-radius: 3px;
+  }
+
+  .nav-links {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 75%;
+    height: 100vh;
+    background: #e7f0f7;
+    flex-direction: column;
+    padding: 90px 25px;
+    gap: 18px;
+    transition: .4s ease;
+    z-index: 1000;
+  }
+
+  .nav-links.active {
+    right: 0;
+  }
+
+  .nav-links a {
+    font-size: 14px;
+  }
+
+  .btn-container {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .btn-nav {
+    font-size: 13px;
+    padding: 8px 14px;
+  }
+
+  /* =====================
+     HERO
+  ===================== */
+  .hero {
+    height: auto;
+    padding: 70px 20px;
+  }
+
+  .hero-content {
+    padding: 0;
+  }
+
+  .hero-content h1 {
+    font-size: 34px;
+    line-height: 1.2;
+  }
+
+  .hero-content p {
+    font-size: 15px;
+    max-width: 100%;
+  }
+
+  /* =====================
+     FEATURES (2 x 2)
+  ===================== */
+  .features {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 14px;
+  }
+
+  .icon {
+    font-size: 30px;
+  }
+
+  .feature h4 {
+    font-size: 15px;
+  }
+
+  .feature p {
+    font-size: 13px;
+  }
+
+  /* =====================
+     PLAYAS DEL MES (VERTICAL)
+  ===================== */
+  .top-month {
+    padding: 50px 18px;
+  }
+
+  .top-grid {
+    grid-template-columns: 1fr;
+    gap: 18px;
+  }
+
+  .top-card img {
+    height: 150px;
+  }
+
+  .top-card h3 {
+    font-size: 15px;
+  }
+
+  .top-card p {
+    font-size: 13px;
+  }
+
+  /* =====================
+     PLAYAS DESTACADAS (PARES + ÚLTIMA CENTRADA)
+  ===================== */
+  .featured-beaches {
+    padding: 50px 18px;
+  }
+
+ .featured-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+  }
+
+  .featured-card {
+    height: 120px;
+  }
+
+  .featured-card:last-child {
+    grid-column: 1 / -1;
+    width: 50%;
+    margin: 0 auto;
+  }
+  .featured-card {
+    height: 120px;
+    border-radius: 12px;
+  }
+
+
+
+  .overlay h4 {
+    font-size: 13px;
+  }
+
+  .overlay span {
+    font-size: 11px;
+  }
+
+  /* =====================
+     CARDS DE COLORES (PARES)
+  ===================== */
+  .surf-facts {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 14px;
+    padding: 30px 18px 50px;
+  }
+
+  .fact-card {
+    padding: 14px;
+  }
+
+  .fact-icon {
+    width: 55px;
+    height: 55px;
+  }
+
+  .fact-icon i {
+    font-size: 26px;
+  }
+
+  .fact-card h3 {
+    font-size: 14px;
+  }
+
+  .fact-card p {
+    font-size: 13px;
+    line-height: 1.5;
+  }
+
+  .map-section {
+    padding: 35px 15px;
+  }
+
+  .map-card {
+    padding: 10px;
+    border-radius: 16px;
+  }
+
+  #map {
+    height: 240px;
+    width: 100%;
+    border-radius: 14px;
+  }
+  /* CONTENEDOR DEL CARRUSEL */
+  .more-grid {
+    display: flex;
+    gap: 14px;
+
+    overflow-x: auto;
+    overflow-y: hidden;
+
+    padding: 0 16px 12px 16px;
+    justify-content: flex-start;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .more-card {
+    flex: 0 0 80%;
+    max-width: 80%;
+
+    scroll-snap-align: start;
+  }
+
+  .nav-links {
+    display: none;
+  }
+
+  /* BOTÓN HAMBURGUESA */
+  .hamburger {
+    margin-left: auto;
+    width: 32px;
+    height: 22px;
+    background: none;
+    border: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    cursor: pointer;
+    z-index: 1100;
+  }
+
+  .hamburger span {
+    height: 3px;
+    width: 100%;
+    background: #00c9a7;
+    border-radius: 4px;
+    transition: 0.3s ease;
+  }
+
+  /* MENÚ MÓVIL */
+  .mobile-menu {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 75%;
+    height: 100vh;
+    background: #fff;
+    display: flex;
+    flex-direction: column;
+    gap: 22px;
+    padding: 90px 24px;
+    transition: right 0.35s ease;
+    z-index: 1050;
+    box-shadow: -5px 0 15px rgba(0,0,0,0.1);
+  }
+
+  .mobile-menu a {
+    text-decoration: none;
+    font-size: 1rem;
+    font-weight: 500;
+    color: #222;
+  }
+
+  .mobile-menu.active {
+    right: 0;
+  }
+
+  /* ANIMACIÓN ICONO */
+  .hamburger.active span:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 5px);
+  }
+
+  .hamburger.active span:nth-child(2) {
+    opacity: 0;
+  }
+
+  .hamburger.active span:nth-child(3) {
+    transform: rotate(-45deg) translate(6px, -6px);
+  }
+}
+
 }

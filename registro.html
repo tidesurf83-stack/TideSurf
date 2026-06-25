@@ -28,16 +28,16 @@
                 <h2 class="titulo-formulario">Únete a TideSurf</h2>
                 <p class="subtitulo-formulario">y conecta con el océano</p>
  
-                <form class="formulario-registro" action="#" method="POST">
+                <form class="formulario-registro" method="POST" action="php/registro.php">
                     
                     <div class="contenedor-input-icono">
                         <i class='bx bx-user input-icon'></i>
-                        <input type="text" name="nombre" placeholder="Tu nombre completo" required>
+                        <input type="text"placeholder="Tu nombre completo" required name="nombre">
                     </div>
  
                     <div class="contenedor-input-icono">
                         <i class='bx bx-envelope input-icon'></i>
-                        <input type="email" name="email" placeholder="Tu correo electrónico" required>
+                        <input type="email" placeholder="Tu correo electrónico" required name="correo">
                     </div>
  
                     <div class="contenedor-input-icono select-wrapper">
@@ -93,12 +93,12 @@
  
                     <div class="contenedor-input-icono">
                         <i class='bx bx-lock-alt input-icon'></i>
-                        <input type="password" name="password" placeholder="Nueva contraseña" required>
+                        <input type="password" placeholder="Nueva contraseña" required  name="password">
                     </div>
  
                     <div class="contenedor-input-icono">
                         <i class='bx bx-lock-open-alt input-icon'></i>
-                        <input type="password" name="confirm_password" placeholder="Confirma tu contraseña" required>
+                        <input type="password" placeholder="Confirma tu contraseña" required name="confirm_password" >
                     </div>
  
                     <div class="enlace-login-redireccion">

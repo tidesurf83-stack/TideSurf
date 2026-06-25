@@ -1,9 +1,10 @@
+<?php session_start(); ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>TIDE SURF - Inicio</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -35,7 +36,11 @@ href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
 <nav class="navbar navbar-expand-lg navbar-light fixed-top custom-navbar">
     <div class="container">
 
+<<<<<<< HEAD:index.html
         <a class="navbar-brand" href="#">
+=======
+        <a class="navbar-brand" href="index.html">
+>>>>>>> c274b3deea0f5707aeafc8551330992a11106142:index.php
             <img src="img/logof-removebg-preview.png" alt="TideSurf Logo">
         </a>
 
@@ -48,40 +53,55 @@ href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
             <ul class="navbar-nav mx-auto">
 
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Noticias</a>
+                    <a class="nav-link" href="index.html">Inicio</a>
                 </li>
 
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Competencias</a>
+                    <a class="nav-link" href="noticias.php">Noticias</a>
                 </li>
 
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Playas</a>
+                    <a class="nav-link" href="competencias.html">Competencias</a>
                 </li>
 
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Escuelas de Surf</a>
+                    <a class="nav-link" href="playas.html">Playas</a>
                 </li>
 
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Tienda</a>
+                    <a class="nav-link" href="escuelas.html">Escuelas de Surf</a>
                 </li>
-
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Sobre Nosotros</a>
+                    <a class="nav-link" href="tiendas.html">Tiendas</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="galeria.html">Galería</a>
+                </li>
+                 <li class="nav-item">
+                    <a class="nav-link" href="sobre_nosotros.html">Sobre Nosotros</a>
                 </li>
 
             </ul>
 
             <div class="nav-buttons">
 
-                <a href="#" class="btn-login">
-                    Iniciar Sesión
+                <?php if (isset($_SESSION['usuario_id'])): ?>
+
+                <a href="php/logout.php" class="btn-login">
+                    Cerrar sesión
                 </a>
 
-                <a href="#" class="btn-register">
-                    Registrarse
-                </a>
+                <?php else: ?>
+
+                    <a href="inicio_sesion.html" class="btn-login">
+                        Iniciar Sesión
+                    </a>
+
+                    <a href="registro.html" class="btn-register">
+                        Registrarse
+                    </a>
+
+                <?php endif; ?>
 
             </div>
 
@@ -89,7 +109,6 @@ href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
 
     </div>
 </nav>
-
 
 <section class="hero">
     
