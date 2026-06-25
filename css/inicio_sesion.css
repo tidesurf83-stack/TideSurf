@@ -18,9 +18,6 @@ body {
     position: relative;
 }
  
-/* ==========================================================================
-   SISTEMA DE OLAS IDÉNTICO A TU REGISTRO
-   ========================================================================== */
 body::before,
 body::after {
     content: "";
@@ -58,7 +55,6 @@ body.mostrar-olas::after {
     animation: oleajeHorizontal 20s linear infinite, oleajeVertical 4s ease-in-out infinite alternate;
 }
  
-/* ESTRUCTURA DE LA INTERFAZ */
 .interfaz-navegador {
     width: 100%;
     max-width: 1050px;
@@ -92,12 +88,11 @@ body.mostrar-olas::after {
     -webkit-backdrop-filter: blur(10px);
 }
  
-/* PANEL IZQUIERDO VISUAL: Surfista en la ola */
 .panel-izquierdo-visual {
     flex: 1.1;
-    background-image: url('https://images.unsplash.com/photo-1502680390469-be75c86b636f?q=80&w=1000&auto=format&fit=crop');
+    background-image: url('../foto-login-surf.png');
     background-size: cover;
-    background-position: center;
+    background-position: center center;
     position: relative;
     display: flex;
     flex-direction: column;
@@ -142,7 +137,6 @@ body.mostrar-olas::after {
     text-shadow: 0 2px 8px rgba(2, 48, 82, 0.5);
 }
  
-/* PANEL FORMULARIO DERECHO */
 .panel-derecho-formulario {
     flex: 1;
     padding: 50px 45px;
@@ -164,7 +158,6 @@ body.mostrar-olas::after {
     text-shadow: 0 2px 6px rgba(1, 76, 133, 0.3);
 }
  
-/* ¡MÁS GRANDE! Se subió de 1rem a 1.15rem */
 .subtitulo-formulario {
     color: #013a63;
     font-size: 1.15rem; 
@@ -234,7 +227,6 @@ body.mostrar-olas::after {
     box-shadow: 0 4px 15px rgba(2, 136, 209, 0.25) !important;
 }
  
-/* ¡MÁS GRANDE! Los placeholders subieron de 0.9rem/400 a 1.05rem/500 */
 .contenedor-input-icono input::placeholder {
     color: #638890;
     font-size: 1.05rem;
@@ -247,7 +239,6 @@ body.mostrar-olas::after {
     margin-bottom: 5px;
 }
  
-/* ¡MÁS GRANDE! Subió de 0.85rem a 1.05rem */
 .link-olvido {
     color: #014c85;
     text-decoration: none;
@@ -260,7 +251,6 @@ body.mostrar-olas::after {
     color: #0288d1;
 }
  
-/* ¡MÁS GRANDE! El bloque inferior subió de 0.88rem a 1.05rem */
 .enlace-registro-redireccion {
     text-align: center;
     font-size: 1.05rem; 
@@ -275,7 +265,6 @@ body.mostrar-olas::after {
     font-weight: 700;
 }
  
-/* BOTÓN INICIAR SESIÓN */
 .boton-iniciar-tide {
     width: 100%;
     padding: 15px;
@@ -299,7 +288,6 @@ body.mostrar-olas::after {
     background: linear-gradient(135deg, #0288d1 0%, #026aa7 100%);
 }
  
-/* KEYFRAMES ANIMACIÓN DE OLAS */
 @keyframes oleajeHorizontal {
     0% { transform: translateX(0); }
     100% { transform: translateX(-50%); }
@@ -328,4 +316,15 @@ body.mostrar-olas::after {
 @media (min-width: 851px) {
     body { padding-bottom: 120px !important; }
 }
- 
+
+.mensaje-error {
+    background: rgba(255, 255, 255, 0.75);
+    color: #b00020;
+    border: 1px solid rgba(176, 0, 32, 0.2);
+    padding: 10px 14px;
+    border-radius: 16px;
+    font-size: 0.95rem;
+    font-weight: 600;
+    margin-bottom: 18px;
+    text-align: center;
+}

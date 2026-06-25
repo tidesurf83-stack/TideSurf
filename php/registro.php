@@ -41,7 +41,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     if ($stmt->execute()) {
 
-        header("Location: ../inicio_sesion.html");
+        header("Location: ../inicio_sesion.php");
         exit();
 
     } else {

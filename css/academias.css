@@ -42,6 +42,47 @@ body{
     color:#0077b6;
 }
 
+.perfil-navbar-icon{
+    width:54px;
+    height:54px;
+    border-radius:50%;
+    border:3px solid #0A84C1;
+    background:linear-gradient(135deg,#dce4ec,#b9dbef);
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    overflow:hidden;
+    box-shadow:0 4px 12px rgba(10,38,71,.18);
+    transition:.3s;
+    flex-shrink:0;
+}
+
+.perfil-navbar-icon:hover{
+    transform:translateY(-2px);
+    box-shadow:0 8px 18px rgba(10,38,71,.22);
+}
+
+.perfil-navbar-icon span{
+    width:22px;
+    height:22px;
+    border-radius:50%;
+    background:#fff;
+    display:block;
+    position:relative;
+}
+
+.perfil-navbar-icon span::after{
+    content:"";
+    position:absolute;
+    left:50%;
+    top:26px;
+    width:34px;
+    height:20px;
+    border-radius:16px 16px 0 0;
+    background:#fff;
+    transform:translateX(-50%);
+}
+
 .navbar__active{
     color:#0077b6 !important;
     font-weight:600;

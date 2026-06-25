@@ -1,20 +1,23 @@
-<?php session_start(); ?>
+<?php
+session_start();
+?>
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>TIDE SURF - Inicio</title>
+
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
 
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 
-<link rel="stylesheet" href="css/style.css">
-<link
-rel="stylesheet"
-href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
+    <link rel="stylesheet" href="css/style.css?v=perfil-icono">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
+    <link rel="stylesheet" href="css/navbar.css?v=login-espacio">
 </head>
+
 <body>
 
 
@@ -36,12 +39,28 @@ href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
 <nav class="navbar navbar-expand-lg navbar-light fixed-top custom-navbar">
     <div class="container">
 
-<<<<<<< HEAD:index.html
-        <a class="navbar-brand" href="#">
-=======
         <a class="navbar-brand" href="index.html">
->>>>>>> c274b3deea0f5707aeafc8551330992a11106142:index.php
             <img src="img/logof-removebg-preview.png" alt="TideSurf Logo">
+
+<body class="has-site-navbar">
+<div class="site-navbar-shell">
+    <div class="site-navbar">
+        <a class="site-navbar-brand" href="index.php" aria-label="TideSurf Inicio">
+            <img src="logo-tidesurf-navbar.png" alt="TideSurf">
+        </a>
+        <nav class="site-navbar-menu" aria-label="Navegacion principal">
+            <a href="index.php">Inicio</a>
+            <a href="noticias.html">Noticias</a>
+            <a href="competencias.html">Competencias</a>
+            <a href="playas.html">Playas</a>
+            <a href="escuelas.html">Escuelas de Surf</a>
+            <a href="tiendas.html">Tiendas</a>
+            <a href="galeria.html">Galeria</a>
+            <a href="sobre_nosotros.html">Sobre Nosotros</a>
+        </nav>
+        <a href="perfil.php" class="site-profile-avatar" aria-label="Mi Perfil">
+            <span class="site-avatar-icon"></span>
+
         </a>
 
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menu">
@@ -107,8 +126,8 @@ href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
 
         </div>
 
-    </div>
-</nav>
+     </div>
+</div>
 
 <section class="hero">
     
@@ -1036,13 +1055,14 @@ href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
 
         <div class="footer-social">
 
-            <a href="#">Instagram</a>
+            <a href="https://www.instagram.com/tidesurf_06?igsh=MTB3dnd0ZG5iNWJkbw==">Instagram</a>
 
-            <a href="#">Facebook</a>
+            <a href=" https://chat.whatsapp.com/JwgjqdCgNBq9hLrAbfWoY">WhatsApp</a>
 
-            <a href="#">TikTok</a>
+        <a href="mailto:tidesurf83@gmail.com?subject=Consulta&body=Hola, quisiera más información.">Gmail</a>
 
-            <a href="#">YouTube</a>
+</a>
+
 
         </div>
 
@@ -1053,5 +1073,6 @@ href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
 <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
 <script src="js/main.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/navbar.js?v=login-si-no"></script>
 </body>
 </html>

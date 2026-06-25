@@ -90,9 +90,9 @@ body.mostrar-olas::after {
  
 .panel-izquierdo-visual {
     flex: 1.1;
-    background-image: url('../img/registro-inicio/fondo.registro.jpg');
+    background-image: url('../foto-registro-surf.png');
     background-size: cover;
-    background-position: center 20%;
+    background-position: center center;
     position: relative;
     display: flex;
     flex-direction: column;
