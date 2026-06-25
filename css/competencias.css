@@ -338,23 +338,73 @@ header{
     border-radius:20px;
 }
 
-/* RESPONSIVE */
+/* ===== MENÚ MÓVIL ===== */
 
-@media(max-width:900px){
-
-.hero{
-    flex-direction:column;
-    text-align:center;
+.menu{
+    display:none;
+    font-size:32px;
+    cursor:pointer;
+    padding:10px 15px;
+    border:1px solid #d9d9d9;
+    border-radius:8px;
+    background:white;
+    
 }
 
-.featured{
-    flex-direction:column;
+/* COMPUTADORA */
+.navbar{
+    display: flex;
+    gap: 40px;
 }
 
-.hero-text h1{
-    font-size:50px;
+
+.menu-btn{
+    display:none;
 }
+
+@media (max-width:1200px){
+
+    nav{
+        display:none;
+        flex-direction:column;
+        position:absolute;
+        top:80px;
+        right:10px;
+        width:250px;
+        background:white;
+        padding:20px;
+        border-radius:10px;
+        box-shadow:0 5px 15px rgba(0,0,0,.2);
+        z-index:999;
+    }
+
+     nav{
+        display:none;
+    }
+
+    nav.active{
+        display:flex;
+        flex-direction:column;
+    }
+    
+    nav.active{
+        display:flex; /* solo aparece al tocar ☰ */
+    }
+
+
+    nav a{
+        padding:10px 0;
+        display:block;
+    }
+
+    .menu-btn{
+        display:block;
+        font-size:30px;
+        cursor:pointer;
+    }
 }
+
+
 
 .featured-section{
     padding:60px 8%;
@@ -610,4 +660,41 @@ header{
     100%{
         transform:scale(1);
     }
+}
+
+/* CELULAR */
+@media (max-width: 768px){
+
+    .events{
+        padding: 40px 5%;
+    }
+
+    .card{
+        min-width: 100%;
+    }
+
+    .card img{
+        height: 180px;
+    }
+
+    .carousel{
+        gap: 15px;
+    }
+
+    .carousel-btn{
+        display: none;
+    }
+
+    .section-title h2{
+        font-size: 1.5rem;
+    }
+
+    .carousel{
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+}
+
+.card{
+    scroll-snap-align: center;
+}
 }

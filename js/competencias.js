@@ -18,3 +18,8 @@ window.onload = function () {
         });
     };
 };
+
+
+function toggleMenu() {
+    document.querySelector("nav").classList.toggle("active");
+}
