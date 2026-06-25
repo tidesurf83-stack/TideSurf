@@ -247,3 +247,112 @@ body {
 @media (min-width: 851px) {
     body { padding-bottom: 120px !important; }
 }
+
+/* Mejoras de accesibilidad y mensajes para recuperación */
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+}
+
+.etiqueta-seguridad {
+    align-self: flex-start;
+    margin-bottom: 14px;
+    padding: 7px 14px;
+    border-radius: 999px;
+    background: rgba(255, 255, 255, 0.72);
+    color: #01547f;
+    font-size: 0.82rem;
+    font-weight: 800;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+}
+
+.mensaje-visual {
+    position: relative;
+    z-index: 2;
+    margin: auto 35px 0;
+    padding: 22px;
+    border-radius: 22px;
+    background: rgba(1, 57, 94, 0.36);
+    color: #ffffff;
+    text-align: center;
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+}
+
+.mensaje-visual i {
+    display: block;
+    margin-bottom: 10px;
+    font-size: 2.8rem;
+}
+
+.mensaje-visual p {
+    font-size: 1.05rem;
+    font-weight: 600;
+    line-height: 1.45;
+}
+
+.alerta-recuperacion {
+    margin-bottom: 18px;
+    padding: 13px 16px;
+    border-left: 5px solid #0288d1;
+    border-radius: 16px;
+    background: rgba(255, 255, 255, 0.82);
+    color: #013a63;
+    font-weight: 700;
+    line-height: 1.4;
+}
+
+.alerta-recuperacion a {
+    display: inline-block;
+    margin-left: 4px;
+    color: #026aa7;
+}
+
+.ayuda-recuperacion {
+    display: flex;
+    gap: 10px;
+    margin-top: 18px;
+    padding: 14px;
+    border-radius: 18px;
+    background: rgba(255, 255, 255, 0.42);
+    color: #014c85;
+    font-size: 0.9rem;
+    line-height: 1.45;
+}
+
+.ayuda-recuperacion i {
+    margin-top: 2px;
+    color: #026aa7;
+    font-size: 1.25rem;
+}
+
+.contenedor-input-icono input:invalid:not(:placeholder-shown) {
+    border-color: #e76f51 !important;
+    box-shadow: 0 0 0 4px rgba(231, 111, 81, 0.16) !important;
+}
+
+.boton-registrarse-tide:focus-visible,
+.back a:focus-visible,
+.enlace-login-redireccion a:focus-visible {
+    outline: 3px solid rgba(2, 136, 209, 0.35);
+    outline-offset: 3px;
+}
+
+@media (max-width: 850px) {
+    .mensaje-visual {
+        margin: 70px 24px 0;
+    }
+
+    .titulo-registro-principal {
+        font-size: 2.4rem;
+        text-align: center;
+    }
+}
