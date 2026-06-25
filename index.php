@@ -100,7 +100,7 @@ session_start();
 
         </div>
 
-    </div>
+     </div>
 </div>
 
 <section class="hero">
@@ -1029,13 +1029,14 @@ session_start();
 
         <div class="footer-social">
 
-            <a href="#">Instagram</a>
+            <a href="https://www.instagram.com/tidesurf_06?igsh=MTB3dnd0ZG5iNWJkbw==">Instagram</a>
 
-            <a href="#">Facebook</a>
+            <a href=" https://chat.whatsapp.com/JwgjqdCgNBq9hLrAbfWoY">WhatsApp</a>
 
-            <a href="#">TikTok</a>
+        <a href="mailto:tidesurf83@gmail.com?subject=Consulta&body=Hola, quisiera más información.">Gmail</a>
 
-            <a href="#">YouTube</a>
+</a>
+
 
         </div>
 
@@ -1049,4 +1050,3 @@ session_start();
     <script src="js/navbar.js?v=login-si-no"></script>
 </body>
 </html>
->>>>>>> c274b3deea0f5707aeafc8551330992a11106142
