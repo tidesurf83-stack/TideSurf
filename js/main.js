@@ -1,3 +1,22 @@
+window.onload = function () {
+
+  const splash = document.getElementById("splash");
+  const home = document.getElementById("home");
+
+  setTimeout(() => {
+
+    splash.style.transition = "4s ease";
+    splash.style.opacity = "0";
+
+    setTimeout(() => {
+      splash.style.display = "none";
+      home.style.display = "block";
+    }, 1000);
+
+  }, 3500);
+
+};
+
 const counters = document.querySelectorAll(".counter");
  
 counters.forEach(counter => {
