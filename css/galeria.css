@@ -197,3 +197,70 @@
         grid-template-columns: 1fr;
     }
 }
+
+
+.footer{
+
+    background:#0A2647;
+
+    color:white;
+
+    text-align:center;
+
+    padding:60px 20px;
+}
+
+.footer h3{
+
+    font-size:32px;
+
+    font-weight:700;
+
+    margin-bottom:20px;
+}
+
+.footer-objective{
+
+    max-width:800px;
+
+    margin:auto;
+
+    line-height:1.8;
+
+    color:rgba(255,255,255,.85);
+
+    margin-bottom:35px;
+}
+
+.footer-social{
+
+    display:flex;
+
+    justify-content:center;
+
+    gap:20px;
+
+    flex-wrap:wrap;
+}
+
+.footer-social a{
+
+    text-decoration:none;
+
+    color:white;
+
+    background:rgba(255,255,255,.1);
+
+    padding:12px 22px;
+
+    border-radius:30px;
+
+    transition:.3s;
+}
+
+.footer-social a:hover{
+
+    background:#00CFE8;
+
+    transform:translateY(-4px);
+}
