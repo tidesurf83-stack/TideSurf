@@ -11,9 +11,6 @@ body{
      overflow-x:hidden;
 }
 
-/* ===============================
-   RESET & BASE
-================================ */
 * {
     margin: 0;
     padding: 0;
@@ -27,9 +24,6 @@ body {
     overflow-x: hidden;
 }
 
-/* ===============================
-   NAVBAR
-================================ */
 .navbar {
     background: #e7f0f7;
     padding: 12px 20px;
@@ -63,9 +57,6 @@ body {
     color: #19d7df;
 }
 
-/* ===============================
-   HERO
-================================ */
 .hero {
     height: 85vh;
     background:
@@ -93,9 +84,6 @@ body {
     margin: auto;
 }
 
-/* ===============================
-   OUR BEACHES (INTRO)
-================================ */
 .our-beaches {
     background: #fff4d7;
     padding: 90px 20px;
@@ -120,7 +108,6 @@ body {
     margin: 0 auto 60px;
 }
 
-/* FEATURES */
 .features {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
@@ -155,9 +142,6 @@ body {
     color: #555;
 }
 
-/* ===============================
-   TOP MONTH
-================================ */
 .top-month {
     background: #dfeaf2;
     padding: 90px 20px;
@@ -216,9 +200,6 @@ body {
     color: #666;
 }
 
-/* ===============================
-   SURF FACTS
-================================ */
 .facts-title {
     text-align: center;
     padding: 80px 20px 30px;
@@ -273,9 +254,6 @@ body {
     line-height: 1.6;
 }
 
-/* ===============================
-   FEATURED BEACHES
-================================ */
 .featured-beaches {
     background: #f3f8fb;
     padding: 90px 20px;
@@ -328,9 +306,6 @@ body {
     color: white;
 }
 
-/* ===============================
-   MORE GRID
-================================ */
 .more-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -1562,4 +1537,3 @@ footer h3{
   }
 }
 
-}
