@@ -529,14 +529,37 @@ href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.c
 
 </div>
 
-<footer>
+<footer class="footer">
 
-    <h3>Tide Surf</h3>
+    <div class="container">
 
-    <p>Ride the Wave. Explore El Salvador.</p>
+        <h3>Nuestro Objetivo</h3>
+
+        <p class="footer-objective">
+
+            Nuestro objetivo es ayudar a las personas a conocer más sobre el surf,
+            descubrir las mejores playas de El Salvador, promover el turismo y
+            fomentar el aprendizaje de este deporte a través de información útil,
+            academias y eventos destacados.
+
+        </p>
+
+        <div class="footer-social">
+
+            <a href="https://www.instagram.com/tidesurf_06?igsh=MTB3dnd0ZG5iNWJkbw==">Instagram</a>
+
+            <a href=" https://chat.whatsapp.com/JwgjqdCgNBq9hLrAbfWoY">WhatsApp</a>
+
+        <a href="mailto:tidesurf83@gmail.com?subject=Consulta&body=Hola, quisiera más información.">Gmail</a>
+
+</a>
+
+
+        </div>
+
+    </div>
 
 </footer>
-
 <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
 
 <script src="js/mapa.js"></script>
