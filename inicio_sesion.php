@@ -1,6 +1,5 @@
 <?php
-session_start();
-include("php/conexion.php");
+include __DIR__ . "/conexion.php";
 
 $error = "";
 

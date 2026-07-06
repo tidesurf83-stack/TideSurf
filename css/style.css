@@ -67,7 +67,6 @@ body{
   letter-spacing: 3px;
 }
 
-/* ✨ animación del logo */
 @keyframes riseIn {
   0% {
     opacity: 0;
@@ -82,158 +81,61 @@ body{
   }
 }
 
-/* 🏠 HOME oculta al inicio */
+
 #home {
   display: none;
 }
-.custom-navbar{
-    background:#f5fbfd;
-    padding:18px 0;
-    transition:.4s;
-}
-
-.custom-navbar .container{
-    display:flex;
-    align-items:center;
-    gap:18px;
-}
-
-.navbar-brand img{
-    height:55px;
-}
 
 .navbar{
+
     display:flex;
-    align-items:center;
     justify-content:space-between;
-    padding:15px 40px;
+    align-items:rigth;
+
+    padding:8px 30px;
+
+    background:#e7f0f7 !important;
+
+    border-bottom:3px solid #5fa8ff;
+
+    position:sticky;
+    top:0;
+    z-index:1000;
 }
 
-.navbar-collapse{
-    justify-content:space-between;
-    gap:18px;
-    min-width:0;
-}
-
-.navbar-nav{
-    flex:1;
-    justify-content:center;
-    min-width:0;
+.logo img{
+    width:90px;
 }
 
 .nav-links{
-    display:flex;
-    align-items:center;
-    gap:15px;
+
     list-style:none;
-    flex-wrap:nowrap;
-}
 
-.nav-link::after{
-    content:'';
-    position:absolute;
-    bottom:-5px;
-    left:0;
-    width:0;
-    height:2px;
-    background:#00CFE8;
-    transition:.3s;
-}
-
-.nav-link:hover::after{
-    width:100%;
-}
-
-.nav-buttons{
     display:flex;
-    gap:10px;
-    align-items:center;
-    flex-shrink:0;
-    margin-left:12px;
+
+    gap:35px;
+
+    align-items: left;
 }
 
-.nav-links li{
-    white-space:nowrap;
-}
+.nav-links a{
 
-.btn-login{
     text-decoration:none;
-    color:#0A2647;
-    border:2px solid #00CFE8;
-    padding:10px 20px;
-    border-radius:12px;
-    transition:.3s;
-    white-space:nowrap;
-}
 
-.btn-login:hover{
-    background:#00CFE8;
-    color:white;
-}
+    color:#333;
 
-.btn-profile-avatar{
-    width:54px;
-    height:54px;
-    border-radius:50%;
-    border:3px solid #0A84C1;
-    background:linear-gradient(135deg,#dce4ec,#b9dbef);
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    overflow:hidden;
-    box-shadow:0 4px 12px rgba(10,38,71,.18);
+    font-size:14px;
+
     transition:.3s;
 }
 
-.btn-profile-avatar:hover{
+.nav-links a:hover{
+
+    color:#2f88ff;
+
     transform:translateY(-2px);
-    box-shadow:0 7px 16px rgba(10,38,71,.24);
 }
 
-.btn-profile-avatar img{
-    width:100%;
-    height:100%;
-    object-fit:cover;
-}
-
-.avatar-mini-icon{
-    width:22px;
-    height:22px;
-    border-radius:50%;
-    background:#ffffff;
-    position:relative;
-}
-
-.avatar-mini-icon::after{
-    content:'';
-    position:absolute;
-    left:50%;
-    top:26px;
-    width:34px;
-    height:20px;
-    border-radius:16px 16px 0 0;
-    background:#ffffff;
-    transform:translateX(-50%);
-}
-
-.auth-buttons{
-    display:flex;
-    gap:15px;
-    flex-shrink:0;
-}
-
-.btn-register{
-    text-decoration:none;
-    background:#00CFE8;
-    color:white;
-    padding:10px 20px;
-    border-radius:12px;
-    transition:.3s;
-}
-
-.btn-register:hover{
-    transform:translateY(-3px);
-}
 
 
 .hero{

@@ -1,5 +1,5 @@
 <?php
-include("php/conexion.php");
+include __DIR__ . "/conexion.php";
 
 $sql = "SELECT * FROM tiendas";
 $resultado = $conn->query($sql);

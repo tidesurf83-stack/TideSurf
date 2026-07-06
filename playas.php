@@ -31,40 +31,26 @@ href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.c
     
 <header>
 
-   <nav class="navbar navbar-expand-lg bg-white shadow-sm fixed-top">
-    <div class="container">
-
-        <a class="navbar-brand" href="#" style="margin-left:-40px;">
-            <img src="img/logof-removebg-preview.png" alt="logo" class="logo">
+<div class="site-navbar-shell">
+    <div class="site-navbar">
+        <a class="site-navbar-brand" href="index.php" aria-label="TideSurf Inicio">
+            <img src="logo-tidesurf-navbar.png" alt="TideSurf">
         </a>
-        <button class="hamburger" id="hamburger">
-            <span></span>
-            <span></span>
-            <span></span>
-        </button>
-
-        <div class="nav-links">
-            <a href="noticias/noticias.html">Noticias</a>
-            <a href="competicions">competencias</a>
-            <a href="ride_the_weve/ride-the-wave.html">Playas</a>
-            <a href="grearzone.html">Tiendas</a>
-            <a href="academias.html">Escuelas de surf</a>
-            <a href="profile.html">Mi perfil</a>
-
-            
-        </div>
-
+        <nav class="site-navbar-menu" aria-label="Navegacion principal">
+            <a href="index.php">Inicio</a>
+            <a href="noticias.html">Noticias</a>
+            <a href="competencias.html">Competencias</a>
+            <a href="playas.html">Playas</a>
+            <a href="escuelas.html">Escuelas de Surf</a>
+            <a href="tiendas.html">Tiendas</a>
+            <a href="galeria.html">Galeria</a>
+            <a href="sobre_nosotros.html">Sobre Nosotros</a>
+        </nav>
+        <a href="perfil.php" class="site-profile-avatar" aria-label="Mi Perfil">
+            <span class="site-avatar-icon"></span>
+        </a>
     </div>
-</nav>
-
-<nav class="mobile-menu" id="mobileMenu">
-  <a href="noticias/noticias.html">Noticias</a>
-  <a href="competicions">Competencias</a>
-  <a href="ride_the_weve/ride-the-wave.html">Playas</a>
-  <a href="grearzone.html">Tiendas</a>
-  <a href="academias.html">Escuelas de surf</a>
-  <a href="profile.html">Mi perfil</a>
-</nav>
+</div>
 
 
 <section class="hero">
