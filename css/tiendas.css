@@ -1,48 +1,3 @@
-.custom-navbar{
-    background:#f5fbfd;
-    position:relative;
-}
-
-.custom-navbar .container{
-    display:flex;
-    align-items:center;
-    justify-content:space-between;
-    max-width:1200px;
-    margin:auto;
-    padding:0 20px;
-}
-
-.navbar-brand img{
-    height:55px;
-}
-
-.navbar-nav{
-    display:flex;
-    flex-direction:row;
-    justify-content:center;
-    align-items:center;
-    gap:30px;
-
-    list-style:none;
-    margin:0 auto;
-    padding:0;
-}
-
-.nav-item{
-    list-style:none;
-}
-
-.nav-link{
-    text-decoration:none;
-    color:#0A2647 !important;
-    font-weight:600;
-    font-size:1rem;
-    transition:.3s;
-}
-
-.nav-link:hover{
-    color:#18C6E3 !important;
-}
 
 .nav-link.active{
     color:#18C6E3 !important;
@@ -133,11 +88,13 @@
 }
 
 .card-tienda{
-    background:white;
-    border:3px solid #19C7E5;
-    padding:20px;
-    text-align:center;
+    background:#fff;
+    border:1.5px solid #19C7E5;
+    border-radius:25px;
+    overflow:hidden;
+    padding:18px;
     transition:.3s;
+    text-align:center;
 }
 
 .card-tienda:hover{
@@ -148,6 +105,7 @@
     width:100%;
     height:220px;
     object-fit:cover;
+    border-radius:18px;
 }
 
 .card-tienda h3{
@@ -168,6 +126,7 @@
     text-decoration:none;
     padding:12px 28px;
     font-weight:bold;
+    border-radius: 12px;
 }
 
 .btn-ver:hover{
@@ -225,15 +184,28 @@
 }
 
 .modal-contenido p{
-    text-align:left;
     margin:12px 0;
     font-size:1rem;
-    display:flex;
-    flex-direction:column;
-    align-items:center;
-    gap:12px;
 }
 
+.info-modal{
+    width:100%;
+    text-align:left;
+    margin-top:20px;
+}
+
+.info-modal p{
+    display:flex;
+    align-items:center;
+    gap:10px;
+    margin:14px 0;
+}
+
+.info-modal i{
+    color:#222 !important;
+    font-size:18px;
+    width:22px;
+}
 
 .descripcion-modal{
     margin-top:20px;
@@ -246,6 +218,32 @@
     line-height:1.7;
 }
 
+.estrellas i,
+.rating i{
+    color:#f4b400;
+    margin-right:2px;
+}
+
+
+.info-modal{
+    width:100%;
+    text-align:left;
+    margin-top:20px;
+}
+
+.info-modal p{
+    display:flex;
+    align-items:center;
+    gap:10px;
+    margin:14px 0;
+}
+
+.info-modal i{
+    color:#19C7E5;
+    font-size:18px;
+    width:22px;
+}
+
 .modal-img{
     width:100%;
     height:300px;
@@ -256,6 +254,7 @@
 
     margin-bottom:20px;
 }
+
 
 .cerrar{
     position:absolute;
