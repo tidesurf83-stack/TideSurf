@@ -1,7 +1,3 @@
-<?php
-include "conexion.php";
-?>
-
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -83,28 +79,257 @@ include "conexion.php";
 </section>
 
 <section class="schools">
-<div class="academy-modal" id="academyModal">
-  <div class="academy-modal-content">
+    <div class="cards-grid">
 
-    <span class="close-modal" onclick="closeModal()">&times;</span>
+        <div class="card">
+            <div class="card__img-wrapper">
+                <img src="https://images.unsplash.com/photo-1502680390469-be75c86b636f?w=400&auto=format&fit=crop" alt="Tunco Surf School" class="card__img"/>
+            </div>
+            <div class="card__body">
+                <h3 class="card__name">Tunco Surf School</h3>
+                <p class="card__location"> Playa El Tunco - El Salvador</p>
+                <div class="card__rating">
+                    <span class="card__stars">★★★★☆</span>
+                    <span class="card__reviews">4.1 (120 reseñas)</span>
+                </div>
+                <button class="card__btn" onclick="openModal('tuncoModal')">Ver más</button>
+            </div>
+        </div>
 
-    <img id="modalImagen" class="modal-banner">
+        <div class="card">
+            <div class="card__img-wrapper">
+                <img src="https://images.unsplash.com/photo-1455729552869-3658a5d39692?w=400&auto=format&fit=crop" alt="Sunzal El Salvador Company" class="card__img"/>
+            </div>
+            <div class="card__body">
+                <h3 class="card__name">Sunzal El Salvador Company</h3>
+                <p class="card__location">Playa Sunzal - El Salvador</p>
+                <div class="card__rating">
+                    <span class="card__stars">★★★★☆</span>
+                    <span class="card__reviews">4.1 (120 reseñas)</span>
+                </div>
+                <button class="card__btn" onclick="openModal('sunzalModal')">Ver más</button>
+            </div>
+        </div>
 
-    <div class="modal-info">
-      <h2 id="modalNombre"></h2>
-      <p id="modalUbicacion"></p>
-      <div id="modalRating"></div>
-      <p id="modalDescripcion"></p>
+        <div class="card">
+            <div class="card__img-wrapper">
+                <img src="https://images.unsplash.com/photo-1531722569936-825d3dd91b15?w=400&auto=format&fit=crop" alt="Puro Surf Academy" class="card__img"/>
+            </div>
+            <div class="card__body">
+                <h3 class="card__name">Puro Surf Academy</h3>
+                <p class="card__location">Playa El Zonte - El Salvador</p>
+                <div class="card__rating">
+                    <span class="card__stars">★★★★☆</span>
+                    <span class="card__reviews">4.1 (120 reseñas)</span>
+                </div>
+                <button class="card__btn" onclick="openModal('puroModal')">Ver más</button>
+            </div>
+        </div>
 
-      <div class="modal-contact">
-        <p id="modalTelefono"></p>
-        <p id="modalEmail"></p>
-      </div>
+        <div class="card">
+            <div class="card__img-wrapper">
+                <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=400&auto=format&fit=crop" alt="Slow Motion Surf School" class="card__img"/>
+            </div>
+            <div class="card__body">
+                <h3 class="card__name">Slow Motion Surf School</h3>
+                <p class="card__location"> Playa El Tunco - El Salvador</p>
+                <div class="card__rating">
+                    <span class="card__stars">★★★★☆</span>
+                    <span class="card__reviews">4.1 (120 reseñas)</span>
+                </div>
+                <button class="card__btn" onclick="openModal('slowModal')">Ver más</button>
+            </div>
+        </div>
 
-      <button class="modal-register-btn">Inscribirme</button>
+        <div class="card">
+            <div class="card__img-wrapper">
+                <img src="https://images.unsplash.com/photo-1544551763-46a013bb70d5?w=400&auto=format&fit=crop" alt="Tunco Surf School 2" class="card__img"/>
+            </div>
+            <div class="card__body">
+                <h3 class="card__name">Tunco Surf School Premium</h3>
+                <p class="card__location">Playa El Tunco - El Salvador</p>
+                <div class="card__rating">
+                    <span class="card__stars">★★★★☆</span>
+                    <span class="card__reviews">4.1 (120 reseñas)</span>
+                </div>
+                <button class="card__btn" onclick="openModal('premiumModal')">Ver más</button>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="card__img-wrapper">
+                <img src="https://images.unsplash.com/photo-1476673160081-cf065607f449?w=400&auto=format&fit=crop" alt="Tunco Surf School 3" class="card__img"/>
+            </div>
+            <div class="card__body">
+                <h3 class="card__name">Tunco Surf School Pro</h3>
+                <p class="card__location">Playa El Tunco - El Salvador</p>
+                <div class="card__rating">
+                    <span class="card__stars">★★★★☆</span>
+                    <span class="card__reviews">4.1 (120 reseñas)</span>
+                </div>
+                <button class="card__btn" onclick="openModal('proModal')">Ver más</button>
+            </div>
+        </div>
+
     </div>
+</section>
+<div class="academy-modal" id="tuncoModal">
+<div class="academy-modal-content">
+<span class="close-modal" onclick="closeModal('tuncoModal')">&times;</span>
 
-  </div>
+<img src="https://images.unsplash.com/photo-1502680390469-be75c86b636f?w=1200" class="modal-banner">
+
+<div class="modal-info">
+<h2>Tunco Surf School</h2>
+<p> Playa El Tunco, La Libertad</p>
+<div class="modal-rating">⭐⭐⭐⭐⭐ 4.9 (243 Reseñas)</div>
+
+<p>
+Escuela de surf profesional para principiantes y surfistas avanzados.
+Instructores certificados y equipo moderno.
+</p>
+
+<div class="modal-contact">
+<p> 8923-3333</p>
+<p> info@tuncosurf.com</p>
+</div>
+
+<button class="modal-register-btn">Inscribirme</button>
+</div>
+</div>
+</div>
+
+<div class="academy-modal" id="sunzalModal">
+<div class="academy-modal-content">
+<span class="close-modal" onclick="closeModal('sunzalModal')">&times;</span>
+
+<img src="https://images.unsplash.com/photo-1455729552869-3658a5d39692?w=1200" class="modal-banner">
+
+<div class="modal-info">
+<h2>Sunzal El Salvador Company</h2>
+<p> Playa Sunzal, La Libertad</p>
+<div class="modal-rating">⭐⭐⭐⭐⭐ 4.8 (189 Reseñas)</div>
+
+<p>
+Enfocados en entrenamiento de longboard y lectura de olas.
+Perfecto para surfistas que buscan mejorar su técnica.
+</p>
+
+<div class="modal-contact">
+<p> 7865-2234</p>
+<p> contact@sunzalsurf.com</p>
+</div>
+
+<button class="modal-register-btn">Inscribirme</button>
+</div>
+</div>
+</div>
+
+<div class="academy-modal" id="puroModal">
+<div class="academy-modal-content">
+<span class="close-modal" onclick="closeModal('puroModal')">&times;</span>
+
+<img src="https://images.unsplash.com/photo-1531722569936-825d3dd91b15?w=1200" class="modal-banner">
+
+<div class="modal-info">
+<h2>Puro Surf Academy</h2>
+<p> Playa El Zonte</p>
+<div class="modal-rating">⭐⭐⭐⭐⭐ 5.0 (310 Reseñas)</div>
+
+<p>
+Academia internacional de surf con programas intensivos,
+entrenamiento profesional y paquetes de alojamiento.
+</p>
+
+<div class="modal-contact">
+<p> 7456-8812</p>
+<p> info@purosurf.com</p>
+</div>
+
+<button class="modal-register-btn">Inscribirme</button>
+</div>
+</div>
+</div>
+
+
+<div class="academy-modal" id="slowModal">
+<div class="academy-modal-content">
+<span class="close-modal" onclick="closeModal('slowModal')">&times;</span>
+
+<img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=1200" class="modal-banner">
+
+<div class="modal-info">
+<h2>Slow Motion Surf School</h2>
+<p> Playa El Tunco</p>
+<div class="modal-rating">⭐⭐⭐⭐☆ 4.6 (154 Reseñas)</div>
+
+<p>
+Amigable escuela de surf enfocada en principiantes y clases familiares.
+Grupos pequeños y atención personalizada.
+</p>
+
+<div class="modal-contact">
+<p> 7789-1223</p>
+<p> hello@slowmotionsurf.com</p>
+</div>
+
+<button class="modal-register-btn">Inscribirme</button>
+</div>
+</div>
+</div>
+
+
+<div class="academy-modal" id="premiumModal">
+<div class="academy-modal-content">
+<span class="close-modal" onclick="closeModal('premiumModal')">&times;</span>
+
+<img src="https://images.unsplash.com/photo-1544551763-46a013bb70d5?w=1200" class="modal-banner">
+
+<div class="modal-info">
+<h2>Tunco Surf School Premium</h2>
+<p> Playa El Tunco</p>
+<div class="modal-rating">⭐⭐⭐⭐⭐ 4.9 (275 Reseñas)</div>
+
+<p>
+Clases premium con instructores privados,
+análisis de video y preparación para competiciones.
+</p>
+
+<div class="modal-contact">
+<p> 7123-4545</p>
+<p> premium@tuncosurf.com</p>
+</div>
+
+<button class="modal-register-btn">Inscribirme</button>
+</div>
+</div>
+</div>
+
+
+<div class="academy-modal" id="proModal">
+<div class="academy-modal-content">
+<span class="close-modal" onclick="closeModal('proModal')">&times;</span>
+
+<img src="https://images.unsplash.com/photo-1476673160081-cf065607f449?w=1200" class="modal-banner">
+
+<div class="modal-info">
+<h2>Tunco Surf School Pro</h2>
+<p> Playa El Tunco</p>
+<div class="modal-rating">⭐⭐⭐⭐⭐ 4.8 (210 Reseñas)</div>
+
+<p>
+Entrenamiento avanzado de surf, preparación ISA,
+y entrenamiento para competiciones regionales.
+</p>
+
+<div class="modal-contact">
+<p> 7894-3311</p>
+<p> pro@tuncosurf.com</p>
+</div>
+
+<button class="modal-register-btn">Inscribirme</button>
+</div>
+</div>
 </div>
 
 <!-- FOOTER -->
@@ -144,33 +369,5 @@ include "conexion.php";
 <script src="js/academias.js"></script>
 
     <script src="js/navbar.js?v=login-si-no"></script>
-<div class="academy-modal" id="academyModal">
-  <div class="academy-modal-content">
-
-    <span class="close-modal" onclick="closeModal()">&times;</span>
-
-    <img id="modalImagen" class="modal-banner">
-
-    <div class="modal-info">
-
-      <h2 id="modalNombre"></h2>
-
-      <p id="modalUbicacion"></p>
-
-      <div class="modal-rating" id="modalRating"></div>
-
-      <p id="modalDescripcion"></p>
-
-      <div class="modal-contact">
-        <p id="modalTelefono"></p>
-        <p id="modalEmail"></p>
-      </div>
-
-      <button class="modal-register-btn">Inscribirme</button>
-
-    </div>
-  </div>
-</div>
 </body>
-
 </html>
