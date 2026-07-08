@@ -26,7 +26,7 @@ session_start();
         <nav class="site-navbar-menu" aria-label="Navegacion principal">
             <a href="index.php">Inicio</a>
             <a href="noticias.html">Noticias</a>
-            <a href="competencias.html">Competencias</a>
+            <a href="competencias.php">Competencias</a>
             <a href="playas.html">Playas</a>
             <a href="escuelas.html">Escuelas de Surf</a>
             <a href="tiendas.html">Tiendas</a>
@@ -54,7 +54,7 @@ session_start();
                 </li>
 
                 <li class="nav-item">
-                    <a class="nav-link" href="competencias.html">Competencias</a>
+                    <a class="nav-link" href="competencias.php">Competencias</a>
                 </li>
 
                 <li class="nav-item">

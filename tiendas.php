@@ -41,7 +41,7 @@ $resultado = $conn->query($sql);
             </li>
 
             <li class="nav-item">
-                <a class="nav-link" href="competencias.html">Competencias</a>
+                <a class="nav-link"   href="competencias.php">competencias</a>
             </li>
 
             <li class="nav-item">

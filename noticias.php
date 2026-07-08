@@ -66,7 +66,7 @@ sort($categorias);
 
         <div class="menu">
             <a href="noticias.html">News</a>
-            <a href="competicions">competition</a>
+            <a href="competencias.php">competition</a>
             <a href="ride-the-wave.html">Ride the wave</a>
             <a href="grearzone.html">Grear Zone Board</a>
             <a href="academias.html">Wave Academy</a>
