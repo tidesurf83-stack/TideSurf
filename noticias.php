@@ -52,28 +52,93 @@ sort($categorias);
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>News</title>
   <link rel="stylesheet" href="css/noticias.css">
+  <link rel="stylesheet" href="css/navbar.css?v=login-espacio">
+
 </head>
 <body>
 
   <!-- NAVBAR -->
 
-  <nav class="navbar">
-    <div class="container">
+<div class="site-navbar-shell">
+    <div class="site-navbar">
 
-        <a class="navbar-brand" href="#" style="margin-left:-40px;" >
-            <img src="ride_the_weve/img/logof-removebg-preview.png" alt="logo" class="logo">
+        <a class="site-navbar-brand" href="index.php" aria-label="TideSurf Inicio">
+            <img src="logo-tidesurf-navbar.png" alt="TideSurf">
         </a>
 
-        <div class="menu">
-            <a href="noticias.html">News</a>
-            <a href="competencias.php">competition</a>
-            <a href="ride-the-wave.html">Ride the wave</a>
-            <a href="grearzone.html">Grear Zone Board</a>
-            <a href="academias.html">Wave Academy</a>
-            <a href="profile.html">My profile</a>
-        </div>   
+        <!--
+        <button class="menu-toggle">
+            ☰
+        </button>
+        -->
+
+        <nav class="site-navbar-menu" aria-label="Navegacion principal">
+
+            <a href="index.php">Inicio</a>
+
+            <div class="dropdown-noticias">
+
+                <button
+                    type="button"
+                    id="btn-noticias"
+                    class="dropdown-toggle-noticias">
+
+                    Noticias
+                    <span class="flecha-dropdown">▼</span>
+
+                </button>
+
+                <div class="dropdown-menu-noticias">
+
+                    <button
+                        class="dropdown-item-noticia active"
+                        data-filtro="todas">
+                        Todas
+                    </button>
+
+                    <button
+                        class="dropdown-item-noticia"
+                        data-filtro="destacadas">
+                        Noticias destacadas
+                    </button>
+
+                    <?php foreach ($categorias as $categoria): ?>
+
+                        <button
+                            class="dropdown-item-noticia"
+                            data-filtro="<?php echo htmlspecialchars($categoria, ENT_QUOTES, 'UTF-8'); ?>">
+
+                            <?php echo htmlspecialchars($categoria); ?>
+
+                        </button>
+
+                    <?php endforeach; ?>
+
+                </div>
+
+            </div>
+
+            <a href="competencias.html">Competencias</a>
+            <a href="playas.html">Playas</a>
+            <a href="escuelas.php">Escuelas de Surf</a>
+            <a href="tiendas.php">Tiendas</a>
+            <a href="galeria.html">Galería</a>
+            <a href="sobre_nosotros.html">Sobre Nosotros</a>
+
+        </nav>
+
+        <a
+            href="perfil.php"
+            class="site-profile-avatar"
+            aria-label="Mi Perfil">
+
+            <span class="site-avatar-icon"></span>
+
+        </a>
+
     </div>
-</nav>
+</div>
+
 
  <section class="hero">
 
@@ -88,6 +153,8 @@ sort($categorias);
       <button id="btn-buscar" type="button">Buscar</button>
       </div>
 
+     <!-- FILTROOOOSS 
+
       <div class="filters">
        <button type="button" class="btn-filtro active" data-filtro="todas">Todas</button>
        <button type="button" class="btn-filtro" data-filtro="destacadas">Noticias destacadas</button>
@@ -101,7 +168,7 @@ sort($categorias);
          <?php echo htmlspecialchars($categoria); ?>
         </button>
         <?php endforeach; ?>
-      </div>
+      </div>        -->
 
     </div>
 
@@ -152,21 +219,21 @@ sort($categorias);
 
         <img src="<?php echo htmlspecialchars($imagen); ?>" alt="<?php echo htmlspecialchars($noticia["titulo"]); ?>">
 
-        <div class="content">
+        <div class="news-content">
 
-          <span class="tag">
+          <span class="news-category">
             <?php echo htmlspecialchars($noticia["categoria"]); ?>
           </span>
 
-          <h3>
+          <h3 class="news-title">
             <?php echo htmlspecialchars($noticia["titulo"]); ?>
           </h3>
 
-          <p>
+          <p class="news-summary">
             <?php echo htmlspecialchars($noticia["resumen"]); ?>
           </p>
 
-          <button class="btn-leer-mas"
+          <button class="btn-leer-mas news-button"
           data-titulo="<?php echo htmlspecialchars($noticia["titulo"], ENT_QUOTES, "UTF-8"); ?>"
           data-contenido="<?php echo htmlspecialchars($noticia["contenido"], ENT_QUOTES, "UTF-8"); ?>"
           data-imagenes="<?php echo $imagenesModalJson; ?>">

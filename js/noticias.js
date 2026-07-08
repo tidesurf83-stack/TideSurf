@@ -13,11 +13,14 @@ let imagenActual = 0;
 
 const buscador = document.getElementById("busqueda-noticias");
 const btnBuscar = document.getElementById("btn-buscar");
-const botonesFiltro = document.querySelectorAll(".btn-filtro");
+const botonesFiltro = document.querySelectorAll(".btn-filtro, .dropdown-item-noticia");
 const tarjetas = Array.from(document.querySelectorAll(".news-card"));
 const mensajeSinResultados = document.getElementById("mensaje-sin-resultados");
 
 let filtroActual = "todas";
+
+const btnNoticias = document.getElementById("btn-noticias");
+const menuNoticias = document.querySelector(".dropdown-menu-noticias");
 
 function normalizar(texto) {
   return texto
@@ -152,4 +155,17 @@ window.addEventListener("click", (e) => {
   if (e.target === modal) {
     modal.style.display = "none";
   }
+});
+
+btnNoticias.addEventListener("click", (e) => {
+    e.stopPropagation();
+    menuNoticias.classList.toggle("mostrar-menu");
+});
+
+document.addEventListener("click", () => {
+    menuNoticias.classList.remove("mostrar-menu");
+});
+
+menuNoticias.addEventListener("click", (e) => {
+    e.stopPropagation();
 });

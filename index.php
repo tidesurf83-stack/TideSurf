@@ -45,7 +45,6 @@ session_start();
         <a href="perfil.php" class="site-profile-avatar" aria-label="Mi Perfil">
             <span class="site-avatar-icon"></span>
         </a>
-<<<<<<< HEAD
 
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menu">
             <span class="navbar-toggler-icon"></span>
@@ -85,10 +84,6 @@ session_start();
                 </li>
 
             </ul>
-=======
-    </div>
-</div>
->>>>>>> 193c1b777a5b32b99a2053e9acb0c5fe701924cd
 
             <div class="nav-buttons">
 
