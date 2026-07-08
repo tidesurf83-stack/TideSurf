@@ -741,42 +741,7 @@ header{
 }
 
 
-/* CELULAR */
-@media (max-width: 768px){
 
-    .events{
-        padding: 40px 5%;
-    }
-
-    .card{
-        min-width: 100%;
-    }
-
-    .card img{
-        height: 180px;
-    }
-
-    .carousel{
-        gap: 15px;
-    }
-
-    .carousel-btn{
-        display: none;
-    }
-
-    .section-title h2{
-        font-size: 1.5rem;
-    }
-
-    .carousel{
-    overflow-x: auto;
-    scroll-snap-type: x mandatory;
-}
-
-.card{
-    scroll-snap-align: center;
-}
-}
 
 /*=========================
         MODAL
@@ -870,23 +835,6 @@ header{
     color:#00b8e6;
 }
 
-@media(max-width:768px){
-
-    .modal-box{
-        flex-direction:column;
-    }
-
-    .modal-box img{
-        width:100%;
-        height:250px;
-    }
-
-    .datos{
-        flex-direction:column;
-        gap:10px;
-    }
-
-}
 
 /* ===========================
    MODAL REGISTRO
@@ -1007,15 +955,6 @@ header{
 
 }
 
-@media(max-width:768px){
-
-.fila{
-
-    flex-direction:column;
-
-}
-
-}
 
 /* HERO */
 .hero-comp{
@@ -1204,5 +1143,132 @@ header{
     color:rgba(255,255,255,.7);
 
     font-size:.9rem;
+
+}
+
+@media screen and (max-width: 768px) {
+
+    /* Header */
+    header{
+        padding:15px 20px;
+    }
+
+    .logo img{
+        width:70px;
+    }
+
+    .menu-btn{
+        display:block;
+    }
+
+    nav{
+        width:100%;
+        top:80px;
+        right:0;
+        border-radius:0;
+    }
+
+    /* Hero */
+    .hero-comp{
+        min-height:auto;
+        padding:70px 20px;
+        background-attachment:scroll;
+    }
+
+    .hero-content h1{
+        font-size:2rem;
+    }
+
+    .hero-content p{
+        font-size:1rem;
+    }
+
+    .hero-stats{
+        flex-direction:column;
+        gap:15px;
+    }
+
+    .stat-card{
+        width:100%;
+        padding:20px;
+    }
+
+    /* Eventos */
+    .events{
+        padding:40px 20px;
+    }
+
+    .carousel{
+        gap:15px;
+    }
+
+    .carousel-btn{
+        display:none;
+    }
+
+    .card{
+        min-width:100%;
+    }
+
+    .card img{
+        height:200px;
+    }
+
+    /* Eventos destacados */
+    .featured-container{
+        grid-template-columns:1fr;
+        width:95%;
+    }
+
+    .featured-card img{
+        height:220px;
+    }
+
+    /* Ranking */
+    .ranking-header{
+        display:none;
+    }
+
+    .ranking-row{
+        display:flex;
+        flex-direction:column;
+        align-items:flex-start;
+        gap:10px;
+    }
+
+    .surfer-info{
+        width:100%;
+    }
+
+    /* Formulario */
+    .fila{
+        flex-direction:column;
+    }
+
+    .modal-registro{
+        width:95%;
+        padding:20px;
+    }
+
+    /* Modal */
+    .modal-box{
+        flex-direction:column;
+    }
+
+    .modal-box img{
+        width:100%;
+        height:220px;
+    }
+
+    .datos{
+        flex-direction:column;
+        gap:10px;
+    }
+
+    /* Footer */
+    .footer-social{
+        flex-direction:column;
+        gap:15px;
+    }
 
 }
