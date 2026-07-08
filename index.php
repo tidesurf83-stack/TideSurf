@@ -17,7 +17,16 @@ session_start();
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
     <link rel="stylesheet" href="css/navbar.css?v=login-espacio">
 </head>
+
+
+
 <body class="has-site-navbar">
+    
+<div class="site-navbar-shell">
+    <div class="site-navbar">
+        <a class="site-navbar-brand" href="index.php" aria-label="TideSurf Inicio">
+            <img src="logo-tidesurf-navbar.png" alt="TideSurf">
+        </a>
 <div class="site-navbar-shell">
     <div class="site-navbar">
         <a class="site-navbar-brand" href="index.php" aria-label="TideSurf Inicio">
@@ -36,6 +45,7 @@ session_start();
         <a href="perfil.php" class="site-profile-avatar" aria-label="Mi Perfil">
             <span class="site-avatar-icon"></span>
         </a>
+<<<<<<< HEAD
 
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menu">
             <span class="navbar-toggler-icon"></span>
@@ -75,6 +85,10 @@ session_start();
                 </li>
 
             </ul>
+=======
+    </div>
+</div>
+>>>>>>> 193c1b777a5b32b99a2053e9acb0c5fe701924cd
 
             <div class="nav-buttons">
 
@@ -562,7 +576,7 @@ session_start();
                     </ul>
 
                     <a href="#">
-                        Descubrir →
+                        
                     </a>
 
                 </div>
@@ -593,7 +607,7 @@ session_start();
                     </ul>
 
                     <a href="#">
-                        Explorar →
+                       
                     </a>
 
                 </div>
@@ -624,7 +638,7 @@ session_start();
                     </ul>
 
                     <a href="#">
-                        Conocer →
+                        
                     </a>
 
                 </div>
@@ -1043,7 +1057,7 @@ session_start();
     </div>
 
 </footer>
-
+</div>
 <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
 <script src="js/main.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"></script>

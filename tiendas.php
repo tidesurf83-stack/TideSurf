@@ -1,5 +1,5 @@
 <?php
-include("php/conexion.php");
+include __DIR__ . "/conexion.php";
 
 $sql = "SELECT * FROM tiendas";
 $resultado = $conn->query($sql);
@@ -16,19 +16,33 @@ $resultado = $conn->query($sql);
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/tiendas.css">
+    <link rel="stylesheet" href="css/navbar.css">
+    <link rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
 </head>
 
-<body>
+<body class="has-site-navbar">
 
 <!-- NAVBAR -->
-
-<nav class="custom-navbar">
-
-    <div class="container">
-
-        <a class="navbar-brand" href="index.html">
-            <img src="img/logof-removebg-preview.png" alt="TideSurf Logo">
+<div class="site-navbar-shell">
+    <div class="site-navbar">
+        <a class="site-navbar-brand" href="index.php" aria-label="TideSurf Inicio">
+            <img src="logo-tidesurf-navbar.png" alt="TideSurf">
         </a>
+        <nav class="site-navbar-menu" aria-label="Navegacion principal">
+            <a href="index.php">Inicio</a>
+            <a href="noticias.html">Noticias</a>
+            <a href="competencias.html">Competencias</a>
+            <a href="playas.html">Playas</a>
+            <a href="escuelas.html">Escuelas de Surf</a>
+            <a href="tiendas.php">Tiendas</a>
+            <a href="galeria.html">Galeria</a>
+            <a href="sobre_nosotros.html">Sobre Nosotros</a>
+        </nav>
+        <a href="perfil.php" class="site-profile-avatar" aria-label="Mi Perfil">
+            <span class="site-avatar-icon"></span>
+        </a>
+<<<<<<< HEAD
 
                 <button class="menu-toggle">
                    ☰
@@ -62,9 +76,10 @@ $resultado = $conn->query($sql);
 
         </ul>
 
+=======
+>>>>>>> 193c1b777a5b32b99a2053e9acb0c5fe701924cd
     </div>
-
-</nav>
+</div>
 <!-- HERO -->
 
 <section class="hero-tiendas">
@@ -110,15 +125,13 @@ $resultado = $conn->query($sql);
                     $estrellas = round($row['calificacion']);
 
                     for($i = 1; $i <= $estrellas; $i++){
-                        echo "⭐";
+                        echo '<i class="bi bi-star-fill"></i>';
                     }
                 ?>
                 <span><?= $row['calificacion']; ?></span>
              </div>
 
-                <p>
-                    📍 <?= $row['distancia']; ?> km
-                </p>
+                <p><i class="bi bi-geo-alt-fill"></i> <?= $row['direccion']; ?></p>
 
              <button
             class="btn-ver"
@@ -147,31 +160,35 @@ $resultado = $conn->query($sql);
 
         <h2><?= $row['nombre']; ?></h2>
 
-          <p class="estrellas">
+         <p class="estrellas">
 
-            <?php
-            $estrellas = round($row['calificacion']);
+<?php
+$estrellas = round($row['calificacion']);
 
-            for($i=1; $i<=$estrellas; $i++){
-                echo "⭐";
-            }
-            ?>
+for($i=1; $i<=$estrellas; $i++){
+    echo '<i class="bi bi-star-fill"></i>';
+}
+?>
 
-            (<?= $row['calificacion']; ?>)
+(<?= $row['calificacion']; ?>)
 
-         </p>
+</p>
 
-        <p>📍 <?= $row['direccion']; ?></p>
+<div class="info-modal">
 
-        <p>📏 <?= $row['distancia']; ?> km</p>
+    <p><i class="bi bi-geo-alt-fill"></i> <?= $row['direccion']; ?></p>
 
-        <p>🕒 <?= $row['horario']; ?></p>
+    <p><i class="bi bi-signpost"></i> <?= $row['distancia']; ?> km</p>
 
-        <p>📞 <?= $row['telefono']; ?></p>
+    <p><i class="bi bi-clock"></i> <?= $row['horario']; ?></p>
 
-       <div class="descripcion-modal">
-            <?= $row['descripcion']; ?>
-        </div>
+    <p><i class="bi bi-telephone-fill"></i> <?= $row['telefono']; ?></p>
+
+</div>
+
+<div class="descripcion-modal">
+    <?= $row['descripcion']; ?>
+</div>
 
     </div>
 

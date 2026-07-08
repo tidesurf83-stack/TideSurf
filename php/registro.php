@@ -1,6 +1,6 @@
 <?php
 
-include("conexion.php");
+include(__DIR__ . "/../conexion.php");
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
@@ -12,16 +12,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $password = $_POST['password'] ?? '';
     $confirm_password = $_POST['confirm_password'] ?? '';
 
-    // Verificar contraseñas
     if ($password !== $confirm_password) {
         die("Las contraseñas no coinciden.");
     }
 
-    // Encriptar contraseña
     $passwordHash = password_hash($password, PASSWORD_DEFAULT);
 
-    $sql = "INSERT INTO register
-            (nombre, correo, nacionalidad, nivel_surf, password)
+    $sql = "INSERT INTO register (nombre, correo, nacionalidad, nivel_surf, password)
             VALUES (?, ?, ?, ?, ?)";
 
     $stmt = $conn->prepare($sql);
@@ -40,10 +37,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     );
 
     if ($stmt->execute()) {
-
         header("Location: ../inicio_sesion.php");
         exit();
-
     } else {
         echo "Error al registrar: " . $stmt->error;
     }
