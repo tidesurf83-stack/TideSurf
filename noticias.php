@@ -53,6 +53,7 @@ sort($categorias);
   <title>News</title>
   <link rel="stylesheet" href="css/noticias.css">
   <link rel="stylesheet" href="css/navbar.css?v=login-espacio">
+  <link rel="stylesheet" href="css/style.csss">
 
 </head>
 <body>
@@ -122,7 +123,7 @@ sort($categorias);
             <a href="playas.php">Playas</a>
             <a href="escuelas.php">Escuelas de Surf</a>
             <a href="tiendas.php">Tiendas</a>
-            <a href="galeria.html">Galería</a>
+            <a href="galeria.php">Galería</a>
             <a href="sobre_nosotros.html">Sobre Nosotros</a>
 
         </nav>
@@ -276,6 +277,39 @@ sort($categorias);
   </div>
  </div>
 
+ <footer class="footer">
+
+    <div class="container">
+
+        <h3>Nuestro Objetivo</h3>
+
+        <p class="footer-objective">
+
+            Nuestro objetivo es ayudar a las personas a conocer más sobre el surf,
+            descubrir las mejores playas de El Salvador, promover el turismo y
+            fomentar el aprendizaje de este deporte a través de información útil,
+            academias y eventos destacados.
+
+        </p>
+
+        <div class="footer-social">
+
+            <a href="https://www.instagram.com/tidesurf_06?igsh=MTB3dnd0ZG5iNWJkbw==">Instagram</a>
+
+            <a href=" https://chat.whatsapp.com/JwgjqdCgNBq9hLrAbfWoY">WhatsApp</a>
+
+        <a href="mailto:tidesurf83@gmail.com?subject=Consulta&body=Hola, quisiera más información.">Gmail</a>
+
+</a>
+
+
+        </div>
+
+    </div>
+
+</footer>
+
+<script src="js/main.js"></script>
 <script src="js/noticias.js"></script>
 </body>
 </html> 
