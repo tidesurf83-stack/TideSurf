@@ -1,4 +1,6 @@
 <?php
+session_start();
+
 include __DIR__ . "/php/conexion.php";
 
 $sql = "SELECT * FROM tiendas";
@@ -27,8 +29,10 @@ $resultado = $conn->query($sql);
 <div class="site-navbar-shell">
     <div class="site-navbar">
         <a class="site-navbar-brand" href="index.php" aria-label="TideSurf Inicio">
-            <img src="logo-tidesurf-navbar.png" alt="TideSurf">
+            <img src="img/logo-tidesurf-navbar.png" alt="TideSurf">
         </a>
+
+        
         <nav class="site-navbar-menu" aria-label="Navegacion principal">
             <a href="index.php">Inicio</a>
             <a href="noticias.html">Noticias</a>
@@ -39,9 +43,9 @@ $resultado = $conn->query($sql);
             <a href="galeria.html">Galeria</a>
             <a href="sobre_nosotros.html">Sobre Nosotros</a>
         </nav>
-        <a href="perfil.php" class="site-profile-avatar" aria-label="Mi Perfil">
-            <span class="site-avatar-icon"></span>
-        </a>
+       <a href="inicio_sesion.html" class="site-login-button">
+    Iniciar sesión
+</a>
     </div>
 </div>
 <!-- HERO -->

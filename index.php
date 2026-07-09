@@ -25,7 +25,7 @@ session_start();
 <div class="site-navbar-shell">
     <div class="site-navbar">
         <a class="site-navbar-brand" href="index.php" aria-label="TideSurf Inicio">
-            <img src="logo-tidesurf-navbar.png" alt="TideSurf">
+            <img src="img/logo-tidesurf-navbar.png" alt="TideSurf">
         </a>
 <div class="site-navbar-shell">
     <div class="site-navbar">
