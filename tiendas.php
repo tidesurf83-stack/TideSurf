@@ -31,19 +31,18 @@ $resultado = $conn->query($sql);
         <a class="site-navbar-brand" href="index.php" aria-label="TideSurf Inicio">
             <img src="img/logo-tidesurf-navbar.png" alt="TideSurf">
         </a>
-
         
         <nav class="site-navbar-menu" aria-label="Navegacion principal">
             <a href="index.php">Inicio</a>
-            <a href="noticias.html">Noticias</a>
+            <a href="noticias.php">Noticias</a>
             <a href="competencias.html">Competencias</a>
-            <a href="playas.html">Playas</a>
-            <a href="escuelas.html">Escuelas de Surf</a>
+            <a href="playas.php">Playas</a>
+            <a href="escuelas.php">Escuelas de Surf</a>
             <a href="tiendas.php">Tiendas</a>
             <a href="galeria.html">Galeria</a>
             <a href="sobre_nosotros.html">Sobre Nosotros</a>
         </nav>
-       <a href="inicio_sesion.html" class="site-login-button">
+        <a href="inicio_sesion.html" class="site-login-button">
     Iniciar sesión
 </a>
     </div>
