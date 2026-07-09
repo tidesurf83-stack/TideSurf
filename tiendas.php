@@ -1,5 +1,5 @@
 <?php
-include __DIR__ . "/conexion.php";
+include __DIR__ . "/php/conexion.php";
 
 $sql = "SELECT * FROM tiendas";
 $resultado = $conn->query($sql);
@@ -42,42 +42,6 @@ $resultado = $conn->query($sql);
         <a href="perfil.php" class="site-profile-avatar" aria-label="Mi Perfil">
             <span class="site-avatar-icon"></span>
         </a>
-<<<<<<< HEAD
-
-                <button class="menu-toggle">
-                   ☰
-                </button>
-
-        <ul class="navbar-nav" id="menu">
-
-            <li class="nav-item">
-                <a class="nav-link" href="noticias.html">Noticias</a>
-            </li>
-
-            <li class="nav-item">
-                <a class="nav-link"   href="competencias.php">competencias</a>
-            </li>
-
-            <li class="nav-item">
-                <a class="nav-link" href="playas.html">Playas</a>
-            </li>
-
-            <li class="nav-item">
-                <a class="nav-link" href="academias.html">Escuelas de Surf</a>
-            </li>
-
-            <li class="nav-item">
-                <a class="nav-link active" href="tiendas.php">Tiendas</a>
-            </li>
-
-            <li class="nav-item">
-                <a class="nav-link" href="#">Sobre Nosotros</a>
-            </li>
-
-        </ul>
-
-=======
->>>>>>> 193c1b777a5b32b99a2053e9acb0c5fe701924cd
     </div>
 </div>
 <!-- HERO -->
