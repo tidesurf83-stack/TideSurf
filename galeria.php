@@ -1,0 +1,96 @@
+<?php
+// Conexión a la base de datos
+$servername = "localhost";
+$username   = "root";       // cambia si tu usuario es distinto
+$password   = "";           // cambia si tu contraseña es distinta
+$dbname     = "tidesurf";   // tu base de datos
+
+$conn = new mysqli($servername, $username, $password, $dbname);
+
+// Verificar conexión
+if ($conn->connect_error) {
+    die("Conexión fallida: " . $conn->connect_error);
+}
+?>
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Galería - TIDE SURF</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css?v=perfil-icono">
+    <link rel="stylesheet" href="css/galeria.css">
+    <link rel="stylesheet" href="css/navbar.css?v=login-espacio">
+</head>
+<body class="has-site-navbar">
+<div class="site-navbar-shell">
+    <div class="site-navbar">
+        <a class="site-navbar-brand" href="index.php" aria-label="TideSurf Inicio">
+            <img src="logo-tidesurf-navbar.png" alt="TideSurf">
+        </a>
+        <nav class="site-navbar-menu" aria-label="Navegacion principal">
+            <a href="noticias.php">Noticias</a>
+            <a href="competencias.html">Competencias</a>
+            <a href="playas.html">Playas</a>
+            <a href="escuelas.html">Escuelas de Surf</a>
+            <a href="tiendas.php">Tiendas</a>
+            <a href="galeria.php">Galeria</a>
+            <a href="sobre_nosotros.html">Sobre Nosotros</a>
+        </nav>
+        <a href="perfil.php" class="site-profile-avatar" aria-label="Mi Perfil">
+            <span class="site-avatar-icon"></span>
+        </a>
+    </div>
+</div>
+
+<section class="grid-gallery-section container mt-5 mb-5">
+    <div class="section-title">
+        <h2>Galería de Tidesurr</h2>
+    </div>
+    <div class="gallery-grid">
+        <?php
+        // Consultar la tabla galerias
+        $sql = "SELECT * FROM galerias";
+        $result = $conn->query($sql);
+
+        if ($result->num_rows > 0) {
+            while($row = $result->fetch_assoc()) {
+                echo '<div class="gallery-item">';
+                echo '<img src="'.$row["imagen_url"].'" alt="'.$row["descripcion"].'">';
+                echo '<div class="gallery-overlay"><i class="fas fa-expand"></i></div>';
+                echo '</div>';
+            }
+        } else {
+            echo "No hay fotos en la galería.";
+        }
+        ?>
+    </div>
+</section>
+
+<footer class="footer">
+    <div class="container">
+        <h3>Nuestro Objetivo</h3>
+        <p class="footer-objective">
+            Nuestro objetivo es ayudar a las personas a conocer más sobre el surf,
+            descubrir las mejores playas de El Salvador, promover el turismo y
+            fomentar el aprendizaje de este deporte a través de información útil,
+            academias y eventos destacados.
+        </p>
+        <div class="footer-social">
+            <a href="#">Instagram</a>
+            
+            
+        </div>
+    </div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"></script>
+<script src="js/navbar.js?v=login-si-no"></script>
+</body>
+</html>
+<?php
+$conn->close();
+?>

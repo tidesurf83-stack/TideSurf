@@ -1,5 +1,5 @@
 <?php
-include __DIR__ . "/conexion.php";
+include __DIR__ . "/php/conexion.php";
 
 $sql = "SELECT * FROM tiendas";
 $resultado = $conn->query($sql);
@@ -27,57 +27,22 @@ $resultado = $conn->query($sql);
 <div class="site-navbar-shell">
     <div class="site-navbar">
         <a class="site-navbar-brand" href="index.php" aria-label="TideSurf Inicio">
-            <img src="logo-tidesurf-navbar.png" alt="TideSurf">
+            <img src="img/logo-tidesurf-navbar.png" alt="TideSurf">
         </a>
+        
         <nav class="site-navbar-menu" aria-label="Navegacion principal">
             <a href="index.php">Inicio</a>
-            <a href="noticias.html">Noticias</a>
+            <a href="noticias.php">Noticias</a>
             <a href="competencias.html">Competencias</a>
-            <a href="playas.html">Playas</a>
-            <a href="escuelas.html">Escuelas de Surf</a>
+            <a href="playas.php">Playas</a>
+            <a href="escuelas.php">Escuelas de Surf</a>
             <a href="tiendas.php">Tiendas</a>
             <a href="galeria.html">Galeria</a>
             <a href="sobre_nosotros.html">Sobre Nosotros</a>
         </nav>
-        <a href="perfil.php" class="site-profile-avatar" aria-label="Mi Perfil">
-            <span class="site-avatar-icon"></span>
-        </a>
-<<<<<<< HEAD
-
-                <button class="menu-toggle">
-                   ☰
-                </button>
-
-        <ul class="navbar-nav" id="menu">
-
-            <li class="nav-item">
-                <a class="nav-link" href="noticias.html">Noticias</a>
-            </li>
-
-            <li class="nav-item">
-                <a class="nav-link"   href="competencias.php">competencias</a>
-            </li>
-
-            <li class="nav-item">
-                <a class="nav-link" href="playas.html">Playas</a>
-            </li>
-
-            <li class="nav-item">
-                <a class="nav-link" href="academias.html">Escuelas de Surf</a>
-            </li>
-
-            <li class="nav-item">
-                <a class="nav-link active" href="tiendas.php">Tiendas</a>
-            </li>
-
-            <li class="nav-item">
-                <a class="nav-link" href="#">Sobre Nosotros</a>
-            </li>
-
-        </ul>
-
-=======
->>>>>>> 193c1b777a5b32b99a2053e9acb0c5fe701924cd
+        <a href="inicio_sesion.html" class="site-login-button">
+    Iniciar sesión
+</a>
     </div>
 </div>
 <!-- HERO -->

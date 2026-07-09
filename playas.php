@@ -1,4 +1,13 @@
+<?php
+include __DIR__ . "/php/conexion.php";
 
+$sql = "SELECT * FROM surf_facts";
+$resultado = $conn->query($sql);
+
+if (!$resultado) {
+    die("Error: " . $conn->error);
+}
+?>
 <head>
 
     <meta charset="UTF-8">
@@ -33,7 +42,7 @@ href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.c
             <a href="noticias.html">Noticias</a>
             <a href="competencias.php">competencias</a>
             <a href="playas.html">Playas</a>
-            <a href="escuelas.html">Escuelas de Surf</a>
+            <a href="escuelas.php">Escuelas de Surf</a>
             <a href="tiendas.html">Tiendas</a>
             <a href="galeria.html">Galeria</a>
             <a href="sobre_nosotros.html">Sobre Nosotros</a>
@@ -173,6 +182,7 @@ href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.c
     </div>
 
 </section>
+
 <div class="facts-title">
     <h2>Características de nuestras playas</h2>
     <p>
@@ -181,81 +191,25 @@ href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.c
 </div>
 <section class="surf-facts">
 
-    <div class="fact-card">
-        <div class="fact-icon">
-            <i class="bi bi-thermometer-sun"></i>
-        </div>
-        
-        <h3>Temperatura del agua</h3>
-        <p>
-            Las aguas del Pacífico salvadoreño mantienen temperaturas entre
-            26°C y 29°C durante la mayor parte del año, por lo que normalmente
-            no se necesita traje de neopreno.
-        </p>
-    </div>
+<?php
+while($fact = $resultado->fetch_assoc()){
+?>
 
     <div class="fact-card">
+
         <div class="fact-icon">
-            <i class="bi bi-water"></i>>
+            <i class="bi <?php echo $fact['icono']; ?>"></i>
         </div>
-        
-        <h3>Niveles de surf</h3>
-        <p>
-            El país cuenta con playas aptas para principiantes, intermedios y
-            avanzados, permitiendo que cualquier persona encuentre una ola
-            adecuada para su experiencia.
-        </p>
+
+        <h3><?php echo $fact['titulo']; ?></h3>
+
+        <p><?php echo $fact['descripcion']; ?></p>
+
     </div>
 
-    <div class="fact-card">
-        <div class="fact-icon">
-            <i class="bi bi-brightness-high"></i>
-        </div>
-         
-        <h3>Clima tropical</h3>
-        <p>
-            Las temperaturas suelen oscilar entre 25°C y 32°C, ofreciendo
-            condiciones favorables para actividades al aire libre durante gran
-            parte del año.
-        </p>
-    </div>
-
-    <div class="fact-card">
-        <div class="fact-icon">
-            <i class="bi bi-trophy"></i>
-        </div>
-        <h3>Temporada de olas</h3>
-        <p>
-            Entre marzo y octubre suelen presentarse las marejadas más
-            consistentes, consideradas por muchos surfistas como la mejor época
-            para visitar las playas del país.
-        </p>
-    </div>
-
-    <div class="fact-card">
-        <div class="fact-icon">
-          <i class="bi bi-globe-americas"></i>
-        </div>
-        <h3>Reconocimiento internacional</h3>
-        <p>
-            El Salvador ha sido sede de importantes competencias
-            internacionales de surf, atrayendo atletas y visitantes de
-            diferentes partes del mundo.
-        </p>
-    </div>
-
-    <div class="fact-card">
-        
-        <div class="fact-icon">
-            <i class="bi bi-camera"></i>
-        </div>
-        <h3>Más que surf</h3>
-        <p>
-            Además de las olas, los visitantes pueden disfrutar de
-            atardeceres, gastronomía local, naturaleza y comunidades costeras
-            con una fuerte cultura relacionada al mar.
-        </p>
-    </div>
+<?php
+}
+?>
 
 </section>
 

@@ -85,6 +85,8 @@ session_start();
                 </li>
 
             </ul>
+    </div>
+</div>
 
             <div class="nav-buttons">
 
