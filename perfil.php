@@ -185,11 +185,11 @@ $fotoPerfil = trim((string) ($usuario["foto_perfil"] ?? ""));
         </a>
         <nav class="site-navbar-menu" aria-label="Navegacion principal">
             <a href="index.php">Inicio</a>
-            <a href="noticias.html">Noticias</a>
+            <a href="noticias.php">Noticias</a>
             <a href="competencias.php">Competencias</a>
-            <a href="playas.html">Playas</a>
+            <a href="playas.php">Playas</a>
             <a href="escuelas.html">Escuelas de Surf</a>
-            <a href="tiendas.html">Tiendas</a>
+            <a href="tiendas.php">Tiendas</a>
             <a href="galeria.html">Galeria</a>
             <a href="sobre_nosotros.html">Sobre Nosotros</a>
         </nav>

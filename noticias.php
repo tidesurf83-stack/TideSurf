@@ -119,7 +119,7 @@ sort($categorias);
             </div>
 
             <a href="competencias.html">Competencias</a>
-            <a href="playas.html">Playas</a>
+            <a href="playas.php">Playas</a>
             <a href="escuelas.php">Escuelas de Surf</a>
             <a href="tiendas.php">Tiendas</a>
             <a href="galeria.html">Galería</a>

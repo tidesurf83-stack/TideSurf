@@ -8,21 +8,21 @@
     <link rel="stylesheet" href="css/navbar.css?v=login-espacio">
 </head>
 <body class="has-site-navbar">
+
 <div class="site-navbar-shell">
     <div class="site-navbar">
         <a class="site-navbar-brand" href="index.php" aria-label="TideSurf Inicio">
             <img src="logo-tidesurf-navbar.png" alt="TideSurf">
         </a>
-
-        <nav class="navbar">
-            <ul class="menu">
-                <li><a href="noticias.html">Noticias</a></li>
-                <li><a href="competencias.php">Competencias</a></li>
-                <li><a href="playas.html">Playas</a></li>
-                <li><a href="escuelas.html">Escuelas de Surf</a></li>
-                <li><a href="tiendas.html">Tiendas</a></li>
-                <li><a href="sobre_nosotros.html">Sobre Nosotros</a></li>
-            </ul>
+        <nav class="site-navbar-menu" aria-label="Navegacion principal">
+            <a href="index.php">Inicio</a>
+            <a href="noticias.php">Noticias</a>
+            <a href="competencias.php">competencias</a>
+            <a href="playas.html">Playas</a>
+            <a href="escuelas.php">Escuelas de Surf</a>
+            <a href="tiendas.php">Tiendas</a>
+            <a href="galeria.html">Galeria</a>
+            <a href="sobre_nosotros.html">Sobre Nosotros</a>
         </nav>
         <a href="perfil.php" class="site-profile-avatar" aria-label="Mi Perfil">
             <span class="site-avatar-icon"></span>

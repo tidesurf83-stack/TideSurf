@@ -19,14 +19,6 @@ session_start();
 </head>
 
 
-
-<body class="has-site-navbar">
-    
-<div class="site-navbar-shell">
-    <div class="site-navbar">
-        <a class="site-navbar-brand" href="index.php" aria-label="TideSurf Inicio">
-            <img src="logo-tidesurf-navbar.png" alt="TideSurf">
-        </a>
 <div class="site-navbar-shell">
     <div class="site-navbar">
         <a class="site-navbar-brand" href="index.php" aria-label="TideSurf Inicio">
@@ -34,11 +26,11 @@ session_start();
         </a>
         <nav class="site-navbar-menu" aria-label="Navegacion principal">
             <a href="index.php">Inicio</a>
-            <a href="noticias.html">Noticias</a>
+            <a href="noticias.php">Noticias</a>
             <a href="competencias.php">Competencias</a>
-            <a href="playas.html">Playas</a>
+            <a href="playas.php">Playas</a>
             <a href="escuelas.html">Escuelas de Surf</a>
-            <a href="tiendas.html">Tiendas</a>
+            <a href="tiendas.php">Tiendas</a>
             <a href="galeria.html">Galeria</a>
             <a href="sobre_nosotros.html">Sobre Nosotros</a>
         </nav>
@@ -97,13 +89,7 @@ session_start();
 
                 <?php else: ?>
 
-                    <a href="inicio_sesion.html" class="btn-login">
-                        Iniciar Sesión
-                    </a>
-
-                    <a href="registro.html" class="btn-register">
-                        Registrarse
-                    </a>
+                    
 
                 <?php endif; ?>
 
@@ -330,8 +316,8 @@ session_start();
 
                         </div>
 
-                        <a href="#" class="btn-beach">
-                            Explorar Playa
+                        <a href="playas.php" class="btn-beach">
+                            Explorar Playas
                         </a>
 
                     </div>
@@ -381,7 +367,7 @@ session_start();
 
                     </div>
 
-                    <a href="#" class="btn-events">
+                    <a href="noticias.php" class="btn-events">
                         Ver Todos
                     </a>
 
@@ -484,7 +470,7 @@ session_start();
                                 Avanzado
                             </div>
 
-                            <a href="#">
+                            <a href="playas.php">
                                 Explorar
                             </a>
 
@@ -510,7 +496,7 @@ session_start();
                                 Intermedio
                             </div>
 
-                            <a href="#">
+                            <a href="playas.php">
                                 Explorar
                             </a>
 
@@ -842,17 +828,6 @@ session_start();
 
 </div>
 
-            <div class="event-buttons">
-
-                <a href="#" class="btn-event-primary">
-                    Explorar Punta Roca
-                </a>
-
-                <a href="#" class="btn-event-secondary">
-                    Más Información
-                </a>
-
-            </div>
 
         </div>
 
@@ -887,7 +862,7 @@ session_start();
                 Explorar Playas
             </a>
 
-            <a href="#" class="btn-banner-secondary">
+            <a href="escuelas.php" class="btn-banner-secondary">
                 Ver Academias
             </a>
 
@@ -934,7 +909,7 @@ session_start();
                             Punta Roca vuelve a ser el escenario de una de las competencias más importantes del circuito internacional.
                         </p>
 
-                        <a href="#">
+                        <a href="competencias.php">
                             
                         </a>
 

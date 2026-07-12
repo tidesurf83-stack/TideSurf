@@ -1,5 +1,5 @@
 <?php
-include __DIR__ . "/conexion.php";
+include __DIR__ . "/php/conexion.php";
 
 $error = "";
 
