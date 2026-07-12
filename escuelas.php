@@ -1,3 +1,14 @@
+<?php
+include __DIR__ . "/php/conexion.php";
+
+$sql = "SELECT * FROM escuelas_surf";
+$resultado = $conn->query($sql);
+
+if (!$resultado) {
+    die("Error: " . $conn->error);
+}
+?>
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -21,7 +32,7 @@
             <a href="noticias.html">Noticias</a>
             <a href="competencias.php">Competencias</a>
             <a href="playas.html">Playas</a>
-            <a href="escuelas.html">Escuelas de Surf</a>
+            <a href="escuelas.php">Escuelas de Surf</a>
             <a href="tiendas.php">Tiendas</a>
             <a href="galeria.html">Galeria</a>
             <a href="sobre_nosotros.html">Sobre Nosotros</a>
