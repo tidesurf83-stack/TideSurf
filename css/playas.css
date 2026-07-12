@@ -219,7 +219,7 @@ body.has-site-navbar {
 .hero-content h1 {
     font-family: 'Playfair Display', serif;
     font-size: 80px;
-    color: #fff;
+    color: #7cd0df;
     margin-bottom: 15px;
 }
 
@@ -230,11 +230,8 @@ body.has-site-navbar {
     margin: auto;
 }
 
-/* ===============================
-   OUR BEACHES (INTRO)
-================================ */
 .our-beaches {
-    background: #fff4d7;
+    background: #9cd0eb;
     padding: 90px 20px;
 }
 
@@ -292,9 +289,6 @@ body.has-site-navbar {
     color: #555;
 }
 
-/* ===============================
-   TOP MONTH
-================================ */
 .top-month {
     background: #dfeaf2;
     padding: 90px 20px;
@@ -353,9 +347,6 @@ body.has-site-navbar {
     color: #666;
 }
 
-/* ===============================
-   SURF FACTS
-================================ */
 .facts-title {
     text-align: center;
     padding: 80px 20px 30px;
@@ -410,9 +401,6 @@ body.has-site-navbar {
     line-height: 1.6;
 }
 
-/* ===============================
-   FEATURED BEACHES
-================================ */
 .featured-beaches {
     background: #f3f8fb;
     padding: 90px 20px;
@@ -465,9 +453,7 @@ body.has-site-navbar {
     color: white;
 }
 
-/* ===============================
-   MORE GRID
-================================ */
+
 .more-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -1118,15 +1104,15 @@ body.has-site-navbar {
 }
 
 .gold{
-    border-top:6px solid #FFD700;
+    border-top:6px solid #2055e9;
 }
 
 .silver{
-    border-top:6px solid #C0C0C0;
+    border-top:6px solid #5fb8ec;
 }
 
 .bronze{
-    border-top:6px solid #CD7F32;
+    border-top:6px solid #88b7e4;
 }
 
 .facts-title{
@@ -1198,15 +1184,15 @@ body.has-site-navbar {
 }
 
 .fact-card:nth-child(odd){
-    background:#f8edd1;
+    background:#72cddd;
 }
 
 .fact-card:nth-child(even){
-    background:#dceff8;
+    background:#c2e8fa;
 }
 
 .fact-card:nth-child(odd) .fact-icon{
-    background:#e9d7a8;
+    background:#598ec0;
 }
 
 .fact-card:nth-child(even) .fact-icon{

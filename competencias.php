@@ -57,8 +57,8 @@ if(isset($_POST['registrar'])){
         <nav id="menu">
     <a href="noticias.php">Noticias</a>
     <a href="competencias.php">competencias</a>
-    <a href="playas.html">Playas</a>
-    <a href="#">Tiendas</a>
+    <a href="playas.php">Playas</a>
+    <a href="tiendas.php">Tiendas</a>
     <a href="academias.html">Escuelas de Surf</a>
     <a href="Profile/perfil.php">Mi perfil</a>
 </nav>
