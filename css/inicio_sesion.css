@@ -90,7 +90,7 @@ body.mostrar-olas::after {
  
 .panel-izquierdo-visual {
     flex: 1.1;
-    background-image: url('../foto-login-surf.png');
+    background-image: url('../img/registro-inicio/surf-5.jpeg');
     background-size: cover;
     background-position: center center;
     position: relative;
@@ -98,7 +98,7 @@ body.mostrar-olas::after {
     flex-direction: column;
     justify-content: flex-end;
 }
- 
+
 .capa-degradado-oceano {
     position: absolute;
     top: 0;

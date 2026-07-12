@@ -1,24 +1,8 @@
 <?php
-
 error_reporting(E_ALL);
 ini_set('display_errors', 1);
 
-
-
-$conexion = new mysqli("localhost", "root", "", "competencia");
-
-if ($conexion->connect_error) {
-    die("Error de conexión: " . $conexion->connect_error);
-}
-
-?>
-
-<?php
-
-error_reporting(E_ALL);
-ini_set('display_errors', 1);
-
-$conexion = new mysqli("localhost", "root", "", "competencia");
+$conexion = new mysqli("localhost", "root", "", "tidesurf");
 
 if ($conexion->connect_error) {
     die("Error de conexión: " . $conexion->connect_error);
@@ -39,24 +23,16 @@ if(isset($_POST['registrar'])){
 
     $sql = "INSERT INTO registros_competencia
     (nombre,apellido,correo,telefono,edad,pais,genero,competencia,categoria,experiencia)
-
     VALUES
-
     ('$nombre','$apellido','$correo','$telefono','$edad','$pais','$genero','$competencia','$categoria','$experiencia')";
 
     if($conexion->query($sql)){
-
-    header("Location: competencias.php?registro=ok");
-    exit;
-
-}else{
-
-    echo "Error: " . $conexion->error;
-
+        header("Location: competencias.php?registro=ok");
+        exit;
+    }else{
+        echo "Error: " . $conexion->error;
+    }
 }
-
-}
-
 ?>
 
 <!DOCTYPE html>
@@ -81,8 +57,8 @@ if(isset($_POST['registrar'])){
         <nav id="menu">
     <a href="noticias.php">Noticias</a>
     <a href="competencias.php">competencias</a>
-    <a href="playas.html">Playas</a>
-    <a href="#">Tiendas</a>
+    <a href="playas.php">Playas</a>
+    <a href="tiendas.php">Tiendas</a>
     <a href="academias.html">Escuelas de Surf</a>
     <a href="Profile/perfil.php">Mi perfil</a>
 </nav>

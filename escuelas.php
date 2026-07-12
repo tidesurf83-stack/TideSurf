@@ -1,3 +1,13 @@
+<?php
+include __DIR__ . "/php/conexion.php";
+
+$sql = "SELECT * FROM escuelas_surf";
+$resultado = $conn->query($sql);
+
+if (!$resultado) {
+    die("Error: " . $conn->error);
+}
+?>
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -9,6 +19,7 @@
     <link rel="stylesheet" href="css/style.css?v=perfil-icono" />
   <link rel="stylesheet" href="css/academias.css" />
     <link rel="stylesheet" href="css/navbar.css?v=login-espacio">
+    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
 </head>
 <body class="has-site-navbar">
 <div class="site-navbar-shell">
@@ -18,10 +29,10 @@
         </a>
         <nav class="site-navbar-menu" aria-label="Navegacion principal">
             <a href="index.php">Inicio</a>
-            <a href="noticias.html">Noticias</a>
+            <a href="noticias.php">Noticias</a>
             <a href="competencias.php">Competencias</a>
-            <a href="playas.html">Playas</a>
-            <a href="escuelas.html">Escuelas de Surf</a>
+            <a href="playas.php">Playas</a>
+            <a href="escuelas.php">Escuelas de Surf</a>
             <a href="tiendas.php">Tiendas</a>
             <a href="galeria.html">Galeria</a>
             <a href="sobre_nosotros.html">Sobre Nosotros</a>
@@ -47,291 +58,154 @@
 </section>
 
 <section class="usuarios">
-    <h2>¿Para quién es?</h2>
 
-    <div class="contenedor-cards">
+    <div class="usuarios-contenedor">
 
-        <div class="card">
-            <div class="icono">🏫</div>
-            <h3>Escuelas</h3>
-            <p>Programas y herramientas para instituciones educativas.</p>
+        <div class="usuarios-imagen">
+            <img src="img/escuelas/surf-4.jpeg" alt="Personas practicando surf">
         </div>
 
-        <div class="card">
-            <div class="icono">👨‍🏫</div>
-            <h3>Instructores</h3>
-            <p>Recursos y certificaciones para profesionales del surf.</p>
-        </div>
+        <div class="usuarios-info">
 
-        <div class="card">
-            <div class="icono">👤</div>
-            <h3>Estudiantes</h3>
-            <p>Cursos y experiencias para todos los niveles.</p>
-        </div>
+            <h2>¿Que encuentras en esta seccion?</h2>
 
-        <div class="card">
-            <div class="icono">👥</div>
-            <h3>Comunidad</h3>
-            <p>Eventos, competencias y actividades para todos.</p>
+            <div class="usuario-item">
+                <div class="icono">
+                    <i class='bx bxs-school'></i>
+                </div>
+
+                <div class="texto">
+                    <h3>Escuelas</h3>
+                    <p>Programas y herramientas para instituciones educativas interesadas en promover el surf.</p>
+                </div>
+            </div>
+
+            <div class="usuario-item">
+                <div class="icono">
+                    <i class='bx bxs-graduation'></i>
+                </div>
+
+                <div class="texto">
+                    <h3>Instructores</h3>
+                    <p>Recursos, certificaciones e información para profesionales y entrenadores de surf.</p>
+                </div>
+            </div>
+
+            <div class="usuario-item">
+                <div class="icono">
+                    <i class='bx bx-user'></i>
+                </div>
+
+                <div class="texto">
+                    <h3>Estudiantes</h3>
+                    <p>Cursos, playas recomendadas y experiencias para aprender desde cero o mejorar habilidades.</p>
+                </div>
+            </div>
+
+            <div class="usuario-item">
+                <div class="icono">
+                    <i class='bx bx-group'></i>
+                </div>
+
+                <div class="texto">
+                    <h3>Comunidad</h3>
+                    <p>Eventos, competencias y actividades para conectar con otros amantes del surf.</p>
+                </div>
+            </div>
+
         </div>
 
     </div>
+
 </section>
+
 
 <section class="schools">
     <div class="cards-grid">
 
-        <div class="card">
-            <div class="card__img-wrapper">
-                <img src="https://images.unsplash.com/photo-1502680390469-be75c86b636f?w=400&auto=format&fit=crop" alt="Tunco Surf School" class="card__img"/>
-            </div>
-            <div class="card__body">
-                <h3 class="card__name">Tunco Surf School</h3>
-                <p class="card__location"> Playa El Tunco - El Salvador</p>
-                <div class="card__rating">
-                    <span class="card__stars">★★★★☆</span>
-                    <span class="card__reviews">4.1 (120 reseñas)</span>
-                </div>
-                <button class="card__btn" onclick="openModal('tuncoModal')">Ver más</button>
-            </div>
-        </div>
+    <?php while($escuela = $resultado->fetch_assoc()) { ?>
 
         <div class="card">
+
             <div class="card__img-wrapper">
-                <img src="https://images.unsplash.com/photo-1455729552869-3658a5d39692?w=400&auto=format&fit=crop" alt="Sunzal El Salvador Company" class="card__img"/>
+                <img src="<?= $escuela['imagen']; ?>" class="card__img" alt="<?= $escuela['nombre']; ?>">
             </div>
+
             <div class="card__body">
-                <h3 class="card__name">Sunzal El Salvador Company</h3>
-                <p class="card__location">Playa Sunzal - El Salvador</p>
+
+                <h3 class="card__name"><?= $escuela['nombre']; ?></h3>
+
+                <p class="card__location"><?= $escuela['ubicacion']; ?></p>
+
                 <div class="card__rating">
-                    <span class="card__stars">★★★★☆</span>
-                    <span class="card__reviews">4.1 (120 reseñas)</span>
+                    <span class="card__stars">
+                        <?= str_repeat("⭐", round($escuela['estrellas'])); ?>
+                    </span>
+
+                    <span class="card__reviews">
+                        <?= $escuela['estrellas']; ?>
+                        (<?= $escuela['total_reseñas']; ?> reseñas)
+                    </span>
                 </div>
-                <button class="card__btn" onclick="openModal('sunzalModal')">Ver más</button>
+
+                <button
+                    class="card__btn"
+                    onclick="openModal(
+                        '<?= $escuela['imagen']; ?>',
+                        '<?= htmlspecialchars(addslashes($escuela['nombre'])); ?>',
+                        '<?= htmlspecialchars(addslashes($escuela['ubicacion'])); ?>',
+                        '<?= $escuela['estrellas']; ?>',
+                        '<?= $escuela['total_reseñas']; ?>',
+                        '<?= htmlspecialchars(addslashes($escuela['descripcion'])); ?>',
+                        '<?= $escuela['telefono']; ?>',
+                        '<?= $escuela['email']; ?>'
+                    )">
+                    Ver más
+                </button>
+
             </div>
+
         </div>
 
-        <div class="card">
-            <div class="card__img-wrapper">
-                <img src="https://images.unsplash.com/photo-1531722569936-825d3dd91b15?w=400&auto=format&fit=crop" alt="Puro Surf Academy" class="card__img"/>
-            </div>
-            <div class="card__body">
-                <h3 class="card__name">Puro Surf Academy</h3>
-                <p class="card__location">Playa El Zonte - El Salvador</p>
-                <div class="card__rating">
-                    <span class="card__stars">★★★★☆</span>
-                    <span class="card__reviews">4.1 (120 reseñas)</span>
-                </div>
-                <button class="card__btn" onclick="openModal('puroModal')">Ver más</button>
-            </div>
-        </div>
-
-        <div class="card">
-            <div class="card__img-wrapper">
-                <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=400&auto=format&fit=crop" alt="Slow Motion Surf School" class="card__img"/>
-            </div>
-            <div class="card__body">
-                <h3 class="card__name">Slow Motion Surf School</h3>
-                <p class="card__location"> Playa El Tunco - El Salvador</p>
-                <div class="card__rating">
-                    <span class="card__stars">★★★★☆</span>
-                    <span class="card__reviews">4.1 (120 reseñas)</span>
-                </div>
-                <button class="card__btn" onclick="openModal('slowModal')">Ver más</button>
-            </div>
-        </div>
-
-        <div class="card">
-            <div class="card__img-wrapper">
-                <img src="https://images.unsplash.com/photo-1544551763-46a013bb70d5?w=400&auto=format&fit=crop" alt="Tunco Surf School 2" class="card__img"/>
-            </div>
-            <div class="card__body">
-                <h3 class="card__name">Tunco Surf School Premium</h3>
-                <p class="card__location">Playa El Tunco - El Salvador</p>
-                <div class="card__rating">
-                    <span class="card__stars">★★★★☆</span>
-                    <span class="card__reviews">4.1 (120 reseñas)</span>
-                </div>
-                <button class="card__btn" onclick="openModal('premiumModal')">Ver más</button>
-            </div>
-        </div>
-
-        <div class="card">
-            <div class="card__img-wrapper">
-                <img src="https://images.unsplash.com/photo-1476673160081-cf065607f449?w=400&auto=format&fit=crop" alt="Tunco Surf School 3" class="card__img"/>
-            </div>
-            <div class="card__body">
-                <h3 class="card__name">Tunco Surf School Pro</h3>
-                <p class="card__location">Playa El Tunco - El Salvador</p>
-                <div class="card__rating">
-                    <span class="card__stars">★★★★☆</span>
-                    <span class="card__reviews">4.1 (120 reseñas)</span>
-                </div>
-                <button class="card__btn" onclick="openModal('proModal')">Ver más</button>
-            </div>
-        </div>
+    <?php } ?>
 
     </div>
 </section>
-<div class="academy-modal" id="tuncoModal">
-<div class="academy-modal-content">
-<span class="close-modal" onclick="closeModal('tuncoModal')">&times;</span>
+<div class="academy-modal" id="academyModal">
 
-<img src="https://images.unsplash.com/photo-1502680390469-be75c86b636f?w=1200" class="modal-banner">
+    <div class="academy-modal-content">
 
-<div class="modal-info">
-<h2>Tunco Surf School</h2>
-<p> Playa El Tunco, La Libertad</p>
-<div class="modal-rating">⭐⭐⭐⭐⭐ 4.9 (243 Reseñas)</div>
+        <span class="close-modal" onclick="closeModal()">&times;</span>
 
-<p>
-Escuela de surf profesional para principiantes y surfistas avanzados.
-Instructores certificados y equipo moderno.
-</p>
+        <img id="modalImagen" class="modal-banner">
 
-<div class="modal-contact">
-<p> 8923-3333</p>
-<p> info@tuncosurf.com</p>
+        <div class="modal-info">
+
+            <h2 id="modalNombre"></h2>
+
+            <p id="modalUbicacion"></p>
+
+            <div class="modal-rating" id="modalRating"></div>
+
+            <p id="modalDescripcion"></p>
+
+            <div class="modal-contact">
+
+                <p id="modalTelefono"></p>
+
+                <p id="modalEmail"></p>
+
+            </div>
+
+            <button class="modal-register-btn">
+                Inscribirme
+            </button>
+
+        </div>
+
+    </div>
+
 </div>
-
-<button class="modal-register-btn">Inscribirme</button>
-</div>
-</div>
-</div>
-
-<div class="academy-modal" id="sunzalModal">
-<div class="academy-modal-content">
-<span class="close-modal" onclick="closeModal('sunzalModal')">&times;</span>
-
-<img src="https://images.unsplash.com/photo-1455729552869-3658a5d39692?w=1200" class="modal-banner">
-
-<div class="modal-info">
-<h2>Sunzal El Salvador Company</h2>
-<p> Playa Sunzal, La Libertad</p>
-<div class="modal-rating">⭐⭐⭐⭐⭐ 4.8 (189 Reseñas)</div>
-
-<p>
-Enfocados en entrenamiento de longboard y lectura de olas.
-Perfecto para surfistas que buscan mejorar su técnica.
-</p>
-
-<div class="modal-contact">
-<p> 7865-2234</p>
-<p> contact@sunzalsurf.com</p>
-</div>
-
-<button class="modal-register-btn">Inscribirme</button>
-</div>
-</div>
-</div>
-
-<div class="academy-modal" id="puroModal">
-<div class="academy-modal-content">
-<span class="close-modal" onclick="closeModal('puroModal')">&times;</span>
-
-<img src="https://images.unsplash.com/photo-1531722569936-825d3dd91b15?w=1200" class="modal-banner">
-
-<div class="modal-info">
-<h2>Puro Surf Academy</h2>
-<p> Playa El Zonte</p>
-<div class="modal-rating">⭐⭐⭐⭐⭐ 5.0 (310 Reseñas)</div>
-
-<p>
-Academia internacional de surf con programas intensivos,
-entrenamiento profesional y paquetes de alojamiento.
-</p>
-
-<div class="modal-contact">
-<p> 7456-8812</p>
-<p> info@purosurf.com</p>
-</div>
-
-<button class="modal-register-btn">Inscribirme</button>
-</div>
-</div>
-</div>
-
-
-<div class="academy-modal" id="slowModal">
-<div class="academy-modal-content">
-<span class="close-modal" onclick="closeModal('slowModal')">&times;</span>
-
-<img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=1200" class="modal-banner">
-
-<div class="modal-info">
-<h2>Slow Motion Surf School</h2>
-<p> Playa El Tunco</p>
-<div class="modal-rating">⭐⭐⭐⭐☆ 4.6 (154 Reseñas)</div>
-
-<p>
-Amigable escuela de surf enfocada en principiantes y clases familiares.
-Grupos pequeños y atención personalizada.
-</p>
-
-<div class="modal-contact">
-<p> 7789-1223</p>
-<p> hello@slowmotionsurf.com</p>
-</div>
-
-<button class="modal-register-btn">Inscribirme</button>
-</div>
-</div>
-</div>
-
-
-<div class="academy-modal" id="premiumModal">
-<div class="academy-modal-content">
-<span class="close-modal" onclick="closeModal('premiumModal')">&times;</span>
-
-<img src="https://images.unsplash.com/photo-1544551763-46a013bb70d5?w=1200" class="modal-banner">
-
-<div class="modal-info">
-<h2>Tunco Surf School Premium</h2>
-<p> Playa El Tunco</p>
-<div class="modal-rating">⭐⭐⭐⭐⭐ 4.9 (275 Reseñas)</div>
-
-<p>
-Clases premium con instructores privados,
-análisis de video y preparación para competiciones.
-</p>
-
-<div class="modal-contact">
-<p> 7123-4545</p>
-<p> premium@tuncosurf.com</p>
-</div>
-
-<button class="modal-register-btn">Inscribirme</button>
-</div>
-</div>
-</div>
-
-
-<div class="academy-modal" id="proModal">
-<div class="academy-modal-content">
-<span class="close-modal" onclick="closeModal('proModal')">&times;</span>
-
-<img src="https://images.unsplash.com/photo-1476673160081-cf065607f449?w=1200" class="modal-banner">
-
-<div class="modal-info">
-<h2>Tunco Surf School Pro</h2>
-<p> Playa El Tunco</p>
-<div class="modal-rating">⭐⭐⭐⭐⭐ 4.8 (210 Reseñas)</div>
-
-<p>
-Entrenamiento avanzado de surf, preparación ISA,
-y entrenamiento para competiciones regionales.
-</p>
-
-<div class="modal-contact">
-<p> 7894-3311</p>
-<p> pro@tuncosurf.com</p>
-</div>
-
-<button class="modal-register-btn">Inscribirme</button>
-</div>
-</div>
-</div>
-
 <!-- FOOTER -->
 <footer class="footer">
 

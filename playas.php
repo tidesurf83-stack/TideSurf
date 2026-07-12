@@ -39,11 +39,11 @@ href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.c
         </a>
         <nav class="site-navbar-menu" aria-label="Navegacion principal">
             <a href="index.php">Inicio</a>
-            <a href="noticias.html">Noticias</a>
+            <a href="noticias.php">Noticias</a>
             <a href="competencias.php">competencias</a>
             <a href="playas.html">Playas</a>
             <a href="escuelas.php">Escuelas de Surf</a>
-            <a href="tiendas.html">Tiendas</a>
+            <a href="tiendas.php">Tiendas</a>
             <a href="galeria.html">Galeria</a>
             <a href="sobre_nosotros.html">Sobre Nosotros</a>
         </nav>

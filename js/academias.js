@@ -1,36 +1,35 @@
+function openModal(imagen, nombre, ubicacion, estrellas, resenas, descripcion, telefono, email){
 
-function openModal(id) {
-    fetch("obtener_escuela.php?id=" + id)
-        .then(response => response.json())
-        .then(data => {
+    document.getElementById("modalImagen").src = imagen;
 
-            
-            document.getElementById("modalImagen").src = data.imagen;
+    document.getElementById("modalNombre").innerText = nombre;
 
-         
-            document.getElementById("modalNombre").innerText = data.nombre;
-            document.getElementById("modalUbicacion").innerText = data.ubicacion;
-            document.getElementById("modalDescripcion").innerText = data.descripcion;
-            document.getElementById("modalTelefono").innerText = data.telefono;
-            document.getElementById("modalEmail").innerText = data.email;
+    document.getElementById("modalUbicacion").innerText = ubicacion;
 
-          
-            document.getElementById("modalRating").innerText =
-                "⭐".repeat(Math.round(data.estrellas)) +
-                " " + data.estrellas + " (" + data.total_resenas + " Reseñas)";
+    document.getElementById("modalDescripcion").innerText = descripcion;
 
-           
-            document.getElementById("academyModal").style.display = "block";
-        });
+    document.getElementById("modalTelefono").innerText = telefono;
+
+    document.getElementById("modalEmail").innerText = email;
+
+    document.getElementById("modalRating").innerHTML =
+        "⭐".repeat(Math.round(estrellas)) +
+        " " + estrellas +
+        " (" + resenas + " reseñas)";
+
+    document.getElementById("academyModal").style.display = "flex";
 }
 
-function closeModal() {
+function closeModal(){
     document.getElementById("academyModal").style.display = "none";
 }
 
-window.onclick = function(event) {
+window.onclick = function(event){
+
     const modal = document.getElementById("academyModal");
-    if (event.target === modal) {
+
+    if(event.target === modal){
         modal.style.display = "none";
     }
+
 }
