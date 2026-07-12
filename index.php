@@ -59,17 +59,17 @@ session_start();
                 </li>
 
                 <li class="nav-item">
-                    <a class="nav-link" href="playas.html">Playas</a>
+                    <a class="nav-link" href="playas.php">Playas</a>
                 </li>
 
                 <li class="nav-item">
-                    <a class="nav-link" href="escuelas.html">Escuelas de Surf</a>
+                    <a class="nav-link" href="escuelas.php">Escuelas de Surf</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="tiendas.html">Tiendas</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="galeria.html">Galería</a>
+                    <a class="nav-link" href="galeria.php">Galería</a>
                 </li>
                  <li class="nav-item">
                     <a class="nav-link" href="sobre_nosotros.html">Sobre Nosotros</a>
