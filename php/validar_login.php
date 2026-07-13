@@ -19,7 +19,7 @@ if ($resultado->num_rows === 1) {
     if (password_verify($password, $usuario['password'])) {
 
         $_SESSION['usuario_id'] = $usuario['ID_register'];
-        $_SESSION['nombre'] = $usuario['nombre'];
+        $_SESSION['usuario_nombre'] = $usuario['nombre'];
 
         header("Location: ../index.php");
         exit();

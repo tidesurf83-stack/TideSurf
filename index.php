@@ -9,7 +9,8 @@ session_start();
     <title>TIDE SURF - Inicio</title>
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-
+    <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 
@@ -19,86 +20,131 @@ session_start();
 </head>
 
 
-<div class="site-navbar-shell">
-    <div class="site-navbar">
-        <a class="site-navbar-brand" href="index.php" aria-label="TideSurf Inicio">
-            <img src="logo-tidesurf-navbar.png" alt="TideSurf">
-        </a>
-        <nav class="site-navbar-menu" aria-label="Navegacion principal">
-            <a href="index.php">Inicio</a>
-            <a href="noticias.php">Noticias</a>
-            <a href="competencias.php">Competencias</a>
-            <a href="playas.php">Playas</a>
-            <a href="escuelas.html">Escuelas de Surf</a>
-            <a href="tiendas.php">Tiendas</a>
-            <a href="galeria.html">Galeria</a>
-            <a href="sobre_nosotros.html">Sobre Nosotros</a>
-        </nav>
-        <a href="perfil.php" class="site-profile-avatar" aria-label="Mi Perfil">
-            <span class="site-avatar-icon"></span>
+
+<body class="has-site-navbar">
+    
+<!-- ================= NAVBAR ================= -->
+
+<header class="ts-navbar">
+
+
+    <!-- LOGO -->
+    <div class="ts-logo">
+
+        <a href="index.php">
+            <img src="img/logo-tidesurf-navbar.png" alt="TideSurf">
         </a>
 
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menu">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-
-        <div class="collapse navbar-collapse" id="menu">
-
-            <ul class="navbar-nav mx-auto">
-
-                <li class="nav-item">
-                    <a class="nav-link" href="index.html">Inicio</a>
-                </li>
-
-                <li class="nav-item">
-                    <a class="nav-link" href="noticias.php">Noticias</a>
-                </li>
-
-                <li class="nav-item">
-                    <a class="nav-link" href="competencias.php">Competencias</a>
-                </li>
-
-                <li class="nav-item">
-                    <a class="nav-link" href="playas.php">Playas</a>
-                </li>
-
-                <li class="nav-item">
-                    <a class="nav-link" href="escuelas.php">Escuelas de Surf</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="tiendas.html">Tiendas</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="galeria.php">Galería</a>
-                </li>
-                 <li class="nav-item">
-                    <a class="nav-link" href="sobre_nosotros.html">Sobre Nosotros</a>
-                </li>
-
-            </ul>
     </div>
-</div>
 
-            <div class="nav-buttons">
 
-                <?php if (isset($_SESSION['usuario_id'])): ?>
+    <!-- MENÚ ESCRITORIO -->
+    <nav class="ts-menu">
 
-                <a href="php/logout.php" class="btn-login">
-                    Cerrar sesión
-                </a>
+        <a href="index.php">Inicio</a>
+        <a href="noticias.php">Noticias</a>
+        <a href="competencias.php">Competencias</a>
+        <a href="playas.php">Playas</a>
+        <a href="escuelas.php">Escuelas</a>
+        <a href="tiendas.php">Tiendas</a>
+        <a href="galeria.php">Galería</a>
+        <a href="sobre_nosotros.php">Sobre Nosotros</a>
 
-                <?php else: ?>
+    </nav>
 
-                    
 
-                <?php endif; ?>
+    <!-- USUARIO ESCRITORIO -->
 
-            </div>
+    <div class="ts-user">
 
-        </div>
 
-     </div>
-</div>
+        <?php if(isset($_SESSION["usuario_id"])) { ?>
+
+
+            <a href="perfil.php" class="perfil-icono" title="Mi perfil">
+
+                <i class="bi bi-person-circle"></i>
+
+            </a>
+
+
+        <?php } else { ?>
+
+
+            <a href="inicio_sesion.php" class="btn-login">
+
+                Iniciar sesión
+
+            </a>
+
+
+        <?php } ?>
+
+
+    </div>
+
+
+
+    <!-- BOTÓN HAMBURGUESA -->
+
+    <button class="ts-toggle" id="tsToggle">
+
+        ☰
+
+    </button>
+
+
+</header>
+
+
+
+<!-- ================= MENU MOVIL ================= -->
+
+
+<nav class="ts-mobile" id="tsMobile">
+
+
+    <a href="index.php">Inicio</a>
+    <a href="noticias.php">Noticias</a>
+    <a href="competencias.html">Competencias</a>
+    <a href="playas.php">Playas</a>
+    <a href="escuelas.php">Escuelas</a>
+    <a href="tiendas.php">Tiendas</a>
+    <a href="galeria.php">Galería</a>
+    <a href="sobre_nosotros.php">Sobre Nosotros</a>
+
+
+    <hr>
+
+
+    <?php if(isset($_SESSION["usuario_id"])) { ?>
+
+
+        <a href="perfil.php" class="mobile-login">
+
+            <i class="bi bi-person-circle"></i>
+
+            Perfil
+
+        </a>
+
+
+    <?php } else { ?>
+
+
+        <a href="inicio_sesion.php" class="mobile-login">
+
+            Iniciar sesión
+
+        </a>
+
+
+    <?php } ?>
+
+
+</nav>
+<div class="ts-overlay" id="tsOverlay"></div>
+
 
 <section class="hero">
     
@@ -1034,5 +1080,39 @@ session_start();
 <script src="js/main.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"></script>
     <script src="js/navbar.js?v=login-si-no"></script>
+
+    <script>
+
+const boton=document.getElementById("tsToggle");
+const menu=document.getElementById("tsMobile");
+const fondo=document.getElementById("tsOverlay");
+
+boton.onclick=function(){
+
+    menu.classList.toggle("active");
+    fondo.classList.toggle("active");
+
+    if(menu.classList.contains("active")){
+
+        boton.innerHTML="✕";
+
+    }else{
+
+        boton.innerHTML="☰";
+
+    }
+
+}
+
+fondo.onclick=function(){
+
+    menu.classList.remove("active");
+    fondo.classList.remove("active");
+
+    boton.innerHTML="☰";
+
+}
+
+</script>
 </body>
 </html>
