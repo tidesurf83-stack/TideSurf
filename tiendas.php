@@ -1,4 +1,6 @@
 <?php
+session_start();
+
 include __DIR__ . "/php/conexion.php";
 
 $sql = "SELECT * FROM tiendas";
@@ -23,28 +25,130 @@ $resultado = $conn->query($sql);
 
 <body class="has-site-navbar">
 
-<!-- NAVBAR -->
-<div class="site-navbar-shell">
-    <div class="site-navbar">
-        <a class="site-navbar-brand" href="index.php" aria-label="TideSurf Inicio">
+<!-- ================= NAVBAR ================= -->
+
+<header class="ts-navbar">
+
+
+    <!-- LOGO -->
+    <div class="ts-logo">
+
+        <a href="index.php">
             <img src="img/logo-tidesurf-navbar.png" alt="TideSurf">
         </a>
-        
-        <nav class="site-navbar-menu" aria-label="Navegacion principal">
-            <a href="index.php">Inicio</a>
-            <a href="noticias.php">Noticias</a>
-            <a href="competencias.html">Competencias</a>
-            <a href="playas.php">Playas</a>
-            <a href="escuelas.php">Escuelas de Surf</a>
-            <a href="tiendas.php">Tiendas</a>
-            <a href="galeria.html">Galeria</a>
-            <a href="sobre_nosotros.html">Sobre Nosotros</a>
-        </nav>
-        <a href="inicio_sesion.html" class="site-login-button">
-    Iniciar sesión
-</a>
+
     </div>
-</div>
+
+
+    <!-- MENÚ ESCRITORIO -->
+    <nav class="ts-menu">
+
+        <a href="index.php">Inicio</a>
+        <a href="noticias.php">Noticias</a>
+        <a href="competencias.php">Competencias</a>
+        <a href="playas.php">Playas</a>
+        <a href="escuelas.php">Escuelas</a>
+        <a href="tiendas.php">Tiendas</a>
+        <a href="galeria.php">Galería</a>
+        <a href="sobre_nosotros.php">Sobre Nosotros</a>
+
+    </nav>
+
+
+
+    <!-- USUARIO ESCRITORIO -->
+
+    <div class="ts-user">
+
+
+        <?php if(isset($_SESSION["usuario_id"])) { ?>
+
+
+            <a href="perfil.php" class="perfil-icono" title="Mi perfil">
+
+                <i class="bi bi-person-circle"></i>
+
+            </a>
+
+
+        <?php } else { ?>
+
+
+            <a href="inicio_sesion.php" class="btn-login">
+
+                Iniciar sesión
+
+            </a>
+
+
+        <?php } ?>
+
+
+    </div>
+
+
+
+    <!-- BOTÓN HAMBURGUESA -->
+
+    <button class="ts-toggle" id="tsToggle">
+
+        ☰
+
+    </button>
+
+
+</header>
+
+
+
+<!-- ================= MENU MOVIL ================= -->
+
+
+<nav class="ts-mobile" id="tsMobile">
+
+
+    <a href="index.php">Inicio</a>
+    <a href="noticias.php">Noticias</a>
+    <a href="competencias.html">Competencias</a>
+    <a href="playas.php">Playas</a>
+    <a href="escuelas.php">Escuelas</a>
+    <a href="tiendas.php">Tiendas</a>
+    <a href="galeria.php">Galería</a>
+    <a href="sobre_nosotros.php">Sobre Nosotros</a>
+
+
+    <hr>
+
+
+    <?php if(isset($_SESSION["usuario_id"])) { ?>
+
+
+        <a href="perfil.php" class="mobile-login">
+
+            <i class="bi bi-person-circle"></i>
+
+            Perfil
+
+        </a>
+
+
+    <?php } else { ?>
+
+
+        <a href="inicio_sesion.php" class="mobile-login">
+
+            Iniciar sesión
+
+        </a>
+
+
+    <?php } ?>
+
+
+</nav>
+
+<div class="ts-overlay" id="tsOverlay"></div>
+
 <!-- HERO -->
 
 <section class="hero-tiendas">
@@ -178,22 +282,38 @@ function cerrarModal(id){
 
 </script>
 
-    <script>
-const menuToggle = document.querySelector('.menu-toggle');
-const navbarNav = document.querySelector('.navbar-nav');
+<script>
 
-menuToggle.addEventListener('click', () => {
+const boton=document.getElementById("tsToggle");
+const menu=document.getElementById("tsMobile");
+const fondo=document.getElementById("tsOverlay");
 
-    navbarNav.classList.toggle('active');
+boton.onclick=function(){
 
-    console.log(navbarNav);
+    menu.classList.toggle("active");
+    fondo.classList.toggle("active");
 
-    console.log(
-        navbarNav.classList.contains('active')
-            ? 'MENU ACTIVO'
-            : 'MENU CERRADO'
-    );
-});
+    if(menu.classList.contains("active")){
+
+        boton.innerHTML="✕";
+
+    }else{
+
+        boton.innerHTML="☰";
+
+    }
+
+}
+
+fondo.onclick=function(){
+
+    menu.classList.remove("active");
+    fondo.classList.remove("active");
+
+    boton.innerHTML="☰";
+
+}
+
 </script>
 </body>
 </html>
