@@ -34,7 +34,7 @@
 
     <section class="hero">
 
-        <img class="hero-img" src="img/sobre-nosotros/Imagen generada 1.png" alt="Surfistas">
+        <img class="hero-img" src="img/sobre-nosotros/playa4.jpg" alt="Surfistas">
 
         <div class="hero-content">
             <h2>SOMOS MÁS QUE SURF</h2>
@@ -227,7 +227,7 @@
         </div>
 
     </section>
-
+  <footer>
     <div class="footer-container">
 
         <div class="footer-brand">
@@ -267,32 +267,20 @@
 
         </div>
 
-        <div>
 
-            <h4>AYUDA</h4>
-
-            <ul>
-                <li><a href="#">Preguntas Frecuentes</a></li>
-                <li><a href="#">Envíos y Devoluciones</a></li>
-                <li><a href="#">Términos y Condiciones</a></li>
-                <li><a href="#">Políticas de Privacidad</a></li>
-            </ul>
-
-        </div>
 
         <div>
 
             <h4>CONTÁCTANOS</h4>
 
             <p>hola@tidesurf.com</p>
-            <p>+57 300 123 4567</p>
-            <p>Playa El Tunco, El Salvador</p>
+            <p>57 300 123 4567</p>
 
         </div>
 
     </div>
 
-<img src="https://img.icons8.com/?size=100&id=pXJTVvE8w6Ub&format=png&color=000000" alt="">
+<img src="" alt="">
 
     <p class="copyright">
         © 2024 TideSurf. Todos los derechos reservados.
