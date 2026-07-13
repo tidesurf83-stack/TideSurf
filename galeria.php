@@ -154,13 +154,39 @@ if ($conn->connect_error) {
 
 <div class="ts-overlay" id="tsOverlay"></div>
 
+<!-- Carrusel dinámico con las primeras 3 fotos de la base de datos -->
+<?php
+$sql_carousel = "SELECT * FROM galerias LIMIT 3";
+$result_carousel = $conn->query($sql_carousel);
+
+if ($result_carousel->num_rows > 0) {
+    echo '<div id="carouselTidesurf" class="carousel slide mb-5" data-bs-ride="carousel">';
+    echo '<div class="carousel-inner">';
+    $active = true;
+    while($row_carousel = $result_carousel->fetch_assoc()) {
+        echo '<div class="carousel-item '.($active ? 'active' : '').'">';
+        echo '<img src="'.$row_carousel["imagen_url"].'" class="d-block w-100" alt="'.$row_carousel["descripcion"].'">';
+        echo '</div>';
+        $active = false;
+    }
+    echo '</div>';
+    echo '<button class="carousel-control-prev" type="button" data-bs-target="#carouselTidesurf" data-bs-slide="prev">';
+    echo '<span class="carousel-control-prev-icon"></span>';
+    echo '</button>';
+    echo '<button class="carousel-control-next" type="button" data-bs-target="#carouselTidesurf" data-bs-slide="next">';
+    echo '<span class="carousel-control-next-icon"></span>';
+    echo '</button>';
+    echo '</div>';
+}
+?>
+
 <section class="grid-gallery-section container mt-5 mb-5">
     <div class="section-title">
-        <h2>Galería de Tidesurr</h2>
+        <h2>Galería de Tidesurf</h2>
     </div>
     <div class="gallery-grid">
         <?php
-        // Consultar la tabla galerias
+        // Consultar la tabla galerias para la galería completa
         $sql = "SELECT * FROM galerias";
         $result = $conn->query($sql);
 
@@ -189,8 +215,6 @@ if ($conn->connect_error) {
         </p>
         <div class="footer-social">
             <a href="#">Instagram</a>
-            
-            
         </div>
     </div>
 </footer>

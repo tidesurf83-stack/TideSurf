@@ -37,14 +37,23 @@ if (!$resultado) {
     
 <!-- ================= NAVBAR ================= -->
 
-<header class="ts-navbar">
-
-
-    <!-- LOGO -->
-    <div class="ts-logo">
-
-        <a href="index.php">
-            <img src="img/logo-tidesurf-navbar.png" alt="TideSurf">
+<div class="site-navbar-shell">
+    <div class="site-navbar">
+        <a class="site-navbar-brand" href="index.php" aria-label="TideSurf Inicio">
+            <img src="logo-tidesurf-navbar.png" alt="TideSurf">
+        </a>
+        <nav class="site-navbar-menu" aria-label="Navegacion principal">
+            <a href="index.php">Inicio</a>
+            <a href="noticias.html">Noticias</a>
+            <a href="competencias.php">competencias</a>
+            <a href="playas.php">Playas</a>
+            <a href="escuelas.php">Escuelas de Surf</a>
+            <a href="tiendas.php">Tiendas</a>
+            <a href="galeria.html">Galeria</a>
+            <a href="sobre_nosotros.html">Sobre Nosotros</a>
+        </nav>
+        <a href="perfil.php" class="site-profile-avatar" aria-label="Mi Perfil">
+            <span class="site-avatar-icon"></span>
         </a>
 
     </div>
