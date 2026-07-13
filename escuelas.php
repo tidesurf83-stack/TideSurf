@@ -206,6 +206,89 @@ if (!$resultado) {
     </div>
 
 </div>
+
+<section class="faq">
+
+    <div class="faq-container">
+
+        <h2>Preguntas frecuentes</h2>
+        <p class="faq-subtitle">
+            Resuelve tus dudas sobre las escuelas de surf y cómo empezar tu experiencia.
+        </p>
+
+
+        <div class="faq-item">
+
+            <button class="faq-question">
+                ¿Necesito experiencia para aprender surf?
+                <span>+</span>
+            </button>
+
+            <div class="faq-answer">
+                <p>
+                    No. Las escuelas cuentan con programas para principiantes donde
+                    aprenderás desde lo básico hasta mejorar tus habilidades.
+                </p>
+            </div>
+
+        </div>
+
+
+        <div class="faq-item">
+
+            <button class="faq-question">
+                ¿Qué necesito para tomar una clase de surf?
+                <span>+</span>
+            </button>
+
+            <div class="faq-answer">
+                <p>
+                    Solo necesitas ganas de aprender. Las escuelas normalmente
+                    proporcionan tabla, equipo de seguridad e instructores capacitados.
+                </p>
+            </div>
+
+        </div>
+
+
+        <div class="faq-item">
+
+            <button class="faq-question">
+                ¿Cuánto dura una clase de surf?
+                <span>+</span>
+            </button>
+
+            <div class="faq-answer">
+                <p>
+                    La duración depende de cada escuela, pero generalmente las clases
+                    duran entre una y dos horas.
+                </p>
+            </div>
+
+        </div>
+
+
+        <div class="faq-item">
+
+            <button class="faq-question">
+                ¿Qué playas son recomendadas para aprender?
+                <span>+</span>
+            </button>
+
+            <div class="faq-answer">
+                <p>
+                    Playas como El Tunco, El Sunzal y otras zonas de La Libertad
+                    cuentan con escuelas ideales para diferentes niveles.
+                </p>
+            </div>
+
+        </div>
+
+
+    </div>
+
+</section>
+
 <!-- FOOTER -->
 <footer class="footer">
 
@@ -243,5 +326,21 @@ if (!$resultado) {
 <script src="js/academias.js"></script>
 
     <script src="js/navbar.js?v=login-si-no"></script>
+
+    <script>
+        const preguntas = document.querySelectorAll(".faq-question");
+
+        preguntas.forEach(pregunta => {
+
+            pregunta.addEventListener("click", () => {
+
+                const item = pregunta.parentElement;
+
+                item.classList.toggle("active");
+
+    });
+
+});
+</script>
 </body>
 </html>
