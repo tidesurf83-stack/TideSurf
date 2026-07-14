@@ -43,18 +43,22 @@ if (!$resultado) {
     </div>
 </div>
 
-<section class="hero">
+<section class="hero-escuelas">
+
     <img
-        src="https://images.unsplash.com/photo-1509914398892-963f53e6e2f1?w=1400&auto=format&fit=crop"
-        alt="Surfer riding a wave"
-        class="hero__img"
-    />
+        src="img/escuelas/heroescuelas.jpg"
+        alt="Surfista practicando"
+        class="hero-escuelas__img"
+    >
 
-    
+    <div class="hero-escuelas__overlay">
 
-    <div class="hero__overlay">
-        <h1 class="hero__title">Practica y mejora tu técnica</h1>
+        <h1 class="hero-escuelas__title">
+            Practica y mejora tu técnica
+        </h1>
+
     </div>
+
 </section>
 
 <section class="usuarios">
