@@ -1,4 +1,5 @@
 <?php
+session_start();
 error_reporting(E_ALL);
 ini_set('display_errors', 1);
 
@@ -43,29 +44,136 @@ if(isset($_POST['registrar'])){
     <title>Surf City</title>
     <link rel="stylesheet" href="css/competencias.css?v=perfil-icono">
     <link rel="stylesheet" href="css/navbar.css?v=login-espacio">
+    <link rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
 </head>
 
-<body>
+<body class="has-site-navbar">
 
-    <!-- HEADER -->
-    <header>
-        <div class="logo">
-            <img src="img/logof-removebg-preview.png" alt="">
-        </div>
+<!-- ================= NAVBAR ================= -->
 
-         
-        <nav id="menu">
+<header class="ts-navbar">
+
+
+    <!-- LOGO -->
+    <div class="ts-logo">
+
+        <a href="index.php">
+            <img src="img/logo-tidesurf-navbar.png" alt="TideSurf">
+        </a>
+
+    </div>
+
+
+    <!-- MENÚ ESCRITORIO -->
+    <nav class="ts-menu">
+
+        <a href="index.php">Inicio</a>
+        <a href="noticias.php">Noticias</a>
+        <a href="competencias.php">Competencias</a>
+        <a href="playas.php">Playas</a>
+        <a href="escuelas.php">Escuelas</a>
+        <a href="tiendas.php">Tiendas</a>
+        <a href="galeria.php">Galería</a>
+        <a href="sobre_nosotros.php">Sobre Nosotros</a>
+
+    </nav>
+
+
+
+    <!-- USUARIO ESCRITORIO -->
+
+    <div class="ts-user">
+
+
+        <?php if(isset($_SESSION["usuario_id"])) { ?>
+
+
+            <a href="perfil.php" class="perfil-icono" title="Mi perfil">
+
+                <i class="bi bi-person-circle"></i>
+
+            </a>
+
+
+        <?php } else { ?>
+
+
+            <a href="inicio_sesion.php" class="btn-login">
+
+                Iniciar sesión
+
+            </a>
+
+
+        <?php } ?>
+
+
+    </div>
+
+
+
+    <!-- BOTÓN HAMBURGUESA -->
+
+    <button class="ts-toggle" id="tsToggle">
+
+        ☰
+
+    </button>
+
+
+</header>
+
+
+
+<!-- ================= MENU MOVIL ================= -->
+
+
+<nav class="ts-mobile" id="tsMobile">
+
+
+    <a href="index.php">Inicio</a>
     <a href="noticias.php">Noticias</a>
-    <a href="competencias.php">competencias</a>
+    <a href="competencias.html">Competencias</a>
     <a href="playas.php">Playas</a>
+    <a href="escuelas.php">Escuelas</a>
     <a href="tiendas.php">Tiendas</a>
-    <a href="academias.html">Escuelas de Surf</a>
-    <a href="Profile/perfil.php">Mi perfil</a>
+    <a href="galeria.php">Galería</a>
+    <a href="sobre_nosotros.php">Sobre Nosotros</a>
+
+
+    <hr>
+
+
+    <?php if(isset($_SESSION["usuario_id"])) { ?>
+
+
+        <a href="perfil.php" class="mobile-login">
+
+            <i class="bi bi-person-circle"></i>
+
+            Perfil
+
+        </a>
+
+
+    <?php } else { ?>
+
+
+        <a href="inicio_sesion.php" class="mobile-login">
+
+            Iniciar sesión
+
+        </a>
+
+
+    <?php } ?>
+
+
 </nav>
 
-    <div class="menu-btn" onclick="toggleMenu()">☰</div>
+<div class="ts-overlay" id="tsOverlay"></div>
 
-    </header>
 <section class="hero-comp">
     <div class="hero-content">
         <h1>Competencias de Surf</h1>
@@ -458,6 +566,40 @@ data-competencia="<?php echo htmlspecialchars($fila['titulo']); ?>">
 </footer>
 
 <script src="js/competencias.js"></script>
+
+<script>
+
+const boton=document.getElementById("tsToggle");
+const menu=document.getElementById("tsMobile");
+const fondo=document.getElementById("tsOverlay");
+
+boton.onclick=function(){
+
+    menu.classList.toggle("active");
+    fondo.classList.toggle("active");
+
+    if(menu.classList.contains("active")){
+
+        boton.innerHTML="✕";
+
+    }else{
+
+        boton.innerHTML="☰";
+
+    }
+
+}
+
+fondo.onclick=function(){
+
+    menu.classList.remove("active");
+    fondo.classList.remove("active");
+
+    boton.innerHTML="☰";
+
+}
+
+</script>
 </body>
 
 </html>

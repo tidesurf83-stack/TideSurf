@@ -1,4 +1,5 @@
 <?php
+session_start();
 // Conexión a la base de datos
 $servername = "localhost";
 $username   = "root";       // cambia si tu usuario es distinto
@@ -24,35 +25,168 @@ if ($conn->connect_error) {
     <link rel="stylesheet" href="css/style.css?v=perfil-icono">
     <link rel="stylesheet" href="css/galeria.css">
     <link rel="stylesheet" href="css/navbar.css?v=login-espacio">
+    <link rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
 </head>
 <body class="has-site-navbar">
-<div class="site-navbar-shell">
-    <div class="site-navbar">
-        <a class="site-navbar-brand" href="index.php" aria-label="TideSurf Inicio">
-            <img src="logo-tidesurf-navbar.png" alt="TideSurf">
+
+<!-- ================= NAVBAR ================= -->
+
+<header class="ts-navbar">
+
+
+    <!-- LOGO -->
+    <div class="ts-logo">
+
+        <a href="index.php">
+            <img src="img/logo-tidesurf-navbar.png" alt="TideSurf">
         </a>
-        <nav class="site-navbar-menu" aria-label="Navegacion principal">
-            <a href="noticias.php">Noticias</a>
-            <a href="competencias.html">Competencias</a>
-            <a href="playas.html">Playas</a>
-            <a href="escuelas.html">Escuelas de Surf</a>
-            <a href="tiendas.php">Tiendas</a>
-            <a href="galeria.php">Galeria</a>
-            <a href="sobre_nosotros.html">Sobre Nosotros</a>
-        </nav>
-        <a href="perfil.php" class="site-profile-avatar" aria-label="Mi Perfil">
-            <span class="site-avatar-icon"></span>
-        </a>
+
     </div>
-</div>
+
+
+    <!-- MENÚ ESCRITORIO -->
+    <nav class="ts-menu">
+
+        <a href="index.php">Inicio</a>
+        <a href="noticias.php">Noticias</a>
+        <a href="competencias.php">Competencias</a>
+        <a href="playas.php">Playas</a>
+        <a href="escuelas.php">Escuelas</a>
+        <a href="tiendas.php">Tiendas</a>
+        <a href="galeria.php">Galería</a>
+        <a href="sobre_nosotros.php">Sobre Nosotros</a>
+
+    </nav>
+
+
+
+    <!-- USUARIO ESCRITORIO -->
+
+    <div class="ts-user">
+
+
+        <?php if(isset($_SESSION["usuario_id"])) { ?>
+
+
+            <a href="perfil.php" class="perfil-icono" title="Mi perfil">
+
+                <i class="bi bi-person-circle"></i>
+
+            </a>
+
+
+        <?php } else { ?>
+
+
+            <a href="inicio_sesion.php" class="btn-login">
+
+                Iniciar sesión
+
+            </a>
+
+
+        <?php } ?>
+
+
+    </div>
+
+
+
+    <!-- BOTÓN HAMBURGUESA -->
+
+    <button class="ts-toggle" id="tsToggle">
+
+        ☰
+
+    </button>
+
+
+</header>
+
+
+
+<!-- ================= MENU MOVIL ================= -->
+
+
+<nav class="ts-mobile" id="tsMobile">
+
+
+    <a href="index.php">Inicio</a>
+    <a href="noticias.php">Noticias</a>
+    <a href="competencias.html">Competencias</a>
+    <a href="playas.php">Playas</a>
+    <a href="escuelas.php">Escuelas</a>
+    <a href="tiendas.php">Tiendas</a>
+    <a href="galeria.php">Galería</a>
+    <a href="sobre_nosotros.php">Sobre Nosotros</a>
+
+
+    <hr>
+
+
+    <?php if(isset($_SESSION["usuario_id"])) { ?>
+
+
+        <a href="perfil.php" class="mobile-login">
+
+            <i class="bi bi-person-circle"></i>
+
+            Perfil
+
+        </a>
+
+
+    <?php } else { ?>
+
+
+        <a href="inicio_sesion.php" class="mobile-login">
+
+            Iniciar sesión
+
+        </a>
+
+
+    <?php } ?>
+
+
+</nav>
+
+<div class="ts-overlay" id="tsOverlay"></div>
+
+<!-- Carrusel dinámico con las primeras 3 fotos de la base de datos -->
+<?php
+$sql_carousel = "SELECT * FROM galerias LIMIT 3";
+$result_carousel = $conn->query($sql_carousel);
+
+if ($result_carousel->num_rows > 0) {
+    echo '<div id="carouselTidesurf" class="carousel slide mb-5" data-bs-ride="carousel">';
+    echo '<div class="carousel-inner">';
+    $active = true;
+    while($row_carousel = $result_carousel->fetch_assoc()) {
+        echo '<div class="carousel-item '.($active ? 'active' : '').'">';
+        echo '<img src="'.$row_carousel["imagen_url"].'" class="d-block w-100" alt="'.$row_carousel["descripcion"].'">';
+        echo '</div>';
+        $active = false;
+    }
+    echo '</div>';
+    echo '<button class="carousel-control-prev" type="button" data-bs-target="#carouselTidesurf" data-bs-slide="prev">';
+    echo '<span class="carousel-control-prev-icon"></span>';
+    echo '</button>';
+    echo '<button class="carousel-control-next" type="button" data-bs-target="#carouselTidesurf" data-bs-slide="next">';
+    echo '<span class="carousel-control-next-icon"></span>';
+    echo '</button>';
+    echo '</div>';
+}
+?>
 
 <section class="grid-gallery-section container mt-5 mb-5">
     <div class="section-title">
-        <h2>Galería de Tidesurr</h2>
+        <h2>Galería de Tidesurf</h2>
     </div>
     <div class="gallery-grid">
         <?php
-        // Consultar la tabla galerias
+        // Consultar la tabla galerias para la galería completa
         $sql = "SELECT * FROM galerias";
         $result = $conn->query($sql);
 
@@ -81,14 +215,46 @@ if ($conn->connect_error) {
         </p>
         <div class="footer-social">
             <a href="#">Instagram</a>
-            
-            
         </div>
     </div>
 </footer>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"></script>
 <script src="js/navbar.js?v=login-si-no"></script>
+
+<script>
+
+const boton=document.getElementById("tsToggle");
+const menu=document.getElementById("tsMobile");
+const fondo=document.getElementById("tsOverlay");
+
+boton.onclick=function(){
+
+    menu.classList.toggle("active");
+    fondo.classList.toggle("active");
+
+    if(menu.classList.contains("active")){
+
+        boton.innerHTML="✕";
+
+    }else{
+
+        boton.innerHTML="☰";
+
+    }
+
+}
+
+fondo.onclick=function(){
+
+    menu.classList.remove("active");
+    fondo.classList.remove("active");
+
+    boton.innerHTML="☰";
+
+}
+
+</script>
 </body>
 </html>
 <?php
