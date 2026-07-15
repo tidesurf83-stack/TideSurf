@@ -43,7 +43,7 @@
 }
 
 .hero-overlay span{
-    color:#18C6E3;
+    color: #47D7F5;
     display:block;
 }
 
@@ -89,7 +89,7 @@
 
 .card-tienda{
     background:#fff;
-    border:1.5px solid #19C7E5;
+    border:none;
     border-radius:25px;
     overflow:hidden;
     padding:18px;
@@ -127,6 +127,7 @@
     padding:12px 28px;
     font-weight:bold;
     border-radius: 12px;
+    border:none;
 }
 
 .btn-ver:hover{

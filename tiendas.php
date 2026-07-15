@@ -50,7 +50,7 @@ $resultado = $conn->query($sql);
         <a href="escuelas.php">Escuelas</a>
         <a href="tiendas.php">Tiendas</a>
         <a href="galeria.php">Galería</a>
-        <a href="sobre_nosotros.php">Sobre Nosotros</a>
+        <a href="sobre_nosotros.html">Sobre Nosotros</a>
 
     </nav>
 
@@ -109,12 +109,12 @@ $resultado = $conn->query($sql);
 
     <a href="index.php">Inicio</a>
     <a href="noticias.php">Noticias</a>
-    <a href="competencias.html">Competencias</a>
+    <a href="competencias.php">Competencias</a>
     <a href="playas.php">Playas</a>
     <a href="escuelas.php">Escuelas</a>
     <a href="tiendas.php">Tiendas</a>
     <a href="galeria.php">Galería</a>
-    <a href="sobre_nosotros.php">Sobre Nosotros</a>
+    <a href="sobre_nosotros.html">Sobre Nosotros</a>
 
 
     <hr>
@@ -159,10 +159,6 @@ $resultado = $conn->query($sql);
             DESCUBRE LAS MEJORES
             <span>TIENDAS DE SURF</span>
         </h1>
-
-        <p>
-            Encuentra tablas, accesorios y equipamiento para vivir la experiencia del surf.
-        </p>
 
     </div>
 
