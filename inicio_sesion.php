@@ -50,8 +50,6 @@ $conn->close();
 <body>
     <div class="interfaz-navegador">
  
-        <h1 class="titulo-login-principal">Inicio de sesión</h1>
- 
         <div class="tarjeta-login-contenedor">
  
             <div class="panel-izquierdo-visual">

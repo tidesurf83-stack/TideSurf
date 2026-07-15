@@ -1,14 +1,12 @@
 <?php
-session_start();
 // Conexión a la base de datos
 $servername = "localhost";
-$username   = "root";       // cambia si tu usuario es distinto
-$password   = "";           // cambia si tu contraseña es distinta
-$dbname     = "tidesurf";   // tu base de datos
+$username   = "root";       
+$password   = "";           
+$dbname     = "tidesurf";   
 
 $conn = new mysqli($servername, $username, $password, $dbname);
 
-// Verificar conexión
 if ($conn->connect_error) {
     die("Conexión fallida: " . $conn->connect_error);
 }
@@ -25,25 +23,29 @@ if ($conn->connect_error) {
     <link rel="stylesheet" href="css/style.css?v=perfil-icono">
     <link rel="stylesheet" href="css/galeria.css">
     <link rel="stylesheet" href="css/navbar.css?v=login-espacio">
-    <link rel="stylesheet"
-    href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
 </head>
 <body class="has-site-navbar">
-
-<!-- ================= NAVBAR ================= -->
-
-<header class="ts-navbar">
-
-
-    <!-- LOGO -->
-    <div class="ts-logo">
-
-        <a href="index.php">
-            <img src="img/logo-tidesurf-navbar.png" alt="TideSurf">
+<div class="site-navbar-shell">
+    <div class="site-navbar">
+        <a class="site-navbar-brand" href="index.php" aria-label="TideSurf Inicio">
+            <img src="logo-tidesurf-navbar.png" alt="TideSurf">
         </a>
-
+        <nav class="site-navbar-menu" aria-label="Navegacion principal">
+            <a href="noticias.php">Noticias</a>
+            <a href="competencias.html">Competencias</a>
+            <a href="playas.html">Playas</a>
+            <a href="escuelas.html">Escuelas de Surf</a>
+            <a href="tiendas.php">Tiendas</a>
+            <a href="galeria.php">Galeria</a>
+            <a href="sobre_nosotros.html">Sobre Nosotros</a>
+        </nav>
+        <a href="perfil.php" class="site-profile-avatar" aria-label="Mi Perfil">
+            <span class="site-avatar-icon"></span>
+        </a>
     </div>
+</div>
 
+<<<<<<< HEAD
 
     <!-- MENÚ ESCRITORIO -->
     <nav class="ts-menu">
@@ -155,17 +157,22 @@ if ($conn->connect_error) {
 <div class="ts-overlay" id="tsOverlay"></div>
 
 <!-- Carrusel dinámico con las primeras 3 fotos de la base de datos -->
+=======
+>>>>>>> e390933 (Cambios en Inicio de sesión y registro)
 <?php
-$sql_carousel = "SELECT * FROM galerias LIMIT 3";
+// Carrusel dinámico con estilo mediano y sin imagen2_noti1.png
+$sql_carousel = "SELECT * FROM noticia_imagenes 
+                 WHERE imagen != 'imagen2_noti1.png' 
+                 ORDER BY orden ASC";
 $result_carousel = $conn->query($sql_carousel);
 
 if ($result_carousel->num_rows > 0) {
-    echo '<div id="carouselTidesurf" class="carousel slide mb-5" data-bs-ride="carousel">';
+    echo '<div id="carouselTidesurf" class="carousel slide galeria-bootstrap-carousel mb-5" data-bs-ride="carousel">';
     echo '<div class="carousel-inner">';
     $active = true;
     while($row_carousel = $result_carousel->fetch_assoc()) {
         echo '<div class="carousel-item '.($active ? 'active' : '').'">';
-        echo '<img src="'.$row_carousel["imagen_url"].'" class="d-block w-100" alt="'.$row_carousel["descripcion"].'">';
+        echo '<img src="img/noticias/'.$row_carousel["imagen"].'" class="d-block w-100" alt="Noticia '.$row_carousel["ID_noticias"].'">';
         echo '</div>';
         $active = false;
     }
@@ -180,13 +187,14 @@ if ($result_carousel->num_rows > 0) {
 }
 ?>
 
+
+<!-- Galería dinámica completa desde la tabla galerias -->
 <section class="grid-gallery-section container mt-5 mb-5">
     <div class="section-title">
         <h2>Galería de Tidesurf</h2>
     </div>
     <div class="gallery-grid">
         <?php
-        // Consultar la tabla galerias para la galería completa
         $sql = "SELECT * FROM galerias";
         $result = $conn->query($sql);
 
@@ -221,40 +229,6 @@ if ($result_carousel->num_rows > 0) {
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"></script>
 <script src="js/navbar.js?v=login-si-no"></script>
-
-<script>
-
-const boton=document.getElementById("tsToggle");
-const menu=document.getElementById("tsMobile");
-const fondo=document.getElementById("tsOverlay");
-
-boton.onclick=function(){
-
-    menu.classList.toggle("active");
-    fondo.classList.toggle("active");
-
-    if(menu.classList.contains("active")){
-
-        boton.innerHTML="✕";
-
-    }else{
-
-        boton.innerHTML="☰";
-
-    }
-
-}
-
-fondo.onclick=function(){
-
-    menu.classList.remove("active");
-    fondo.classList.remove("active");
-
-    boton.innerHTML="☰";
-
-}
-
-</script>
 </body>
 </html>
 <?php
