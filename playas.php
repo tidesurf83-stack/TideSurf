@@ -1,4 +1,5 @@
 <?php
+session_start();
 include __DIR__ . "/php/conexion.php";
 
 $sql = "SELECT * FROM surf_facts";
@@ -20,9 +21,13 @@ if (!$resultado) {
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
 
     <link rel="stylesheet" href="css/playas.css?v=perfil-icono">
+    <link rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
 
     <link rel="stylesheet"
-href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
+    href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
 
     <link rel="stylesheet" href="css/navbar.css?v=login-espacio">
 </head>
@@ -30,28 +35,129 @@ href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.c
 <body>
 
     
-<header>
+<!-- ================= NAVBAR ================= -->
 
-<div class="site-navbar-shell">
-    <div class="site-navbar">
-        <a class="site-navbar-brand" href="index.php" aria-label="TideSurf Inicio">
-            <img src="logo-tidesurf-navbar.png" alt="TideSurf">
+    <header class="ts-navbar">
+
+
+    <!-- LOGO -->
+    <div class="ts-logo">
+
+        <a href="index.php">
+            <img src="img/logo-tidesurf-navbar.png" alt="TideSurf">
         </a>
-        <nav class="site-navbar-menu" aria-label="Navegacion principal">
-            <a href="index.php">Inicio</a>
-            <a href="noticias.php">Noticias</a>
-            <a href="competencias.php">competencias</a>
-            <a href="playas.html">Playas</a>
-            <a href="escuelas.php">Escuelas de Surf</a>
-            <a href="tiendas.php">Tiendas</a>
-            <a href="galeria.html">Galeria</a>
-            <a href="sobre_nosotros.html">Sobre Nosotros</a>
-        </nav>
-        <a href="perfil.php" class="site-profile-avatar" aria-label="Mi Perfil">
-            <span class="site-avatar-icon"></span>
-        </a>
+
     </div>
-</div>
+
+
+    <!-- MENÚ ESCRITORIO -->
+    <nav class="ts-menu">
+
+        <a href="index.php">Inicio</a>
+        <a href="noticias.php">Noticias</a>
+        <a href="competencias.php">Competencias</a>
+        <a href="playas.php">Playas</a>
+        <a href="escuelas.php">Escuelas</a>
+        <a href="tiendas.php">Tiendas</a>
+        <a href="galeria.php">Galería</a>
+        <a href="sobre_nosotros.html">Sobre Nosotros</a>
+
+    </nav>
+
+
+
+    <!-- USUARIO ESCRITORIO -->
+
+    <div class="ts-user">
+
+
+        <?php if(isset($_SESSION["usuario_id"])) { ?>
+
+
+            <a href="perfil.php" class="perfil-icono" title="Mi perfil">
+
+                <i class="bi bi-person-circle"></i>
+
+            </a>
+
+
+        <?php } else { ?>
+
+
+            <a href="inicio_sesion.php" class="btn-login">
+
+                Iniciar sesión
+
+            </a>
+
+
+        <?php } ?>
+
+
+    </div>
+
+
+
+    <!-- BOTÓN HAMBURGUESA -->
+
+    <button class="ts-toggle" id="tsToggle">
+
+        ☰
+
+    </button>
+
+
+</header>
+
+
+
+<!-- ================= MENU MOVIL ================= -->
+
+
+<nav class="ts-mobile" id="tsMobile">
+
+
+    <a href="index.php">Inicio</a>
+    <a href="noticias.php">Noticias</a>
+    <a href="competencias.php">Competencias</a>
+    <a href="playas.php">Playas</a>
+    <a href="escuelas.php">Escuelas</a>
+    <a href="tiendas.php">Tiendas</a>
+    <a href="galeria.php">Galería</a>
+    <a href="sobre_nosotros.html">Sobre Nosotros</a>
+
+
+    <hr>
+
+
+    <?php if(isset($_SESSION["usuario_id"])) { ?>
+
+
+        <a href="perfil.php" class="mobile-login">
+
+            <i class="bi bi-person-circle"></i>
+
+            Perfil
+
+        </a>
+
+
+    <?php } else { ?>
+
+
+        <a href="inicio_sesion.php" class="mobile-login">
+
+            Iniciar sesión
+
+        </a>
+
+
+    <?php } ?>
+
+
+</nav>
+
+<div class="ts-overlay" id="tsOverlay"></div>
 
 
 <section class="hero">
@@ -562,5 +668,39 @@ while($fact = $resultado->fetch_assoc()){
 <script src="ride_the_wave.js"></script>
 
     <script src="js/navbar.js?v=login-si-no"></script>
+
+    <script>
+
+const boton=document.getElementById("tsToggle");
+const menu=document.getElementById("tsMobile");
+const fondo=document.getElementById("tsOverlay");
+
+boton.onclick=function(){
+
+    menu.classList.toggle("active");
+    fondo.classList.toggle("active");
+
+    if(menu.classList.contains("active")){
+
+        boton.innerHTML="✕";
+
+    }else{
+
+        boton.innerHTML="☰";
+
+    }
+
+}
+
+fondo.onclick=function(){
+
+    menu.classList.remove("active");
+    fondo.classList.remove("active");
+
+    boton.innerHTML="☰";
+
+}
+
+</script>
 </body>
 </html>

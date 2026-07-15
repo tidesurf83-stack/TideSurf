@@ -24,9 +24,7 @@ session_start();
 
 <body class="has-site-navbar">
     
-<!-- ================= NAVBAR ================= -->
-
-<header class="ts-navbar">
+    <header class="ts-navbar">
 
 
     <!-- LOGO -->
@@ -49,7 +47,7 @@ session_start();
         <a href="escuelas.php">Escuelas</a>
         <a href="tiendas.php">Tiendas</a>
         <a href="galeria.php">Galería</a>
-        <a href="sobre_nosotros.php">Sobre Nosotros</a>
+        <a href="sobre_nosotros.html">Sobre Nosotros</a>
 
     </nav>
 
@@ -107,12 +105,12 @@ session_start();
 
     <a href="index.php">Inicio</a>
     <a href="noticias.php">Noticias</a>
-    <a href="competencias.html">Competencias</a>
+    <a href="competencias.php">Competencias</a>
     <a href="playas.php">Playas</a>
     <a href="escuelas.php">Escuelas</a>
     <a href="tiendas.php">Tiendas</a>
     <a href="galeria.php">Galería</a>
-    <a href="sobre_nosotros.php">Sobre Nosotros</a>
+    <a href="sobre_nosotros.html">Sobre Nosotros</a>
 
 
     <hr>

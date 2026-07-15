@@ -26,94 +26,71 @@ function toggleMenu() {
 
 
 
-/* ==========================
-      MODAL EVENTOS
-========================== */
+// ==============================
+// MODAL REGISTRO
+// ==============================
 
-const modal = document.getElementById("eventoModal");
+document.addEventListener("DOMContentLoaded", () => {
 
-const modalTitulo = document.getElementById("modalTitulo");
-const modalLugar = document.getElementById("modalLugar");
-const modalFecha = document.getElementById("modalFecha");
-const modalDescripcion = document.getElementById("modalDescripcion");
-const modalImagen = document.getElementById("modalImagen");
+    const modal = document.getElementById("registroModal");
+    const botones = document.querySelectorAll(".abrirRegistro");
+    const cerrar = document.querySelector(".cerrarRegistro");
 
-const botones = document.querySelectorAll(".btn-detalles");
+    const inputCompetencia = document.getElementById("nombreCompetencia");
+    const tituloCompetencia = document.getElementById("tituloCompetencia");
+    const lugarCompetencia = document.getElementById("lugarCompetencia");
+    const fechaCompetencia = document.getElementById("fechaCompetencia");
+    const imagenCompetencia = document.getElementById("imagenCompetencia");
 
-botones.forEach((boton) => {
+    // Abrir modal
+    botones.forEach((boton) => {
 
-    boton.addEventListener("click", function () {
+        boton.addEventListener("click", () => {
 
-        modalTitulo.textContent = this.dataset.titulo;
-        modalLugar.textContent = this.dataset.lugar;
-        modalFecha.textContent = this.dataset.fecha;
-        modalDescripcion.textContent = this.dataset.descripcion;
-        modalImagen.src = this.dataset.imagen;
+            modal.style.display = "flex";
+            document.body.style.overflow = "hidden";
 
-        modal.style.display = "flex";
+            if (inputCompetencia)
+                inputCompetencia.value = boton.dataset.competencia || "";
 
-        document.body.style.overflow = "hidden";
+            if (tituloCompetencia)
+                tituloCompetencia.textContent = boton.dataset.competencia || "Competencia";
 
-    });
+            if (lugarCompetencia)
+                lugarCompetencia.textContent = boton.dataset.lugar || "El Salvador";
 
-});
+            if (fechaCompetencia)
+                fechaCompetencia.textContent = boton.dataset.fecha || "Próximamente";
 
-document.querySelector(".cerrar").addEventListener("click", function () {
+            if (imagenCompetencia && boton.dataset.imagen)
+                imagenCompetencia.src = boton.dataset.imagen;
 
-    modal.style.display = "none";
-
-    document.body.style.overflow = "auto";
-
-});
-
-window.addEventListener("click", function(e){
-
-    if(e.target === modal){
-
-        modal.style.display = "none";
-
-        document.body.style.overflow = "auto";
-
-    }
-
-});
-
-/*=========================
-    MODAL REGISTRO
-=========================*/
-
-const modalRegistro = document.getElementById("registroModal");
-
-const botonesRegistro = document.querySelectorAll(".abrirRegistro");
-
-const cerrarRegistro = document.querySelector(".cerrarRegistro");
-
-const inputCompetencia = document.getElementById("nombreCompetencia");
-
-botonesRegistro.forEach(boton=>{
-
-    boton.addEventListener("click",()=>{
-
-        modalRegistro.style.display="flex";
-
-        inputCompetencia.value=boton.dataset.competencia;
+        });
 
     });
 
-});
-
-cerrarRegistro.addEventListener("click",()=>{
-
-    modalRegistro.style.display="none";
-
-});
-
-window.addEventListener("click",(e)=>{
-
-    if(e.target===modalRegistro){
-
-        modalRegistro.style.display="none";
-
+    // Cerrar con la X
+    if (cerrar) {
+        cerrar.addEventListener("click", () => {
+            modal.style.display = "none";
+            document.body.style.overflow = "auto";
+        });
     }
+
+    // Cerrar al hacer clic fuera
+    window.addEventListener("click", (e) => {
+        if (e.target === modal) {
+            modal.style.display = "none";
+            document.body.style.overflow = "auto";
+        }
+    });
+
+    // Cerrar con ESC
+    document.addEventListener("keydown", (e) => {
+        if (e.key === "Escape") {
+            modal.style.display = "none";
+            document.body.style.overflow = "auto";
+        }
+    });
 
 });

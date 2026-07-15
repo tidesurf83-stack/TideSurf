@@ -265,7 +265,7 @@ $fotoPerfil = trim((string) ($usuario["foto_perfil"] ?? ""));
 
     <a href="index.php">Inicio</a>
     <a href="noticias.php">Noticias</a>
-    <a href="competencias.html">Competencias</a>
+    <a href="competencias.php">Competencias</a>
     <a href="playas.php">Playas</a>
     <a href="escuelas.php">Escuelas</a>
     <a href="tiendas.php">Tiendas</a>
