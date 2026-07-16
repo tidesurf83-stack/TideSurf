@@ -115,7 +115,7 @@ if (!$resultado) {
     <a href="escuelas.php">Escuelas</a>
     <a href="tiendas.php">Tiendas</a>
     <a href="galeria.php">Galería</a>
-    <a href="sobre_nosotros.html">Sobre Nosotros</a>
+    <a href="sobre_nosotros.php">Sobre Nosotros</a>
 
 
     <hr>
