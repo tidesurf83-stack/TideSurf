@@ -9,6 +9,8 @@ $resultado = $conn->query($sql);
 
 <!DOCTYPE html>
 <html lang="es">
+ <?php include("head.php"); ?>
+
 
 <head>
     <meta charset="UTF-8">
