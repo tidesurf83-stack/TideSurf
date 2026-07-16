@@ -25,27 +25,19 @@ if ($conn->connect_error) {
     <link rel="stylesheet" href="css/navbar.css?v=login-espacio">
 </head>
 <body class="has-site-navbar">
-<div class="site-navbar-shell">
-    <div class="site-navbar">
-        <a class="site-navbar-brand" href="index.php" aria-label="TideSurf Inicio">
-            <img src="logo-tidesurf-navbar.png" alt="TideSurf">
-        </a>
-        <nav class="site-navbar-menu" aria-label="Navegacion principal">
-            <a href="noticias.php">Noticias</a>
-            <a href="competencias.html">Competencias</a>
-            <a href="playas.html">Playas</a>
-            <a href="escuelas.html">Escuelas de Surf</a>
-            <a href="tiendas.php">Tiendas</a>
-            <a href="galeria.php">Galeria</a>
-            <a href="sobre_nosotros.html">Sobre Nosotros</a>
-        </nav>
-        <a href="perfil.php" class="site-profile-avatar" aria-label="Mi Perfil">
-            <span class="site-avatar-icon"></span>
-        </a>
-    </div>
-</div>
+    
+    <header class="ts-navbar">
 
-<<<<<<< HEAD
+
+    <!-- LOGO -->
+    <div class="ts-logo">
+
+        <a href="index.php">
+            <img src="img/logo-tidesurf-navbar.png" alt="TideSurf">
+        </a>
+
+    </div>
+
 
     <!-- MENÚ ESCRITORIO -->
     <nav class="ts-menu">
@@ -60,7 +52,6 @@ if ($conn->connect_error) {
         <a href="sobre_nosotros.php">Sobre Nosotros</a>
 
     </nav>
-
 
 
     <!-- USUARIO ESCRITORIO -->
@@ -153,14 +144,10 @@ if ($conn->connect_error) {
 
 
 </nav>
-
 <div class="ts-overlay" id="tsOverlay"></div>
 
-<!-- Carrusel dinámico con las primeras 3 fotos de la base de datos -->
-=======
->>>>>>> e390933 (Cambios en Inicio de sesión y registro)
 <?php
-// Carrusel dinámico con estilo mediano y sin imagen2_noti1.png
+// Carrusel dinámico con todas las imágenes excepto imagen2_noti1.png
 $sql_carousel = "SELECT * FROM noticia_imagenes 
                  WHERE imagen != 'imagen2_noti1.png' 
                  ORDER BY orden ASC";
@@ -186,6 +173,7 @@ if ($result_carousel->num_rows > 0) {
     echo '</div>';
 }
 ?>
+
 
 
 <!-- Galería dinámica completa desde la tabla galerias -->
