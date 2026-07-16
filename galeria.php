@@ -1,12 +1,14 @@
 <?php
+session_start();
 // Conexión a la base de datos
 $servername = "localhost";
-$username   = "root";       
-$password   = "";           
-$dbname     = "tidesurf";   
+$username   = "root";       // cambia si tu usuario es distinto
+$password   = "";           // cambia si tu contraseña es distinta
+$dbname     = "tidesurf";   // tu base de datos
 
 $conn = new mysqli($servername, $username, $password, $dbname);
 
+// Verificar conexión
 if ($conn->connect_error) {
     die("Conexión fallida: " . $conn->connect_error);
 }
@@ -25,10 +27,19 @@ if ($conn->connect_error) {
     <link rel="stylesheet" href="css/style.css?v=perfil-icono">
     <link rel="stylesheet" href="css/galeria.css">
     <link rel="stylesheet" href="css/navbar.css?v=login-espacio">
+    <link rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="css/footer.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    
 </head>
 <body class="has-site-navbar">
-    
-    <header class="ts-navbar">
+
+<!-- ================= NAVBAR ================= -->
+
+<header class="ts-navbar">
 
 
     <!-- LOGO -->
@@ -51,9 +62,10 @@ if ($conn->connect_error) {
         <a href="escuelas.php">Escuelas</a>
         <a href="tiendas.php">Tiendas</a>
         <a href="galeria.php">Galería</a>
-        <a href="sobre_nosotros.php">Sobre Nosotros</a>
+        <a href="sobre_nosotros.html">Sobre Nosotros</a>
 
     </nav>
+
 
 
     <!-- USUARIO ESCRITORIO -->
@@ -114,7 +126,7 @@ if ($conn->connect_error) {
     <a href="escuelas.php">Escuelas</a>
     <a href="tiendas.php">Tiendas</a>
     <a href="galeria.php">Galería</a>
-    <a href="sobre_nosotros.php">Sobre Nosotros</a>
+    <a href="sobre_nosotros.html">Sobre Nosotros</a>
 
 
     <hr>
@@ -146,22 +158,21 @@ if ($conn->connect_error) {
 
 
 </nav>
+
 <div class="ts-overlay" id="tsOverlay"></div>
 
+<!-- Carrusel dinámico con las primeras 3 fotos de la base de datos -->
 <?php
-// Carrusel dinámico con todas las imágenes excepto imagen2_noti1.png
-$sql_carousel = "SELECT * FROM noticia_imagenes 
-                 WHERE imagen != 'imagen2_noti1.png' 
-                 ORDER BY orden ASC";
+$sql_carousel = "SELECT * FROM galerias LIMIT 3";
 $result_carousel = $conn->query($sql_carousel);
 
 if ($result_carousel->num_rows > 0) {
-    echo '<div id="carouselTidesurf" class="carousel slide galeria-bootstrap-carousel mb-5" data-bs-ride="carousel">';
+    echo '<div id="carouselTidesurf" class="carousel slide mb-5" data-bs-ride="carousel">';
     echo '<div class="carousel-inner">';
     $active = true;
     while($row_carousel = $result_carousel->fetch_assoc()) {
         echo '<div class="carousel-item '.($active ? 'active' : '').'">';
-        echo '<img src="img/noticias/'.$row_carousel["imagen"].'" class="d-block w-100" alt="Noticia '.$row_carousel["ID_noticias"].'">';
+        echo '<img src="'.$row_carousel["imagen_url"].'" class="d-block w-100" alt="'.$row_carousel["descripcion"].'">';
         echo '</div>';
         $active = false;
     }
@@ -176,15 +187,13 @@ if ($result_carousel->num_rows > 0) {
 }
 ?>
 
-
-
-<!-- Galería dinámica completa desde la tabla galerias -->
 <section class="grid-gallery-section container mt-5 mb-5">
     <div class="section-title">
         <h2>Galería de Tidesurf</h2>
     </div>
     <div class="gallery-grid">
         <?php
+        // Consultar la tabla galerias para la galería completa
         $sql = "SELECT * FROM galerias";
         $result = $conn->query($sql);
 
@@ -202,23 +211,65 @@ if ($result_carousel->num_rows > 0) {
     </div>
 </section>
 
-<footer class="footer">
-    <div class="container">
-        <h3>Nuestro Objetivo</h3>
-        <p class="footer-objective">
-            Nuestro objetivo es ayudar a las personas a conocer más sobre el surf,
-            descubrir las mejores playas de El Salvador, promover el turismo y
-            fomentar el aprendizaje de este deporte a través de información útil,
-            academias y eventos destacados.
-        </p>
-        <div class="footer-social">
-            <a href="#">Instagram</a>
+<footer class="footer-tidesurf">
+    <div class="footer-container">
+        <!-- Columna izquierda -->
+        <div class="footer-left">
+            <h2>TideSurf</h2>
+            <p>
+                Explora El Salvador a través de TideSurf y sumérgete en las olas.
+            </p>
+            <div class="social-icons">
+                <a href="//www.instagram.com/tidesurf_06?igsh=MTB3dnd0ZG5iNWJkbw=="><i class="fab fa-instagram"></i></a>
+                <a href="https://chat.whatsapp.com/JwgjqdCgNBq9hLrAbfWoY"><i class="fab fa-whatsapp"></i></a>
+                <a href="mailto:tidesurf83@gmail.com?subject=Consulta&body=Hola, quisiera más información."><i class="far fa-envelope"></i></a>
+            </div>
         </div>
+    </div>
+ 
+    <!-- Parte inferior -->
+    <div class="footer-bottom">
+        <p>© 2026 TideSurf. Todos los derechos reservados.</p>
+        <p><a href="#">Política de Privacidad</a> | <a href="#">Términos y Condiciones</a></p>
     </div>
 </footer>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"></script>
 <script src="js/navbar.js?v=login-si-no"></script>
+
+<script>
+
+const boton=document.getElementById("tsToggle");
+const menu=document.getElementById("tsMobile");
+const fondo=document.getElementById("tsOverlay");
+
+boton.onclick=function(){
+
+    menu.classList.toggle("active");
+    fondo.classList.toggle("active");
+
+    if(menu.classList.contains("active")){
+
+        boton.innerHTML="✕";
+
+    }else{
+
+        boton.innerHTML="☰";
+
+    }
+
+}
+
+fondo.onclick=function(){
+
+    menu.classList.remove("active");
+    fondo.classList.remove("active");
+
+    boton.innerHTML="☰";
+
+}
+
+</script>
 </body>
 </html>
 <?php
