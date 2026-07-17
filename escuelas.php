@@ -183,7 +183,7 @@ if (!$resultado) {
 
         <div class="usuarios-info">
 
-            <h2>¿Que encuentras en esta seccion?</h2>
+            <h2>¿Qué encuentras en esta sección?</h2>
 
             <div class="usuario-item">
                 <div class="icono">
