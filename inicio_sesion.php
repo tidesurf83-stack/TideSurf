@@ -40,6 +40,7 @@ $conn->close();
 
 <!DOCTYPE html>
 <html lang="es">
+<?php include("head.php"); ?>
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -81,13 +82,9 @@ $conn->close();
                         <input type="password" id="passwordInput" name="password" placeholder="Contraseña" required>
                         <i class='bx bx-hide eye-icon' id="togglePassword"></i>
                     </div>
- 
-                    <div class="helper-text-links">
-                        <a href="recuperar_contra.html" class="link-olvido">¿Olvidé mi contraseña?</a>
-                    </div>
- 
+
                     <div class="enlace-registro-redireccion">
-                        ¿No tienes cuenta? <a href="registro.html">Regístrate</a>
+                        ¿No tienes cuenta? <a href="registro.php">Regístrate</a>
                     </div>
                     <button type="submit" class="boton-iniciar-tide">
                         <i class='bx bx-log-in-circle'></i> Iniciar Sesión
