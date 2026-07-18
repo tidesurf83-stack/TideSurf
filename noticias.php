@@ -43,40 +43,44 @@ $categorias = array_unique(array_column($noticias, "categoria"));
 sort($categorias);
 ?>
 
-
-
 <!DOCTYPE html>
 <html lang="es">
+<?php include("head.php"); ?>
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>News</title>
   <link rel="stylesheet" href="css/noticias.css">
-  <link rel="stylesheet" href="css/navbar.css?v=login-espacio">
-
+  <link rel="stylesheet" href="css/navbar.css">
+  <link rel="stylesheet" href="css/footer.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+  
 </head>
-<body>
+<body class="has-site-navbar">
 
-  <!-- NAVBAR -->
+<!-- ================= NAVBAR ================= -->
 
-<div class="site-navbar-shell">
-    <div class="site-navbar">
+<header class="ts-navbar">
 
-        <a class="site-navbar-brand" href="index.php" aria-label="TideSurf Inicio">
-            <img src="logo-tidesurf-navbar.png" alt="TideSurf">
+
+    <!-- LOGO -->
+    <div class="ts-logo">
+
+        <a href="index.php">
+            <img src="img/logo-tidesurf-navbar.png" alt="TideSurf">
         </a>
 
-        <!--
-        <button class="menu-toggle">
-            ☰
-        </button>
-        -->
+    </div>
 
-        <nav class="site-navbar-menu" aria-label="Navegacion principal">
 
-            <a href="index.php">Inicio</a>
+    <!-- MENÚ ESCRITORIO -->
+    <nav class="ts-menu">
 
-            <div class="dropdown-noticias">
+        <a href="index.php">Inicio</a>
+
+        <div class="dropdown-noticias">
 
                 <button
                     type="button"
@@ -118,14 +122,151 @@ sort($categorias);
 
             </div>
 
-            <a href="competencias.html">Competencias</a>
-            <a href="playas.php">Playas</a>
-            <a href="escuelas.php">Escuelas de Surf</a>
-            <a href="tiendas.php">Tiendas</a>
-            <a href="galeria.html">Galería</a>
-            <a href="sobre_nosotros.html">Sobre Nosotros</a>
+        <a href="competencias.php">Competencias</a>
+        <a href="playas.php">Playas</a>
+        <a href="escuelas.php">Escuelas</a>
+        <a href="tiendas.php">Tiendas</a>
+        <a href="galeria.php">Galería</a>
+        <a href="sobre_nosotros.html">Sobre Nosotros</a>
 
-        </nav>
+    </nav>
+
+
+
+    <!-- USUARIO ESCRITORIO -->
+
+    <div class="ts-user">
+
+
+        <?php if(isset($_SESSION["usuario_id"])) { ?>
+
+
+            <a href="perfil.php" class="perfil-icono" title="Mi perfil">
+
+                <i class="bi bi-person-circle"></i>
+
+            </a>
+
+
+        <?php } else { ?>
+
+
+            <a href="inicio_sesion.php" class="btn-login">
+
+                Iniciar sesión
+
+            </a>
+
+
+        <?php } ?>
+
+
+    </div>
+
+
+
+    <!-- BOTÓN HAMBURGUESA -->
+
+    <button class="ts-toggle" id="tsToggle">
+
+        ☰
+
+    </button>
+
+
+</header>
+
+
+
+<!-- ================= MENU MOVIL ================= -->
+
+
+<nav class="ts-mobile" id="tsMobile">
+
+
+    <a href="index.php">Inicio</a>
+
+
+   <div class="dropdown-noticias">
+
+                <button
+                    type="button"
+                    id="btn-noticias"
+                    class="dropdown-toggle-noticias">
+
+                    Noticias
+                    <span class="flecha-dropdown">▼</span>
+
+                </button>
+
+                <div class="dropdown-menu-noticias">
+
+                    <button
+                        class="dropdown-item-noticia active"
+                        data-filtro="todas">
+                        Todas
+                    </button>
+
+                    <button
+                        class="dropdown-item-noticia"
+                        data-filtro="destacadas">
+                        Noticias destacadas
+                    </button>
+
+                    <?php foreach ($categorias as $categoria): ?>
+
+                        <button
+                            class="dropdown-item-noticia"
+                            data-filtro="<?php echo htmlspecialchars($categoria, ENT_QUOTES, 'UTF-8'); ?>">
+
+                            <?php echo htmlspecialchars($categoria); ?>
+
+                        </button>
+
+                    <?php endforeach; ?>
+
+                </div>
+
+            </div>
+
+
+    <a href="competencias.php">Competencias</a>
+    <a href="playas.php">Playas</a>
+    <a href="escuelas.php">Escuelas</a>
+    <a href="tiendas.php">Tiendas</a>
+    <a href="galeria.php">Galería</a>
+    <a href="sobre_nosotros.html">Sobre Nosotros</a>
+
+
+    <hr>
+
+
+    <?php if(isset($_SESSION["usuario_id"])) { ?>
+
+
+        <a href="perfil.php" class="mobile-login">
+
+            <i class="bi bi-person-circle"></i>
+
+            Perfil
+
+        </a>
+
+
+    <?php } else { ?>
+
+
+        <a href="inicio_sesion.php" class="mobile-login">
+
+            Iniciar sesión
+
+        </a>
+
+
+    <?php } ?>
+
+
+</nav>
 
         <a
             href="perfil.php"
@@ -276,6 +417,31 @@ sort($categorias);
   </div>
  </div>
 
+<footer class="footer-tidesurf">
+    <div class="footer-container">
+        <!-- Columna izquierda -->
+        <div class="footer-left">
+            <h2>TideSurf</h2>
+            <p>
+                Explora El Salvador a través de TideSurf y sumérgete en las olas.
+            </p>
+            <div class="social-icons">
+                <a href="//www.instagram.com/tidesurf_06?igsh=MTB3dnd0ZG5iNWJkbw=="><i class="fab fa-instagram"></i></a>
+                <a href="https://chat.whatsapp.com/JwgjqdCgNBq9hLrAbfWoY"><i class="fab fa-whatsapp"></i></a>
+                <a href="mailto:tidesurf83@gmail.com?subject=Consulta&body=Hola, quisiera más información."><i class="far fa-envelope"></i></a>
+            </div>
+        </div>
+    </div>
+ 
+    <!-- Parte inferior -->
+    <div class="footer-bottom">
+        <p>© 2026 TideSurf. Todos los derechos reservados.</p>
+        <p><a href="#">Política de Privacidad</a> | <a href="#">Términos y Condiciones</a></p>
+    </div>
+</footer>
+
+<script src="js/navbar.js" ></script>
+<script src="js/main.js"></script>
 <script src="js/noticias.js"></script>
 </body>
 </html> 

@@ -26,71 +26,192 @@ function toggleMenu() {
 
 
 
+/* ==========================
+      MODAL EVENTOS
+========================== */
+
+const modal = document.getElementById("eventoModal");
+
+const modalTitulo = document.getElementById("modalTitulo");
+const modalLugar = document.getElementById("modalLugar");
+const modalFecha = document.getElementById("modalFecha");
+const modalDescripcion = document.getElementById("modalDescripcion");
+const modalImagen = document.getElementById("modalImagen");
+
+const botones = document.querySelectorAll(".btn-detalles");
+
+botones.forEach((boton) => {
+
+    boton.addEventListener("click", function () {
+
+        modalTitulo.textContent = this.dataset.titulo;
+        modalLugar.textContent = this.dataset.lugar;
+        modalFecha.textContent = this.dataset.fecha;
+        modalDescripcion.textContent = this.dataset.descripcion;
+        modalImagen.src = this.dataset.imagen;
+
+        modal.style.display = "flex";
+
+        document.body.style.overflow = "hidden";
+
+    });
+
+});
+
+document.querySelector(".cerrar").addEventListener("click", function () {
+
+    modal.style.display = "none";
+
+    document.body.style.overflow = "auto";
+
+});
+
+window.addEventListener("click", function(e){
+
+    if(e.target === modal){
+
+        modal.style.display = "none";
+
+        document.body.style.overflow = "auto";
+
+    }
+
+});
+
+/*=========================
+    MODAL REGISTRO
+=========================*/
+
 // ==============================
 // MODAL REGISTRO
 // ==============================
 
-document.addEventListener("DOMContentLoaded", () => {
+const modalRegistro = document.getElementById("registroModal");
+const botonesRegistro = document.querySelectorAll(".abrirRegistro");
+const cerrarRegistro = document.querySelector(".cerrarRegistro");
 
-    const modal = document.getElementById("registroModal");
-    const botones = document.querySelectorAll(".abrirRegistro");
-    const cerrar = document.querySelector(".cerrarRegistro");
+const inputCompetencia = document.getElementById("nombreCompetencia");
 
-    const inputCompetencia = document.getElementById("nombreCompetencia");
-    const tituloCompetencia = document.getElementById("tituloCompetencia");
-    const lugarCompetencia = document.getElementById("lugarCompetencia");
-    const fechaCompetencia = document.getElementById("fechaCompetencia");
-    const imagenCompetencia = document.getElementById("imagenCompetencia");
+// Tarjeta lateral
+const tituloCompetencia = document.getElementById("tituloCompetencia");
+const lugarCompetencia = document.getElementById("lugarCompetencia");
+const fechaCompetencia = document.getElementById("fechaCompetencia");
+const imagenCompetencia = document.getElementById("imagenCompetencia");
 
-    // Abrir modal
-    botones.forEach((boton) => {
+// Abrir modal
+botonesRegistro.forEach((boton) => {
 
-        boton.addEventListener("click", () => {
+    boton.addEventListener("click", () => {
 
-            modal.style.display = "flex";
-            document.body.style.overflow = "hidden";
+        modalRegistro.style.display = "flex";
 
-            if (inputCompetencia)
-                inputCompetencia.value = boton.dataset.competencia || "";
+        document.body.style.overflow = "hidden";
 
-            if (tituloCompetencia)
-                tituloCompetencia.textContent = boton.dataset.competencia || "Competencia";
+        // Nombre de la competencia
+        inputCompetencia.value = boton.dataset.competencia;
 
-            if (lugarCompetencia)
-                lugarCompetencia.textContent = boton.dataset.lugar || "El Salvador";
+        // Información de la tarjeta
+        tituloCompetencia.textContent =
+            boton.dataset.competencia || "Competencia";
 
-            if (fechaCompetencia)
-                fechaCompetencia.textContent = boton.dataset.fecha || "Próximamente";
+        lugarCompetencia.textContent =
+            boton.dataset.lugar || "El Salvador";
 
-            if (imagenCompetencia && boton.dataset.imagen)
-                imagenCompetencia.src = boton.dataset.imagen;
+        fechaCompetencia.textContent =
+            boton.dataset.fecha || "Próximamente";
 
-        });
+        if (boton.dataset.imagen) {
+            imagenCompetencia.src = boton.dataset.imagen;
+        }
+
+        // Animación
+        const caja = document.querySelector(".modal-registro");
+
+        caja.animate(
+            [
+                {
+                    opacity: 0,
+                    transform: "translateY(-40px) scale(.9)"
+                },
+                {
+                    opacity: 1,
+                    transform: "translateY(0) scale(1)"
+                }
+            ],
+            {
+                duration: 400,
+                easing: "ease"
+            }
+        );
 
     });
 
-    // Cerrar con la X
-    if (cerrar) {
-        cerrar.addEventListener("click", () => {
-            modal.style.display = "none";
-            document.body.style.overflow = "auto";
-        });
+});
+
+// Cerrar
+function cerrarModal() {
+
+    modalRegistro.style.display = "none";
+
+    document.body.style.overflow = "auto";
+
+}
+
+cerrarRegistro.addEventListener("click", cerrarModal);
+
+window.addEventListener("click", (e) => {
+
+    if (e.target === modalRegistro) {
+
+        cerrarModal();
+
     }
 
-    // Cerrar al hacer clic fuera
-    window.addEventListener("click", (e) => {
-        if (e.target === modal) {
-            modal.style.display = "none";
-            document.body.style.overflow = "auto";
-        }
+});
+
+// Escape
+document.addEventListener("keydown", (e) => {
+
+    if (e.key === "Escape") {
+
+        cerrarModal();
+
+    }
+
+});
+
+// ==============================
+// EFECTO BOTÓN
+// ==============================
+
+const botonEnviar = document.querySelector(".btnEnviar");
+
+if (botonEnviar) {
+
+    botonEnviar.addEventListener("mouseenter", () => {
+
+        botonEnviar.style.transform = "scale(1.03)";
+
     });
 
-    // Cerrar con ESC
-    document.addEventListener("keydown", (e) => {
-        if (e.key === "Escape") {
-            modal.style.display = "none";
-            document.body.style.overflow = "auto";
-        }
+    botonEnviar.addEventListener("mouseleave", () => {
+
+        botonEnviar.style.transform = "scale(1)";
+
+    });
+
+}
+
+// ==============================
+// EFECTO INPUTS
+// ==============================
+
+document.querySelectorAll("input, select").forEach((campo) => {
+
+    campo.addEventListener("focus", () => {
+
+        campo.style.transition = ".3s";
+
     });
 
 });

@@ -38,6 +38,8 @@ if(isset($_POST['registrar'])){
 
 <!DOCTYPE html>
 <html lang="es">
+ <?php include("head.php"); ?>
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -46,6 +48,11 @@ if(isset($_POST['registrar'])){
     <link rel="stylesheet" href="css/navbar.css?v=login-espacio">
     <link rel="stylesheet"
     href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="css/footer.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+  
 </head>
 
 <body class="has-site-navbar">
@@ -203,11 +210,12 @@ if(isset($_POST['registrar'])){
     </div>
 </section>
 
-   <!-- EVENTS -->
+  <!-- EVENTS -->
 <section class="events">
 
     <div class="section-title">
-        <h2>Próximos Eventos
+        <h2>
+            Próximos Eventos
             <span class="wave">〰️</span>
         </h2>
     </div>
@@ -232,27 +240,35 @@ if(isset($_POST['registrar'])){
 
                 <div class="card">
 
-                    <img src="<?php echo $fila['imagen']; ?>" alt="<?php echo $fila['titulo']; ?>">
+                    <img 
+                        src="<?php echo htmlspecialchars($fila['imagen']); ?>" 
+                        alt="<?php echo htmlspecialchars($fila['titulo']); ?>"
+                    >
 
                     <div class="card-content">
 
-                        <h3><?php echo $fila['titulo']; ?></h3>
+                        <h3>
+                            <?php echo htmlspecialchars($fila['titulo']); ?>
+                        </h3>
 
-                        <p><?php echo $fila['lugar']; ?></p>
+                        <p>
+                            📍 <?php echo htmlspecialchars($fila['lugar']); ?>
+                        </p>
 
-                        <p><?php echo date("M d - Y", strtotime($fila['fecha'])); ?></p>
-
+                        <p>
+                            📅 <?php echo date("M d - Y", strtotime($fila['fecha'])); ?>
+                        </p>
 
                         <button
-    class="btn-detalles"
-    data-titulo="<?php echo htmlspecialchars($fila['titulo']); ?>"
-    data-lugar="<?php echo htmlspecialchars($fila['lugar']); ?>"
-    data-fecha="<?php echo date('d/m/Y', strtotime($fila['fecha'])); ?>"
-    data-imagen="<?php echo htmlspecialchars($fila['imagen']); ?>"
-    data-descripcion="<?php echo htmlspecialchars($fila['descripcion']); ?>">
-    VER DETALLES →
-</button>
-
+                            class="btn-detalles"
+                            data-titulo="<?php echo htmlspecialchars($fila['titulo']); ?>"
+                            data-lugar="<?php echo htmlspecialchars($fila['lugar']); ?>"
+                            data-fecha="<?php echo date('d/m/Y', strtotime($fila['fecha'])); ?>"
+                            data-imagen="<?php echo htmlspecialchars($fila['imagen']); ?>"
+                            data-descripcion="<?php echo htmlspecialchars($fila['descripcion']); ?>"
+                        >
+                            VER DETALLES →
+                        </button>
 
                     </div>
 
@@ -271,6 +287,51 @@ if(isset($_POST['registrar'])){
 </section>
 
 
+<!-- MODAL DEL EVENTO -->
+
+<div id="eventoModal" class="modal">
+
+    <div class="modal-content">
+
+        <!-- Imagen del evento -->
+        <img 
+            id="modalImagen" 
+            src="" 
+            alt="Imagen del evento"
+        >
+
+        <!-- Información del evento -->
+        <div class="modal-info">
+
+            <!-- Botón cerrar -->
+            <span class="cerrar">&times;</span>
+
+            <!-- Título -->
+            <h2 id="modalTitulo"></h2>
+
+            <!-- Lugar y fecha -->
+            <div class="modal-datos">
+
+                <p>
+                    📍 <strong>Lugar:</strong><br>
+                    <span id="modalLugar"></span>
+                </p>
+
+                <p>
+                    📅 <strong>Fecha:</strong><br>
+                    <span id="modalFecha"></span>
+                </p>
+
+            </div>
+
+            <!-- Descripción -->
+            <p id="modalDescripcion"></p>
+
+        </div>
+
+    </div>
+
+</div>
 
 
 <!-- CATEGORY -->
@@ -303,7 +364,7 @@ while ($fila = $resultado->fetch_assoc()) {
 
         <div class="featured-content">
 
-            <span>FEATURED EVENT</span>
+            <span>PROXIMO EVENTO</span>
 
             <h3><?php echo $fila['titulo']; ?></h3>
 
@@ -331,8 +392,8 @@ data-competencia="<?php echo htmlspecialchars($fila['titulo']); ?>">
 <section class="rankings">
 
     <div class="section-title">
-        <h2>Top Surf Rankings</h2>
-        <a href="#">Ver todo</a>
+        <h2>Ranking de Surfistas</h2>
+        
     </div>
 
     <div class="ranking-table">
@@ -596,21 +657,26 @@ data-competencia="<?php echo htmlspecialchars($fila['titulo']); ?>">
 
 </div>
 
-<footer class="footer">
-    <div class="container">
-        <h3>Nuestro Objetivo</h3>
-        <p class="footer-objective">
-            Nuestro objetivo es ayudar a las personas a conocer más sobre el surf,
-            descubrir las mejores playas de El Salvador, promover el turismo y
-            fomentar el aprendizaje de este deporte a través de información útil,
-            academias y eventos destacados.
-        </p>
-        <div class="footer-social">
-            <a href="#">Instagram</a>
-            <a href="#">Facebook</a>
-            <a href="#">TikTok</a>
-            <a href="#">YouTube</a>
+<footer class="footer-tidesurf">
+    <div class="footer-container">
+        <!-- Columna izquierda -->
+        <div class="footer-left">
+            <h2>TideSurf</h2>
+            <p>
+                Explora El Salvador a través de TideSurf y sumérgete en las olas.
+            </p>
+            <div class="social-icons">
+                <a href="//www.instagram.com/tidesurf_06?igsh=MTB3dnd0ZG5iNWJkbw=="><i class="fab fa-instagram"></i></a>
+                <a href="https://chat.whatsapp.com/JwgjqdCgNBq9hLrAbfWoY"><i class="fab fa-whatsapp"></i></a>
+                <a href="mailto:tidesurf83@gmail.com?subject=Consulta&body=Hola, quisiera más información."><i class="far fa-envelope"></i></a>
+            </div>
         </div>
+    </div>
+ 
+    <!-- Parte inferior -->
+    <div class="footer-bottom">
+        <p>© 2026 TideSurf. Todos los derechos reservados.</p>
+        <p><a href="#">Política de Privacidad</a> | <a href="#">Términos y Condiciones</a></p>
     </div>
 </footer>
 

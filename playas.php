@@ -10,6 +10,7 @@ if (!$resultado) {
 }
 ?>
 <head>
+    <?php include("head.php"); ?>
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -30,6 +31,13 @@ if (!$resultado) {
     href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
 
     <link rel="stylesheet" href="css/navbar.css?v=login-espacio">
+
+    <link rel="stylesheet" href="css/footer.css">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    
 </head>
 
 <body>
@@ -630,37 +638,30 @@ while($fact = $resultado->fetch_assoc()){
 
 </div>
 
-<footer class="footer">
-
-    <div class="container">
-
-        <h3>Nuestro Objetivo</h3>
-
-        <p class="footer-objective">
-
-            Nuestro objetivo es ayudar a las personas a conocer más sobre el surf,
-            descubrir las mejores playas de El Salvador, promover el turismo y
-            fomentar el aprendizaje de este deporte a través de información útil,
-            academias y eventos destacados.
-
-        </p>
-
-        <div class="footer-social">
-
-            <a href="https://www.instagram.com/tidesurf_06?igsh=MTB3dnd0ZG5iNWJkbw==">Instagram</a>
-
-            <a href=" https://chat.whatsapp.com/JwgjqdCgNBq9hLrAbfWoY">WhatsApp</a>
-
-        <a href="mailto:tidesurf83@gmail.com?subject=Consulta&body=Hola, quisiera más información.">Gmail</a>
-
-</a>
-
-
+<footer class="footer-tidesurf">
+    <div class="footer-container">
+        <!-- Columna izquierda -->
+        <div class="footer-left">
+            <h2>TideSurf</h2>
+            <p>
+                Explora El Salvador a través de TideSurf y sumérgete en las olas.
+            </p>
+            <div class="social-icons">
+                <a href="//www.instagram.com/tidesurf_06?igsh=MTB3dnd0ZG5iNWJkbw=="><i class="fab fa-instagram"></i></a>
+                <a href="https://chat.whatsapp.com/JwgjqdCgNBq9hLrAbfWoY"><i class="fab fa-whatsapp"></i></a>
+                <a href="mailto:tidesurf83@gmail.com?subject=Consulta&body=Hola, quisiera más información."><i class="far fa-envelope"></i></a>
+            </div>
         </div>
-
     </div>
-
+ 
+    <!-- Parte inferior -->
+    <div class="footer-bottom">
+        <p>© 2026 TideSurf. Todos los derechos reservados.</p>
+        <p><a href="#">Política de Privacidad</a> | <a href="#">Términos y Condiciones</a></p>
+    </div>
 </footer>
+
+
 <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
 
 <script src="js/mapa.js"></script>
