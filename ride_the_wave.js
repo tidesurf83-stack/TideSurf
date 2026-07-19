@@ -390,17 +390,17 @@ const monthlyTop = {
         {
             name: "Las Flores",
             location: "San Miguel",
-            image: "img/playas/las flores.webp"
+            image: "img/playas/lasflores.jpg"
         },
         {
             name: "Punta Roca",
             location: "La Libertad",
-            image: "img/playas/punta roca.jpg"
+            image: "img/playas/puntaroca.jpg"
         },
         {
             name: "Mizata",
             location: "Sonsonate",
-            image: "img/playas/mizata.webp"
+            image: "img/playas/mizata.jpg"
         }
     ],
 
@@ -408,17 +408,17 @@ const monthlyTop = {
         {
             name: "Las Flores",
             location: "San Miguel",
-            image: "img/playas/las flores.webp"
+            image: "img/playas/lasflores.jpg"
         },
         {
             name: "Punta Roca",
             location: "La Libertad",
-            image: "img/playas/punta roca.jpg"
+            image: "img/playas/puntaroca.jpg"
         },
         {
             name: "Punta Mango",
             location: "La Unión",
-            image: "img/playas/punta-mango.jpg"
+            image: "img/playas/puntamango.jpg"
         }
     ],
 
@@ -528,13 +528,19 @@ const months = [
 document.getElementById("monthName").textContent =
     months[currentMonth];
 
- const hamburger = document.getElementById('hamburger');
-  const mobileMenu = document.getElementById('mobileMenu');
+const hamburger = document.getElementById('hamburger');
+const mobileMenu = document.getElementById('mobileMenu');
 
-  hamburger.addEventListener('click', () => {
+if(hamburger && mobileMenu){
+
+hamburger.addEventListener('click', () => {
+
     hamburger.classList.toggle('active');
     mobileMenu.classList.toggle('active');
-  });
+
+});
+
+}
 
   document.querySelectorAll('.mobile-menu a').forEach(link => {
     link.addEventListener('click', () => {
@@ -542,3 +548,213 @@ document.getElementById("monthName").textContent =
       mobileMenu.classList.remove('active');
     });
   });
+
+  // INFORMACIÓN DEL TOP 3
+
+const details =topDetails =  {
+
+
+    "Las Flores":{
+
+        wave:"5 - 8 pies",
+
+        water:"28°C",
+
+        level:"Avanzado",
+
+        score:"9.8/10",
+
+        description:
+        "Durante esta época Las Flores recibe marejadas constantes del Pacífico Sur, creando olas largas, rápidas y perfectas para surfistas experimentados."
+
+    },
+
+
+
+    "Punta Roca":{
+
+        wave:"6 - 10 pies",
+
+        water:"28°C",
+
+        level:"Experto",
+
+        score:"9.6/10",
+
+        description:
+        "Una de las olas más reconocidas de El Salvador. Sus condiciones ofrecen sesiones potentes y técnicas."
+
+    },
+
+
+
+    "Mizata":{
+
+        wave:"5 - 9 pies",
+
+        water:"28°C",
+
+        level:"Intermedio - Avanzado",
+
+        score:"9.3/10",
+
+        description:
+        "Destaca por sus olas consistentes, su entorno natural y una experiencia más tranquila para surfistas."
+
+    },
+
+
+
+    "El Sunzal":{
+
+        wave:"3 - 6 pies",
+
+        water:"27°C",
+
+        level:"Principiante",
+
+        score:"9/10",
+
+        description:
+        "Una playa ideal para aprender surf gracias a sus olas largas y suaves."
+
+    },
+
+
+
+    "El Tunco":{
+
+        wave:"4 - 7 pies",
+
+        water:"27°C",
+
+        level:"Todos los niveles",
+
+        score:"8.8/10",
+
+        description:
+        "El corazón de la cultura surf salvadoreña, con excelentes servicios y ambiente turístico."
+
+    },
+
+
+
+    "El Zonte":{
+
+        wave:"4 - 8 pies",
+
+        water:"27°C",
+
+        level:"Intermedio",
+
+        score:"9/10",
+
+        description:
+        "Una playa reconocida por sus olas constantes y su comunidad surf."
+
+    },
+
+
+    "Punta Mango":{
+
+        wave:"6 - 9 pies",
+
+        water:"28°C",
+
+        level:"Avanzado",
+
+        score:"9.4/10",
+
+        description:
+        "Una playa remota con olas potentes y de gran calidad."
+
+    }
+
+
+};
+
+function openTopModal(position){
+
+
+    const beach = topData[position];
+
+
+    const details = topDetails[beach.name];
+
+
+
+    document.getElementById("topModalImage").src =
+    beach.image;
+
+
+
+    document.getElementById("topModalName").textContent =
+    beach.name;
+
+
+
+    document.getElementById("topModalRank").textContent =
+    "#" + (position + 1);
+
+
+
+    document.getElementById("topModalLocation").textContent =
+    beach.location;
+
+
+
+    document.getElementById("topModalWave").textContent =
+    details.wave;
+
+
+
+    document.getElementById("topModalWater").textContent =
+    details.water;
+
+
+
+    document.getElementById("topModalLevel").textContent =
+    details.level;
+
+
+
+    document.getElementById("topModalScore").textContent =
+    details.score;
+
+
+
+    document.getElementById("topModalDescription").textContent =
+    details.description;
+
+
+
+    document.getElementById("topModal").style.display="block";
+
+
+}
+
+const closeTopModal = document.querySelector(".close-top-modal");
+
+
+closeTopModal.onclick=function(){
+
+    document.getElementById("topModal").style.display="none";
+
+};
+
+
+
+window.addEventListener("click",function(e){
+
+
+    const modal=document.getElementById("topModal");
+
+
+    if(e.target===modal){
+
+        modal.style.display="none";
+
+    }
+
+
+});

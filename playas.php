@@ -48,7 +48,6 @@ if (!$resultado) {
     <header class="ts-navbar">
 
 
-    <!-- LOGO -->
     <div class="ts-logo">
 
         <a href="index.php">
@@ -105,9 +104,6 @@ if (!$resultado) {
     </div>
 
 
-
-    <!-- BOTÓN HAMBURGUESA -->
-
     <button class="ts-toggle" id="tsToggle">
 
         ☰
@@ -116,10 +112,6 @@ if (!$resultado) {
 
 
 </header>
-
-
-
-<!-- ================= MENU MOVIL ================= -->
 
 
 <nav class="ts-mobile" id="tsMobile">
@@ -168,9 +160,9 @@ if (!$resultado) {
 <div class="ts-overlay" id="tsOverlay"></div>
 
 
-<section class="hero">
+<section class="hero-playas">
 
-    <div class="hero-content">
+    <div class="hero-content-playas">
 
         <h1>Encuentra Tu Playa</h1>
 
@@ -261,39 +253,102 @@ if (!$resultado) {
 </section>
 
 <section class="top-month">
+    <div class="top-divider"></div>
 
     <h2>
-     Top 3 Playas de <span id="monthName"></span>
+        Top 3 Playas de <span id="monthName"></span>
     </h2>
+
 
     <p class="month-subtitle">
         Las playas recomendadas para este mes.
     </p>
 
+
+
     <div class="top-grid">
+        
 
-        <div class="top-card gold" id="top1-card">
-            <span class="medal"></span>
+
+        <!-- TOP 1 -->
+
+        <div class="top-card gold" 
+        id="top1-card"
+        onclick="openTopModal(0)">
+
+
+            <span class="medal">
+                
+            </span>
+
+
             <img id="top1-img" src="" alt="">
+
+
             <h3 id="top1-name"></h3>
+
+
             <p id="top1-location"></p>
+
+
         </div>
 
-        <div class="top-card silver" id="top2-card">
-            <span class="medal"></span>
+
+
+
+        <!-- TOP 2 -->
+
+        <div class="top-card silver" 
+        id="top2-card"
+        onclick="openTopModal(1)">
+
+
+            <span class="medal">
+                
+            </span>
+
+
             <img id="top2-img" src="" alt="">
+
+
             <h3 id="top2-name"></h3>
+
+
             <p id="top2-location"></p>
+
+
         </div>
 
-        <div class="top-card bronze" id="top3-card">
-            <span class="medal"></span>
+
+
+
+        <!-- TOP 3 -->
+
+        <div class="top-card bronze" 
+        id="top3-card"
+        onclick="openTopModal(2)">
+
+
+            <span class="medal">
+                
+            </span>
+
+
             <img id="top3-img" src="" alt="">
+
+
             <h3 id="top3-name"></h3>
+
+
             <p id="top3-location"></p>
+
+
         </div>
+
+
 
     </div>
+
 
 </section>
 
@@ -635,6 +690,149 @@ while($fact = $resultado->fetch_assoc()){
         </div>
 
     </div>
+
+</div>
+
+
+
+
+<div class="top-modal" id="topModal">
+
+
+    <div class="top-modal-content">
+
+
+        <span class="close-top-modal">
+            &times;
+        </span>
+
+
+
+        <img id="topModalImage" src="" alt="">
+
+
+
+        <h2 id="topModalName"></h2>
+
+
+
+        <div class="top-info-grid">
+
+
+    <div>
+
+        <i class="bi bi-trophy-fill"></i>
+
+        <br>
+
+        Ranking
+
+        <br>
+
+        <span id="topModalRank"></span>
+
+    </div>
+
+
+
+    <div>
+
+        <i class="bi bi-geo-alt-fill"></i>
+
+        <br>
+
+        Ubicación
+
+        <br>
+
+        <span id="topModalLocation"></span>
+
+    </div>
+
+
+
+    <div class="wave-animation">
+
+        <i class="bi bi-water"></i>
+
+        <br>
+
+        Oleaje
+
+        <br>
+
+        <span id="topModalWave"></span>
+
+    </div>
+
+
+
+
+    <div class="wind-animation">
+
+        <i class="bi bi-wind"></i>
+
+        <br>
+
+        Temperatura
+
+        <br>
+
+        <span id="topModalWater"></span>
+
+    </div>
+
+
+
+
+    <div>
+
+        <i class="bi bi-person-fill"></i>
+
+        <br>
+
+        Nivel
+
+        <br>
+
+        <span id="topModalLevel"></span>
+
+    </div>
+
+
+
+
+    <div>
+
+        <i class="bi bi-star-fill"></i>
+
+        <br>
+
+        Puntuación
+
+        <br>
+
+        <span id="topModalScore"></span>
+
+    </div>
+
+
+</div>
+
+
+
+
+        <h3>
+            ¿Por qué está en el Top 3?
+        </h3>
+
+
+        <p id="topModalDescription"></p>
+
+
+
+    </div>
+
 
 </div>
 
