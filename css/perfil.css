@@ -627,6 +627,42 @@ body {
     margin-bottom:35px;
 }
 
+.btn-back{
+    position:fixed;
+    top:25px;
+    left:25px;
+
+    display:flex;
+    align-items:center;
+    gap:8px;
+
+    padding:12px 22px;
+
+    background:#0288d1;
+    color:#fff;
+
+    text-decoration:none;
+    border-radius:30px;
+
+    font-weight:600;
+    font-size:16px;
+
+    box-shadow:0 8px 20px rgba(0,0,0,.15);
+
+    transition:.3s;
+
+    z-index:9999;
+}
+
+.btn-back:hover{
+    background:#01579b;
+    transform:translateY(-2px);
+}
+
+.btn-back i{
+    font-size:20px;
+}
+
 .footer-social{
 
     display:flex;
@@ -708,3 +744,5 @@ body {
         width: 100%;
     }
 }
+
+

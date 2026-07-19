@@ -1,4 +1,5 @@
 <?php
+session_start();
 
 include(__DIR__ . "/conexion.php");
 
@@ -36,10 +37,18 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $passwordHash
     );
 
-    if ($stmt->execute()) {
-        header("Location: ../inicio_sesion.php");
-        exit();
-    } else {
+  if ($stmt->execute()) {
+
+    $usuarioId = $conn->insert_id;
+
+    $_SESSION["usuario_id"] = $usuarioId;
+    $_SESSION["usuario_nombre"] = $nombre;
+    $_SESSION["foto_perfil"] = "";
+
+    header("Location: ../index.php");
+    exit();
+
+}else {
         echo "Error al registrar: " . $stmt->error;
     }
 
