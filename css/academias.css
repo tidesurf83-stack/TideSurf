@@ -267,7 +267,7 @@ body{
     padding:22px;
     border-radius:20px;
     margin-bottom:20px;
-    box-shadow:0 8px 20px rgba(0,120,180,.10);
+    box-shadow:0 8px 20px rgb(251, 252, 252);
     transition:.3s;
 }
 

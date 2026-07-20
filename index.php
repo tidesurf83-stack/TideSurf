@@ -470,7 +470,7 @@ session_start();
                                 Intermedio
                             </div>
 
-                            <a href="#">
+                            <a href="playas.php">
                                 Explorar
                             </a>
 
@@ -497,7 +497,7 @@ session_start();
                                 Principiante
                             </div>
 
-                            <a href="#">
+                            <a href="playas.php">
                                 Explorar
                             </a>
 
@@ -911,7 +911,7 @@ session_start();
 
         <div class="banner-buttons">
 
-            <a href="#" class="btn-banner-primary">
+            <a href="playas.php" class="btn-banner-primary">
                 Explorar Playas
             </a>
 
