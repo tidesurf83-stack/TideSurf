@@ -1761,3 +1761,345 @@ body{
     transform:translateY(-4px);
 }
 
+@media (max-width:768px){
+
+body{
+    overflow-x:hidden;
+}
+
+.container{
+    padding-left:20px;
+    padding-right:20px;
+}
+
+section{
+    overflow:hidden;
+}
+
+.hero{
+    height:85vh;
+    text-align:center;
+    justify-content:center;
+}
+
+.hero::before{
+    animation:zoomHero 12s ease-in-out infinite alternate;
+}
+
+.hero-content{
+    width:100%;
+}
+
+.hero h1{
+    font-size:48px;
+    line-height:1;
+    margin-bottom:15px;
+}
+
+.hero p{
+    font-size:16px;
+    line-height:1.8;
+    max-width:100%;
+    margin:0 auto 25px;
+}
+
+.hero-buttons{
+    justify-content:center;
+    flex-wrap:wrap;
+}
+
+.section-title{
+    margin-bottom:40px;
+}
+
+.section-title span{
+    font-size:14px;
+}
+
+.section-title h2{
+    font-size:32px;
+    line-height:1.2;
+    margin-bottom:15px;
+}
+
+.section-title p{
+    font-size:15px;
+    max-width:100%;
+}
+
+.features-section{
+    padding:70px 0;
+}
+
+.feature-card{
+    padding:25px;
+    border-radius:20px;
+}
+
+.feature-icon{
+    font-size:45px;
+}
+
+.feature-card h4{
+    font-size:22px;
+}
+
+.feature-card p{
+    font-size:15px;
+}
+
+.stats-section{
+    padding:40px 0;
+}
+
+.stat-box{
+    margin-bottom:25px;
+}
+
+.stat-box h2{
+    font-size:38px;
+}
+
+.stat-box p{
+    font-size:15px;
+}
+
+.featured-events{
+    padding:70px 0;
+}
+
+.featured-beach{
+    height:380px;
+}
+
+.featured-overlay{
+    padding:25px;
+}
+
+.featured-overlay h2{
+    font-size:32px;
+}
+
+.featured-overlay p{
+    font-size:14px;
+}
+
+.beach-info{
+    gap:10px;
+}
+
+.beach-info div{
+    padding:8px 12px;
+    font-size:13px;
+}
+
+.events-card{
+    padding:25px;
+    margin-top:20px;
+}
+
+.events-card h3{
+    font-size:24px;
+}
+
+.event-item span{
+    min-width:60px;
+    height:60px;
+    font-size:13px;
+}
+
+.beaches-section{
+    padding:70px 0;
+}
+
+.beach-card{
+    border-radius:20px;
+}
+
+.beach-card img{
+    height:220px;
+}
+
+.beach-content{
+    padding:20px;
+}
+
+.beach-content h4{
+    font-size:22px;
+}
+
+.beach-content p{
+    font-size:14px;
+}
+
+.level{
+    font-size:13px;
+    padding:7px 14px;
+}
+
+.info-section{
+    padding:70px 0;
+}
+
+.info-card{
+    padding:25px;
+}
+
+.card-icon{
+    font-size:50px;
+}
+
+.info-card h3{
+    font-size:24px;
+}
+
+.info-card li{
+    font-size:14px;
+}
+
+.dynamic-section{
+    padding:70px 0;
+}
+
+.dynamic-card{
+    padding:25px;
+}
+
+.dynamic-icon{
+    font-size:55px;
+}
+
+.dynamic-card h3{
+    font-size:24px;
+}
+
+.dynamic-card p{
+    font-size:15px;
+}
+
+.event-section{
+    padding:50px 15px;
+}
+
+.event-wrapper{
+    flex-direction:column;
+    min-height:auto;
+}
+
+.event-image{
+    width:100%;
+    min-height:280px;
+    height:280px;
+}
+
+.featured-event{
+    width:100%;
+    padding:30px 25px;
+}
+
+.featured-event h2{
+    font-size:32px;
+}
+
+.event-description{
+    font-size:15px;
+}
+
+.event-details{
+    gap:10px;
+}
+
+.detail-box{
+    width:100%;
+    text-align:center;
+}
+
+.event-stats{
+    flex-direction:column;
+}
+
+.beach-info-grid{
+    grid-template-columns:1fr;
+}
+
+.explore-banner{
+    min-height:500px;
+    margin:70px 0;
+}
+
+.banner-overlay{
+    padding:20px;
+}
+
+.explore-banner h2{
+    font-size:34px;
+}
+
+.explore-banner p{
+    font-size:15px;
+}
+
+.banner-buttons{
+    flex-direction:column;
+}
+
+.btn-banner-primary,
+.btn-banner-secondary{
+    width:100%;
+}
+
+.news-section{
+    padding:70px 0;
+}
+
+.news-image{
+    height:220px;
+}
+
+.news-content{
+    padding:20px;
+}
+
+.news-content h4{
+    font-size:22px;
+}
+
+.news-content p{
+    font-size:14px;
+}
+
+.footer{
+    padding:50px 20px;
+}
+
+.footer h3{
+    font-size:24px;
+}
+
+.footer-objective{
+    font-size:14px;
+}
+
+.footer-social{
+    flex-direction:column;
+    align-items:center;
+    gap:12px;
+}
+
+.feature-card:hover,
+.beach-card:hover,
+.info-card:hover,
+.dynamic-card:hover,
+.news-card:hover{
+    transform:translateY(-6px);
+}
+
+}
+
+.feature-card,
+.beach-card,
+.info-card,
+.dynamic-card,
+.news-card{
+    animation:riseIn .9s ease;
+}

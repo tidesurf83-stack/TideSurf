@@ -586,7 +586,7 @@ while($fact = $resultado->fetch_assoc()){
                     Aprende con instructores certificados y mejora tu técnica.
                 </p>
 
-                <a href="academias.html">Ver escuelas →</a>
+                <a href="escuelas.php">Ver escuelas →</a>
 
             </div>
 
@@ -604,7 +604,7 @@ while($fact = $resultado->fetch_assoc()){
                     Encuentra tablas, ropa y accesorios especializados.
                 </p>
 
-                <a href="">Ver tiendas →</a>
+                <a href="tiendas.php">Ver tiendas →</a>
 
             </div>
 
@@ -622,7 +622,7 @@ while($fact = $resultado->fetch_assoc()){
                     No te pierdas los torneos y eventos de surf nacionales.
                 </p>
 
-                <a href="competencias.html">Ver competencias →</a>
+                <a href="competencias.php">Ver competencias →</a>
 
             </div>
 
@@ -681,7 +681,7 @@ while($fact = $resultado->fetch_assoc()){
 
             <div class="activities">
 
-                <h3>Activities</h3>
+                <h3>Actividades</h3>
 
                 <ul id="activitiesList"></ul>
 

@@ -1040,7 +1040,7 @@ session_start();
 
         <div class="text-center mt-5">
 
-            <a href="#" class="btn-all-news">
+            <a href="noticias.php" class="btn-all-news">
                 Ver todas las noticias
             </a>
 
