@@ -88,35 +88,34 @@ if(isset($_POST['registrar'])){
 
 
 
-    <!-- USUARIO ESCRITORIO -->
+ <!-- USUARIO ESCRITORIO -->
+<div class="ts-user">
 
-    <div class="ts-user">
+<?php if(isset($_SESSION["usuario_id"])) { ?>
 
+ <a href="perfil.php" class="perfil-icono" title="Mi perfil">
 
-        <?php if(isset($_SESSION["usuario_id"])) { ?>
+    <?php if(!empty($_SESSION["foto_perfil"])) { ?>
 
+        <img src="<?= $_SESSION['foto_perfil']; ?>" alt="Foto de perfil">
 
-            <a href="perfil.php" class="perfil-icono" title="Mi perfil">
+    <?php } else { ?>
 
-                <i class="bi bi-person-circle"></i>
+        <i class="bi bi-person-circle"></i>
 
-            </a>
+    <?php } ?>
 
+</a>
 
-        <?php } else { ?>
+<?php } else { ?>
 
+    <a href="inicio_sesion.php" class="btn-login">
+        Iniciar sesión
+    </a>
 
-            <a href="inicio_sesion.php" class="btn-login">
+<?php } ?>
 
-                Iniciar sesión
-
-            </a>
-
-
-        <?php } ?>
-
-
-    </div>
+</div>
 
 
 
@@ -154,27 +153,27 @@ if(isset($_POST['registrar'])){
 
     <?php if(isset($_SESSION["usuario_id"])) { ?>
 
+ <a href="perfil.php" class="perfil-icono" title="Mi perfil">
 
-        <a href="perfil.php" class="mobile-login">
+    <?php if(!empty($_SESSION["foto_perfil"])) { ?>
 
-            <i class="bi bi-person-circle"></i>
-
-            Perfil
-
-        </a>
-
+        <img src="<?= $_SESSION['foto_perfil']; ?>" alt="Foto de perfil">
 
     <?php } else { ?>
 
-
-        <a href="inicio_sesion.php" class="mobile-login">
-
-            Iniciar sesión
-
-        </a>
-
+        <i class="bi bi-person-circle"></i>
 
     <?php } ?>
+
+</a>
+
+<?php } else { ?>
+
+    <a href="inicio_sesion.php" class="btn-login">
+        Iniciar sesión
+    </a>
+
+<?php } ?>
 
 
 </nav>

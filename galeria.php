@@ -2,9 +2,9 @@
 session_start();
 // Conexión a la base de datos
 $servername = "localhost";
-$username   = "root";       // cambia si tu usuario es distinto
-$password   = "";           // cambia si tu contraseña es distinta
-$dbname     = "tidesurf";   // tu base de datos
+$username   = "root";       
+$password   = "";           
+$dbname     = "tidesurf";   
 
 $conn = new mysqli($servername, $username, $password, $dbname);
 
@@ -32,11 +32,23 @@ if ($conn->connect_error) {
 <body class="has-site-navbar">
 
 <!-- ================= NAVBAR ================= -->
+
 <header class="ts-navbar">
+
+
+    <!-- LOGO -->
     <div class="ts-logo">
-        <a href="index.php"><img src="img/logo-tidesurf-navbar.png" alt="TideSurf"></a>
+
+        <a href="index.php">
+            <img src="img/logo-tidesurf-navbar.png" alt="TideSurf">
+        </a>
+
     </div>
+
+
+    <!-- MENÚ ESCRITORIO -->
     <nav class="ts-menu">
+
         <a href="index.php">Inicio</a>
         <a href="noticias.php">Noticias</a>
         <a href="competencias.php">Competencias</a>
@@ -47,14 +59,49 @@ if ($conn->connect_error) {
         <a href="sobre_nosotros.php">Sobre Nosotros</a>
 
     </nav>
-    <div class="ts-user">
-        <?php if(isset($_SESSION["usuario_id"])) { ?>
-            <a href="perfil.php" class="perfil-icono" title="Mi perfil"><i class="bi bi-person-circle"></i></a>
-        <?php } else { ?>
-            <a href="inicio_sesion.php" class="btn-login">Iniciar sesión</a>
-        <?php } ?>
-    </div>
-    <button class="ts-toggle" id="tsToggle">☰</button>
+
+
+
+ <!-- USUARIO ESCRITORIO -->
+<div class="ts-user">
+
+<?php if(isset($_SESSION["usuario_id"])) { ?>
+
+ <a href="perfil.php" class="perfil-icono" title="Mi perfil">
+
+    <?php if(!empty($_SESSION["foto_perfil"])) { ?>
+
+        <img src="<?= $_SESSION['foto_perfil']; ?>" alt="Foto de perfil">
+
+    <?php } else { ?>
+
+        <i class="bi bi-person-circle"></i>
+
+    <?php } ?>
+
+</a>
+
+<?php } else { ?>
+
+    <a href="inicio_sesion.php" class="btn-login">
+        Iniciar sesión
+    </a>
+
+<?php } ?>
+
+</div>
+
+
+
+    <!-- BOTÓN HAMBURGUESA -->
+
+    <button class="ts-toggle" id="tsToggle">
+
+        ☰
+
+    </button>
+
+
 </header>
 
 
@@ -80,59 +127,34 @@ if ($conn->connect_error) {
 
     <?php if(isset($_SESSION["usuario_id"])) { ?>
 
+ <a href="perfil.php" class="perfil-icono" title="Mi perfil">
 
-        <a href="perfil.php" class="mobile-login">
+    <?php if(!empty($_SESSION["foto_perfil"])) { ?>
 
-            <i class="bi bi-person-circle"></i>
-
-            Perfil
-
-        </a>
-
+        <img src="<?= $_SESSION['foto_perfil']; ?>" alt="Foto de perfil">
 
     <?php } else { ?>
 
-
-        <a href="inicio_sesion.php" class="mobile-login">
-
-            Iniciar sesión
-
-        </a>
-
+        <i class="bi bi-person-circle"></i>
 
     <?php } ?>
+
+</a>
+
+<?php } else { ?>
+
+    <a href="inicio_sesion.php" class="btn-login">
+        Iniciar sesión
+    </a>
+
+<?php } ?>
 
 
 </nav>
 
 <div class="ts-overlay" id="tsOverlay"></div>
 
-<!-- Carrusel dinámico con las primeras 3 fotos de la base de datos -->
-<?php
-$sql_carousel = "SELECT * FROM galerias LIMIT 3";
-$result_carousel = $conn->query($sql_carousel);
-
-if ($result_carousel->num_rows > 0) {
-    echo '<div id="carouselTidesurf" class="carousel slide mb-5" data-bs-ride="carousel">';
-    echo '<div class="carousel-inner">';
-    $active = true;
-    while($row_carousel = $result_carousel->fetch_assoc()) {
-        echo '<div class="carousel-item '.($active ? 'active' : '').'">';
-        echo '<img src="'.$row_carousel["imagen_url"].'" class="d-block w-100" alt="'.$row_carousel["descripcion"].'">';
-        echo '</div>';
-        $active = false;
-    }
-    echo '</div>';
-    echo '<button class="carousel-control-prev" type="button" data-bs-target="#carouselTidesurf" data-bs-slide="prev">';
-    echo '<span class="carousel-control-prev-icon"></span>';
-    echo '</button>';
-    echo '<button class="carousel-control-next" type="button" data-bs-target="#carouselTidesurf" data-bs-slide="next">';
-    echo '<span class="carousel-control-next-icon"></span>';
-    echo '</button>';
-    echo '</div>';
-}
-?>
-
+<!-- ================= GALERÍA ================= -->
 <section class="grid-gallery-section container mt-5 mb-5">
     <div class="section-title">
         <h2>Galería de Tidesurf</h2>
@@ -143,9 +165,25 @@ if ($result_carousel->num_rows > 0) {
         $result = $conn->query($sql);
         if ($result->num_rows > 0) {
             while($row = $result->fetch_assoc()) {
-                echo '<div class="gallery-item">';
-                echo '<img src="'.$row["imagen_url"].'" alt="'.$row["descripcion"].'">';
-                echo '</div>';
+                ?>
+                <div class="gallery-item" data-bs-toggle="modal" data-bs-target="#modalImagen<?php echo $row['id']; ?>">
+                    <img src="<?php echo $row['imagen_url']; ?>" alt="<?php echo $row['descripcion']; ?>">
+                </div>
+
+                <!-- Modal -->
+                <div class="modal fade" id="modalImagen<?php echo $row['id']; ?>" tabindex="-1" aria-hidden="true">
+                  <div class="modal-dialog modal-dialog-centered modal-lg" style="margin:100px auto; max-width:90%;">
+                    <div class="modal-content">
+                      <div class="modal-header border-0">
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+                      </div>
+                      <div class="modal-body text-center">
+                        <img src="<?php echo $row['imagen_url']; ?>" class="img-fluid" alt="<?php echo $row['descripcion']; ?>">
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <?php
             }
         } else {
             echo "No hay fotos en la galería.";
@@ -160,7 +198,7 @@ $sql = "SELECT * FROM videos";
 $result = $conn->query($sql);
 if($result->num_rows > 0){
 ?>
-<div id="carouselTidesurf" class="carousel slide galeria-bootstrap-carousel" data-bs-ride="carousel">
+<div id="carouselVideos" class="carousel slide galeria-bootstrap-carousel" data-bs-ride="carousel">
     <div class="carousel-inner">
         <?php
         $active = true;
@@ -177,10 +215,10 @@ if($result->num_rows > 0){
         }
         ?>
     </div>
-    <button class="carousel-control-prev" type="button" data-bs-target="#carouselTidesurf" data-bs-slide="prev">
+    <button class="carousel-control-prev" type="button" data-bs-target="#carouselVideos" data-bs-slide="prev">
         <span class="carousel-control-prev-icon"></span>
     </button>
-    <button class="carousel-control-next" type="button" data-bs-target="#carouselTidesurf" data-bs-slide="next">
+    <button class="carousel-control-next" type="button" data-bs-target="#carouselVideos" data-bs-slide="next">
         <span class="carousel-control-next-icon"></span>
     </button>
 </div>
@@ -188,14 +226,12 @@ if($result->num_rows > 0){
 }
 ?>
 
+<!-- ================= FOOTER ================= -->
 <footer class="footer-tidesurf">
     <div class="footer-container">
-        <!-- Columna izquierda -->
         <div class="footer-left">
             <h2>TideSurf</h2>
-            <p>
-                Explora El Salvador a través de TideSurf y sumérgete en las olas.
-            </p>
+            <p>Explora El Salvador a través de TideSurf y sumérgete en las olas.</p>
             <div class="social-icons">
                 <a href="//www.instagram.com/tidesurf_06?igsh=MTB3dnd0ZG5iNWJkbw=="><i class="fab fa-instagram"></i></a>
                 <a href="https://chat.whatsapp.com/JwgjqdCgNBq9hLrAbfWoY"><i class="fab fa-whatsapp"></i></a>
@@ -203,8 +239,6 @@ if($result->num_rows > 0){
             </div>
         </div>
     </div>
- 
-    <!-- Parte inferior -->
     <div class="footer-bottom">
         <p>© 2026 TideSurf. Todos los derechos reservados.</p>
         <p><a href="#">Política de Privacidad</a> | <a href="#">Términos y Condiciones</a></p>

@@ -88,11 +88,22 @@
 }
 
 /* ===============================
+   ESPACIO CON NAVBAR
+================================= */
+
+body.has-site-navbar {
+    padding-top: 90px; /* Ajusta según la altura real de tu navbar */
+}
+
+.grid-gallery-section {
+    margin-top: 40px; /* espacio adicional debajo de la navbar */
+}
+
+/* ===============================
    GALERÍA GRID
 ================================= */
 
 .grid-gallery-section {
-    margin-top: 100px;
     text-align: center;
 }
 
@@ -149,6 +160,34 @@
     color: #fff;
     font-size: 24px;
 }
+
+/* ===============================
+   MODAL GALERÍA
+================================= */
+
+.modal-dialog {
+    margin: 100px; /* espacio uniforme en los 4 lados */
+    max-width: calc(100% - 200px); /* deja espacio a los lados */
+}
+
+.modal-content {
+    background: transparent; /* quita el fondo blanco */
+    border: none;            /* elimina el borde */
+    box-shadow: none;        /* quita la sombra */
+}
+
+.modal-body {
+    padding: 0; /* elimina espacio interno */
+}
+
+.modal-body img {
+    display: block;
+    width: 100%;
+    height: auto;
+    border-radius: 0; /* sin esquinas redondeadas */
+    box-shadow: none; /* sin sombra */
+}
+
 
 /* ===============================
    CARRUSEL DE VIDEOS
