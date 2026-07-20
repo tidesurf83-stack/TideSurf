@@ -44,7 +44,8 @@ if ($conn->connect_error) {
         <a href="escuelas.php">Escuelas</a>
         <a href="tiendas.php">Tiendas</a>
         <a href="galeria.php">Galería</a>
-        <a href="sobre_nosotros.html">Sobre Nosotros</a>
+        <a href="sobre_nosotros.php">Sobre Nosotros</a>
+
     </nav>
     <div class="ts-user">
         <?php if(isset($_SESSION["usuario_id"])) { ?>
@@ -56,7 +57,82 @@ if ($conn->connect_error) {
     <button class="ts-toggle" id="tsToggle">☰</button>
 </header>
 
-<!-- ================= GALERÍA DE IMÁGENES ================= -->
+
+
+<!-- ================= MENU MOVIL ================= -->
+
+
+<nav class="ts-mobile" id="tsMobile">
+
+
+    <a href="index.php">Inicio</a>
+    <a href="noticias.php">Noticias</a>
+    <a href="competencias.php">Competencias</a>
+    <a href="playas.php">Playas</a>
+    <a href="escuelas.php">Escuelas</a>
+    <a href="tiendas.php">Tiendas</a>
+    <a href="galeria.php">Galería</a>
+    <a href="sobre_nosotros.php">Sobre Nosotros</a>
+
+
+    <hr>
+
+
+    <?php if(isset($_SESSION["usuario_id"])) { ?>
+
+
+        <a href="perfil.php" class="mobile-login">
+
+            <i class="bi bi-person-circle"></i>
+
+            Perfil
+
+        </a>
+
+
+    <?php } else { ?>
+
+
+        <a href="inicio_sesion.php" class="mobile-login">
+
+            Iniciar sesión
+
+        </a>
+
+
+    <?php } ?>
+
+
+</nav>
+
+<div class="ts-overlay" id="tsOverlay"></div>
+
+<!-- Carrusel dinámico con las primeras 3 fotos de la base de datos -->
+<?php
+$sql_carousel = "SELECT * FROM galerias LIMIT 3";
+$result_carousel = $conn->query($sql_carousel);
+
+if ($result_carousel->num_rows > 0) {
+    echo '<div id="carouselTidesurf" class="carousel slide mb-5" data-bs-ride="carousel">';
+    echo '<div class="carousel-inner">';
+    $active = true;
+    while($row_carousel = $result_carousel->fetch_assoc()) {
+        echo '<div class="carousel-item '.($active ? 'active' : '').'">';
+        echo '<img src="'.$row_carousel["imagen_url"].'" class="d-block w-100" alt="'.$row_carousel["descripcion"].'">';
+        echo '</div>';
+        $active = false;
+    }
+    echo '</div>';
+    echo '<button class="carousel-control-prev" type="button" data-bs-target="#carouselTidesurf" data-bs-slide="prev">';
+    echo '<span class="carousel-control-prev-icon"></span>';
+    echo '</button>';
+    echo '<button class="carousel-control-next" type="button" data-bs-target="#carouselTidesurf" data-bs-slide="next">';
+    echo '<span class="carousel-control-next-icon"></span>';
+    echo '</button>';
+    echo '</div>';
+}
+?>
+
 <section class="grid-gallery-section container mt-5 mb-5">
     <div class="section-title">
         <h2>Galería de Tidesurf</h2>

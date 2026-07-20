@@ -9,7 +9,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     $email = trim($_POST["email"] ?? "");
     $password = $_POST["password"] ?? "";
 
-    $sql = "SELECT ID_register, nombre, correo, password FROM register WHERE correo = ? LIMIT 1";
+    $sql = "SELECT ID_register, nombre, correo, password, foto_perfil FROM register WHERE correo = ? LIMIT 1";
     $stmt = $conn->prepare($sql);
 
     if (!$stmt) {
@@ -24,6 +24,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         if ($usuario && password_verify($password, $usuario["password"])) {
             $_SESSION["usuario_id"] = $usuario["ID_register"];
             $_SESSION["usuario_nombre"] = $usuario["nombre"];
+            $_SESSION["foto_perfil"] = $usuario["foto_perfil"] ?? "";
 
             header("Location: index.php");
             exit;

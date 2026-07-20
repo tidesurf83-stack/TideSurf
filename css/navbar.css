@@ -92,18 +92,12 @@ body{
 /*      ICONO PERFIL          */
 /* ========================= */
 
+
+
 .perfil-icono{
-
-    color:#23364d;
-
-    font-size:35px;
-
-    text-decoration:none;
-
-    display:flex;
-
-    align-items:center;
-
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 
@@ -117,6 +111,19 @@ body{
 
     display:none;
 
+}
+
+.perfil-icono img{
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    object-fit: cover;
+    display: block;
+}
+
+.perfil-icono i{
+    font-size: 42px;
+    color:#23364d;
 }
 
 .ts-mobile{

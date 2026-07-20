@@ -74,47 +74,23 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         }
     }
 
-    if ($accion === "actualizar_foto") {
+      if ($accion === "actualizar_foto") {
+
         $foto = $_FILES["foto_perfil"] ?? null;
         $fotoCapturada = trim($_POST["foto_capturada"] ?? "");
 
         if ($fotoCapturada !== "") {
+
             if (!preg_match('/^data:image\/(png|jpeg|webp);base64,/', $fotoCapturada, $coincidencias)) {
+
                 $errorPerfil = "La foto tomada no tiene un formato valido.";
+
             } else {
+
                 $extension = $coincidencias[1] === "jpeg" ? "jpg" : $coincidencias[1];
                 $datosBase64 = substr($fotoCapturada, strpos($fotoCapturada, ",") + 1);
                 $datosImagen = base64_decode($datosBase64, true);
 
-                if ($datosImagen === false) {
-                    $errorPerfil = "No se pudo procesar la foto tomada.";
-                } else {
-                    $carpetaDestino = __DIR__ . "/uploads/perfiles";
-
-                    if (!is_dir($carpetaDestino)) {
-                        mkdir($carpetaDestino, 0775, true);
-                    }
-
-                    $nombreArchivo = "perfil_" . $usuarioId . "_" . time() . "." . $extension;
-                    $rutaDestino = $carpetaDestino . "/" . $nombreArchivo;
-                    $rutaPublica = "uploads/perfiles/" . $nombreArchivo;
-
-                    if (file_put_contents($rutaDestino, $datosImagen) !== false && actualizarFotoPerfil($conn, $usuarioId, $rutaPublica)) {
-                        $mensaje = "Foto de perfil actualizada.";
-                    } else {
-                        $errorPerfil = "No se pudo guardar la foto tomada.";
-                    }
-                }
-            }
-        } elseif (!$foto || $foto["error"] !== UPLOAD_ERR_OK) {
-            $errorPerfil = "Selecciona una foto para actualizar tu perfil.";
-        } else {
-            $extension = strtolower(pathinfo($foto["name"], PATHINFO_EXTENSION));
-            $extensionesValidas = ["jpg", "jpeg", "png", "webp"];
-
-            if (!in_array($extension, $extensionesValidas, true)) {
-                $errorPerfil = "La foto debe ser JPG, PNG o WEBP.";
-            } else {
                 $carpetaDestino = __DIR__ . "/uploads/perfiles";
 
                 if (!is_dir($carpetaDestino)) {
@@ -125,20 +101,68 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
                 $rutaDestino = $carpetaDestino . "/" . $nombreArchivo;
                 $rutaPublica = "uploads/perfiles/" . $nombreArchivo;
 
-                if (move_uploaded_file($foto["tmp_name"], $rutaDestino)) {
-                    if (actualizarFotoPerfil($conn, $usuarioId, $rutaPublica)) {
-                        $mensaje = "Foto de perfil actualizada.";
-                    } else {
-                        $errorPerfil = "La foto subio, pero falta la columna foto_perfil en la tabla.";
-                    }
-                } else {
-                    $errorPerfil = "No se pudo guardar la foto.";
-                }
-            }
-        }
-    }
-}
 
+                if (file_put_contents($rutaDestino, $datosImagen) !== false && actualizarFotoPerfil($conn, $usuarioId, $rutaPublica)) {
+
+                    $_SESSION['foto_perfil'] = $rutaPublica;
+                    $mensaje = "Foto de perfil actualizada.";
+
+                } else {
+
+                    $errorPerfil = "No se pudo guardar la foto.";
+
+                }
+
+            }
+
+
+        } elseif ($foto && $foto["error"] === UPLOAD_ERR_OK) {
+
+
+            $extension = strtolower(pathinfo($foto["name"], PATHINFO_EXTENSION));
+            $extensionesValidas = ["jpg", "jpeg", "png", "webp"];
+
+
+            if (!in_array($extension, $extensionesValidas, true)) {
+
+                $errorPerfil = "La foto debe ser JPG, PNG o WEBP.";
+
+            } else {
+
+                $carpetaDestino = __DIR__ . "/uploads/perfiles";
+
+                if (!is_dir($carpetaDestino)) {
+                    mkdir($carpetaDestino, 0775, true);
+                }
+
+
+                $nombreArchivo = "perfil_" . $usuarioId . "_" . time() . "." . $extension;
+                $rutaDestino = $carpetaDestino . "/" . $nombreArchivo;
+                $rutaPublica = "uploads/perfiles/" . $nombreArchivo;
+
+
+                if (move_uploaded_file($foto["tmp_name"], $rutaDestino)) {
+
+                    if (actualizarFotoPerfil($conn, $usuarioId, $rutaPublica)) {
+
+                        $_SESSION['foto_perfil'] = $rutaPublica;
+                        $mensaje = "Foto de perfil actualizada.";
+
+                    }
+
+                }
+
+            }
+
+            } else {
+
+        $errorPerfil = "Selecciona una foto.";
+
+    }
+
+} // cierra if ($accion === "actualizar_foto")
+
+} // cierra if ($_SERVER["REQUEST_METHOD"] === "POST")
 $sql = "SELECT * FROM register WHERE ID_register = ? LIMIT 1";
 $stmt = $conn->prepare($sql);
 
@@ -179,25 +203,11 @@ $fotoPerfil = trim((string) ($usuario["foto_perfil"] ?? ""));
     <link rel="stylesheet" href="css/navbar.css?v=login-espacio">
 </head>
 <body class="has-site-navbar">
-<div class="site-navbar-shell">
-    <div class="site-navbar">
-        <a class="site-navbar-brand" href="index.php" aria-label="TideSurf Inicio">
-            <img src="logo-tidesurf-navbar.png" alt="TideSurf">
-        </a>
-        <nav class="site-navbar-menu" aria-label="Navegacion principal">
-            <a href="noticias.html">Noticias</a>
-            <a href="competencias.html">Competencias</a>
-            <a href="playas.html">Playas</a>
-            <a href="escuelas.html">Escuelas de Surf</a>
-            <a href="tiendas.html">Tiendas</a>
-            <a href="galeria.html">Galeria</a>
-            <a href="sobre_nosotros.html">Sobre Nosotros</a>
-        </nav>
-        <a href="perfil.php" class="site-profile-avatar" aria-label="Mi Perfil">
-            <span class="site-avatar-icon"></span>
-        </a>
-    </div>
-</div>
+
+<a href="javascript:history.back()" class="btn-back">
+    <i class='bx bx-arrow-back'></i>
+    Back
+</a>
 
 <main class="pagina-perfil">
 <h1>Mi perfil</h1>

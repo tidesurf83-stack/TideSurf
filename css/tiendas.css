@@ -17,7 +17,7 @@
 
 .hero-tiendas{
     height:70vh;
-    background-image:url('../img/tiendas/back-tienda.jpg');
+    background-image:url('../img/tiendas/hero_tiendas.png');
     background-size:cover;
     background-position:center;
     position:relative;
@@ -82,8 +82,9 @@
     max-width:1300px;
     margin:auto;
 
-    display:grid;
-    grid-template-columns:repeat(3,1fr);
+    display:flex;
+    flex-wrap:wrap;
+    justify-content:center;
     gap:30px;
 }
 
@@ -95,6 +96,8 @@
     padding:18px;
     transition:.3s;
     text-align:center;
+     width: 380px;
+    flex: 0 0 380px;
 }
 
 .card-tienda:hover{
@@ -106,6 +109,7 @@
     height:220px;
     object-fit:cover;
     border-radius:18px;
+
 }
 
 .card-tienda h3{
@@ -177,6 +181,29 @@
 
     max-height:90vh;
     overflow-y:auto;
+}
+
+.btn-maps {
+    display: inline-block;
+    margin-top: 15px;
+    padding: 10px 22px;
+    background: #18C6E3;
+    color: white;
+    text-decoration: none;
+    border-radius: 25px;
+    font-weight: 600;
+    transition: 0.3s ease;
+}
+
+.btn-maps:hover {
+    background: #0A2647;
+    transform: translateY(-3px);
+}
+
+.btn-maps {
+    display: block;
+    width: fit-content;
+    margin: 15px auto 0;
 }
 
 .modal-contenido h2{
@@ -290,6 +317,16 @@
 
 @media(max-width:992px){
 
+    .card-tienda{
+    width:100%;
+    max-width:380px;
+    flex:0 1 auto;
+}
+
+.contenedor-tiendas{
+    padding:0 20px;
+}
+
     .contenedor-tiendas{
         grid-template-columns:repeat(2,1fr);
     }
@@ -379,6 +416,8 @@
     .contenedor-tiendas{
         grid-template-columns:1fr;
     }
+
+    
 
     .navbar-brand img{
     height:40px;
