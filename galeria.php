@@ -32,12 +32,23 @@ if ($conn->connect_error) {
 <body class="has-site-navbar">
 
 <!-- ================= NAVBAR ================= -->
+
 <header class="ts-navbar">
-   <div class="ts-logo">
-         <a href="index.php"><img src="img/logo-tidesurf-navbar.png" alt="TideSurf"></a>
+
+
+    <!-- LOGO -->
+    <div class="ts-logo">
+
+        <a href="index.php">
+            <img src="img/logo-tidesurf-navbar.png" alt="TideSurf">
+        </a>
+
     </div>
 
+
+    <!-- MENÚ ESCRITORIO -->
     <nav class="ts-menu">
+
         <a href="index.php">Inicio</a>
         <a href="noticias.php">Noticias</a>
         <a href="competencias.php">Competencias</a>
@@ -46,19 +57,61 @@ if ($conn->connect_error) {
         <a href="tiendas.php">Tiendas</a>
         <a href="galeria.php">Galería</a>
         <a href="sobre_nosotros.php">Sobre Nosotros</a>
+
     </nav>
-    <div class="ts-user">
-        <?php if(isset($_SESSION["usuario_id"])) { ?>
-            <a href="perfil.php" class="perfil-icono" title="Mi perfil"><i class="bi bi-person-circle"></i></a>
-        <?php } else { ?>
-            <a href="inicio_sesion.php" class="btn-login">Iniciar sesión</a>
-        <?php } ?>
-    </div>
-    <button class="ts-toggle" id="tsToggle">☰</button>
+
+
+
+ <!-- USUARIO ESCRITORIO -->
+<div class="ts-user">
+
+<?php if(isset($_SESSION["usuario_id"])) { ?>
+
+ <a href="perfil.php" class="perfil-icono" title="Mi perfil">
+
+    <?php if(!empty($_SESSION["foto_perfil"])) { ?>
+
+        <img src="<?= $_SESSION['foto_perfil']; ?>" alt="Foto de perfil">
+
+    <?php } else { ?>
+
+        <i class="bi bi-person-circle"></i>
+
+    <?php } ?>
+
+</a>
+
+<?php } else { ?>
+
+    <a href="inicio_sesion.php" class="btn-login">
+        Iniciar sesión
+    </a>
+
+<?php } ?>
+
+</div>
+
+
+
+    <!-- BOTÓN HAMBURGUESA -->
+
+    <button class="ts-toggle" id="tsToggle">
+
+        ☰
+
+    </button>
+
+
 </header>
 
+
+
 <!-- ================= MENU MOVIL ================= -->
+
+
 <nav class="ts-mobile" id="tsMobile">
+
+
     <a href="index.php">Inicio</a>
     <a href="noticias.php">Noticias</a>
     <a href="competencias.php">Competencias</a>
@@ -67,13 +120,38 @@ if ($conn->connect_error) {
     <a href="tiendas.php">Tiendas</a>
     <a href="galeria.php">Galería</a>
     <a href="sobre_nosotros.php">Sobre Nosotros</a>
+
+
     <hr>
+
+
     <?php if(isset($_SESSION["usuario_id"])) { ?>
-        <a href="perfil.php" class="mobile-login"><i class="bi bi-person-circle"></i> Perfil</a>
+
+ <a href="perfil.php" class="perfil-icono" title="Mi perfil">
+
+    <?php if(!empty($_SESSION["foto_perfil"])) { ?>
+
+        <img src="<?= $_SESSION['foto_perfil']; ?>" alt="Foto de perfil">
+
     <?php } else { ?>
-        <a href="inicio_sesion.php" class="mobile-login">Iniciar sesión</a>
+
+        <i class="bi bi-person-circle"></i>
+
     <?php } ?>
+
+</a>
+
+<?php } else { ?>
+
+    <a href="inicio_sesion.php" class="btn-login">
+        Iniciar sesión
+    </a>
+
+<?php } ?>
+
+
 </nav>
+
 <div class="ts-overlay" id="tsOverlay"></div>
 
 <!-- ================= GALERÍA ================= -->

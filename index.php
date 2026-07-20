@@ -32,7 +32,9 @@ session_start();
 
 <body class="has-site-navbar">
     
-    <header class="ts-navbar">
+<!-- ================= NAVBAR ================= -->
+
+<header class="ts-navbar">
 
 
     <!-- LOGO -->
@@ -60,35 +62,35 @@ session_start();
     </nav>
 
 
-    <!-- USUARIO ESCRITORIO -->
 
-    <div class="ts-user">
+ <!-- USUARIO ESCRITORIO -->
+<div class="ts-user">
 
+<?php if(isset($_SESSION["usuario_id"])) { ?>
 
-        <?php if(isset($_SESSION["usuario_id"])) { ?>
+ <a href="perfil.php" class="perfil-icono" title="Mi perfil">
 
+    <?php if(!empty($_SESSION["foto_perfil"])) { ?>
 
-            <a href="perfil.php" class="perfil-icono" title="Mi perfil">
+        <img src="<?= $_SESSION['foto_perfil']; ?>" alt="Foto de perfil">
 
-                <i class="bi bi-person-circle"></i>
+    <?php } else { ?>
 
-            </a>
+        <i class="bi bi-person-circle"></i>
 
+    <?php } ?>
 
-        <?php } else { ?>
+</a>
 
+<?php } else { ?>
 
-            <a href="inicio_sesion.php" class="btn-login">
+    <a href="inicio_sesion.php" class="btn-login">
+        Iniciar sesión
+    </a>
 
-                Iniciar sesión
+<?php } ?>
 
-            </a>
-
-
-        <?php } ?>
-
-
-    </div>
+</div>
 
 
 
@@ -126,30 +128,31 @@ session_start();
 
     <?php if(isset($_SESSION["usuario_id"])) { ?>
 
+ <a href="perfil.php" class="perfil-icono" title="Mi perfil">
 
-        <a href="perfil.php" class="mobile-login">
+    <?php if(!empty($_SESSION["foto_perfil"])) { ?>
 
-            <i class="bi bi-person-circle"></i>
-
-            Perfil
-
-        </a>
-
+        <img src="<?= $_SESSION['foto_perfil']; ?>" alt="Foto de perfil">
 
     <?php } else { ?>
 
-
-        <a href="inicio_sesion.php" class="mobile-login">
-
-            Iniciar sesión
-
-        </a>
-
+        <i class="bi bi-person-circle"></i>
 
     <?php } ?>
 
+</a>
+
+<?php } else { ?>
+
+    <a href="inicio_sesion.php" class="btn-login">
+        Iniciar sesión
+    </a>
+
+<?php } ?>
+
 
 </nav>
+
 <div class="ts-overlay" id="tsOverlay"></div>
 
 
@@ -1111,6 +1114,14 @@ fondo.onclick=function(){
 
 }
 
+</script>
+
+<script>
+window.addEventListener("pageshow", function (event) {
+    if (event.persisted || performance.getEntriesByType("navigation")[0]?.type === "back_forward") {
+        window.location.reload();
+    }
+});
 </script>
 </body>
 </html>
