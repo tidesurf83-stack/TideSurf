@@ -1,4 +1,5 @@
 const modal = document.getElementById("modal");
+const navbar = document.querySelector(".ts-navbar");
 const titulo = document.getElementById("modal-titulo");
 const texto = document.getElementById("modal-texto");
 const cerrar = document.querySelector(".cerrar");
@@ -105,6 +106,7 @@ document.querySelectorAll(".btn-leer-mas").forEach((boton) => {
     mostrarImagenActual();
 
     modal.style.display = "flex";
+    navbar.classList.add("navbar-fondo");
   });
 });
 
@@ -149,11 +151,13 @@ buscador.addEventListener("keydown", (e) => {
 
 cerrar.addEventListener("click", () => {
   modal.style.display = "none";
+  navbar.classList.remove("navbar-fondo");  
 });
 
 window.addEventListener("click", (e) => {
   if (e.target === modal) {
     modal.style.display = "none";
+    navbar.classList.remove("navbar-fondo");
   }
 });
 

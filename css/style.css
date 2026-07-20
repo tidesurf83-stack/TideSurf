@@ -183,24 +183,15 @@ body{
 .hero{
     position:relative;
     height:100vh;
-    background:url('../img/homepage/surf4.jpg');
+    background:url('../img/homepage/heroPrincipal.avif');
     background-size:cover;
     background-position:center;
     display:flex;
     align-items:center;
     overflow:hidden;
-}
-
-.hero::before{
-    content:'';
-    position:absolute;
-    width:120%;
-    height:120%;
-    background:url('../img/homepage/heroPrincipal.avif');
-    background-size:cover;
-    background-position:center;
     animation:zoomHero 15s ease-in-out infinite alternate;
 }
+
 
 .hero-overlay{
     position:absolute;
