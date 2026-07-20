@@ -820,3 +820,228 @@ body{
     }
 
 }
+
+/*==================================
+            CELULARES
+===================================*/
+@media (max-width:480px){
+
+    body{
+        overflow-x:hidden;
+    }
+
+    /* NAVBAR */
+
+    .navbar{
+        flex-direction:column;
+        gap:15px;
+        padding:15px;
+    }
+
+    .navbar__logo-img{
+        height:48px;
+    }
+
+    .navbar__links{
+        flex-wrap:wrap;
+        justify-content:center;
+        gap:12px;
+    }
+
+    .navbar__links a{
+        font-size:.85rem;
+    }
+
+    .navbar__search{
+        width:100%;
+    }
+
+    .navbar__search input{
+        width:100%;
+    }
+
+    /* HERO */
+
+    .hero,
+    .hero-escuelas{
+        height:250px;
+    }
+
+    .hero-escuelas__overlay{
+        justify-content:center;
+        padding:20px;
+        text-align:center;
+    }
+
+    .hero-escuelas__title{
+        font-size:1.8rem;
+        max-width:100%;
+        text-align:center;
+    }
+
+    /* TITULOS */
+
+    .section-title h2{
+        font-size:1.8rem;
+    }
+
+    .section-title p{
+        font-size:.9rem;
+    }
+
+    /* USUARIOS */
+
+    .usuarios{
+        padding:60px 20px;
+    }
+
+    .usuarios-contenedor{
+        grid-template-columns:1fr;
+        gap:30px;
+    }
+
+    .usuarios-imagen img{
+        height:260px;
+        border-radius:20px;
+    }
+
+    .usuarios-info h2{
+        font-size:1.8rem;
+        text-align:center;
+    }
+
+    .usuario-item{
+        flex-direction:column;
+        text-align:center;
+        padding:20px;
+    }
+
+    .icono{
+        width:60px;
+        height:60px;
+        min-width:60px;
+        font-size:28px;
+    }
+
+    /* TARJETAS */
+
+    .schools{
+        padding:50px 20px;
+    }
+
+    .cards-grid{
+        grid-template-columns:1fr;
+        gap:25px;
+    }
+
+    .card__img-wrapper{
+        height:210px;
+    }
+
+    /* FAQ */
+
+    .faq{
+        padding:60px 20px;
+    }
+
+    .faq h2{
+        font-size:1.8rem;
+    }
+
+    .faq-item{
+        width:100%;
+    }
+
+    .faq-question{
+        padding:18px;
+        font-size:.9rem;
+    }
+
+    /* MODAL */
+
+    .academy-modal{
+        padding:10px;
+    }
+
+    .academy-modal-content{
+        border-radius:18px;
+    }
+
+    .modal-banner{
+        height:180px;
+    }
+
+    .modal-info{
+        padding:20px;
+    }
+
+    .modal-info h2{
+        font-size:1.5rem;
+    }
+
+    /* FOOTER */
+
+    .footer{
+        padding:45px 20px;
+    }
+
+    .footer h3{
+        font-size:24px;
+    }
+
+    .footer-social{
+        flex-direction:column;
+        align-items:center;
+    }
+
+    .footer-social a{
+        width:220px;
+        text-align:center;
+    }
+
+    /*=========================
+        FAQ CELULAR
+=========================*/
+
+.faq{
+    padding:50px 15px;
+}
+
+.faq-container{
+    width:100%;
+    max-width:100%;
+}
+
+.faq h2{
+    font-size:1.7rem;
+}
+
+.faq-subtitle{
+    font-size:.9rem;
+    margin-bottom:30px;
+}
+
+.faq-item{
+    width:90%;
+    max-width:330px;
+    margin:0 auto 15px;
+    border-radius:14px;
+}
+
+.faq-question{
+    padding:16px 18px;
+    font-size:.85rem;
+    text-align:left;
+}
+
+.faq-question span{
+    font-size:24px;
+}
+
+.faq-answer p{
+    padding:0 18px 18px;
+    font-size:.85rem;
+    line-height:1.6;
+}
+
+}
