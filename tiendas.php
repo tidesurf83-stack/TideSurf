@@ -151,9 +151,9 @@ $resultado = $conn->query($sql);
 
 <?php } else { ?>
 
-    <a href="inicio_sesion.php" class="btn-login">
-        Iniciar sesión
-    </a>
+    <a href="inicio_sesion.php" class="btn-login mobile-login">
+    Iniciar sesión
+</a>
 
 <?php } ?>
 
@@ -169,8 +169,8 @@ $resultado = $conn->query($sql);
     <div class="hero-overlay">
 
         <h1>
-            DESCUBRE LAS MEJORES
-            <span>TIENDAS DE SURF</span>
+            Descubre Las Mejores
+            <span>Tiendas De Surf</span>
         </h1>
 
     </div>

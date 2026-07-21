@@ -281,29 +281,27 @@ body{
 
     /* Botón iniciar sesión móvil */
 
-    .mobile-login{
+   .mobile-login{
 
-        margin-top:25px;
+    display:block;
+    width:100%;
+    margin-top:25px;
 
+    text-align:center;
 
-        text-align:center;
+    background:#0288d1;
 
+    color:#fff !important;
 
-        background:#0288d1;
+    padding:14px;
 
+    border-radius:35px;
 
-        color:white !important;
+    text-decoration:none;
 
+    border:none !important;
 
-        padding:14px;
-
-
-        border-radius:35px;
-
-
-        border:none !important;
-
-    }
+}
 
 
 
@@ -359,3 +357,4 @@ body{
 
 
 }
+
