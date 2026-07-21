@@ -49,6 +49,14 @@ sort($categorias);
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta property="og:title" content="TideSurf" />
+  <meta property="og:description" content="TideSurf es una plataforma donde puede empezar tu gusto hacia el Surf o seguir con la pasión hacia el deporte" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://tidesurf.infinityfreeapp.com/?i=1" />
+  <meta property="og:image" content="" />
+  <meta property="og:site_name" content="TideSurf" />
+
+ 
   <title>News</title>
   <link rel="stylesheet" href="css/noticias.css">
   <link rel="stylesheet" href="css/navbar.css">
@@ -79,89 +87,46 @@ sort($categorias);
     <nav class="ts-menu">
 
         <a href="index.php">Inicio</a>
-
-        <div class="dropdown-noticias">
-
-                <button
-                    type="button"
-                    id="btn-noticias"
-                    class="dropdown-toggle-noticias">
-
-                    Noticias
-                    <span class="flecha-dropdown">▼</span>
-
-                </button>
-
-                <div class="dropdown-menu-noticias">
-
-                    <button
-                        class="dropdown-item-noticia active"
-                        data-filtro="todas">
-                        Todas
-                    </button>
-
-                    <button
-                        class="dropdown-item-noticia"
-                        data-filtro="destacadas">
-                        Noticias destacadas
-                    </button>
-
-                    <?php foreach ($categorias as $categoria): ?>
-
-                        <button
-                            class="dropdown-item-noticia"
-                            data-filtro="<?php echo htmlspecialchars($categoria, ENT_QUOTES, 'UTF-8'); ?>">
-
-                            <?php echo htmlspecialchars($categoria); ?>
-
-                        </button>
-
-                    <?php endforeach; ?>
-
-                </div>
-
-            </div>
-
+        <a href="noticias.php">Noticias</a>
         <a href="competencias.php">Competencias</a>
         <a href="playas.php">Playas</a>
         <a href="escuelas.php">Escuelas</a>
         <a href="tiendas.php">Tiendas</a>
         <a href="galeria.php">Galería</a>
-        <a href="sobre_nosotros.html">Sobre Nosotros</a>
+        <a href="sobre_nosotros.php">Sobre Nosotros</a>
 
     </nav>
 
 
 
-    <!-- USUARIO ESCRITORIO -->
+ <!-- USUARIO ESCRITORIO -->
+<div class="ts-user">
 
-    <div class="ts-user">
+<?php if(isset($_SESSION["usuario_id"])) { ?>
 
+ <a href="perfil.php" class="perfil-icono" title="Mi perfil">
 
-        <?php if(isset($_SESSION["usuario_id"])) { ?>
+    <?php if(!empty($_SESSION["foto_perfil"])) { ?>
 
+        <img src="<?= $_SESSION['foto_perfil']; ?>" alt="Foto de perfil">
 
-            <a href="perfil.php" class="perfil-icono" title="Mi perfil">
+    <?php } else { ?>
 
-                <i class="bi bi-person-circle"></i>
+        <i class="bi bi-person-circle"></i>
 
-            </a>
+    <?php } ?>
 
+</a>
 
-        <?php } else { ?>
+<?php } else { ?>
 
+    <a href="inicio_sesion.php" class="btn-login">
+        Iniciar sesión
+    </a>
 
-            <a href="inicio_sesion.php" class="btn-login">
+<?php } ?>
 
-                Iniciar sesión
-
-            </a>
-
-
-        <?php } ?>
-
-
-    </div>
+</div>
 
 
 
@@ -185,57 +150,13 @@ sort($categorias);
 
 
     <a href="index.php">Inicio</a>
-
-
-   <div class="dropdown-noticias">
-
-                <button
-                    type="button"
-                    id="btn-noticias"
-                    class="dropdown-toggle-noticias">
-
-                    Noticias
-                    <span class="flecha-dropdown">▼</span>
-
-                </button>
-
-                <div class="dropdown-menu-noticias">
-
-                    <button
-                        class="dropdown-item-noticia active"
-                        data-filtro="todas">
-                        Todas
-                    </button>
-
-                    <button
-                        class="dropdown-item-noticia"
-                        data-filtro="destacadas">
-                        Noticias destacadas
-                    </button>
-
-                    <?php foreach ($categorias as $categoria): ?>
-
-                        <button
-                            class="dropdown-item-noticia"
-                            data-filtro="<?php echo htmlspecialchars($categoria, ENT_QUOTES, 'UTF-8'); ?>">
-
-                            <?php echo htmlspecialchars($categoria); ?>
-
-                        </button>
-
-                    <?php endforeach; ?>
-
-                </div>
-
-            </div>
-
-
+    <a href="noticias.php">Noticias</a>
     <a href="competencias.php">Competencias</a>
     <a href="playas.php">Playas</a>
     <a href="escuelas.php">Escuelas</a>
     <a href="tiendas.php">Tiendas</a>
     <a href="galeria.php">Galería</a>
-    <a href="sobre_nosotros.html">Sobre Nosotros</a>
+    <a href="sobre_nosotros.php">Sobre Nosotros</a>
 
 
     <hr>
@@ -243,43 +164,32 @@ sort($categorias);
 
     <?php if(isset($_SESSION["usuario_id"])) { ?>
 
+ <a href="perfil.php" class="perfil-icono" title="Mi perfil">
 
-        <a href="perfil.php" class="mobile-login">
+    <?php if(!empty($_SESSION["foto_perfil"])) { ?>
 
-            <i class="bi bi-person-circle"></i>
-
-            Perfil
-
-        </a>
-
+        <img src="<?= $_SESSION['foto_perfil']; ?>" alt="Foto de perfil">
 
     <?php } else { ?>
 
-
-        <a href="inicio_sesion.php" class="mobile-login">
-
-            Iniciar sesión
-
-        </a>
-
+        <i class="bi bi-person-circle"></i>
 
     <?php } ?>
+
+</a>
+
+<?php } else { ?>
+
+    <a href="inicio_sesion.php" class="btn-login">
+        Iniciar sesión
+    </a>
+
+<?php } ?>
 
 
 </nav>
 
-        <a
-            href="perfil.php"
-            class="site-profile-avatar"
-            aria-label="Mi Perfil">
-
-            <span class="site-avatar-icon"></span>
-
-        </a>
-
-    </div>
-</div>
-
+<div class="ts-overlay" id="tsOverlay"></div>
 
  <section class="hero">
 
