@@ -879,7 +879,7 @@ while($fact = $resultado->fetch_assoc()){
 
 <script src="js/mapa.js"></script>
 
-<script src="ride_the_wave.js"></script>
+<script src="js/ride_the_wave.js"></script>
 
     <script src="js/navbar.js?v=login-si-no"></script>
 
