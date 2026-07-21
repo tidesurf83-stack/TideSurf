@@ -180,7 +180,7 @@ sort($categorias);
 
 <?php } else { ?>
 
-    <a href="inicio_sesion.php" class="btn-login">
+    <a href="inicio_sesion.php" class="btn-login mobile-login">
         Iniciar sesión
     </a>
 
