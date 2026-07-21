@@ -270,21 +270,20 @@ if (!$resultado) {
                         (<?= $escuela['total_reseñas']; ?> reseñas)
                     </span>
                 </div>
-
                 <button
-                    class="card__btn"
-                    onclick="openModal(
-                        '<?= $escuela['imagen']; ?>',
-                        '<?= htmlspecialchars(addslashes($escuela['nombre'])); ?>',
-                        '<?= htmlspecialchars(addslashes($escuela['ubicacion'])); ?>',
-                        '<?= $escuela['estrellas']; ?>',
-                        '<?= $escuela['total_reseñas']; ?>',
-                        '<?= htmlspecialchars(addslashes($escuela['descripcion'])); ?>',
-                        '<?= $escuela['telefono']; ?>',
-                        '<?= $escuela['email']; ?>'
-                    )">
-                    Ver más
-                </button>
+    class="card__btn"
+    onclick='openModal(
+        <?= json_encode($escuela["imagen"]) ?>,
+        <?= json_encode($escuela["nombre"]) ?>,
+        <?= json_encode($escuela["ubicacion"]) ?>,
+        <?= json_encode($escuela["estrellas"]) ?>,
+        <?= json_encode($escuela["total_reseñas"]) ?>,
+        <?= json_encode($escuela["descripcion"]) ?>,
+        <?= json_encode($escuela["telefono"]) ?>,
+        <?= json_encode($escuela["email"]) ?>
+    )'>
+    Ver más
+</button>
 
             </div>
 
