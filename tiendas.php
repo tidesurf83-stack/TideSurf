@@ -15,9 +15,16 @@ $resultado = $conn->query($sql);
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta property="og:title" content="TideSurf" />
+    <meta property="og:description" content="TideSurf es una plataforma donde puede empezar tu gusto hacia el Surf o seguir con la pasión hacia el deporte" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://tidesurf.infinityfreeapp.com/?i=1" />
+    <meta property="og:image" content="" />
+    <meta property="og:site_name" content="TideSurf" />
     <title>Tiendas de Surf</title>
     
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/tiendas.css">
     <link rel="stylesheet" href="css/navbar.css">
@@ -63,35 +70,34 @@ $resultado = $conn->query($sql);
 
 
 
-    <!-- USUARIO ESCRITORIO -->
+ <!-- USUARIO ESCRITORIO -->
+<div class="ts-user">
 
-    <div class="ts-user">
+<?php if(isset($_SESSION["usuario_id"])) { ?>
 
+ <a href="perfil.php" class="perfil-icono" title="Mi perfil">
 
-        <?php if(isset($_SESSION["usuario_id"])) { ?>
+    <?php if(!empty($_SESSION["foto_perfil"])) { ?>
 
+        <img src="<?= $_SESSION['foto_perfil']; ?>" alt="Foto de perfil">
 
-            <a href="perfil.php" class="perfil-icono" title="Mi perfil">
+    <?php } else { ?>
 
-                <i class="bi bi-person-circle"></i>
+        <i class="bi bi-person-circle"></i>
 
-            </a>
+    <?php } ?>
 
+</a>
 
-        <?php } else { ?>
+<?php } else { ?>
 
+    <a href="inicio_sesion.php" class="btn-login">
+        Iniciar sesión
+    </a>
 
-            <a href="inicio_sesion.php" class="btn-login">
+<?php } ?>
 
-                Iniciar sesión
-
-            </a>
-
-
-        <?php } ?>
-
-
-    </div>
+</div>
 
 
 
@@ -129,27 +135,27 @@ $resultado = $conn->query($sql);
 
     <?php if(isset($_SESSION["usuario_id"])) { ?>
 
+ <a href="perfil.php" class="perfil-icono" title="Mi perfil">
 
-        <a href="perfil.php" class="mobile-login">
+    <?php if(!empty($_SESSION["foto_perfil"])) { ?>
 
-            <i class="bi bi-person-circle"></i>
-
-            Perfil
-
-        </a>
-
+        <img src="<?= $_SESSION['foto_perfil']; ?>" alt="Foto de perfil">
 
     <?php } else { ?>
 
-
-        <a href="inicio_sesion.php" class="mobile-login">
-
-            Iniciar sesión
-
-        </a>
-
+        <i class="bi bi-person-circle"></i>
 
     <?php } ?>
+
+</a>
+
+<?php } else { ?>
+
+    <a href="inicio_sesion.php" class="btn-login">
+        Iniciar sesión
+    </a>
+
+<?php } ?>
 
 
 </nav>
@@ -191,17 +197,20 @@ $resultado = $conn->query($sql);
                 >
 
                 <h3><?= $row['nombre']; ?></h3>
+            <div class="rating">
+            <?php
+                $estrellas = floor($row['calificacion']);
 
-               <div class="rating">
-                <?php
-                    $estrellas = round($row['calificacion']);
-
-                    for($i = 1; $i <= $estrellas; $i++){
+                for($i = 1; $i <= 5; $i++){
+                    if($i <= $estrellas){
                         echo '<i class="bi bi-star-fill"></i>';
+                    }else{
+                        echo '<i class="bi bi-star"></i>';
                     }
-                ?>
-                <span><?= $row['calificacion']; ?></span>
-             </div>
+                }
+            ?>
+            <span><?= $row['calificacion']; ?></span>
+            </div>
 
                 <p><i class="bi bi-geo-alt-fill"></i> <?= $row['direccion']; ?></p>
 
@@ -232,29 +241,35 @@ $resultado = $conn->query($sql);
 
         <h2><?= $row['nombre']; ?></h2>
 
-         <p class="estrellas">
+        <p class="estrellas">
 
-<?php
-$estrellas = round($row['calificacion']);
+        <?php
+        $estrellas = floor($row['calificacion']);
 
-for($i=1; $i<=$estrellas; $i++){
-    echo '<i class="bi bi-star-fill"></i>';
-}
-?>
+        for($i=1; $i<=5; $i++){
+            if($i <= $estrellas){
+                echo '<i class="bi bi-star-fill"></i>';
+            } else {
+                echo '<i class="bi bi-star"></i>';
+            }
+        }
+        ?>
 
-(<?= $row['calificacion']; ?>)
+        (<?= $row['calificacion']; ?>)
 
-</p>
+        </p>
 
 <div class="info-modal">
 
     <p><i class="bi bi-geo-alt-fill"></i> <?= $row['direccion']; ?></p>
 
-    <p><i class="bi bi-signpost"></i> <?= $row['distancia']; ?> km</p>
-
     <p><i class="bi bi-clock"></i> <?= $row['horario']; ?></p>
 
     <p><i class="bi bi-telephone-fill"></i> <?= $row['telefono']; ?></p>
+
+    <a href="<?php echo $row['Maps']; ?>" target="_blank" class="btn-maps">
+     Ver ubicación
+</a>
 
 </div>
 

@@ -9,7 +9,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     $email = trim($_POST["email"] ?? "");
     $password = $_POST["password"] ?? "";
 
-    $sql = "SELECT ID_register, nombre, correo, password FROM register WHERE correo = ? LIMIT 1";
+    $sql = "SELECT ID_register, nombre, correo, password, foto_perfil FROM register WHERE correo = ? LIMIT 1";
     $stmt = $conn->prepare($sql);
 
     if (!$stmt) {
@@ -24,6 +24,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         if ($usuario && password_verify($password, $usuario["password"])) {
             $_SESSION["usuario_id"] = $usuario["ID_register"];
             $_SESSION["usuario_nombre"] = $usuario["nombre"];
+            $_SESSION["foto_perfil"] = $usuario["foto_perfil"] ?? "";
 
             header("Location: index.php");
             exit;
@@ -44,6 +45,13 @@ $conn->close();
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta property="og:title" content="TideSurf" />
+    <meta property="og:description" content="TideSurf es una plataforma donde puede empezar tu gusto hacia el Surf o seguir con la pasión hacia el deporte" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://tidesurf.infinityfreeapp.com/?i=1" />
+    <meta property="og:image" content="" />
+    <meta property="og:site_name" content="TideSurf" />
+
     <title>Iniciar Sesión - TideSurf</title>
     <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
     <link rel="stylesheet" href="css/inicio_sesion.css">

@@ -8,15 +8,28 @@ session_start();
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta property="og:title" content="TideSurf" />
+    <meta property="og:description" content="TideSurf es una plataforma donde puede empezar tu gusto hacia el Surf o seguir con la pasión hacia el deporte" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://tidesurf.infinityfreeapp.com/?i=1" />
+    <meta property="og:image" content="" />
+    <meta property="og:site_name" content="TideSurf" />
+
     <title>TideSurf - Sobre Nosotros</title>
     <link rel="stylesheet" href="css/sobre_nosotros.css?v=perfil-icono">
     <link rel="stylesheet" href="css/navbar.css?v=login-espacio">
+    <link rel="stylesheet" href="css/footer.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+  
      <link rel="stylesheet"
     href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
 </head>
 <body class="has-site-navbar">
+    
+<!-- ================= NAVBAR ================= -->
 
-    <!-- ================= NAVBAR ================= -->
 <header class="ts-navbar">
 
 
@@ -46,35 +59,34 @@ session_start();
 
 
 
-    <!-- USUARIO ESCRITORIO -->
+ <!-- USUARIO ESCRITORIO -->
+<div class="ts-user">
 
-    <div class="ts-user">
+<?php if(isset($_SESSION["usuario_id"])) { ?>
 
+ <a href="perfil.php" class="perfil-icono" title="Mi perfil">
 
-        <?php if(isset($_SESSION["usuario_id"])) { ?>
+    <?php if(!empty($_SESSION["foto_perfil"])) { ?>
 
+        <img src="<?= $_SESSION['foto_perfil']; ?>" alt="Foto de perfil">
 
-            <a href="perfil.php" class="perfil-icono" title="Mi perfil">
+    <?php } else { ?>
 
-                <i class="bi bi-person-circle"></i>
+        <i class="bi bi-person-circle"></i>
 
-            </a>
+    <?php } ?>
 
+</a>
 
-        <?php } else { ?>
+<?php } else { ?>
 
+    <a href="inicio_sesion.php" class="btn-login">
+        Iniciar sesión
+    </a>
 
-            <a href="inicio_sesion.php" class="btn-login">
+<?php } ?>
 
-                Iniciar sesión
-
-            </a>
-
-
-        <?php } ?>
-
-
-    </div>
+</div>
 
 
 
@@ -112,27 +124,27 @@ session_start();
 
     <?php if(isset($_SESSION["usuario_id"])) { ?>
 
+ <a href="perfil.php" class="perfil-icono" title="Mi perfil">
 
-        <a href="perfil.php" class="mobile-login">
+    <?php if(!empty($_SESSION["foto_perfil"])) { ?>
 
-            <i class="bi bi-person-circle"></i>
-
-            Perfil
-
-        </a>
-
+        <img src="<?= $_SESSION['foto_perfil']; ?>" alt="Foto de perfil">
 
     <?php } else { ?>
 
-
-        <a href="inicio_sesion.php" class="mobile-login">
-
-            Iniciar sesión
-
-        </a>
-
+        <i class="bi bi-person-circle"></i>
 
     <?php } ?>
+
+</a>
+
+<?php } else { ?>
+
+    <a href="inicio_sesion.php" class="btn-login">
+        Iniciar sesión
+    </a>
+
+<?php } ?>
 
 
 </nav>
@@ -336,65 +348,27 @@ session_start();
         </div>
 
     </section>
-  <footer>
+<footer class="footer-tidesurf">
     <div class="footer-container">
-
-        <div class="footer-brand">
-
-            <img src="logo-white.png"git commit add alt="TideSurf">
-
-            <p>RIDE THE TIDE, LIVE THE DREAM</p>
-
+        <!-- Columna izquierda -->
+        <div class="footer-left">
+            <h2>TideSurf</h2>
             <p>
-                Inspiramos, conectamos y transformamos vidas
-                a través del surf y el amor por el océano.
+                Explora El Salvador a través de TideSurf y sumérgete en las olas.
             </p>
-
+            <div class="social-icons">
+                <a href="//www.instagram.com/tidesurf_06?igsh=MTB3dnd0ZG5iNWJkbw=="><i class="fab fa-instagram"></i></a>
+                <a href="https://chat.whatsapp.com/JwgjqdCgNBq9hLrAbfWoY"><i class="fab fa-whatsapp"></i></a>
+                <a href="mailto:tidesurf83@gmail.com?subject=Consulta&body=Hola, quisiera más información."><i class="far fa-envelope"></i></a>
+            </div>
         </div>
-
-        <div class="footer-social">
-
-            <a href="#">Instagram</a>
-            <a href="#">YouTube</a>
-            <a href="#">TikTok</a>
-            <a href="#">Facebook</a>
-
-        </div>
-
-        <div>
-
-            <h4>ENLACES</h4>
-
-            <ul>
-                <li><a href="#">Inicio</a></li>
-                <li><a href="#">Tienda</a></li>
-                <li><a href="#">Experiencias</a></li>
-                <li><a href="#">Blog</a></li>
-                <li><a href="#">Sobre Nosotros</a></li>
-                <li><a href="#">Contacto</a></li>
-            </ul>
-
-        </div>
-
-
-
-        <div>
-
-            <h4>CONTÁCTANOS</h4>
-
-            <p>hola@tidesurf.com</p>
-            <p>57 300 123 4567</p>
-
-        </div>
-
     </div>
-
-<img src="" alt="">
-
-    <p class="copyright">
-        © 2024 TideSurf. Todos los derechos reservados.
-    </p>
-
+ 
+    <!-- Parte inferior -->
+    <div class="footer-bottom">
+        <p>© 2026 TideSurf. Todos los derechos reservados.</p>
+        <p><a href="#">Política de Privacidad</a> | <a href="#">Términos y Condiciones</a></p>
+    </div>
 </footer>
 <script>
 

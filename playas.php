@@ -15,6 +15,14 @@ if (!$resultado) {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+    <meta property="og:title" content="TideSurf" />
+    <meta property="og:description" content="TideSurf es una plataforma donde puede empezar tu gusto hacia el Surf o seguir con la pasión hacia el deporte" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://tidesurf.infinityfreeapp.com/?i=1" />
+    <meta property="og:image" content="" />
+    <meta property="og:site_name" content="TideSurf" />
+
+
     <title>Tide Surf</title>
 
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
@@ -45,7 +53,7 @@ if (!$resultado) {
     
 <!-- ================= NAVBAR ================= -->
 
-    <header class="ts-navbar">
+<header class="ts-navbar">
 
 
     <!-- LOGO -->
@@ -74,35 +82,34 @@ if (!$resultado) {
 
 
 
-    <!-- USUARIO ESCRITORIO -->
+ <!-- USUARIO ESCRITORIO -->
+<div class="ts-user">
 
-    <div class="ts-user">
+<?php if(isset($_SESSION["usuario_id"])) { ?>
 
+ <a href="perfil.php" class="perfil-icono" title="Mi perfil">
 
-        <?php if(isset($_SESSION["usuario_id"])) { ?>
+    <?php if(!empty($_SESSION["foto_perfil"])) { ?>
 
+        <img src="<?= $_SESSION['foto_perfil']; ?>" alt="Foto de perfil">
 
-            <a href="perfil.php" class="perfil-icono" title="Mi perfil">
+    <?php } else { ?>
 
-                <i class="bi bi-person-circle"></i>
+        <i class="bi bi-person-circle"></i>
 
-            </a>
+    <?php } ?>
 
+</a>
 
-        <?php } else { ?>
+<?php } else { ?>
 
+    <a href="inicio_sesion.php" class="btn-login">
+        Iniciar sesión
+    </a>
 
-            <a href="inicio_sesion.php" class="btn-login">
+<?php } ?>
 
-                Iniciar sesión
-
-            </a>
-
-
-        <?php } ?>
-
-
-    </div>
+</div>
 
 
 
@@ -140,27 +147,27 @@ if (!$resultado) {
 
     <?php if(isset($_SESSION["usuario_id"])) { ?>
 
+ <a href="perfil.php" class="perfil-icono" title="Mi perfil">
 
-        <a href="perfil.php" class="mobile-login">
+    <?php if(!empty($_SESSION["foto_perfil"])) { ?>
 
-            <i class="bi bi-person-circle"></i>
-
-            Perfil
-
-        </a>
-
+        <img src="<?= $_SESSION['foto_perfil']; ?>" alt="Foto de perfil">
 
     <?php } else { ?>
 
-
-        <a href="inicio_sesion.php" class="mobile-login">
-
-            Iniciar sesión
-
-        </a>
-
+        <i class="bi bi-person-circle"></i>
 
     <?php } ?>
+
+</a>
+
+<?php } else { ?>
+
+    <a href="inicio_sesion.php" class="btn-login">
+        Iniciar sesión
+    </a>
+
+<?php } ?>
 
 
 </nav>
@@ -168,9 +175,9 @@ if (!$resultado) {
 <div class="ts-overlay" id="tsOverlay"></div>
 
 
-<section class="hero">
+<section class="hero-playas">
 
-    <div class="hero-content">
+    <div class="hero-content-playas">
 
         <h1>Encuentra Tu Playa</h1>
 
@@ -261,39 +268,102 @@ if (!$resultado) {
 </section>
 
 <section class="top-month">
+    <div class="top-divider"></div>
 
     <h2>
-     Top 3 Playas de <span id="monthName"></span>
+        Top 3 Playas de <span id="monthName"></span>
     </h2>
+
 
     <p class="month-subtitle">
         Las playas recomendadas para este mes.
     </p>
 
+
+
     <div class="top-grid">
+        
 
-        <div class="top-card gold" id="top1-card">
-            <span class="medal"></span>
+
+        <!-- TOP 1 -->
+
+        <div class="top-card gold" 
+        id="top1-card"
+        onclick="openTopModal(0)">
+
+
+            <span class="medal">
+                
+            </span>
+
+
             <img id="top1-img" src="" alt="">
+
+
             <h3 id="top1-name"></h3>
+
+
             <p id="top1-location"></p>
+
+
         </div>
 
-        <div class="top-card silver" id="top2-card">
-            <span class="medal"></span>
+
+
+
+        <!-- TOP 2 -->
+
+        <div class="top-card silver" 
+        id="top2-card"
+        onclick="openTopModal(1)">
+
+
+            <span class="medal">
+                
+            </span>
+
+
             <img id="top2-img" src="" alt="">
+
+
             <h3 id="top2-name"></h3>
+
+
             <p id="top2-location"></p>
+
+
         </div>
 
-        <div class="top-card bronze" id="top3-card">
-            <span class="medal"></span>
+
+
+
+        <!-- TOP 3 -->
+
+        <div class="top-card bronze" 
+        id="top3-card"
+        onclick="openTopModal(2)">
+
+
+            <span class="medal">
+                
+            </span>
+
+
             <img id="top3-img" src="" alt="">
+
+
             <h3 id="top3-name"></h3>
+
+
             <p id="top3-location"></p>
+
+
         </div>
+
+
 
     </div>
+
 
 </section>
 
@@ -531,7 +601,7 @@ while($fact = $resultado->fetch_assoc()){
                     Aprende con instructores certificados y mejora tu técnica.
                 </p>
 
-                <a href="academias.html">Ver escuelas →</a>
+                <a href="escuelas.php">Ver escuelas →</a>
 
             </div>
 
@@ -549,7 +619,7 @@ while($fact = $resultado->fetch_assoc()){
                     Encuentra tablas, ropa y accesorios especializados.
                 </p>
 
-                <a href="">Ver tiendas →</a>
+                <a href="tiendas.php">Ver tiendas →</a>
 
             </div>
 
@@ -567,7 +637,7 @@ while($fact = $resultado->fetch_assoc()){
                     No te pierdas los torneos y eventos de surf nacionales.
                 </p>
 
-                <a href="competencias.html">Ver competencias →</a>
+                <a href="competencias.php">Ver competencias →</a>
 
             </div>
 
@@ -626,7 +696,7 @@ while($fact = $resultado->fetch_assoc()){
 
             <div class="activities">
 
-                <h3>Activities</h3>
+                <h3>Actividades</h3>
 
                 <ul id="activitiesList"></ul>
 
@@ -635,6 +705,149 @@ while($fact = $resultado->fetch_assoc()){
         </div>
 
     </div>
+
+</div>
+
+
+
+
+<div class="top-modal" id="topModal">
+
+
+    <div class="top-modal-content">
+
+
+        <span class="close-top-modal">
+            &times;
+        </span>
+
+
+
+        <img id="topModalImage" src="" alt="">
+
+
+
+        <h2 id="topModalName"></h2>
+
+
+
+        <div class="top-info-grid">
+
+
+    <div>
+
+        <i class="bi bi-trophy-fill"></i>
+
+        <br>
+
+        Ranking
+
+        <br>
+
+        <span id="topModalRank"></span>
+
+    </div>
+
+
+
+    <div>
+
+        <i class="bi bi-geo-alt-fill"></i>
+
+        <br>
+
+        Ubicación
+
+        <br>
+
+        <span id="topModalLocation"></span>
+
+    </div>
+
+
+
+    <div class="wave-animation">
+
+        <i class="bi bi-water"></i>
+
+        <br>
+
+        Oleaje
+
+        <br>
+
+        <span id="topModalWave"></span>
+
+    </div>
+
+
+
+
+    <div class="wind-animation">
+
+        <i class="bi bi-wind"></i>
+
+        <br>
+
+        Temperatura
+
+        <br>
+
+        <span id="topModalWater"></span>
+
+    </div>
+
+
+
+
+    <div>
+
+        <i class="bi bi-person-fill"></i>
+
+        <br>
+
+        Nivel
+
+        <br>
+
+        <span id="topModalLevel"></span>
+
+    </div>
+
+
+
+
+    <div>
+
+        <i class="bi bi-star-fill"></i>
+
+        <br>
+
+        Puntuación
+
+        <br>
+
+        <span id="topModalScore"></span>
+
+    </div>
+
+
+</div>
+
+
+
+
+        <h3>
+            ¿Por qué está en el Top 3?
+        </h3>
+
+
+        <p id="topModalDescription"></p>
+
+
+
+    </div>
+
 
 </div>
 

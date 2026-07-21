@@ -43,6 +43,13 @@ if(isset($_POST['registrar'])){
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta property="og:title" content="TideSurf" />
+    <meta property="og:description" content="TideSurf es una plataforma donde puede empezar tu gusto hacia el Surf o seguir con la pasión hacia el deporte" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://tidesurf.infinityfreeapp.com/?i=1" />
+    <meta property="og:image" content="" />
+    <meta property="og:site_name" content="TideSurf" />
+
     <title>Surf City</title>
     <link rel="stylesheet" href="css/competencias.css?v=perfil-icono">
     <link rel="stylesheet" href="css/navbar.css?v=login-espacio">
@@ -88,35 +95,34 @@ if(isset($_POST['registrar'])){
 
 
 
-    <!-- USUARIO ESCRITORIO -->
+ <!-- USUARIO ESCRITORIO -->
+<div class="ts-user">
 
-    <div class="ts-user">
+<?php if(isset($_SESSION["usuario_id"])) { ?>
 
+ <a href="perfil.php" class="perfil-icono" title="Mi perfil">
 
-        <?php if(isset($_SESSION["usuario_id"])) { ?>
+    <?php if(!empty($_SESSION["foto_perfil"])) { ?>
 
+        <img src="<?= $_SESSION['foto_perfil']; ?>" alt="Foto de perfil">
 
-            <a href="perfil.php" class="perfil-icono" title="Mi perfil">
+    <?php } else { ?>
 
-                <i class="bi bi-person-circle"></i>
+        <i class="bi bi-person-circle"></i>
 
-            </a>
+    <?php } ?>
 
+</a>
 
-        <?php } else { ?>
+<?php } else { ?>
 
+    <a href="inicio_sesion.php" class="btn-login">
+        Iniciar sesión
+    </a>
 
-            <a href="inicio_sesion.php" class="btn-login">
+<?php } ?>
 
-                Iniciar sesión
-
-            </a>
-
-
-        <?php } ?>
-
-
-    </div>
+</div>
 
 
 
@@ -154,27 +160,27 @@ if(isset($_POST['registrar'])){
 
     <?php if(isset($_SESSION["usuario_id"])) { ?>
 
+ <a href="perfil.php" class="perfil-icono" title="Mi perfil">
 
-        <a href="perfil.php" class="mobile-login">
+    <?php if(!empty($_SESSION["foto_perfil"])) { ?>
 
-            <i class="bi bi-person-circle"></i>
-
-            Perfil
-
-        </a>
-
+        <img src="<?= $_SESSION['foto_perfil']; ?>" alt="Foto de perfil">
 
     <?php } else { ?>
 
-
-        <a href="inicio_sesion.php" class="mobile-login">
-
-            Iniciar sesión
-
-        </a>
-
+        <i class="bi bi-person-circle"></i>
 
     <?php } ?>
+
+</a>
+
+<?php } else { ?>
+
+    <a href="inicio_sesion.php" class="btn-login">
+        Iniciar sesión
+    </a>
+
+<?php } ?>
 
 
 </nav>
@@ -210,12 +216,13 @@ if(isset($_POST['registrar'])){
     </div>
 </section>
 
-   <!-- EVENTS -->
+  <!-- EVENTS -->
 <section class="events">
 
     <div class="section-title">
-        <h2>Próximos Eventos
-            <span class="wave">〰️</span>
+        <h2>
+            Próximos Eventos
+            
         </h2>
     </div>
 
@@ -239,27 +246,35 @@ if(isset($_POST['registrar'])){
 
                 <div class="card">
 
-                    <img src="<?php echo $fila['imagen']; ?>" alt="<?php echo $fila['titulo']; ?>">
+                    <img 
+                        src="<?php echo htmlspecialchars($fila['imagen']); ?>" 
+                        alt="<?php echo htmlspecialchars($fila['titulo']); ?>"
+                    >
 
                     <div class="card-content">
 
-                        <h3><?php echo $fila['titulo']; ?></h3>
+                        <h3>
+                            <?php echo htmlspecialchars($fila['titulo']); ?>
+                        </h3>
 
-                        <p><?php echo $fila['lugar']; ?></p>
+                        <p>
+                             <?php echo htmlspecialchars($fila['lugar']); ?>
+                        </p>
 
-                        <p><?php echo date("M d - Y", strtotime($fila['fecha'])); ?></p>
-
+                        <p>
+                             <?php echo date("M d - Y", strtotime($fila['fecha'])); ?>
+                        </p>
 
                         <button
-    class="btn-detalles"
-    data-titulo="<?php echo htmlspecialchars($fila['titulo']); ?>"
-    data-lugar="<?php echo htmlspecialchars($fila['lugar']); ?>"
-    data-fecha="<?php echo date('d/m/Y', strtotime($fila['fecha'])); ?>"
-    data-imagen="<?php echo htmlspecialchars($fila['imagen']); ?>"
-    data-descripcion="<?php echo htmlspecialchars($fila['descripcion']); ?>">
-    VER DETALLES →
-</button>
-
+                            class="btn-detalles"
+                            data-titulo="<?php echo htmlspecialchars($fila['titulo']); ?>"
+                            data-lugar="<?php echo htmlspecialchars($fila['lugar']); ?>"
+                            data-fecha="<?php echo date('d/m/Y', strtotime($fila['fecha'])); ?>"
+                            data-imagen="<?php echo htmlspecialchars($fila['imagen']); ?>"
+                            data-descripcion="<?php echo htmlspecialchars($fila['descripcion']); ?>"
+                        >
+                            VER DETALLES →
+                        </button>
 
                     </div>
 
@@ -278,13 +293,57 @@ if(isset($_POST['registrar'])){
 </section>
 
 
+<!-- MODAL DEL EVENTO -->
+
+<div id="eventoModal" class="modal">
+
+    <div class="modal-content">
+
+        <!-- Imagen del evento -->
+        <img 
+            id="modalImagen" 
+            src="" 
+            alt="Imagen del evento"
+        >
+
+        <!-- Información del evento -->
+        <div class="modal-info">
+
+            <!-- Botón cerrar -->
+            <span class="cerrar">&times;</span>
+
+            <!-- Título -->
+            <h2 id="modalTitulo"></h2>
+
+            <!-- Lugar y fecha -->
+            <div class="modal-datos">
+
+                <p>
+                     <strong>Lugar:</strong><br>
+                    <span id="modalLugar"></span>
+                </p>
+
+                <p>
+                     <strong>Fecha:</strong><br>
+                    <span id="modalFecha"></span>
+                </p>
+
+            </div>
+
+            <!-- Descripción -->
+            <p id="modalDescripcion"></p>
+
+        </div>
+
+    </div>
+
+</div>
 
 
 <!-- CATEGORY -->
 <section class="levels">
 
     <h2>Regístrate aquí.
-        <span class="wave">〰️</span>
     </h2>
 
 
@@ -310,7 +369,7 @@ while ($fila = $resultado->fetch_assoc()) {
 
         <div class="featured-content">
 
-            <span>FEATURED EVENT</span>
+            <span>PROXIMO EVENTO</span>
 
             <h3><?php echo $fila['titulo']; ?></h3>
 
@@ -338,8 +397,8 @@ data-competencia="<?php echo htmlspecialchars($fila['titulo']); ?>">
 <section class="rankings">
 
     <div class="section-title">
-        <h2>Top Surf Rankings</h2>
-        <a href="#">Ver todo</a>
+        <h2>Ranking de Surfistas</h2>
+        
     </div>
 
     <div class="ranking-table">
@@ -398,7 +457,7 @@ data-competencia="<?php echo htmlspecialchars($fila['titulo']); ?>">
 </section>
 
 <!-- =========================
-        MODAL DEL EVENTO
+        MODAL De registro
 ========================= -->
 
 <div id="registroModal" class="modal">
@@ -414,7 +473,7 @@ data-competencia="<?php echo htmlspecialchars($fila['titulo']); ?>">
 
             <div class="header-info">
 
-                <h2>🏄 Registro a Competencia</h2>
+                <h2>Registro a Competencia</h2>
 
                 <p>Únete a los mejores surfistas de El Salvador</p>
 
@@ -435,7 +494,7 @@ data-competencia="<?php echo htmlspecialchars($fila['titulo']); ?>">
 
                         <div class="campo">
 
-                            <label>👤 Nombre</label>
+                            <label> Nombre</label>
 
                             <input
                                 type="text"
@@ -447,7 +506,7 @@ data-competencia="<?php echo htmlspecialchars($fila['titulo']); ?>">
 
                         <div class="campo">
 
-                            <label>👥 Apellido</label>
+                            <label> Apellido</label>
 
                             <input
                                 type="text"
@@ -475,7 +534,7 @@ data-competencia="<?php echo htmlspecialchars($fila['titulo']); ?>">
 
                         <div class="campo">
 
-                            <label>📱 Teléfono</label>
+                            <label>Teléfono</label>
 
                             <input
                                 type="text"
@@ -491,7 +550,7 @@ data-competencia="<?php echo htmlspecialchars($fila['titulo']); ?>">
 
                         <div class="campo">
 
-                            <label>🎂 Edad</label>
+                            <label> Edad</label>
 
                             <input
                                 type="number"
@@ -555,7 +614,7 @@ data-competencia="<?php echo htmlspecialchars($fila['titulo']); ?>">
 
                     <div class="campo">
 
-                        <label>🏄 Competencia</label>
+                        <label> Competencia</label>
 
                         <input
                             type="text"
@@ -567,7 +626,7 @@ data-competencia="<?php echo htmlspecialchars($fila['titulo']); ?>">
 
                     <div class="campo">
 
-                        <label>⭐ Experiencia</label>
+                        <label> Experiencia</label>
 
                         <select name="experiencia">
 
@@ -588,7 +647,7 @@ data-competencia="<?php echo htmlspecialchars($fila['titulo']); ?>">
                         name="registrar"
                         class="btnEnviar">
 
-                        🌊 Registrarme Ahora
+                         Registrarme Ahora
 
                     </button>
 

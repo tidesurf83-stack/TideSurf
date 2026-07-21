@@ -11,9 +11,6 @@ body{
      overflow-x:hidden;
 }
 
-/* ===============================
-   RESET & BASE
-================================ */
 * {
     margin: 0;
     padding: 0;
@@ -203,11 +200,11 @@ body.has-site-navbar {
 }
 
 
-.hero {
+.hero-playas{
     height: 85vh;
     background:
         linear-gradient(rgba(0,0,0,0.35), rgba(0,0,0,0.35)),
-        url("../img/playas/playita.png");
+        url("../img/playas/playa.hero.png");
     background-size: cover;
     background-position: center;
     display: flex;
@@ -216,14 +213,14 @@ body.has-site-navbar {
     text-align: center;
 }
 
-.hero-content h1 {
-    font-family: 'Playfair Display', serif;
+.hero-content-playas h1 {
+    font-family:'Poppins',sans-serif;
     font-size: 80px;
-    color: #7cd0df;
+    color: #ffffff;
     margin-bottom: 15px;
 }
 
-.hero-content p {
+.hero-content-playas p {
     font-size: 22px;
     color: #f1f1f1;
     max-width: 600px;
@@ -242,7 +239,7 @@ body.has-site-navbar {
 }
 
 .container-beaches h2 {
-    font-family: 'Playfair Display', serif;
+    font-family:'Poppins',sans-serif;
     font-size: 52px;
     margin-bottom: 25px;
 }
@@ -296,7 +293,7 @@ body.has-site-navbar {
 }
 
 .top-month h2 {
-    font-family: 'Playfair Display', serif;
+    font-family:'Poppins',sans-serif;
     font-size: 48px;
     margin-bottom: 10px;
 }
@@ -353,7 +350,7 @@ body.has-site-navbar {
 }
 
 .facts-title h2 {
-    font-family: 'Playfair Display', serif;
+    font-family:'Poppins',sans-serif;
     font-size: 48px;
 }
 
@@ -412,7 +409,7 @@ body.has-site-navbar {
 }
 
 .section-title h2 {
-    font-family: 'Playfair Display', serif;
+    font-family:'Poppins',sans-serif;
     font-size: 48px;
 }
 
@@ -494,8 +491,298 @@ body.has-site-navbar {
     color: #19d7df;
     font-weight: 600;
 }
+.top-modal{
+    display:none;
+    position:fixed;
+    inset:0;
+
+    background:rgba(0,0,0,.75);
+
+    z-index:9999;
+
+    overflow-y:auto;
+     backdrop-filter: blur(5px);
+}
+
+.modal-info-card{
+
+    background:rgba(255,255,255,0.08);
+
+    border-radius:20px;
+
+    padding:20px;
+
+    text-align:center;
+
+}
 
 
+
+.modal-info-card i{
+
+    font-size:30px;
+
+    color:#39d5ff;
+
+}
+
+
+
+.modal-info-card h4{
+
+    font-size:15px;
+
+    margin:10px 0;
+
+}
+
+.top-info-grid i{
+
+    font-size:28px;
+    color:#42d9ff;
+
+}
+
+/* 🌊 Animación de la ola */
+
+.wave-animation i{
+
+    display: inline-block;
+    animation: waveMove 2s infinite ease-in-out;
+
+}
+
+
+@keyframes waveMove{
+
+    0%{
+        transform: translateY(0);
+    }
+
+    50%{
+        transform: translateY(-6px);
+    }
+
+    100%{
+        transform: translateY(0);
+    }
+
+}
+
+
+
+/* 💨 Animación del viento */
+
+.wind-animation i{
+
+    display: inline-block;
+    animation: windMove 1.8s infinite ease-in-out;
+
+}
+
+
+@keyframes windMove{
+
+    0%{
+        transform: translateX(0);
+    }
+
+    50%{
+        transform: translateX(10px);
+    }
+
+    100%{
+        transform: translateX(0);
+    }
+
+}
+
+.top-modal-content{
+    background:#fff;
+
+    width:900px;
+    max-width:95%;
+
+    margin:50px auto;
+
+    padding:35px;
+
+    border-radius:25px;
+
+    position:relative;
+
+    animation:showTopModal .3s ease;
+}
+
+@keyframes showTopModal{
+    from{
+        opacity:0;
+        transform:translateY(-20px);
+    }
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+
+.close-top-modal{
+    position:absolute;
+    top:15px;
+    right:25px;
+
+    font-size:35px;
+    cursor:pointer;
+}
+
+
+.top-info-grid{
+
+    display:grid;
+
+    grid-template-columns:repeat(3, 1fr);
+
+    gap:10px;
+
+    margin:20px 0;
+
+}
+
+.top-info-grid{
+
+    display:grid;
+
+    grid-template-columns:
+    repeat(3,minmax(200px,1fr));
+
+    gap:20px;
+
+    margin:30px auto;
+
+}
+
+
+.top-modal-content *{
+    box-sizing:border-box;
+}
+
+.top-modal-content img{
+
+    width:100%;
+
+    height:500px;
+
+    object-fit:cover;
+
+    border-radius:20px;
+
+    display:block;
+
+    margin:0 auto 25px;
+
+}
+
+.top-info-grid div{
+
+    background:#eef7fb;
+
+    border-radius:18px;
+
+    padding:20px;
+
+    text-align:center;
+
+    font-size:16px;
+
+}
+.top-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:25px;
+    max-width:1200px;
+    margin:auto;
+
+    align-items:start;
+}
+.top-card{
+    align-self:start;
+}
+
+.top-card{
+    background:#fff;
+    border-radius:20px;
+    overflow:hidden;
+    box-shadow:0 8px 20px rgba(0,0,0,.10);
+    transition:.3s;
+    position:relative;
+
+    display:flex;
+    flex-direction:column;
+}
+
+.top-card img{
+    width:100%;
+    height:220px;
+    object-fit:cover;
+    display:block;
+}
+.medal{
+    display:block;
+    margin:0;
+    padding:0;
+    line-height:1;
+}
+
+
+
+.top-card h3{
+    margin:20px 0 10px;
+    font-size:30px;
+}
+
+.top-card p{
+    margin-bottom:25px;
+    color:#666;
+}
+
+#topModalDescription{
+
+    max-width:900px;
+
+    margin:auto;
+
+    text-align:center;
+
+    line-height:1.8;
+
+}
+
+.top-modal-content h2{
+
+    text-align:center;
+
+    font-size:3rem;
+
+    margin:25px 0;
+
+    color:#123;
+
+}
+
+@media(max-width:700px){
+
+    .top-modal-content{
+        margin:20px auto;
+        padding:25px;
+    }
+
+    .top-info-grid{
+        grid-template-columns:1fr;
+    }
+
+    .top-modal-content img{
+        height:220px;
+    }
+}
 .navbar{
     padding:10px 10px;
     background:#e7f0f7 !important;
@@ -577,24 +864,6 @@ body.has-site-navbar {
 }
 
 
-.hero{
-
-    height:650px;
-
-    background:
-    linear-gradient(
-        rgba(0,0,0,.25),
-        rgba(0,0,0,.25)
-    ),
-    url("../img/playas/playita.png");
-
-    background-size:cover;
-    background-position:center;
-
-    display:flex;
-    align-items:center;
-}
-
 .hero-content{
 
     max-width:1200px;
@@ -606,7 +875,7 @@ body.has-site-navbar {
 .hero-content h1{
 
     color:white;
-    font-family:'Playfair Display', serif;
+    font-family:'Poppins',sans-serif;
     font-size:90px;
     margin-bottom:15px;
 }
@@ -627,7 +896,7 @@ body.has-site-navbar {
 }
 
 .intro h2{
-    font-family:'Playfair Display',serif;
+    font-family:'Poppins',sans-serif;
     font-size:50px;
     margin-bottom:25px;
 }
@@ -655,7 +924,7 @@ body.has-site-navbar {
 .container-beaches h2{
 
     font-size:60px;
-    font-family:'Playfair Display', serif;
+    font-family:'Poppins',sans-serif;
     margin-bottom:25px;
 }
 
@@ -715,7 +984,7 @@ body.has-site-navbar {
 
     font-size:60px;
 
-    font-family:'Playfair Display', serif;
+    font-family:'Poppins',sans-serif;
 
     margin-bottom:35px;
 }
@@ -821,7 +1090,7 @@ body.has-site-navbar {
 .map-section h2{
     text-align:center;
     font-size:50px;
-    font-family:'Playfair Display',serif;
+    font-family:'Poppins',sans-serif;
     margin-bottom:40px;
 }
 
@@ -869,7 +1138,7 @@ body.has-site-navbar {
 }
 
 .section-title h2{
-    font-family:'Playfair Display',serif;
+    font-family:'Poppins',sans-serif;
     font-size:38px;
 }
 
@@ -938,7 +1207,7 @@ body.has-site-navbar {
 }
 
 .section-title h2{
-    font-family:'Playfair Display',serif;
+    font-family:'Poppins',sans-serif;
     font-size:38px;
     margin-bottom:15px;
 }
@@ -1052,7 +1321,7 @@ body.has-site-navbar {
 }
 
 .top-month h2{
-    font-family:'Playfair Display',serif;
+    font-family:'Poppins',sans-serif;
     font-size:50px;
     margin-bottom:10px;
 }
@@ -1122,7 +1391,7 @@ body.has-site-navbar {
 }
 
 .facts-title h2{
-    font-family:'Playfair Display', serif;
+    font-family:'Poppins',sans-serif;
     font-size:48px;
     margin-bottom:15px;
 }
@@ -1168,7 +1437,7 @@ body.has-site-navbar {
 
 .fact-icon i{
     font-size:48px;
-    color:#0d5b7a;
+    color:#32beff;
     line-height:1;
 }
 
@@ -1188,15 +1457,15 @@ body.has-site-navbar {
 }
 
 .fact-card:nth-child(even){
-    background:#c2e8fa;
+    background:#72addd;
 }
 
 .fact-card:nth-child(odd) .fact-icon{
-    background:#598ec0;
+    background:#ffffff;
 }
 
 .fact-card:nth-child(even) .fact-icon{
-    background:#bfe3ec;
+    background:#ffffff;
 }
 @media(max-width:900px){
 
@@ -1277,7 +1546,7 @@ body.has-site-navbar {
 .modal-info h2{
     font-size:40px;
     margin-bottom:20px;
-    font-family:'Playfair Display',serif;
+    font-family:'Poppins',sans-serif;
 }
 
 .modal-details{
