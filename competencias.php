@@ -222,7 +222,7 @@ if(isset($_POST['registrar'])){
     <div class="section-title">
         <h2>
             Próximos Eventos
-            <span class="wave">〰️</span>
+            
         </h2>
     </div>
 
@@ -258,11 +258,11 @@ if(isset($_POST['registrar'])){
                         </h3>
 
                         <p>
-                            📍 <?php echo htmlspecialchars($fila['lugar']); ?>
+                             <?php echo htmlspecialchars($fila['lugar']); ?>
                         </p>
 
                         <p>
-                            📅 <?php echo date("M d - Y", strtotime($fila['fecha'])); ?>
+                             <?php echo date("M d - Y", strtotime($fila['fecha'])); ?>
                         </p>
 
                         <button
@@ -319,12 +319,12 @@ if(isset($_POST['registrar'])){
             <div class="modal-datos">
 
                 <p>
-                    📍 <strong>Lugar:</strong><br>
+                     <strong>Lugar:</strong><br>
                     <span id="modalLugar"></span>
                 </p>
 
                 <p>
-                    📅 <strong>Fecha:</strong><br>
+                     <strong>Fecha:</strong><br>
                     <span id="modalFecha"></span>
                 </p>
 
@@ -344,7 +344,6 @@ if(isset($_POST['registrar'])){
 <section class="levels">
 
     <h2>Regístrate aquí.
-        <span class="wave">〰️</span>
     </h2>
 
 
@@ -458,7 +457,7 @@ data-competencia="<?php echo htmlspecialchars($fila['titulo']); ?>">
 </section>
 
 <!-- =========================
-        MODAL DEL EVENTO
+        MODAL De registro
 ========================= -->
 
 <div id="registroModal" class="modal">
@@ -474,7 +473,7 @@ data-competencia="<?php echo htmlspecialchars($fila['titulo']); ?>">
 
             <div class="header-info">
 
-                <h2>🏄 Registro a Competencia</h2>
+                <h2>Registro a Competencia</h2>
 
                 <p>Únete a los mejores surfistas de El Salvador</p>
 
@@ -495,7 +494,7 @@ data-competencia="<?php echo htmlspecialchars($fila['titulo']); ?>">
 
                         <div class="campo">
 
-                            <label>👤 Nombre</label>
+                            <label> Nombre</label>
 
                             <input
                                 type="text"
@@ -507,7 +506,7 @@ data-competencia="<?php echo htmlspecialchars($fila['titulo']); ?>">
 
                         <div class="campo">
 
-                            <label>👥 Apellido</label>
+                            <label> Apellido</label>
 
                             <input
                                 type="text"
@@ -535,7 +534,7 @@ data-competencia="<?php echo htmlspecialchars($fila['titulo']); ?>">
 
                         <div class="campo">
 
-                            <label>📱 Teléfono</label>
+                            <label>Teléfono</label>
 
                             <input
                                 type="text"
@@ -551,7 +550,7 @@ data-competencia="<?php echo htmlspecialchars($fila['titulo']); ?>">
 
                         <div class="campo">
 
-                            <label>🎂 Edad</label>
+                            <label> Edad</label>
 
                             <input
                                 type="number"
@@ -615,7 +614,7 @@ data-competencia="<?php echo htmlspecialchars($fila['titulo']); ?>">
 
                     <div class="campo">
 
-                        <label>🏄 Competencia</label>
+                        <label> Competencia</label>
 
                         <input
                             type="text"
@@ -627,7 +626,7 @@ data-competencia="<?php echo htmlspecialchars($fila['titulo']); ?>">
 
                     <div class="campo">
 
-                        <label>⭐ Experiencia</label>
+                        <label> Experiencia</label>
 
                         <select name="experiencia">
 
@@ -648,7 +647,7 @@ data-competencia="<?php echo htmlspecialchars($fila['titulo']); ?>">
                         name="registrar"
                         class="btnEnviar">
 
-                        🌊 Registrarme Ahora
+                         Registrarme Ahora
 
                     </button>
 
