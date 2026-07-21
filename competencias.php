@@ -23,11 +23,11 @@ if(isset($_POST['registrar'])){
     VALUES
     ('$nombre','$apellido','$correo','$telefono','$edad','$pais','$genero','$competencia','$categoria','$experiencia')";
 
-    if($conexion->query($sql)){
+    if($conn->query($sql)){
         header("Location: competencias.php?registro=ok");
         exit;
     }else{
-        echo "Error: " . $conexion->error;
+        echo "Error: " . $conn->error;
     }
 }
 ?>
@@ -234,7 +234,7 @@ if(isset($_POST['registrar'])){
             $resultado = $conn->query($sql);
 
             if (!$resultado) {
-                die("Error en la consulta: " . $conon->error);
+                die("Error en la consulta: " . $conn->error);
             }
 
             while($fila = $resultado->fetch_assoc()){
