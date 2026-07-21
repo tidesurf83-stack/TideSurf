@@ -1,17 +1,9 @@
 <?php
 session_start();
 // Conexión a la base de datos
-$servername = "localhost";
-$username   = "root";       
-$password   = "";           
-$dbname     = "tidesurf";   
 
-$conn = new mysqli($servername, $username, $password, $dbname);
+require_once __DIR__ . "/php/conexion.php";
 
-// Verificar conexión
-if ($conn->connect_error) {
-    die("Conexión fallida: " . $conn->connect_error);
-}
 ?>
 <!DOCTYPE html>
 <html lang="es">

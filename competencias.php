@@ -3,11 +3,7 @@ session_start();
 error_reporting(E_ALL);
 ini_set('display_errors', 1);
 
-$conexion = new mysqli("localhost", "root", "", "tidesurf");
-
-if ($conexion->connect_error) {
-    die("Error de conexión: " . $conexion->connect_error);
-}
+require_once __DIR__ . "/php/conexion.php";
 
 if(isset($_POST['registrar'])){
 
@@ -235,10 +231,10 @@ if(isset($_POST['registrar'])){
             <?php
 
             $sql = "SELECT * FROM proximos_eventos";
-            $resultado = $conexion->query($sql);
+            $resultado = $conn->query($sql);
 
             if (!$resultado) {
-                die("Error en la consulta: " . $conexion->error);
+                die("Error en la consulta: " . $conon->error);
             }
 
             while($fila = $resultado->fetch_assoc()){
@@ -354,10 +350,10 @@ if(isset($_POST['registrar'])){
 <?php
 
 $sql = "SELECT * FROM featured_events";
-$resultado = $conexion->query($sql);
+$resultado = $conn->query($sql);
 
 if (!$resultado) {
-    die("Error en la consulta: " . $conexion->error);
+    die("Error en la consulta: " . $conn->error);
 }
 
 while ($fila = $resultado->fetch_assoc()) {
@@ -413,10 +409,10 @@ data-competencia="<?php echo htmlspecialchars($fila['titulo']); ?>">
         <?php
 
         $sql = "SELECT * FROM ranking_surfistas ORDER BY posicion ASC";
-        $resultado = $conexion->query($sql);
+        $resultado = $conn->query($sql);
 
         if (!$resultado) {
-            die("Error en la consulta: " . $conexion->error);
+            die("Error en la consulta: " . $conn->error);
         }
 
         while ($fila = $resultado->fetch_assoc()) {

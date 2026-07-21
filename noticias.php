@@ -1,4 +1,6 @@
 <?php
+session_start();
+
 require_once __DIR__ . "/php/conexion.php";
 
 $conn->set_charset("utf8mb4");
@@ -87,7 +89,50 @@ sort($categorias);
     <nav class="ts-menu">
 
         <a href="index.php">Inicio</a>
-        <a href="noticias.php">Noticias</a>
+
+         <div class="dropdown-noticias">
+
+                <button
+                    type="button"
+                    id="btn-noticias"
+                    class="dropdown-toggle-noticias">
+
+                    Noticias
+                    <span class="flecha-dropdown">▼</span>
+
+                </button>
+
+                <div class="dropdown-menu-noticias">
+
+                    <button
+                        class="dropdown-item-noticia active"
+                        data-filtro="todas">
+                        Todas
+                    </button>
+
+                    <button
+                        class="dropdown-item-noticia"
+                        data-filtro="destacadas">
+                        Noticias destacadas
+                    </button>
+
+                    <?php foreach ($categorias as $categoria): ?>
+
+                        <button
+                            class="dropdown-item-noticia"
+                            data-filtro="<?php echo htmlspecialchars($categoria, ENT_QUOTES, 'UTF-8'); ?>">
+
+                            <?php echo htmlspecialchars($categoria); ?>
+
+                        </button>
+
+                    <?php endforeach; ?>
+
+                </div>
+
+            </div>
+
+
         <a href="competencias.php">Competencias</a>
         <a href="playas.php">Playas</a>
         <a href="escuelas.php">Escuelas</a>
@@ -150,7 +195,51 @@ sort($categorias);
 
 
     <a href="index.php">Inicio</a>
-    <a href="noticias.php">Noticias</a>
+
+
+          <div class="dropdown-noticias">
+
+                <button
+                    type="button"
+                    id="btn-noticias"
+                    class="dropdown-toggle-noticias">
+
+                    Noticias
+                    <span class="flecha-dropdown">▼</span>
+
+                </button>
+
+                <div class="dropdown-menu-noticias">
+
+                    <button
+                        class="dropdown-item-noticia active"
+                        data-filtro="todas">
+                        Todas
+                    </button>
+
+                    <button
+                        class="dropdown-item-noticia"
+                        data-filtro="destacadas">
+                        Noticias destacadas
+                    </button>
+
+                    <?php foreach ($categorias as $categoria): ?>
+
+                        <button
+                            class="dropdown-item-noticia"
+                            data-filtro="<?php echo htmlspecialchars($categoria, ENT_QUOTES, 'UTF-8'); ?>">
+
+                            <?php echo htmlspecialchars($categoria); ?>
+
+                        </button>
+
+                    <?php endforeach; ?>
+
+                </div>
+
+            </div>
+
+
     <a href="competencias.php">Competencias</a>
     <a href="playas.php">Playas</a>
     <a href="escuelas.php">Escuelas</a>
@@ -351,7 +440,6 @@ sort($categorias);
 </footer>
 
 <script src="js/navbar.js" ></script>
-<script src="js/main.js"></script>
 <script src="js/noticias.js"></script>
 </body>
 </html> 
