@@ -504,6 +504,32 @@ body.has-site-navbar {
      backdrop-filter: blur(5px);
 }
 
+@media (max-width:480px){
+
+    .hero-playas{
+        height:50vh;
+        background-position:center;
+        padding:0 20px;
+    }
+
+    .hero-content-playas{
+        width:100%;
+        text-align:center;
+    }
+
+    .hero-content-playas h1{
+        font-size:2.3rem;
+        line-height:1.2;
+        margin-bottom:15px;
+    }
+
+    .hero-content-playas p{
+        font-size:1rem;
+        max-width:100%;
+        line-height:1.6;
+    }
+
+}
 .modal-info-card{
 
     background:rgba(255,255,255,0.08);
