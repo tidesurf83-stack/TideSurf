@@ -99,6 +99,7 @@ session_start();
                             <option value="principiante"> Principiante</option>
                             <option value="intermedio"> Intermedio</option>
                             <option value="avanzado"> Avanzado / Experto</option>
+                            <option value="avanzado"> surf lover </option>
                         </select>
                     </div>
  

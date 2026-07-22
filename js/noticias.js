@@ -20,8 +20,7 @@ const mensajeSinResultados = document.getElementById("mensaje-sin-resultados");
 
 let filtroActual = "todas";
 
-const btnNoticias = document.getElementById("btn-noticias");
-const menuNoticias = document.querySelector(".dropdown-menu-noticias");
+const dropdownsNoticias = document.querySelectorAll(".dropdown-noticias");
 
 function normalizar(texto) {
   return texto
@@ -161,15 +160,48 @@ window.addEventListener("click", (e) => {
   }
 });
 
-btnNoticias.addEventListener("click", (e) => {
-    e.stopPropagation();
-    menuNoticias.classList.toggle("mostrar-menu");
+dropdownsNoticias.forEach((dropdown) => {
+
+    const boton = dropdown.querySelector(".dropdown-toggle-noticias");
+    const menu = dropdown.querySelector(".dropdown-menu-noticias");
+
+    boton.addEventListener("click", (e) => {
+
+        e.stopPropagation();
+
+        // Cierra los demás menús
+        dropdownsNoticias.forEach((otroDropdown) => {
+
+            if (otroDropdown !== dropdown) {
+
+                otroDropdown
+                    .querySelector(".dropdown-menu-noticias")
+                    .classList.remove("mostrar-menu");
+
+            }
+
+        });
+
+        menu.classList.toggle("mostrar-menu");
+
+    });
+
+    menu.addEventListener("click", (e) => {
+
+        e.stopPropagation();
+
+    });
+
 });
 
 document.addEventListener("click", () => {
-    menuNoticias.classList.remove("mostrar-menu");
-});
 
-menuNoticias.addEventListener("click", (e) => {
-    e.stopPropagation();
+    dropdownsNoticias.forEach((dropdown) => {
+
+        dropdown
+            .querySelector(".dropdown-menu-noticias")
+            .classList.remove("mostrar-menu");
+
+    });
+
 });
