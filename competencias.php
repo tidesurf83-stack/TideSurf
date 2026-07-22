@@ -418,14 +418,14 @@ data-competencia="<?php echo htmlspecialchars($fila['titulo']); ?>">
         while ($fila = $resultado->fetch_assoc()) {
 
             if ($fila['posicion'] == 1) {
-                $puesto = "🥇";
-            } elseif ($fila['posicion'] == 2) {
-                $puesto = "🥈";
-            } elseif ($fila['posicion'] == 3) {
-                $puesto = "🥉";
-            } else {
-                $puesto = "#" . $fila['posicion'];
-            }
+    $puesto = "#1 ";
+} elseif ($fila['posicion'] == 2) {
+    $puesto = "#2 ";
+} elseif ($fila['posicion'] == 3) {
+    $puesto = "#3 ";
+} else {
+    $puesto = "#" . $fila['posicion'];
+}
 
         ?>
 
