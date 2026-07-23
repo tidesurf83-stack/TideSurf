@@ -91,6 +91,11 @@ $conn->close();
                         <i class='bx bx-hide eye-icon' id="togglePassword"></i>
                     </div>
 
+                    
+                    <div class="enlace-registro-redireccion">
+                        ¿No sabes tu nivel de surf? <a href="trivia.php">Juega esta mini trivia</a>
+                    </div>
+
                     <div class="enlace-registro-redireccion">
                         ¿No tienes cuenta? <a href="registro.php">Regístrate</a>
                     </div>
