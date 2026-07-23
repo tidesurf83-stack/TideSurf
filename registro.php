@@ -1,31 +1,24 @@
 <?php
 session_start();
 ?>
-
+ 
 <!DOCTYPE html>
 <html lang="es">
 <?php include("head.php"); ?>
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta property="og:title" content="TideSurf" />
-    <meta property="og:description" content="TideSurf es una plataforma donde puede empezar tu gusto hacia el Surf o seguir con la pasión hacia el deporte" />
-    <meta property="og:type" content="website" />
-    <meta property="og:url" content="https://tidesurf.infinityfreeapp.com/?i=1" />
-    <meta property="og:image" content="" />
-    <meta property="og:site_name" content="TideSurf" />
-
     <title>Registro - TideSurf</title>
     <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
     <link rel="stylesheet" href="css/registro.css">
 </head>
 <body>
     <div class="interfaz-navegador">
-        
-        
+       
+       
  
         <div class="tarjeta-registro-contenedor">
-            
+           
             <div class="panel-izquierdo-visual">
                 <div class="capa-degradado-oceano"></div>
                 <div class="branding-inferior">
@@ -40,7 +33,7 @@ session_start();
                 <p class="subtitulo-formulario">y conecta con el océano</p>
  
                 <form class="formulario-registro" method="POST" action="php/registro.php">
-                    
+                   
                     <div class="contenedor-input-icono">
                         <i class='bx bx-user input-icon'></i>
                         <input type="text"placeholder="Tu nombre completo" required name="nombre">
@@ -99,7 +92,6 @@ session_start();
                             <option value="principiante"> Principiante</option>
                             <option value="intermedio"> Intermedio</option>
                             <option value="avanzado"> Avanzado / Experto</option>
-                            <option value="avanzado"> surf lover </option>
                         </select>
                     </div>
  
@@ -118,14 +110,14 @@ session_start();
                     </div>
  
                     <button type="submit" class="boton-registrarse-tide">
-                        <i class='bx bx-run'></i> Registrarse
+                         Registrarse
                     </button>
                 </form>
             </div>
  
         </div>
  
-
+ 
     </div>
  <script src="js/registro.js"></script>
 </body>
