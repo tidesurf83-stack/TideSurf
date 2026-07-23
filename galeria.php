@@ -1,9 +1,9 @@
 <?php
 session_start();
 // Conexión a la base de datos
-
 require_once __DIR__ . "/php/conexion.php";
 
+$conn->set_charset("utf8mb4");
 ?>
 <!DOCTYPE html>
 <html lang="es">
@@ -11,13 +11,6 @@ require_once __DIR__ . "/php/conexion.php";
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta property="og:title" content="TideSurf" />
-    <meta property="og:description" content="TideSurf es una plataforma donde puede empezar tu gusto hacia el Surf o seguir con la pasión hacia el deporte" />
-    <meta property="og:type" content="website" />
-    <meta property="og:url" content="https://tidesurf.infinityfreeapp.com/?i=1" />
-    <meta property="og:image" content="" />
-    <meta property="og:site_name" content="TideSurf" />
-
     <title>Galería - TIDE SURF</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
@@ -29,25 +22,18 @@ require_once __DIR__ . "/php/conexion.php";
     <link rel="stylesheet" href="css/footer.css">
 </head>
 <body class="has-site-navbar">
-
+ 
 <!-- ================= NAVBAR ================= -->
-
 <header class="ts-navbar">
-
-
     <!-- LOGO -->
     <div class="ts-logo">
-
         <a href="index.php">
             <img src="img/logo-tidesurf-navbar.png" alt="TideSurf">
         </a>
-
     </div>
-
-
+ 
     <!-- MENÚ ESCRITORIO -->
     <nav class="ts-menu">
-
         <a href="index.php">Inicio</a>
         <a href="noticias.php">Noticias</a>
         <a href="competencias.php">Competencias</a>
@@ -56,61 +42,29 @@ require_once __DIR__ . "/php/conexion.php";
         <a href="tiendas.php">Tiendas</a>
         <a href="galeria.php">Galería</a>
         <a href="sobre_nosotros.php">Sobre Nosotros</a>
-
     </nav>
-
-
-
- <!-- USUARIO ESCRITORIO -->
-<div class="ts-user">
-
-<?php if(isset($_SESSION["usuario_id"])) { ?>
-
- <a href="perfil.php" class="perfil-icono" title="Mi perfil">
-
-    <?php if(!empty($_SESSION["foto_perfil"])) { ?>
-
-        <img src="<?= $_SESSION['foto_perfil']; ?>" alt="Foto de perfil">
-
-    <?php } else { ?>
-
-        <i class="bi bi-person-circle"></i>
-
-    <?php } ?>
-
-</a>
-
-<?php } else { ?>
-
-    <a href="inicio_sesion.php" class="btn-login">
-        Iniciar sesión
-    </a>
-
-<?php } ?>
-
-</div>
-
-
-
+ 
+    <!-- USUARIO ESCRITORIO -->
+    <div class="ts-user">
+        <?php if(isset($_SESSION["usuario_id"])) { ?>
+            <a href="perfil.php" class="perfil-icono" title="Mi perfil">
+                <?php if(!empty($_SESSION["foto_perfil"])) { ?>
+                    <img src="<?= $_SESSION['foto_perfil']; ?>" alt="Foto de perfil">
+                <?php } else { ?>
+                    <i class="bi bi-person-circle"></i>
+                <?php } ?>
+            </a>
+        <?php } else { ?>
+            <a href="inicio_sesion.php" class="btn-login">Iniciar sesión</a>
+        <?php } ?>
+    </div>
+ 
     <!-- BOTÓN HAMBURGUESA -->
-
-    <button class="ts-toggle" id="tsToggle">
-
-        ☰
-
-    </button>
-
-
+    <button class="ts-toggle" id="tsToggle">☰</button>
 </header>
-
-
-
+ 
 <!-- ================= MENU MOVIL ================= -->
-
-
 <nav class="ts-mobile" id="tsMobile">
-
-
     <a href="index.php">Inicio</a>
     <a href="noticias.php">Noticias</a>
     <a href="competencias.php">Competencias</a>
@@ -119,40 +73,21 @@ require_once __DIR__ . "/php/conexion.php";
     <a href="tiendas.php">Tiendas</a>
     <a href="galeria.php">Galería</a>
     <a href="sobre_nosotros.php">Sobre Nosotros</a>
-
-
     <hr>
-
-
     <?php if(isset($_SESSION["usuario_id"])) { ?>
-
- <a href="perfil.php" class="perfil-icono" title="Mi perfil">
-
-    <?php if(!empty($_SESSION["foto_perfil"])) { ?>
-
-        <img src="<?= $_SESSION['foto_perfil']; ?>" alt="Foto de perfil">
-
+        <a href="perfil.php" class="perfil-icono" title="Mi perfil">
+            <?php if(!empty($_SESSION["foto_perfil"])) { ?>
+                <img src="<?= $_SESSION['foto_perfil']; ?>" alt="Foto de perfil">
+            <?php } else { ?>
+                <i class="bi bi-person-circle"></i>
+            <?php } ?>
+        </a>
     <?php } else { ?>
-
-        <i class="bi bi-person-circle"></i>
-
+        <a href="inicio_sesion.php" class="btn-login">Iniciar sesión</a>
     <?php } ?>
-
-</a>
-
-<?php } else { ?>
-
-    <a href="inicio_sesion.php" class="btn-login mobile-login">
-        Iniciar sesión
-    </a>
-
-<?php } ?>
-
-
 </nav>
-
 <div class="ts-overlay" id="tsOverlay"></div>
-
+ 
 <!-- ================= GALERÍA ================= -->
 <section class="grid-gallery-section container mt-5 mb-5">
     <div class="section-title">
@@ -168,7 +103,7 @@ require_once __DIR__ . "/php/conexion.php";
                 <div class="gallery-item" data-bs-toggle="modal" data-bs-target="#modalImagen<?php echo $row['id']; ?>">
                     <img src="<?php echo $row['imagen_url']; ?>" alt="<?php echo $row['descripcion']; ?>">
                 </div>
-
+ 
                 <!-- Modal -->
                 <div class="modal fade" id="modalImagen<?php echo $row['id']; ?>" tabindex="-1" aria-hidden="true">
                   <div class="modal-dialog modal-dialog-centered modal-lg" style="margin:100px auto; max-width:90%;">
@@ -190,41 +125,80 @@ require_once __DIR__ . "/php/conexion.php";
         ?>
     </div>
 </section>
-
-<!-- ================= CARRUSEL DE VIDEOS ================= -->
-<?php
-$sql = "SELECT * FROM videos";
-$result = $conn->query($sql);
-if($result->num_rows > 0){
-?>
-<div id="carouselVideos" class="carousel slide galeria-bootstrap-carousel" data-bs-ride="carousel">
-    <div class="carousel-inner">
-        <?php
-        $active = true;
-        while($video = $result->fetch_assoc()){
-        ?>
-            <div class="carousel-item <?php echo $active ? 'active' : ''; ?>">
-                <video class="video-carrusel" controls autoplay muted loop>
-                    <source src="<?php echo $video['video_url']; ?>" type="video/mp4">
-                    Tu navegador no soporta el video.
-                </video>
-            </div>
-        <?php
-            $active = false;
-        }
-        ?>
+ 
+<!-- ================= GALERÍA DE VIDEOS ================= -->
+<section class="video-gallery-section container mt-5 mb-5">
+    <div class="section-title">
+        <h2>Videos de Tidesurf</h2>
     </div>
-    <button class="carousel-control-prev" type="button" data-bs-target="#carouselVideos" data-bs-slide="prev">
-        <span class="carousel-control-prev-icon"></span>
-    </button>
-    <button class="carousel-control-next" type="button" data-bs-target="#carouselVideos" data-bs-slide="next">
-        <span class="carousel-control-next-icon"></span>
-    </button>
-</div>
-<?php
-}
-?>
-
+ 
+    <div class="d-flex flex-wrap justify-content-center gap-4">
+ 
+        <!-- Video 1 -->
+        <div style="width:300px; height:180px;">
+            <iframe src="https://www.youtube.com/embed/0zG03LTWxds"
+                    class="object-fit-contain"
+                    frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowfullscreen>
+            </iframe>
+        </div>
+ 
+        <!-- Video 2 -->
+        <div style="width:300px; height:180px;">
+            <iframe src="https://www.youtube.com/embed/t_2FPO4aG-M"
+                    class="object-fit-cover"
+                    frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowfullscreen>
+            </iframe>
+        </div>
+ 
+        <!-- Video 3 -->
+        <div style="width:300px; height:180px;">
+            <iframe src="https://www.youtube.com/embed/1YGiVpPq_Uw"
+                    class="object-fit-fill"
+                    frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowfullscreen>
+            </iframe>
+        </div>
+ 
+        <!-- Video 4 -->
+        <div style="width:300px; height:180px;">
+            <iframe src="https://www.youtube.com/embed/_7NwBWbqAN4"
+                    class="object-fit-scale"
+                    frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowfullscreen>
+            </iframe>
+        </div>
+ 
+        <!-- Video 5 -->
+        <div style="width:300px; height:180px;">
+            <iframe src="https://www.youtube.com/embed/gTgrNf_56YE"
+                    class="object-fit-none"
+                    frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowfullscreen>
+            </iframe>
+        </div>
+ 
+        <!-- Video 6 -->
+        <div style="width:300px; height:180px;">
+            <iframe src="https://www.youtube.com/embed/XiJb76GFmNc"
+                    class="object-fit-cover"
+                    frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowfullscreen>
+            </iframe>
+        </div>
+ 
+    </div>
+</section>
+ 
+ 
+ 
 <!-- ================= FOOTER ================= -->
 <footer class="footer-tidesurf">
     <div class="footer-container">
@@ -243,7 +217,7 @@ if($result->num_rows > 0){
         <p><a href="#">Política de Privacidad</a> | <a href="#">Términos y Condiciones</a></p>
     </div>
 </footer>
-
+ 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"></script>
 <script src="js/navbar.js?v=login-si-no"></script>
 </body>
@@ -251,3 +225,4 @@ if($result->num_rows > 0){
 <?php
 $conn->close();
 ?>
+ 
